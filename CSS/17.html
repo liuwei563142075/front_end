@@ -1,0 +1,30 @@
+﻿<html>
+	<head>
+		<title>
+			定位属性！
+		</title>
+		<style type = "text/css">
+			#container1 {position:absolute;Top:100px}
+			#container2 {visibility:hidden;position:absolute;top:100px}
+			p{font-size:12pt}
+		</style>
+	</head>
+	<body>
+		<p style = "font-size:15pt;color:#cc33cc;font-family:行书体">请选择一张图片：</p>
+		<div id = container1>
+			<img height=280 src="images/sand.jpg" width=158>
+			<p style="font-size:12pt;color:#cc9933;font-family:行书体">名称：大漠</p>
+		</div>
+		<div id = container2>
+			<img height=280 src="images/ocean.jpg" width=185>
+			<p style="font-size:12pt;color:#3366cc;font-family:行书体">名称：大海</p>
+		</div>
+		
+		<form name=myform>
+			<p>
+				<input onclick = "container1.style.visibility='visible';container2.style.visibility='hidden'" type=button value = 大漠>
+				<input onclick = "container2.style.visibility='visible';container1.style.visibility='hidden'" type=button value = 大海>
+			</p>
+		</form>
+	</body>
+</html>

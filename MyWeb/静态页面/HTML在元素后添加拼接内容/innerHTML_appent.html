@@ -1,0 +1,24 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("button").click(function(){
+	document.getElementById('myAnchor').innerHTML="RUNOOB";
+  
+    $("p").append(" <b>Hello world!</b>");
+	
+	document.getElementById('other').innerHTML="**90";
+  });
+});
+</script>
+</head>
+<body>
+<p id="myAnchor">This is a paragraph.</p>
+<p id="other">This is other paragraph.</p>
+<p>This is another paragraph.</p>
+<button>在每个 p 元素的结尾添加内容</button>&nbsp;
+<h1>append是在标签的内部（开始标签和结束标签）之间添加！！！内容</h1>
+<h1>innerHTML是在标签的内部（开始标签和结束标签）之间替换！！！内容</h1>
+</body>
+</html>

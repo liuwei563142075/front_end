@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>overflow:hidden的一个例子</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			a{/*去除a标签的下划线*/
+				text-decoration: none;
+			}
+			.box1{
+				border-top-width: 1px;
+				border-top-style: dashed;
+				border-bottom-style: solid;
+				overflow: hidden;
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				padding-left: 40px;
+				padding-right: 40px;
+				border-bottom-width: 1px;
+				border-bottom-style: dashed;
+				overflow: hidden;
+			}
+			.title{
+				float: left;
+			}
+			.date{
+				float: right;
+			}
+			
+			a:link{
+				color:red;
+			}
+			a:hover{
+				color: yellow;
+			}
+			a:active{
+				color:black;
+			}
+			a:visited{
+				color: deeppink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<span class="title">通知公告</span>
+			<span class="date"><a href="#">更多 >></a></span>
+		</div>
+		<div class="box2">
+			<ul>
+				<li>
+					<span class="title"><a href="#">哈哈哈哈哈哈哈哈哈</a></span>
+					<span class="date">2014年9月28日</span>
+				</li>
+				<li>
+					<span class="title"><a href="#">嘻嘻嘻嘻嘻嘻嘻嘻嘻</a></span>
+					<span class="date">2014年</span>
+				</li>
+				<li>
+					<span class="title"><a href="#">呵呵呵呵呵呵呵呵呵呵呵</a></span>
+					<span class="date">2014年9月28日</span>
+				</li>
+			</ul>
+		</div>
+		<p>title向左挤，date向右挤。由于li没有高度，所以li中下一个title会向左追上一个title。下一个date会向右追上一个date</p>
+	</body>
+</html>

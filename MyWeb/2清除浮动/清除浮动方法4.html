@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>使用偏方清除浮动overflow：hidden</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				float: left;
+				margin-left: 30px;
+			}
+			.box{
+				float: left;
+			}
+			.box1{
+				overflow: hidden;
+			}
+			.box2{
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			我是box!
+		</div><!--box有浮动，box1并不能够占用box1之前的空间-->
+		<div class="box1">
+			<ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+				<li>JAVA</li>
+				<li>PHP</li>
+			</ul>
+		</div>
+		<div class="box2">
+			<ul>
+				<li>语文</li>
+				<li>数学</li>
+				<li>外语</li>
+				<li>政治</li>
+				<li>考古</li>
+			</ul>
+		</div>
+		<p>一个父亲不能被自己浮动的儿子撑出高度，但只要给这个父亲加上overflow：hidden，那么父亲就能被儿子撑出高了。这是一个偏方</p>
+		<p>加overflow：hidden的父元素默认占用其后的所有宽度！</p>
+		<p>为啥在box2上加就不可以？给box2加overflow:hidden后box2中子元素默认沾满整个盒子的宽高，box2这个盒子有高了，其后的p元素就不在贴着box2</p>
+		<p>给box1加overflow：hidden，那么box1这个盒子就被子元素沾满撑出宽高，而且占用其后的整行，所以box2就换了一行</p>
+		<p>总结：overflow：hidden可以清除浮动，而且加了overflow：hidden的父盒子能被子盒子撑出高度，且占满其后的所有宽度，overflow:hidden能使margin生效</p>
+	</body>
+</html>

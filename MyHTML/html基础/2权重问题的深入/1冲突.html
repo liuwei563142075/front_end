@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>同一个标签携带多个类名有冲突</title>
+		<style type="text/css">
+			.box1 {
+				color: red;
+			}
+			.box2 {
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<!--与自己携带的顺序无关，只和css的顺序有关-->
+		<p class="box1 box2">我是什么颜色?</p>
+		<p class="box2 box1">我是什么颜色?</p>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>css精灵是一种css图像合并技术，该方法是将小图像和背景图像像合并到一张图片上，然后利用css定位来显示需要显示的图像,优点：减少http请求，比如四张小图片需要四次请求，但是利用css精灵，小图片变成了一张图，只需要一次请求</title>
+		<style type="text/css">
+			.ling{
+				width: 144px;
+				height: 37px;
+				background-image: url(../../static/images/taobao.png);
+				background-position: 0 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ling">
+		</div>
+		<p>使用fireworks切出来的图，宽高就是盒子的宽高，x,y记得加负号，就是背景定位background-position: -15px -28px;</p>
+	</body>
+</html>

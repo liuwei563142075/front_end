@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>清除浮动的方法2：clear:both</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				float: left;
+				margin: 10px;
+				/*margin-top: 100px;想让两个ul里的li有间隔，可以在li里面添加，但是在clear:both的盒子里margin-top/bottom就失效了*/
+				background-color: yellow;
+			}
+			.box{
+				clear: both;
+				margin-left: 30px;/*margin-left/right不失效*/
+				margin-top: 200px;/*margin-top/bottom失效*/
+			}
+			.box1{
+				clear: both;
+				margin-top: 200px;/*margin-top/bottom失效*/
+			}
+		</style>
+	</head>
+	<body>
+	<div>
+		<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JS</li>
+			<li>JAVA</li>
+			<li>PHP</li>
+		</ul>
+	</div>
+	<div class="box">
+		<ul>
+			<li>语文</li>
+			<li>数学</li>
+			<li>外语</li>
+			<li>政治</li>
+			<li>考古</li>
+		</ul>
+	</div>
+	<div class="box1">
+		<p>网页制作中，height属性很少出现，因为能被内容撑高，所以清除浮动方法1并不常用</p>
+		<p>（浮动的元素脱标） clear就是清除，both指的是左浮动，右浮动。意思是清除别人对我的影响</p>
+		<p>这种方法的一个致命的缺点是margin-top/bottom失效！！！！</p>
+	</div>
+	</body>
+</html>

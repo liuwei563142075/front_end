@@ -1,0 +1,25 @@
+﻿<html>
+	<head>
+		<title>描述《input》元素的输入类型</title>
+	</head>
+	<body>
+		<form method="post">
+			姓名：<input type="text" name="username"/> <br/>
+			密码：<input type="password" name="pwd"><br/><br/>
+			请选择性别：<br/>
+			<input type="radio" name="sex" value="male">Male
+			<input type="radio" name="sex" value="female">Female<br/><br/>
+			所在城市：<br/>
+			<input type="checkbox" name="city" value="beijing">北京
+			<input type="checkbox" name="city" value="shanghai">上海
+			<br/><br/>
+			<input type="button" value="点哦" onclick="alert('你好！')"><br/><br/>
+			<input type="submit" value="提交">
+		</form>
+		<br/><br/><br/>
+		<form method="post" enctype="multipart/form-data">
+			<input type="file" name="file" value="请选择上传的文件"><br/></br>
+			<input type="submit" value="提交">
+		</form>
+	</body>
+</html>

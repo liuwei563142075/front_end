@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>微型盒子，IE6不支持小于12px的盒子，任何小于12px的盒子，在IE6中看着都大</title>
+		<style type="text/css">
+			.box{
+				height: 3px;
+				width: 40px;
+				border: 1px solid red;
+				_font-size:0;/*只要盒子的高度小于等于12，记得加上*/
+				_background-color: red;/*只有IE6才认识*/
+			}
+		</style>
+	</head>
+	<body>
+		<p>解决办法：将盒子的字号，设置小（小于盒子的高），比如0px</p>
+		<p>浏览器hack，即浏览器提供的后门，针对某一种浏览器做兼容，IE6留了一个后门，就是只要给css属性之前，加上下划线，这个属性就是IE6认识的专有属性</p>
+		<div class="box">
+			
+		</div>
+		<p>解决微型盒子：只要盒子的高度小于等于12，记得要就上_font-size:0;</p>
+	</body>
+</html>

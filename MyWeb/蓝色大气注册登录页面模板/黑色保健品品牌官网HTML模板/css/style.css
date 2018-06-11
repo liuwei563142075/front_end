@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* CSS Document */
+/********************* index样式 ******************************/
+/**虫草介绍**/
+.Introduction01 { background:#efe9c9; margin-top:5px;min-width:1000px;}
+.TntrW {padding:20px; overflow:hidden;}
+.LefttTxt { width:650px;}
+.LefttTxt h2 {margin-left:100px;}
+.LefttTxt p { text-indent:20px; font-size:14px; margin-top:10px;}
+.Rightimg { width:243px; height:161px;background:url(../images/imgBg.jpg) no-repeat; margin-left:50px;}
+.Rightimg img { margin:2px 7px 7px 2px;}
+
+/**产品展示**/
+.ProJs { margin:10px auto;}
+
+/****/
+.MainBg { padding-top:10px; background:url(../images/Bg.jpg) repeat-x;min-width:1000px;}
+
+/**视频展示**/
+.VideoDisplay { margin:10px 0;}
+.VidoBg { width:1000px; height:400px; background:url(../images/VidoBg.jpg) no-repeat; overflow:hidden; margin-bottom:20px;}
+.Vido { padding:23px 17px 18px 19px;}
+
+/**优惠活动**/
+.Yh { overflow:hidden;}
+.YhRight { width:681px; height:100px; background:url(../images/Yhright.png) no-repeat; padding:30px 0px 0px 0px;}
+.Taobao { text-indent:180px; color:#4e4e4e; font-size:18px; font-family:"微软雅黑";}
+.Taobao a { color:#a74b19; font-size:18px; font-family:"微软雅黑";}
+.QQBg { width:122px; height:33px; background:url(../images/QQBg.png) no-repeat; margin-left:180px; }
+.QQBg a {color:#FFF; text-align:center; line-height:30px; font-size:18px; font-family:"微软雅黑"; display:block;}
+.Online { width:279px; height:31px; background:url(../images/YhBg.png) no-repeat;}
+.Xpt {margin-top:10px;}
+.Xpt p { float:left;}
+.Online a {color:#FFF; text-align:center; line-height:31px; font-size:18px; font-family:"微软雅黑"; display:block;}
+.Online span { color:#fee300;font-size:18px; font-family:"微软雅黑";}
+.Show { overflow:hidden;}
+.Show p{ float:left; margin:5px 3px;}
+
+/**通栏广告**/
+.BannerAdvertising { margin:10px auto; }
+
+/**友情链接**/
+.Links { background:#f8f1dd;}
+.LinksTxt { padding:20px 0px; overflow:hidden;}
+.LinksTxt p a { display:block;float:left; text-align:center; text-indent:20px;white-space:nowrap;}
+.LinNav { margin:20px auto;}
+
+.Goods { margin:20px auto;}
+
+/******************公司简介**********************/
+/**图片处**/
+#Main02 { margin:40px auto; overflow:hidden;}
+.Mainleft { height:563px; padding-right:20px; background:url(../images/dividing.jpg) right no-repeat;}
+.Mainleft p { margin-top:20px;}
+
+/**文字介绍**/
+.MainRight { margin-left:30px;}
+.JTop { width:700px; border-bottom:5px solid #bfab82; line-height:40px;color:#8ba709; font-size:24px;font-family:"微软雅黑"; margin-bottom:40px; margin-top:150px;}
+.MainRight p { width:580px; text-indent:20px; margin-left:50px;}
+.Line { width:630px; height:30px; border-bottom:5px solid #bfab82; float:right;}
+
+
+/*************联系我们****************/
+#Main03 { margin-top:20px; overflow:hidden;}
+/** 产品类别 **/
+.Side { width:350px;}
+.Category { width:350px;border-bottom:5px solid #bfab82; overflow:hidden;}
+.Category h2 {font-size:20px;font-family:"微软雅黑";float:left; line-height:30px;}
+.Category p { float:right;line-height:30px;}
+.List ul li { border-bottom:1px dotted #000;}
+.List ul li a { margin-left:5px;}
+
+/**联系我们**/
+.lxwm { margin-bottom:50px;}
+.lxwm dl { margin:10px 0px;}
+.lxwm dd { text-indent:60px;}
+.Zjgg { margin:20px auto;}
+/**右边内容**/
+.M03Right { width:630px;  margin-left:20px;}
+.Current { background:#f2eee6;padding:2px 0 2px 30px; margin:8px auto 5px 15px;}
+.LxwmNav { margin:20px 40px;}
+.LogoGs { width:392px; margin:30px auto;}
+.LogoGs dd { text-indent:60px;}
+.LogoGs dl { margin-left:70px;}
+.Resimg p { margin:5px 12px;}
+
+/****************产品详细页面***************************/
+.Coment { margin-top:20px;}
+.Coment h3 { text-align:center; font-size:20px; color:#61170e; border-bottom:1px solid #cbba99;}
+.imgMain { padding:20px 0;}
+.Introduction { text-align:left; text-indent:20px; font-size:14px; color:#fff; background:#cbba99;}
+.ENav p { text-align:left; margin:10px; line-height:25px;}
+
+.Article p a { color:#F00;}
+.Article p a:hover { color:#cbba99}
+
+
+/****************产品展示页***************************/
+.M04Right { width:640px;  margin-left:10px;}
+
+.ListNav { width:384px; height:50px; margin:20px 0; color:#FFF; font-size:18px; font-weight:bold; font-family:"微软雅黑"; background:url(../images/NavBg02.png) no-repeat; padding:4px 0 0 90px;}
+.JgBg { width:50px; height:23px; text-align:center; line-height:23px; font-weight:bold; background:url(../images/MuchBg.gif) no-repeat;}
+.Much { margin:15px 0 15px 15px; border-bottom:1px dotted #000;overflow:hidden;}
+.Much p { float:left; margin-left:10px;}
+.Much p a { display:block;}
+.Img01 { height:230px;float:left;
+}
+.ListD { margin-left:15px;}
+.BjBg { width:68px; height:89px;position:relative;left: 132px;top: -115px; background:url(../images/Pag.png) no-repeat; }
+.BjBg p {color:#FFF; display:block; font-weight:bold; padding:60px 0 0 41px;font-family:"微软雅黑";}
+.ListImg { overflow:hidden;}
+.Imgtxt { width:200px; line-height:30px; text-align:center;}
+.magrl { margin:0 12px;}
+
+
+/*********图片滚动**************/
+ 
+ /* 左右滚动 */
+.Instiute { width:100%;min-width:1000px; margin-top:10px;}
+.InsBg { height:160px; position:relative; border:1px solid #FFF; background:#F7F7F7; padding:3px;}
+.InsLeft { width:18px; height:30px; display:block;background:url(../images/feature_left.png) center top;margin:-20px 5px 0 10px; position:relative; top:80px;}
+.InsLeft:hover {width:18px; height:30px;background:url(../images/feature_left.png) center bottom; 
+position:relative; top:80px;}
+.InsRight { width:18px; height:30px; display:block;background:url(../images/feature_right.png) center top; margin:70px 10px 0 5px; position:relative; left:960px; top:-170px;}
+.InsRight:hover {width:18px; height:30px;background:url(../images/feature_right.png) center bottom; 
+position:relative; left:960px; top:-170px;}
+.InsCenter { width:900px; height:150px; margin:auto; overflow:hidden;}
+.InsCenter ul {position:relative;width:1360px;}
+.InsCenter ul li { width:175px;float:left; margin: 3px 6px;}
+.InsCenter ul li img { width:175px; height:130px; background:#FFF; border:#999 1px solid; padding:3px;}
+.InsTxt {border:1px solid #F00  width:175px; display:inline-block;text-align:center;line-height:35px; color:#F00;}
+

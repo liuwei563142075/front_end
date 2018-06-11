@@ -1,0 +1,21 @@
+﻿<html>
+	<head>
+		
+	</head>
+	<body>
+	<script type = "text/javascript">
+			function check() {
+				if(document.myform.name.va1ue=="") {
+					alert("空串不允许！提交失败！");
+					return false；
+				}
+				alert("提交成功！");
+				return true;
+			}
+		</script>
+		<form name = "myform" onsubmit = "return check()">
+			<input type = "text" name = "name">
+			<input type = "submit" value = "Submit">
+		</form>
+	</body>
+</html>

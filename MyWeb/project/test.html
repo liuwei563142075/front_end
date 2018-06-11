@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<style>
+			*{
+				padding:0px;
+				margin:0px;
+			}
+			.h3_style{
+				font-size:19px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span class="h3_style"><h3>标题</h3></span>
+			<table border="1px">
+				<tr>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+					<th>5</th>
+					<th>6</th>
+				</tr>
+			</table>
+		</div>
+		<script>
+			var obj;
+			try{
+				console.log(obj.exp);
+			}catch(err){
+				var exp = null;
+				if(typeof(exp) == "object"){
+					console.log("undefined1");
+				}
+			}
+			console.log("nihao");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		div {
+			width:200px;
+			height:200px;
+			/*padding:10px 10px 30px 15px;*/      /*上-右-下-左*/
+			/*padding: 10px 30px;*//*上10 右30 下10 左30*/
+			
+			/*这种写法是错误的，不能把小属性写在大属性前面！！！！，小属性写在大属性前面将不起作用*/
+			padding-left: 50px;
+			padding-bottom: 30px;/**/
+			padding: 40px 15px 40px 49px;/*上右下左*/
+			padding-right: 70px;/*排在下面的会层叠排在上面的属性*/
+			
+		}
+	</style>
+	<body>
+		<div>
+			<p>你打算年底短短三年都随你企鹅号封闭期恶一把覅去玩必读</p>
+		</div>
+	</body>
+</html>

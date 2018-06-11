@@ -1,0 +1,18 @@
+﻿<html>
+	<head>
+		<title>框架的使用</title>
+	</head>
+	<!--注意不要有body-->
+	<noframes>
+		<body>
+			<p>此网页使用了框架，但您的浏览器不支持框架</p>
+		</body>
+	</noframes>
+	<frameset cols = "150,*"><!--最左边框架的宽度是150像素，*代表剩下的占全部-->
+		<frame name = "left" src = "1.html" noresize><!--noresize表示这个框架不允许调整大小-->
+		<frameset rows = "300,*"><!--最左边框架的宽度是300像素，*代表剩下的占全部-->
+			<frame name = "up" src = "2.html">
+			<frame name = "down" src = "3.html">
+		</frameset>
+	</frameset>
+</html>

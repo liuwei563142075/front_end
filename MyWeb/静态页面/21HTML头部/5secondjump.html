@@ -1,0 +1,26 @@
+﻿<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+ <title>你要明白页面的加载顺序是自上而下的，head里的js只有在调用的时候才去加载</title>
+ <script type="text/javascript">     
+    
+ </script> 
+ </head>
+ 
+ <body><span id="jumpTo">5</span>秒后自动跳转到http://www.baidu.com/
+ <script type="text/javascript">
+ function countDown(secs,surl){     
+  //alert(surl);     
+  var jumpTo = document.getElementById('jumpTo');
+  jumpTo.innerHTML=secs;  
+  if(--secs>0){     
+      setTimeout("countDown("+secs+",'"+surl+"')",1000);     
+      }     
+  else{       
+      location.href=surl;     
+     }     
+}  
+
+countDown(5,'http://www.baidu.com/');
+</script>  
+</body>
+</html>

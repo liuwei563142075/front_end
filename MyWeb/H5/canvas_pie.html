@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="can_pie" style="width: 200px;height: 300px;border: 1px solid rosybrown;"></div>
+		<script type="text/javascript">
+			var p = document.getElementById("can_pie");
+			var ctx = p.getContext("2d);
+			ctx.fillStyle="blue";
+			ctx.beginPath();
+			ctx.arc(70,18,15,0,Math.PI*2,true);
+			ctx.closePath();ctx.fill();
+		</script>
+	</body>
+</html>

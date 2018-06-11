@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用浮动来脱标</title>
+		<style type="text/css">
+			.b1{
+				float: left;
+				width: 200px;
+				height: 100px;
+				border: 1px solid red;
+				background-color: burlywood;
+			}
+			.b2{
+				float: left;
+				width: 100px;
+				height: 50px;
+				border: 1px solid red;
+				background-color: yellow;
+			}
+			.b3{
+				float: left;
+				width: 200px;
+				height: 300px;
+				border: 1px solid red;
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="b1">
+			1
+		</div>
+		<div class="b2">
+			2
+		</div>
+		<div class="b3">
+			3
+		</div>
+		<p>浮动的元素相互贴靠，如果有足够的空间，3盒子就会贴靠2盒子，如果2盒子没有足够的空间，3盒子就会贴靠1盒子。如果1盒子也没有足够的空间，3盒子就会贴靠左墙</p>
+	</body>
+</html>

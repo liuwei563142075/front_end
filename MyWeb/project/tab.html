@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../static/bootstrap-3.3.7/dist/css/bootstrap.min.css" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;	
+			}
+			.mytab{
+				margin: 100px;
+				width: 500px;
+			}
+			.mytab .mydata{
+				margin: 0 auto;
+			}
+			.mytab .mydata table{
+				margin-bottom: 5px;
+			}
+			.mytab .mypage{
+				width: 250px;
+				margin: 0 auto;
+			}
+			.mytab .mypage .pagination{
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mytab">
+			<div class="mydata">
+				<table class="table table-striped" border="1px">
+					<thead><tr><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+					<tbody>
+						<tr><td>nidas</td><td>htynus</td><td>gwegs</td><td>darge</td></tr>
+						<tr><td>nfqerfs</td><td>htrs</td><td>nys</td><td>dm</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="mypage">
+				<ul class="pagination">
+					<li><a href="#">&laquo;</a></li>
+					<li><a href="javascript:void(0)">1</a></li>
+					<li><a href="javascript:void(0)">2</a></li>
+					<li><a href="javascript:void(0)">3</a></li>
+					<li><a href="javascript:void(0)">4</a></li>
+					<li><a href="javascript:void(0)">5</a></li>
+					<li><a href="#">&raquo;</a></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript" src="../static/jquery/jquery-3.2.1.min.js" ></script>
+		<script type="text/javascript" src="../static/bootstrap-3.3.7/dist/js/bootstrap.min.js" ></script>
+		<script type="text/javascript">
+			var i;
+			function ab(){
+				i = 10;
+				console.log(i);
+			}
+			ab();
+			console.log(i);
+		</script>
+	</body>
+</html>

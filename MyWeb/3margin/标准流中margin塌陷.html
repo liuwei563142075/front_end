@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>标准文档流中!，竖直方向的margin不叠加，以较大的为准，较大的覆盖较小的</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box1{
+				border: 1px solid red;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				margin-bottom: 30px;
+			}
+			.box2{
+				border: 1px solid red;
+				width: 100px;
+				height: 100px;
+				background-color: green;
+				margin-top: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+	</body>
+</html>

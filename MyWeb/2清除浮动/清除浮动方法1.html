@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>给浮动的元素的祖先元素加高度（给ul或div加高）</title>
+		<style type="text/css">
+			.u1{
+				height: 20px;
+			}
+			.u2{
+				height: 20px;
+			}
+			li{
+				float: left;
+				margin-left: 30px;
+			}
+		</style>
+	</head>
+	<body>
+	<p>如果一个元素要浮动，那么它的祖先元素一定要有高度。有高度的盒子才能关住浮动</p>
+	<div>
+		<ul class="u1">
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JS</li>
+			<li>JAVA</li>
+			<li>PHP</li>
+		</ul>
+	</div>
+	<div>
+		<ul class="u2">
+			<li>语文</li>
+			<li>数学</li>
+			<li>外语</li>
+			<li>政治</li>
+			<li>考古</li>
+		</ul>
+	</div>
+	<p>只要浮动在一个有高度的盒子中，那么这个浮动就不会影响后面的元素，所以就是清除浮动带来的影响</p>
+	</body>
+</html>

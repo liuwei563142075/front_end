@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Method属性</title>
+	</head>
+	<body>
+		<form action="action_page.php" method="GET">
+			姓名：<input type="text" name="username"/>
+			<input type="submit" name="submit" value="提交">
+		</form>
+		<p>method属性规定在提交表单时所用的HTTP方法(GET或POST)</p>
+		<p>GET是默认提交方式，如果表单提交是被动的（比如搜索引擎查询），并且没有敏感信息。使用GET时表单数据在页面地址栏中是可见的。GET最适合少量数据的提交，浏览器会设定容量限制</p>
+		<p>如果表单正在更新数据，或者包含敏感信息（例如密码），POST的安全性更好，因为在页面地址栏被提交的数据是不可见的</p>
+	</body>
+</html>

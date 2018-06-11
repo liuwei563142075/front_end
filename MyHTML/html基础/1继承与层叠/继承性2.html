@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>继承性是重自己开始，直到最小的元素</title>
+		<style type="text/css">
+			body{/*如果我们的页面都是微软雅黑，字体都是18px，那么就可以用继承性*/
+				font-size: 18px;
+				font-family: "微软雅黑";
+				font-style: italic;/*斜体*/
+				text-decoration: underline;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+			}
+			ul li{
+				float: left;
+				list-style-type: none;
+				margin-left: 10px;
+			}
+			/*ul li:before{
+				color: #8A2BE2;
+				font-size: 40px;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div class="b1">
+			<ul>
+				<li>回事擦</li>
+				<li>擦磨破</li>
+				<li>比佛牌</li>
+				<li>充分考虑</li>
+				<li><p>你好</p></li>
+			</ul>
+			<p>你好啊</p>
+		</div>
+	</body>
+</html>

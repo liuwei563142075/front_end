@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>非标准文档流中!margin无塌陷现象</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box1{
+				float: left;
+				border: 1px solid red;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				margin-bottom: 30px;
+			}
+			.box2{
+				float: left;
+				border: 1px solid red;
+				width: 1900px;
+				height: 100px;
+				background-color: green;
+				margin-top: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+	</body>
+</html>

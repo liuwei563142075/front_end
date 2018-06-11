@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML表单属性action</title>
+	</head>
+	<body>
+		<form action="action_page.php">
+			姓名：<input type="text" name="username" />
+			密码：<input type="text" name="password"/>
+			<input type="submit" name="submit" value="提交" />
+		</form>
+		<p>action属性定义在提交表单时执行的动作，向服务器提交表单的通常做法是使用提交按钮，通常，表单会被提交到web服务器上的网页</p>
+		<p>注意：如果省略了action属性，则action会被设置为当前页面。之前见过项目里的form都是不写Action的，原来是这个意思，重新请求一次（可能会带着分页参数）</p>
+	</body>
+</html>

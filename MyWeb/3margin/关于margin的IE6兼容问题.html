@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>当出现连续浮动的元素，携带和浮动方向相同的margin时，队首的元素，会双倍margin</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box1{
+				float: left;
+				margin-left: 30px;/*margin-right: 30px;*/
+				width: 100px;
+				height: 100px;
+				background-color: yellow;				
+			}
+			.box2{
+				float: left;
+				margin-left: 30px;/*margin-right: 30px;*/
+				width: 100px;
+				height: 100px;
+				background-color: yellow;				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			
+		</div>
+		<div class="box2">
+			
+		</div>
+		<p>解决方案：习惯上让浮动的方向与margin的方向相反！就如注释中那样</p>
+	</body>
+</html>

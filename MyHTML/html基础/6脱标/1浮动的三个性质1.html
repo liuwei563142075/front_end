@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用浮动来脱标</title>
+		<style type="text/css">
+			.b1{
+				float: left;
+				width: 100px;
+				height: 100px;
+				border: 1px solid red;
+				background-color: black;
+			}
+			.b2{
+				width: 300px;
+				height: 300px;
+				border: 1px solid red;
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="b1">
+			
+		</div>
+		<div class="b2">
+			
+		</div>
+		<p>黑盒子float:left，绿盒子没有float:left,黑盒子脱离里标准文档流，绿盒子就是标准文档流里的第一个盒子，所以渲染在了页面的左上方</p>
+	</body>
+</html>

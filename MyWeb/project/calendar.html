@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="content-script-type" content="text/javascript">
+		<title></title>
+		<link rel="stylesheet" href="../static/bootstrap-3.3.7/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../static/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" />
+		<script type="text/javascript" src="../static/jquery/jquery-3.2.1.min.js" ></script>
+		<script type="text/javascript" src="../static/bootstrap/2.3.1/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="../static/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" ></script>
+		<script type="text/javascript" src="../static/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js" ></script>
+	</head>
+	<body>
+		<div class="container">
+        <!--<div class="col-md-12 column">-->
+            <div class="row clearfix">
+                <!--<div class="col-md-12 column">-->
+                    <div class="form-inline">
+                        <div class="form-group">开始时间
+                            <div class='input-group date' id='datetimepickerstart'>
+                                <input type='text' class="form-control" style="width: 100px"/>
+                            <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">结束时间
+                            <div class='input-group date' id='datetimepickerend'>
+                                <input type='text' class="form-control" style="width: 100px"/>
+                            <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                            </div>
+                        </div>
+						
+                        <button class="btn btn-primary" id="search_btn">查询</button>
+                        <!-- <button class="btn btn-primary" onclick="clearForm();">重置</button> -->
+                        
+                    </div>
+                <!--</div>-->
+            </div>
+            <div class="row clearfix">
+                <div id="main" style="height: 493px;width: 1160px" class="col-md-6 column">
+                </div>
+            </div>
+        <!--</div>-->
+    </div>
+    		
+    		<script type="text/javascript">
+$(function () {
+		
+		var date = new Date();;
+		var start_date = date.getFullYear()+"-01-01";
+		var end_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+		$('#datetimepickerstart input').attr("value",start_date);
+		$('#datetimepickerend input').attr("value",end_date);
+	
+		$('#datetimepickerstart').datetimepicker({
+            format: "yyyy-mm-dd",
+            autoclose: true,
+            todayBtn: true,
+            todayHighlight: true,
+            showMeridian: true,
+            pickerPosition: "bottom-left",
+            language: 'zh-CN',
+            startView: 2,
+            minView: 2,
+            //initialDate:start_date
+        });
+        
+        $('#datetimepickerend').datetimepicker({
+            format: "yyyy-mm-dd",
+            autoclose: true,
+            todayBtn: true,
+            todayHighlight: true,
+            showMeridian: true,
+            pickerPosition: "bottom-left",
+            language: 'zh-CN',
+            startView: 2,
+            minView: 2,
+            //initialDate:end_date
+        });
+        
+    });
+	
+	
+	
+	//清空查询条件
+    function clearForm() {
+		location.reload(true);   
+
+    }
+	</script>
+	</body>
+</html>

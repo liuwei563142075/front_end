@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function cva_movefunction(event) {
+				x = event.clientX;
+				y = event.clientY;
+				var cc = document.getElementById("conc");
+				cc.innerHTML = "("+x+","+y+")";
+			}
+			function cva_outfunction(event) {
+				var aa = document.getElementById("conc");
+				aa.innerHTML="";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="convascc" style="width: 200px;height: 300px;border: 1px solid royalblue;" onmousemove="cva_movefunction(event)" onmouseout="cva_outfunction(event)"></div>
+		<div id="conc"></div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>使用隔墙法清除浮动（隔外墙）</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				float: left;
+				margin: 10px;
+				background-color: gold;
+			}
+			.h10{
+				height: 10px;
+			}
+			.cl{
+				clear: both;
+			}
+			.h10.cl{
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+	<div>
+		<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JS</li>
+			<li>JAVA</li>
+			<li>PHP</li>
+		</ul>
+	</div>
+	<div class="h10 cl"></div><!--隔墙法-外墙-->
+	<div class="box">
+		<ul>
+			<li>语文</li>
+			<li>数学</li>
+			<li>外语</li>
+			<li>政治</li>
+			<li>考古</li>
+		</ul>
+	</div>
+	<p>其中class=h10 cl隔开了两部分浮动。两部分浮动，互不影响</p>
+	</body>
+</html>

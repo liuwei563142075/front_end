@@ -1,0 +1,148 @@
+﻿<html>
+	<head>
+		<title>form表单中H5_input新增属性</title>
+	</head>
+	<body>
+		
+			<table border="1">
+				<tr>					
+					<td>用户名：</td>
+					<td>
+					<form>
+						<input type="text" name="username">
+						<input type="submit" value="submit">
+					</form>
+					</td>
+					<td>autocomplete属性规定表单或输入字段是否应该自动完成。<br/>当自动完成开启，浏览器会基于用户之前的输入自动填写值。<br/>你可以把表单的autocomplete设置为on，同时把特定的输入字段设置为off,反之亦然。<br/>autocomplete属性适用于：《form》以及以下《input》类型：text，search，url,tel,email,password,datepickers,range,color.<br/>填写并提交表单，重新加载后会在页面保留上次输入的信息。在某些浏览器你需要手动启动自动完成功能</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>novalidate</td>
+					<td>novalidate属性属于《form》属性</td>
+					<td>如果设置，则novalidate规定在提交表单时不对表单数据进行验证</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>autofocus属性</td>
+					<td><form><input type="text" name="getfocus" autofocus><input type="submit" value="submit"></form></td>
+					<td>如果设置，则规定当前页面加载时该《input》元素自动获得焦点</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>formenctype属性规定当把表单数据（form-data)提交至服务器时如何对其进行编码（仅针对于method="post"的表单）</td>
+					<td><form><input type="text" value="username"><input type="submit" value="submit"><input type="submit" value="以multipart/form-data提交" formenctype="multipart/form-data"><input type="submit" value="submit"></form>第二个按钮会覆盖表单的编码方式（文件提交必须用multipart/form-data）</td>
+					<td>formenctype属性覆盖《form》元素的enctype属性，formenctype属性适用于type="submit"以及type="image"</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>formmethod属性定义用以向action URL发送表单数据（form-data）的HTTP方法。</td>
+					<td>formmethod属性覆盖《form》元素的method属性，且适用于type=submit、image</td>
+					<td><form method="GET"><input type="text" name="username"><input type="submit" value="submit"><input type="submit" formmmethod="post" formaction="demo_post.asp" value="Submit using POST"><input type="submit" value="submit"></form>第二个按钮会覆盖表单的提交方法</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>formnovalidate属性是Boolean属性，如果设置，则规定在提交表单时不对input元素进行验证</td>
+					<td>它将覆盖《form》元素的novalidate属性，可用于type=1submit</td>
+					<td><form><input type="text" name="username"><input type="submit" value="submit"><input type="submit" formnovalidate value="Submit without valodate"></form>拥有两个按钮的表单（验证/不验证）</td>
+				</tr>
+				<tr>
+					<td>formaction属性规定当提交表单时处理该输入控件的文件的URL</td>
+					<td><form action="hello.html"><input type="text" name="username"><input type="submit" value="submit"><input type="submit" formaction="demo.html" value="提交"><input type="submit" value="submit"></form>第二个按钮会覆盖表单提交的地址</td>
+					<td>formaction属性覆盖《form》元素的action属性，formaction属性适用于type="submit"以及type=“image”</td>
+				</tr>	
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>formtarget属性规定的名称或关键词提示表单后在何处显示接收到的响应，它会覆盖《form》元素的target属性</td>
+					<td>formtarget属性会可与type=submit和type=image使用</td>
+					<td><form><input type="text" name="username"><input type="submit" value="submit"><input type="submit" formtarget="_blank" value="Submit to a new window"><input type="submit" value="submit"></form>拥有两个按钮的表单,对应不同的目标窗口</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>height和width1属性仅用于input type="image"</td>
+					<td>把图像定义为提交按钮，并设置height和width属性</td>
+					<td><form><input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"><input type="submit" value="submit"></form></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>list属性引用的《datalist》元素中包含了《input》元素的预定义选项</td>
+					<td><form><input list="browsers"><input type="submit" value="submit"></form></td>
+					<td><datalist id="browsers"><option value="Internet Exporter"><option value="Firefox"><option value="Chrome"><option value="opera"></datalist></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>multiple属性是布尔属性，如果设置则规定允许用户在《input》元素中国输入一个或多个以上的值</td>
+					<td>它适用于以下输入类型email，file</td>
+					<td>接收多个值的文件上传字段 &nbsp; Select images：<form><input type="text" name="username"><input type="file" name="img" multiple><input type="submit" value="submit"></form></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>pattern属性规定用于检查《input》元素的正则表达式，该属性适用于输入以下类型text，search,url,tel,email,password</td>
+					<td>注意：请使用全局的title属性对模式进行描述以帮助用（提交时会验证）</td>
+					<td>只能包含三个字母的输入字段（无数字或特殊字符）：<form><input type="text" name="country_code" pattern="[A-Za-z]{3}" title="三个字母的国家代码"><input type="submit" value="submit"></form></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>placeholder属性规定用以描述输入字段预期值得提示（样本值或有关格式的简短描述）</td>
+					<td>该提示会在用户输入值之前显示在输入字段中。该属性适用于以下输入类型text,search,url,tel.email,password</td>
+					<td>账号：<form><input type="text" name="username" placeholder="system">密码：<input type="password" name="pwd" placeholder="admin"><input type="submit" value="submit"></form></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>required属性是Boolean，如果设置则规定在提交表单之前必须写输入字段</td>
+					<td>适用于text，search..password,data pickers,number,checkbox,radio,file</td>
+					<td><form><input type="text" name="username" required><input type="submit" value="submit"></form></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color:black;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>step属性规定《input》元素的合法数字间隔，如果step=‘3’则合法数字间隔可与max以及min属性一同使用，来创建合法值的范围。</td>
+					<td>它适用于以下number，range,date,datetime，datetime-local,month,time以及week</td>
+					<td><form><input type="number" name="points" step="3"><input type="submit" value="submit"></form></td>
+				</tr>
+				<tr style="text-align:center;">
+					<td>formaction属性</td>
+					<td>拥有两个提交按钮并对于不同动作的HTML表单</td>
+					<td><form><input type="text" name="username" required><input type="submit" value="提交"><input type="submit" value="管理员提交" formaction="/example/demo_admin.asp"></form></td>
+				</tr>
+			</table>
+		
+		
+		
+		<br/><br/><br/>
+		<p>form属性规定《input》元素所属的一个或多个表单。提示：如果引用一个以上的表单，请使用空格分隔的表单id</p>
+		<p>输入字段位于HTML表单之外（但仍属于表单）</p>
+		<form id="form1" method="GET" autocomplete="on" novalidate>
+		</form>
+		
+		<form method="GET" id="form2">
+			First name:<input type="text" name="fname">
+			<input type="submit" value="submit">
+		<form/>
+		Last name:<input type="text" name="lname" form="form1 form2">
+	</body>
+</html>

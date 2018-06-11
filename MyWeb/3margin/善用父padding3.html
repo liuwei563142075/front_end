@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>要善于使用父亲的padding，而不是儿子的margin</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box1{
+				width: 300px;
+				height: 250px;
+				background-color: greenyellow;
+				padding-top: 50px;
+			}
+			.box2{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<p class="box2"></p>
+		</div>
+		<p>这个P有一个margin-top踹父亲，视图将自己下移</p>
+		<p>如果父亲没有border，那么儿子实际上踹的是“流”，踹的是行，所以父亲整体也掉下来了</p>
+		<p>父亲设置了border，儿子踹的就是父亲的border</p>
+		<p>margin这个属性，本质上描述的是兄弟和兄弟之间的距离，最好不要用来表述父子之间的距离</p>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>IE6中不认识overflow：hidden能清除浮动这个偏方，但是对于隐藏溢出还是认识的</title>
+		<style type="text/css">
+			span{
+				float: left;
+			}
+			.box1{
+				overflow: hidden;
+				_zoom:1;/*_zoom:1;能够触发浏览器hasLayout机制*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<span>的全部解决抱歉哦</span>
+		</div>
+		<div class="box2">
+			<span>打啊达瓦大几百</span>
+		</div>
+		<p>解决办法：多写一条hack：_zoom:1;</p>
+	</body>
+</html>
