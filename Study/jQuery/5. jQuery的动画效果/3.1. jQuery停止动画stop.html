@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#box").animate({width:"+500px"},5000);
+            });
+
+            // 点击之后立即停止
+            $("#btn2").click(function () {
+                $("#box").stop();
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="btn1">div动</button>
+<button id="btn2">停止该div元素动画</button>
+<div class="box" id="box">
+
+</div>
+</body>
+</html>

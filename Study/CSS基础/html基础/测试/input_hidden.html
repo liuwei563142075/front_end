@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client</title>
+    <script>
+        window.onload = function () {
+            var bt1 = document.getElementById("bt1");
+            var form1 = document.getElementById("form1");
+            var in1 = document.getElementById("in1");
+            var in1_id = document.getElementById("in1_id");
+            bt1.onclick = function () {
+                console.log(form1.in1.value);
+                console.log(form1.in1_id.value);
+            }
+        }
+    </script>
+</head>
+<body>
+<form id="form1">
+    值：<input type="text" id="in1" />
+    <input type="hidden" id="in1_id" value="hidden1"/>
+    <input type="submit" value="提交" id="bt1">
+</form>
+</body>
+</html>

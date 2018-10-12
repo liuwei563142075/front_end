@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3中一个盒子可以添加多张背景图，用，号隔开</title>
+    <style>
+        .box {
+            width: 350px;
+            height: 100px;
+            margin: 100px auto;
+            border-radius: 15px;
+            background: url("images/paopao.png") no-repeat left top,
+            url("images/paopao.png") no-repeat right bottom;
+            background-color: #369;
+            transition: all 1s;
+        }
+        .box:hover {
+            background-position: right bottom,
+            left top;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

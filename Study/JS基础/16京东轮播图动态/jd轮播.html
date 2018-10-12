@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jd轮播</title>
+    <style>
+        *{margin:0;padding: 0}
+        ul {
+            list-style: none;
+        }
+        .slider {
+            margin: 100px;
+            width: 730px;
+            height: 454px;
+            overflow: hidden;
+            position: relative;
+        }
+        .circle {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            height: 20px;
+        }
+        .circle span {
+            display: block;
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin: 0 2px;
+            text-align: center;
+            border-radius: 10px 10px 10px 10px;
+            background-color: pink;
+            cursor: pointer;
+        }
+        .circle span.current {
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var slimg_ul = document.getElementById("slimg-ul");
+            var slider = document.getElementById("slider");
+            var lis = slimg_ul.children;
+
+            //浏览器在开发者模式下，直接进入页面的此处断点
+            debugger
+
+            //添加子div存放小圆点
+            var circle = document.createElement("div");
+            circle.setAttribute("class","circle");
+            slider.appendChild(circle);
+            for(var i=0;i<lis.length;i++) {
+                var span = document.createElement("span");
+                span.innerHTML = i+1;
+                circle.appendChild(span);
+            }
+            //为第一个小圆点设置为红
+            circle.children[0].setAttribute("class","current");
+            //改变位置属性，使小圆点居中
+            var mleft = circle.children.length*20/2;
+            circle.style.marginLeft="-"+mleft+"px";
+        }
+    </script>
+</head>
+<body>
+<div class="slider" id="slider">
+    <div class="slimg">
+        <ul id="slimg-ul">
+            <li><img src="images/slider1.jpg" alt=""></li>
+            <li><img src="images/slider2.jpg" alt=""></li>
+            <li><img src="images/slider3.jpg" alt=""></li>
+            <li><img src="images/slider4.jpg" alt=""></li>
+            <li><img src="images/slider5.jpg" alt=""></li>
+            <li><img src="images/slider6.jpg" alt=""></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

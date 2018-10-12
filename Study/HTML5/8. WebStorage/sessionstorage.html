@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(function(){
+            var set = $("#set_value");
+            var get = $("#get_value");
+            var txt = $("#text_value");
+            set.on("click",function () {
+                if(window.sessionStorage) {
+                    window.sessionStorage.setItem("key",txt.val());
+                }
+            });
+            get.on("click",function () {
+                if(window.sessionStorage) {
+                    txt.val(window.sessionStorage.getItem("key"));
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<textarea id="text_value" cols="30" rows="10"></textarea>
+<input type="button" id="set_value" value="set">
+<input type="button" id="get_value" value="get">
+</body>
+</html>

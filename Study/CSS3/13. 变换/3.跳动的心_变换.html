@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .heart {
+            width: 600px;
+            height: 600px;
+            margin: 30px auto;
+            background-color: #CCCCCC;
+            position: relative;
+        }
+        .heart .left {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 88px;
+            left: 18%;
+        }
+        .heart .right {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 88px;
+            right: 19%;
+        }
+        .heart .bottom {
+            width: 194px;
+            height: 194px;
+            background-color: red;
+            position: absolute;
+            bottom: 227px;
+            left: 33%;
+        }
+        .left,.right{
+            border-radius: 50%;
+        }
+
+        .left,.right,.bottom {
+            animation: move 1s infinite ease-in-out alternate;
+        }
+
+        @keyframes move {
+            0% {
+                transform: scale(1) rotate(45deg);
+            }
+            100% {
+                transform: scale(1.2) rotate(45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="heart">
+    <span class="left"></span>
+    <span class="right"></span>
+    <span class="bottom"></span>
+</div>
+</body>
+</html>

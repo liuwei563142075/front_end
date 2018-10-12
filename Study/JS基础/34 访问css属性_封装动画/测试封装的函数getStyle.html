@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+           /* width: 50px;
+            height: 20px;*/
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">123</button>
+<div class="box" id="b">
+    你的那啥都弄和和你的我搜和很年轻四大行弄破多情岸
+    你的那啥都弄和和你的我搜和很年轻四大行弄破多情岸
+    你的那啥都弄和和你的我搜和很年轻四大行弄破多情岸
+    你的那啥都弄和和你的我搜和很年轻四大行弄破多情岸
+    你的那啥都弄和和你的我搜和很年轻四大行弄破多情岸
+    你的那啥都弄和和你的我搜和很年轻四大行弄破多情岸
+    你的那啥都弄和和你的我搜和很年轻四大行弄破多情岸
+    你的那啥都弄和和你的我搜和很年轻四大行弄破多情岸
+    你的那啥都弄和和你的我搜和很年轻四大行弄破多情岸
+</div>
+</body>
+</html>
+<script>
+    /*  测试结果见doc.txt总结 */
+
+    var b = document.getElementById("b");
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        console.log(getStyle(b,"height"));
+    }
+
+    function getStyle(obj,attr) {
+        if(obj.currentStyle) {
+            return obj.currentStyle[attr];
+        }else {
+            return window.getComputedStyle(obj,null)[attr];
+        }
+    }
+</script>

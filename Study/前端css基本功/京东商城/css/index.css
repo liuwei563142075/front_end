@@ -1,0 +1,211 @@
+
+/*中心区域大banner开始*/
+.bgbanner{
+    position: relative;
+}
+
+/* 定位的盒子如果没有宽，则和自己内容一样宽。 */
+.bgbanner a {
+    display: block;
+    height: 603px;
+    width: 100%;
+    background:url("../images/banner.jpg") no-repeat top center;
+    position: absolute;
+}
+
+/*中心区域花里胡哨开始*/
+.index {
+    position: relative;
+}
+.index .slider {
+    float: left;
+    width: 730px;
+    height: 454px;
+    margin: 12px 0 0 220px;
+    text-align: center;
+    position: relative;
+}
+
+.slider a {
+    display: block;
+    width: 28px;
+    height: 62px;
+    color: #EBF8FA;
+    background-color: #AF9FB4;
+    font: 500 18px/62px "宋体";
+    position: absolute;
+    top: 198px;
+}
+
+.slider a.left {
+    left: 0;
+}
+
+.slider a.right {
+    right: 0;
+}
+
+.slider .circle {
+    width: 128px;
+    height: 19px;
+    position: absolute;
+    bottom: 9px;
+    left: 301px;
+    cursor: pointer;
+}
+
+.circle ul li {
+    float: left;
+    width: 18px;
+    height: 18px;
+    color: #FFF7DC;
+    background-color: #3E3E3E;
+    margin-right: 4px;
+    border-radius: 10px;
+}
+
+.circle ul li.last {
+    margin-right: 0;
+}
+
+.index .baoservice {
+    float: left;
+    width: 248px;
+    height: 452px;
+    overflow: hidden;
+    margin: 12px 0 0 10px;
+    border: 1px solid #E4E4E4;
+}
+
+.baoservice .jdkb {
+    height: 200px;
+    border-bottom: 1px dashed #E4E4E4;
+}
+
+.jdkb .dt{
+    height: 43px;
+    font: 14px/43px "微软雅黑";
+    padding: 0 15px;
+    border-bottom: 1px dotted #E8E8E7;
+}
+
+.baoservice  h3 {
+    float: left;
+}
+
+.jdkb .dt a {
+    float: right;
+    font:13px/43px "宋体";
+}
+
+.jdkb .dd ul {
+    padding: 8px 0 0 14px;
+}
+
+.jdkb .dd li{
+    float: none;
+    height: 28px;
+    font:12px/28px "宋体";
+}
+
+.jdkb .dd li a h4 {
+    display: inline;
+    font: 700 12px/28px "宋体";
+}
+
+.lifeservice {
+    height: 252px;
+}
+
+.lifeservice  .dt {
+    height: 44px;
+    font: 14px/44px "微软雅黑";
+    padding: 0 15px;
+    border-bottom: 1px dotted #E8E8E7;
+}
+
+.lifeservice  .dd ul{
+    width: 252px;
+    text-align: center;
+}
+
+.lifeservice  .dd li {
+    float: left;
+    width: 62px;
+    height: 68px;
+    margin-left: -1px;
+    border: 1px solid #E4E4E4;
+    border-top: 0;
+}
+
+.lifeservice  .dd li.new {
+    background: url("../images/new.jpg") no-repeat right top;
+}
+
+.lifeservice  .dd li.song {
+    background: url("../images/song.png") no-repeat right top;
+}
+
+.lifeservice  .dd li.mian {
+    background: url("../images/mian.png") no-repeat right top;
+}
+
+.lifeservice .dd a {
+    display: block;
+    width: 62px;
+    height: 68px;
+    position: relative;
+}
+
+.lifeservice .dd s {
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    width: 25px;
+    height: 24px;
+}
+
+.lifeservice .dd s {
+    background: url("../images/icon_lifeserv.png") no-repeat;
+}
+
+.lifeservice .dd span {
+    position: absolute;
+    top: 46px;
+    left: 19px;
+}
+
+.reference {
+    margin-top: 9px;
+    height: 164px;
+    position: relative;
+}
+
+.reference .jd-xy {
+    float: left;
+}
+
+.reference .shoppingref {
+    float: right;
+    width: 1000px;
+    height: 164px;
+}
+
+/*  为啥要500%？？？？100%就不行 */
+.reference .shoppingref ul{
+    width: 1004px;
+    /*或
+    width: 500%;
+    _width: 400%;*/
+}
+
+.reference .shoppingref li {
+    float: left;
+    margin-right: 1px;
+}
+
+.reference .shoppingref li a {
+    display: block;
+    height: 164px;
+}
+

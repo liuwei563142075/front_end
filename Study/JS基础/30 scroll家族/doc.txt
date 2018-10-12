@@ -1,0 +1,7 @@
+1.学习窗口滚动事件：window.onscroll = function() {}
+2.获取当前窗口的scrollTop和scrollLeft，参见【2封装自己的scroll.html】
+3.让窗口滚动到某个位置：window.scrollTo(left,top);
+其中left和top分别代表窗口向左滚动的目标位置，top代表窗口向上滚动的目标位置，left、top都不带单位【数值】
+4.每个li占一屏幕：li的所有父亲节点都要写width:100%;height:100%,li自己也要写。
+
+5.不仅可以使用window.onscroll 还可以使用div等其他标签的onscroll事件

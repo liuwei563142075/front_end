@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body,div{margin: 0;padding: 0;}
+        body {
+            background-color: yellowgreen;
+        }
+        .search {
+            margin: 50px 0 0 -457px;
+            width: 504px;
+            height: 41px;
+            position: relative;
+            background: url("../images/p4.png") no-repeat -14px -14px;
+            animation: play 2s forwards;
+        }
+        .search .key {
+            width: 0;
+            height: 40px;
+            overflow: hidden;
+            color: #2b0f1e;
+            line-height: 40px;
+            padding-left: 15px;
+            position: absolute;
+            animation: pkey 3s steps(300) forwards;
+            animation-delay: 2s;
+        }
+        .search .movie {
+            width: 504px;
+            height: 0;
+            background: url("../images/p4.png") no-repeat -14px -82px;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            animation: movie 1s forwards ease-in;
+            animation-delay: 3s;
+        }
+        @keyframes play {
+            from {
+
+            }
+            to {
+                margin: 50px 0 0 2px;
+            }
+        }
+        @keyframes pkey {
+            from {
+
+            }
+            to {
+               width: 450px;
+            }
+        }
+        @keyframes movie {
+            from {
+
+            }
+            to {
+                height: 354px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="search">
+    <div class="key">智取威虎山</div>
+    <div class="movie"></div>
+</div>
+</body>
+</html>

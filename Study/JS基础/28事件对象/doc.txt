@@ -1,0 +1,26 @@
+24.学会使用display:inline-block;使元素在一行显示【脱标】，但是有一个问题就是，
+使用inline-block的元素之间有间距，去除间距的办法在父元素上加font-size:0;
+
+25.使ul中的li居中也可以使用text-align:center
+
+26.做放大镜6的ul-li时遇到的问题：如果仅仅使用li里面包裹着img是没办法做出鼠标
+滑过一个li显示一个黑色边框的，淘宝的做法是多加了一层a，加a的时候，a的宽度要和li一致，但当
+鼠标滑过时a的宽度要缩小而且还有有边框，最重要的是overflow：hidden；a和img都占用位置，
+所以都是使用相对定位去做。还有就是关键的图片晃动问题：当属性滑动要给img响应的top和left值
+
+26.放大镜中那个放大的盒子能不能用背景图去做？？放大镜6==效果不好，对比放大镜6和7，
+做放大镜不需要再使用缓动公式了【leaderX = leaderX + (targetX - leaderX) / 10】，
+好好熟悉offset属性
+
+27.做水平条滚动：学习了onmousedown鼠标按下和onmouseup鼠标弹起，鼠标按下并滑动是两个事件：
+先按下然后滑动。onmouseover要写在onmousedown里面。记得是document.onmouseup不是tag的，还有就是
+清除鼠标事件，直接将该事件赋值为null【document.onmousemove = null;】
+记得要加上那句：1清除选择拖动
+【window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();】
+
+28.cursor:move;显示鼠标移动光标图，cursor:text;输入光标图，
+cursor：pointor;小手光标图，cousor:wait;等待光标图
+
+29.制作盒子阴影：box-shadow:2px 2px 2px 2px #666;第一个参数为正像素代表右阴影，为
+负像素代表左阴影，第二个参数为正像素代表下阴影，负代表上阴影。第三个参数代表阴影
+的模糊程度，值越大越模糊，为负则无阴影。第四个参数代表阴影的宽度。

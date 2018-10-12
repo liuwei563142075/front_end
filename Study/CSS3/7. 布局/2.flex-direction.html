@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3伸缩布局</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            background-color: #F7F7F7;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #DDD;
+            background-color: #FFF;
+        }
+
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+
+        .wrapper .flex-img {
+            width: 100%;
+        }
+        /* 以上为默认样式 */
+
+        /* 主轴方向：水平向右 */
+        section:nth-child(3) ul {
+            display: flex;
+            flex-direction: row;
+        }
+        section:nth-child(3) ul li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 主轴方向：水平向左 */
+        section:nth-child(4) ul {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        section:nth-child(4) ul li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 主轴方向：竖直向下 */
+        section:nth-child(5) ul {
+            display: flex;
+            flex-direction: column;
+        }
+        section:nth-child(5) ul li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 主轴方向：竖直向上 */
+        section:nth-child(6) ul {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        section:nth-child(6) ul li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>要明白主轴和侧轴的概念，都具有方向性</header>
+    <section>
+        <header>属性flex-direction:调整主轴方向【默认为水平方向】，属性值：row,column,row-reverse,column-reverse</header>
+        <div class="wrap-box">
+            <img class="flex-img" src="./images/flex.png" alt="">
+        </div>
+    </section>
+    <section>
+        <header>属性值：row：主轴与行内轴方向作为默认的书写模式。即横向从左到右排列（左对齐）</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>属性值：row-reverse：对齐方式与row相反。</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>属性值：column：主轴与块轴方向作为默认的书写模式。即纵向从上往下排列（顶对齐）。</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>属性值：column-reverse：对齐方式与column相反。</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+</div>
+</body>
+</html>

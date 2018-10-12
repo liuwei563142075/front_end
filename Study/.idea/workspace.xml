@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3fe52934-4e31-4d8f-9190-35aa53089d0b" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>circle-img1</find>
+      <find>bgc-red</find>
+      <find>search</find>
+      <find>topban</find>
+      <find>checkCircleImgMouseOver</find>
+      <find>hello-login</find>
+      <find>bh-logi</find>
+      <find>init</find>
+      <find>sendBtn</find>
+      <find>insertF</find>
+      <find>.insertFace</find>
+      <find>.atS</find>
+      <find>全屏</find>
+      <find>square</find>
+      <find>config</find>
+      <find>echarts</find>
+      <find>_styles_</find>
+      <find>static</find>
+      <find>console</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/CSS3/16. 案例360/1. 第一页.html" />
+        <option value="$PROJECT_DIR$/CSS3/16. 案例360/2. 第二页.html" />
+        <option value="$PROJECT_DIR$/CSS3/16. 案例360/3. 第三页.html" />
+        <option value="$PROJECT_DIR$/CSS3/16. 案例360/4. 第四页.html" />
+        <option value="$PROJECT_DIR$/CSS3/17. 换屏/copy.html" />
+        <option value="$PROJECT_DIR$/CSS3/16. 案例360/5. 第五页.html" />
+        <option value="$PROJECT_DIR$/WebStrom快捷键总结" />
+        <option value="$PROJECT_DIR$/CSS3/18. 音乐导航/music.html" />
+        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/1.泡泡.html" />
+        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/2.手风琴.html" />
+        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/3.旋转.html" />
+        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/4. 鼠标进入方向.html" />
+        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/5. 鼠标进入方向案例.html" />
+        <option value="$PROJECT_DIR$/测试/页面导出到word.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/1. perspective.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/2. transform-style.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/3. 案例.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/doc.txt" />
+        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/4. translateZ.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/5. 正方体.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/6. 长方体.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 3d透视perspective/7. 轮播图.html" />
+        <option value="$PROJECT_DIR$/测试/导出word/FileSaver.js" />
+        <option value="$PROJECT_DIR$/测试/导出word/jquery.wordexport.js" />
+        <option value="$PROJECT_DIR$/测试/导出word/demo.css" />
+        <option value="$PROJECT_DIR$/测试/导出word/test.html" />
+        <option value="$PROJECT_DIR$/测试/cavas保存为图片.html" />
+        <option value="$PROJECT_DIR$/echarts学习/1.echarts/cavans与img互转.html" />
+        <option value="$PROJECT_DIR$/echarts学习/1.echarts/demo-e4 Bar.html" />
+        <option value="$PROJECT_DIR$/测试/JS调用浏览器自带下载功能下载图片.html" />
+        <option value="$PROJECT_DIR$/echarts学习/1.echarts/JS调用浏览器自带下载功能下载图片.html" />
+        <option value="$PROJECT_DIR$/MyWeb/static/bootstrap-3.3.7/docs/assets/js/vendor/FileSaver.js" />
+        <option value="$PROJECT_DIR$/echarts学习/static/jquery.wordexport.js" />
+        <option value="$PROJECT_DIR$/CSS3/20. 3d透视perspective/8. 切割轮播图.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 3d透视perspective/4. translateZ.html" />
+        <option value="$PROJECT_DIR$/CSS3/13. 变换/1. 介绍.html" />
+        <option value="$PROJECT_DIR$/测试/click事件的多个回调函数.html" />
+        <option value="$PROJECT_DIR$/测试/click事件的能有多个回调函数？.html" />
+        <option value="$PROJECT_DIR$/CSS3/13. 变换/6.transform-origin.html" />
+        <option value="$PROJECT_DIR$/echarts学习/1.echarts/echarts画布转img.html" />
+        <option value="$PROJECT_DIR$/echarts学习/1.echarts/test.css" />
+        <option value="$PROJECT_DIR$/echarts学习/static/getCSS.js" />
+        <option value="$PROJECT_DIR$/echarts学习/static/jquery.wordexport_extension.js" />
+        <option value="$PROJECT_DIR$/echarts学习/1.echarts/echarts能转word.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 3d透视perspective/9. 飘舞的雪花.html" />
+        <option value="$PROJECT_DIR$/CSS3/21 案例/C3按钮效果.html" />
+        <option value="$PROJECT_DIR$/测试/复杂表格.html" />
+        <option value="$PROJECT_DIR$/ajax/1.原生ajax.html" />
+        <option value="$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/ajax.html" />
+        <option value="$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/test.html" />
+        <option value="$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/doc.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/MyWeb/static/bootstrap-3.3.7/package.json" />
+      <path value="$PROJECT_DIR$/echarts学习/static/echarts-2.2.7-all/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1033" />
+    <option name="height" value="728" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="1. 原生ajax模拟的登录" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Study\ajax\1. 原生ajax模拟的登录" />
+      <recent name="E:\Study\echarts学习\static" />
+      <recent name="E:\Study\CSS3\13. 变换" />
+      <recent name="E:\Study\CSS3\images" />
+      <recent name="E:\Study\echarts学习\1.echarts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Study\ajax\1. 原生ajax模拟的登录" />
+      <recent name="E:\Study" />
+      <recent name="E:\Study\echarts学习\1.echarts" />
+      <recent name="E:\Study\echarts学习\static\jquery" />
+      <recent name="E:\Study\测试\js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.jd轮播.html">
+    <configuration name="隐藏浮动最后一个元素1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Study/测试/隐藏浮动最后一个元素1.html" />
+    <configuration name="隐藏浮动最后一个元素2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Study/测试/隐藏浮动最后一个元素2.html" />
+    <configuration name="压盖效果2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Study/测试/压盖效果2.html" />
+    <configuration name="隐藏浮动最后一个元素3.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Study/测试/隐藏浮动最后一个元素3.html" />
+    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Study/前端css基本功/京东商城/index.html" />
+    <configuration name="jd轮播.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Study/JS基础/16京东轮播图动态/jd轮播.html" />
+    <list>
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="JavaScript Debug.隐藏浮动最后一个元素1.html" />
+      <item itemvalue="JavaScript Debug.隐藏浮动最后一个元素2.html" />
+      <item itemvalue="JavaScript Debug.隐藏浮动最后一个元素3.html" />
+      <item itemvalue="JavaScript Debug.jd轮播.html" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.jd轮播.html" />
+        <item itemvalue="JavaScript Debug.隐藏浮动最后一个元素3.html" />
+        <item itemvalue="JavaScript Debug.隐藏浮动最后一个元素1.html" />
+        <item itemvalue="JavaScript Debug.隐藏浮动最后一个元素2.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3fe52934-4e31-4d8f-9190-35aa53089d0b" name="Default" comment="" />
+      <created>1529540954372</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1529540954372</updated>
+      <workItem from="1529540955995" duration="32909000" />
+      <workItem from="1529732380721" duration="16308000" />
+      <workItem from="1529751774038" duration="144000" />
+      <workItem from="1529812561976" duration="8333000" />
+      <workItem from="1529889280550" duration="6228000" />
+      <workItem from="1530059989475" duration="607000" />
+      <workItem from="1530082594610" duration="284000" />
+      <workItem from="1530146627096" duration="47738000" />
+      <workItem from="1530488925544" duration="778000" />
+      <workItem from="1530584093386" duration="4051000" />
+      <workItem from="1531098309633" duration="822000" />
+      <workItem from="1531739222995" duration="5707000" />
+      <workItem from="1531744998802" duration="15050000" />
+      <workItem from="1532079165709" duration="2425000" />
+      <workItem from="1532082742070" duration="6326000" />
+      <workItem from="1532133200774" duration="7709000" />
+      <workItem from="1532303725974" duration="16411000" />
+      <workItem from="1532391111143" duration="20614000" />
+      <workItem from="1532477266347" duration="31381000" />
+      <workItem from="1532650504526" duration="14894000" />
+      <workItem from="1532695319799" duration="3919000" />
+      <workItem from="1532909581833" duration="28015000" />
+      <workItem from="1533084699119" duration="20365000" />
+      <workItem from="1533254821382" duration="14684000" />
+      <workItem from="1533432422979" duration="6226000" />
+      <workItem from="1533438821552" duration="19086000" />
+      <workItem from="1533513580466" duration="5115000" />
+      <workItem from="1533555647924" duration="5155000" />
+      <workItem from="1533600165830" duration="20174000" />
+      <workItem from="1533728101714" duration="4774000" />
+      <workItem from="1533774271883" duration="5587000" />
+      <workItem from="1533815603776" duration="8112000" />
+      <workItem from="1533869324456" duration="9421000" />
+      <workItem from="1533901880242" duration="4632000" />
+      <workItem from="1533948906574" duration="9642000" />
+      <workItem from="1533968708939" duration="4385000" />
+      <workItem from="1533973213780" duration="8592000" />
+      <workItem from="1534118946278" duration="12089000" />
+      <workItem from="1534204949515" duration="5688000" />
+      <workItem from="1534237317550" duration="7680000" />
+      <workItem from="1534291227835" duration="2648000" />
+      <workItem from="1534293932946" duration="11588000" />
+      <workItem from="1534378429474" duration="22031000" />
+      <workItem from="1534465227565" duration="10118000" />
+      <workItem from="1534505856461" duration="4506000" />
+      <workItem from="1534637826671" duration="27499000" />
+      <workItem from="1534723343568" duration="12945000" />
+      <workItem from="1534811947520" duration="2778000" />
+      <workItem from="1534837869135" duration="6862000" />
+      <workItem from="1534896092075" duration="17629000" />
+      <workItem from="1535069162407" duration="3508000" />
+      <workItem from="1535328348569" duration="5335000" />
+      <workItem from="1535421249767" duration="7479000" />
+      <workItem from="1535502765252" duration="3938000" />
+      <workItem from="1535594809903" duration="5468000" />
+      <workItem from="1535633407201" duration="1037000" />
+      <workItem from="1535677193904" duration="11900000" />
+      <workItem from="1535872144777" duration="11579000" />
+      <workItem from="1535939745724" duration="3903000" />
+      <workItem from="1535953416913" duration="89000" />
+      <workItem from="1535953604205" duration="7562000" />
+      <workItem from="1536020070416" duration="19115000" />
+      <workItem from="1536133715414" duration="6561000" />
+      <workItem from="1536193440830" duration="11744000" />
+      <workItem from="1536280148024" duration="10303000" />
+      <workItem from="1536542386626" duration="9014000" />
+      <workItem from="1536627107645" duration="147000" />
+      <workItem from="1536657426579" duration="1380000" />
+      <workItem from="1536665472507" duration="3513000" />
+      <workItem from="1536713169517" duration="32410000" />
+      <workItem from="1536798907272" duration="16966000" />
+      <workItem from="1536835222854" duration="4121000" />
+      <workItem from="1536884015692" duration="21114000" />
+      <workItem from="1537143847627" duration="30880000" />
+      <workItem from="1537229974005" duration="14520000" />
+      <workItem from="1537316801638" duration="20515000" />
+      <workItem from="1537433036519" duration="9726000" />
+      <workItem from="1537837036189" duration="2450000" />
+      <workItem from="1537921054346" duration="16898000" />
+      <workItem from="1538015525706" duration="18147000" />
+      <workItem from="1538041498125" duration="11565000" />
+      <workItem from="1538094641292" duration="17552000" />
+      <workItem from="1538180372855" duration="10548000" />
+      <workItem from="1538463539432" duration="854000" />
+      <workItem from="1538958625106" duration="2543000" />
+      <workItem from="1539044957072" duration="7656000" />
+      <workItem from="1539088057868" duration="1558000" />
+      <workItem from="1539131678677" duration="1215000" />
+      <workItem from="1539168214498" duration="677000" />
+      <workItem from="1539306170438" duration="831000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="926985000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16398244" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.044025157" />
+      <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.37580645" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/jQuery/5. jQuery的动画效果/2. jQuery自定义动画.html</url>
+          <line>24</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CSS3/7. 布局/1. 伸缩布局介绍.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2520" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/7. 布局/doc.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/6.背景/1. box-sizing.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/3. 案例_旋转导航栏.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/1. perspective.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/6. 长方体.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/js/FileSaver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="187" column="1" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/js/jquery.wordexport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="69" lean-forward="true" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/demo-e3 Bar.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/js/FileSaver.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/cavas保存为图片.html" />
+    <entry file="file://$PROJECT_DIR$/测试/导出word/demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/导出word/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/cavans与img互转.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/demo-e4 Bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyWeb/static/bootstrap-3.3.7/docs/assets/js/vendor/FileSaver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="33" column="49" lean-forward="true" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/static/jquery.wordexport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/7. 轮播图.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/images/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/images/2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/images/3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/images/4.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/5. 正方体.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="52" column="30" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/9. 过渡/2.过渡的属性.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2747" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/19. 泡泡和旋转/3.旋转.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/doc.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/4. translateZ.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/click事件的能有多个回调函数？.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/13. 变换/1. 介绍.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="104" column="12" selection-start-line="104" selection-start-column="12" selection-end-line="104" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="6202" column="4" selection-start-line="6202" selection-start-column="4" selection-end-line="6202" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/echarts画布转img.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2460">
+          <caret line="82" column="35" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/static/FileSaver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3180">
+          <caret line="114" column="69" selection-start-line="114" selection-start-column="69" selection-end-line="114" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/static/test.css" />
+    <entry file="file://$PROJECT_DIR$/echarts学习/static/getCSS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/test.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/static/jquery.wordexport_extension.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="81" column="19" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/13. 变换/5. translateZ.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-227">
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/13. 变换/6.transform-origin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/9. 飘舞的雪花.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/8. 切割轮播图.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1860">
+          <caret line="62" column="63" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/未压盖效果0.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS3/21 案例/C3按钮效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/echarts能转word.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31">
+          <caret line="181" column="30" lean-forward="true" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/JS调用浏览器自带下载功能下载图片.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="77" column="21" lean-forward="true" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/复杂表格.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/doc.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/ajax.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS基础/16京东轮播图动态/jd轮播.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1224">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS基础/38. 旋转木马轮播图/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{margin: 0;padding: 0;}
+    .liul {
+        width: 400px;
+        margin: 50px auto;
+        list-style: none;
+        text-align: center;
+        line-height: 50px;
+    }
+    .liul li {
+        float: left;
+        width: 50px;
+        height: 50px;
+        margin-left: -1px;
+        border: 1px solid #eee;
+    }
+    .liul li:hover {
+        background-color: #b3b3b3 !important;
+    }
+    li.first {
+        border-radius: 10px 0 0 10px;
+    }
+    li.last {
+        border-radius: 0 10px 10px 0;
+    }
+</style>
+<script>
+    window.onload = function() {
+        function f(lis) {
+            for (var i=0;i<lis.length;i++){
+                lis[i].onclick = function() {
+                    for (var j=0;j<lis.length;j++){
+                        lis[j].style.backgroundColor="";
+                    }
+                    this.style.backgroundColor="green";
+                    this.nextElementSibling
+                }
+            }
+        }
+        /*document.getElementsByTagName()*/
+        var uls = document.getElementsByClassName("liul");
+        for (var m=0;m<uls.length;m++){
+            var lis = uls[m].children;
+            f(lis);
+        }
+
+
+    }
+</script>
+<body>
+<ul class="liul">
+    <li class="first">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li class="last">7</li>
+</ul>
+<ul class="liul">
+    <li class="first">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li class="last">7</li>
+</ul>
+</body>
+</html>

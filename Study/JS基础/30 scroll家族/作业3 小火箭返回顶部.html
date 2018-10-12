@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {margin:0;padding: 0;}
+        body {
+            height: 2500px;
+        }
+        img {
+            display: none;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            cursor: pointer;
+        }
+    </style>
+    <script src="../base.js"></script>
+    <script>
+        window.onload = function() {
+            var im = document.getElementById("im");
+            var leader=0,target=0,timer=null;
+            window.onscroll = function () {
+                if(scroll().top > 50) {
+                    im.style.display = "block";
+                }else if(scroll().top == 0){
+                    clearInterval(timer);
+                    im.style.display = "none";
+                }
+                leader = scroll().top;
+            }
+            im.onclick = function() {
+                timer = setInterval(function () {
+                    leader = leader + (target-leader) / 10;
+                    window.scrollTo(0,leader);
+                },30)
+            }
+        }
+    </script>
+</head>
+<body>
+顶部
+<img src="images/Top.jpg" alt="" id="im">
+</body>
+</html>

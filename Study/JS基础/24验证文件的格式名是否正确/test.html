@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>上传file属性</title>
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<input id="input-file" class="upload" type="file" value="">
+<img src="" alt="">
+</body>
+
+<script>
+    //总结一下：学了两个onchange事件的了，一个是下拉列表，一个就是选择文件
+
+
+    $(function(){
+        $('.upload').change(function(){
+            var path = this.value;
+            var style = path.substr(path.lastIndexOf('.')).toUpperCase();
+            if(style == '.JPG' || style == '.PNG' || style == '.GIF') {
+                /*
+                *   下面并不是获取文件路径，而是把文件输出到src上，只能选择图片
+                */
+                var oFReader = new FileReader();
+                var file = document.getElementById('input-file').files[0];
+                oFReader.readAsDataURL(file);
+                oFReader.onloadend = function(oFRevent){
+                    var src = oFRevent.target.result;
+                    $('img').attr('src',src);
+                }
+            }else {
+                alert('你选择的图片格式不正确！');
+            }
+        })
+    })
+</script>
+</html>

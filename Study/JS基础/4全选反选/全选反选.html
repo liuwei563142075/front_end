@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选反选</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        input{
+            padding: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            function $(id) {
+                return document.getElementById(id);
+            }
+            $("all").onclick = function() {
+                var inps = $("box").getElementsByTagName("input");
+                for (var i=0;i<inps.length;i++){
+                    inps[i].checked = true;
+                }
+            }
+            $("revall").onclick = function() {
+                var inps = $("box").getElementsByTagName("input");
+                for (var i=0;i<inps.length;i++){
+                    var c = inps[i].checked;
+                    if(c == true){
+                        inps[i].checked = false;
+                    }else{
+                        inps[i].checked = true;
+                    }
+                }
+            }
+            $("del").onclick = function() {
+                var inps = $("box").getElementsByTagName("input");
+                var lis = $("box").getElementsByTagName("li");
+                var arry = new Array(inps.length);
+                var j = 0;
+                for (var i=0;i<inps.length;i++){
+                    var c = inps[i].checked;
+                    if(c == true){
+                        arry[j++] = inps[i].name;
+                    }
+                }
+                for(var d=0;d<=lis.length;d++){
+                    for (var e=0;e<arry.length;e++){
+                        if(d == arry[e]){
+                            lis[d-1].innerHTML="";
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <button id="all">全选</button>&nbsp;<button id="revall">反选</button>&nbsp;<button id="del">删除</button>
+    <ul>
+        <li><input type="checkbox" name="1">1</li>
+        <li><input type="checkbox" name="2">2</li>
+        <li><input type="checkbox" name="3">3</li>
+        <li><input type="checkbox" name="4">4</li>
+        <li><input type="checkbox" name="5">5</li>
+        <li><input type="checkbox" name="6">6</li>
+        <li><input type="checkbox" name="7">7</li>
+        <li><input type="checkbox" name="8">8</li>
+    </ul>
+</div>
+</body>
+</html>

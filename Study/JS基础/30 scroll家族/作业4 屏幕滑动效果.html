@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul,ol {list-style: none;}
+        * {margin:0;padding: 0;}
+        html,body,ul {
+            width: 100%;
+            height: 100%;
+        }
+        li {
+            width: 100%;
+            height: 100%;
+        }
+        #o {
+            position: fixed;
+            top: 50px;
+            left: 50px;
+        }
+        #o li {
+            padding: 5px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+    <script src="../base.js"></script>
+    <script>
+        window.onload = function() {
+            var colorArr = ["pink","blue","green","orange","#EEE"];
+            var lis = $("u").children;
+            var ols = $("o").children;
+            var leader = 0,target = 0,timer = null;
+            for(var i=0;i<lis.length;i++ ){
+                lis[i].style.backgroundColor = colorArr[i];
+                ols[i].style.backgroundColor = colorArr[i];
+                ols[i].index = i;
+                ols[i].onclick = function() {
+                    clearInterval(timer);
+                    target = lis[this.index].offsetTop;
+                    timer = setInterval(function () {
+                        leader = leader + (target - leader) / 10;
+                        console.log(leader);
+                        console.log(target);
+                        if(Math.ceil(leader) == Math.ceil(target) || Math.floor(leader) == Math.ceil(target)){
+                            console.log(leader);
+                            console.log(target);
+                            clearInterval(timer);
+                        }else {
+                            window.scrollTo(0,leader);
+                        }
+                    },30)
+                }
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<ul id="u">
+    <li>首页</li>
+    <li>关注</li>
+    <li>动态</li>
+    <li>风格</li>
+    <li>作品</li>
+</ul>
+<ol id="o">
+    <li>首页</li>
+    <li>关注</li>
+    <li>动态</li>
+    <li>风格</li>
+    <li>作品</li>
+</ol>
+</body>
+</html>

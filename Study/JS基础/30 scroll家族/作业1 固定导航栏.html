@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固定导航栏</title>
+    <style>
+        * {margin:0;padding:0;}
+        div {
+            text-align: center;
+        }
+        .fixed {
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    <img src="images/top.png" alt="">
+</div>
+<div class="nav" id="nav">
+    <img src="images/nav.png" alt="">
+</div>
+<div class="main" id="main">
+    <img src="images/main.png" alt="">
+</div>
+</body>
+</html>
+<script src="../base.js"></script>
+<script>
+    var nav = document.getElementById("nav");
+    var main = document.getElementById("main");
+    var navTop = nav.offsetTop;
+    window.onscroll = function() {
+        // scroll().top >= nav.offsetTop  不能这样写，因为一旦固定定位后nav.offsetTop就变为0了
+        //scroll().top永远>=0
+        if(scroll().top > navTop){
+            nav.className = "nav fixed";
+            //nav固定定位后，防止低下的盒子猛然跳上去 可以给下面盒子一个padding-top
+        }else{
+            nav.className = "nav";
+        }
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div:nth-child(1) {
+            width: 50px;
+            height: 80px;
+            margin: 150px;
+            background-color: pink;
+            transform-origin: 0px 0px;   /*绕某一个点转*/
+            animation: dong 4s linear infinite;
+        }
+        div:nth-child(2) {
+            width: 50px;
+            height: 80px;
+            margin: 150px;
+            background-color: pink;
+            /*绕某一个点转，旋转圆点为盒子左上角，旋转中心点为（100px，0px）【相对于原点】*/
+            transform-origin: 100px 0px;
+            animation: dong 4s linear infinite;
+        }
+        div:nth-child(3) {
+            width: 50px;
+            height: 80px;
+            margin: 150px;
+            background-color: pink;
+            /*绕某一个点转，旋转轨迹成椭圆*/
+            transform-origin: 50px 150px;
+            animation: dong 4s linear infinite;
+        }
+        
+        @keyframes dong {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

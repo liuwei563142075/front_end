@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        div {
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            margin: 100px auto;
+            background-color: white;
+            animation: flavor 5s linear infinite;
+            transform-origin: -80px 0px;
+            transition: all 10s;
+        }
+        @keyframes flavor {
+            from {
+                    transform: translatey(0) rotate(0deg);
+            }
+            to {
+                transform: translatey(800px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

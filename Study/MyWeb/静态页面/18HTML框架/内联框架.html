@@ -1,0 +1,25 @@
+<html>
+	<head></head>
+	<title>内联框架</title>
+		<iframe src="框架.html" width="500px" height="600px" frameborder="0">
+			<!-- <frameset cols="50%,50%">
+				<frame src="frame_02.html">
+				<frame src="frame_03.html">
+			</frameset> -->
+			<body><p>内联框架不能展示其内东西吗？</p></body>
+		</iframe>
+		<body>
+			<p>一些老的浏览器不支持iframe，如果不支持，iframe会显示出来</p>
+			<p>iframe是用来在网页内显示网页</p>
+		
+			<p>内联框架可以设置宽和高，非内联框架里设置宽高是无效的</p>
+			<p>frameborder属性规定是否显示iframe周围的边框,0为移除边框</p>
+			<div>
+				<p>这是在body里内嵌的iframe</p>
+				<iframe src="框架.html" width="500px" height="600px" frameborder="0">
+
+				</iframe>
+			</div>
+		</body>
+		
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3渐变</title>
+    <style>
+        body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F7F7F7;
+        }
+
+        .wrapper {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 20px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header h3 {
+            line-height: 1;
+            font-weight: normal;
+            font-size: 28px;
+        }
+
+        .main {
+            /*overflow: hidden;*/
+        }
+
+        .main:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .main .item {
+            width: 210px;
+            height: 210px;
+            margin: 0 30px 30px 0;
+            display: flex;
+            position: relative;
+            background-color: #FFF;
+            float: left;
+            box-shadow: 2px 2px 5px #CCC;
+        }
+
+        .main .item:after {
+            content: attr(data-brief);
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 210px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FFF;
+            font-family: '微软雅黑';
+            font-size: 18px;
+            background-color: rgba(170, 170, 170, 0);
+            z-index: -1;
+            transition: all 0.3s ease-in;
+        }
+
+        .main .item:hover:after {
+            background-color: rgba(170, 170, 170, 0.6);
+            z-index: 100;
+        }
+
+        .main .item:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        /*.main .item:nth-last-child(-n+5) {
+            margin-bottom: 0;
+        }*/
+
+        /* 以上是骨架样式 */
+        .repeating-linear-gradient {
+            width: 180px;
+            height: 180px;
+            margin: auto;
+        }
+        .repeating-radial-gradient {
+            width: 180px;
+            height: 180px;
+            margin: auto;
+        }
+
+        /* 重复线性渐变：渐变要有个范围10-20范围发生渐变 */
+        .item:nth-child(1) .repeating-linear-gradient {
+            background-image: repeating-linear-gradient(yellow 10%,green 20%);
+        }
+
+        /* 重复径向渐变：渐变要有个范围10-20范围发生渐变 */
+        .item:nth-child(2) .repeating-radial-gradient {
+            background: repeating-radial-gradient(yellow 10%,green 20%);
+            /*background: repeating-radial-gradient(circle, #f00 0, #ff0 10%, #f00 15%);*/
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h3>CSS3线性渐变</h3>
+    </header>
+    <div class="main">
+        <div class="item" data-brief="重复线性渐变">
+            <div class="repeating-linear-gradient"></div>
+        </div>
+        <div class="item" data-brief="重复径向渐变">
+            <div class="repeating-radial-gradient"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        nav {
+            height: 30px;
+            width: 400px;
+            margin: 100px auto;
+        }
+        .list {
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background-color: pink;
+            line-height: 30px;
+            text-align: center;
+            position: relative;
+            transition: all 1s;
+            transform-style: preserve-3d;
+        }
+        .list::before {
+            content: attr(data-name);
+            width: 80px;
+            height: 30px;
+            background-color: palevioletred;
+            position: absolute;
+            top: 15px;
+            left: 0;
+            transform: rotateX(-90deg);
+        }
+        .list:hover {
+            transform: rotateX(80deg);
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="list" data-name="菜鸟教程">
+        传智播客
+    </div>
+    <div class="list" data-name="web开发">
+        传智播客
+    </div>
+    <div class="list" data-name="前端学院">
+        传智播客
+    </div>
+</nav>
+</body>
+</html>

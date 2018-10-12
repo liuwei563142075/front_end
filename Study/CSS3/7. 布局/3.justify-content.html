@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3伸缩布局</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            background-color: #F7F7F7;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #DDD;
+            background-color: #FFF;
+        }
+
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+
+        .wrapper .flex-img {
+            width: 100%;
+        }
+        /* 以上为默认样式 */
+
+        /* 开始方向对齐 */
+        section:nth-child(3) ul {
+            display: flex;
+            justify-content: flex-start;
+        }
+        section:nth-child(3) ul li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 结尾方向对齐 */
+        section:nth-child(4) ul {
+            display: flex;
+            justify-content: flex-end;
+        }
+        section:nth-child(4) ul li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 居中对齐 */
+        section:nth-child(5) ul {
+            display: flex;
+            justify-content: center;
+        }
+        section:nth-child(5) ul li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 环绕对齐 */
+        section:nth-child(6) ul {
+            display: flex;
+            justify-content: space-around;
+        }
+        section:nth-child(6) ul li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 两端对齐（两端贴，中间平分） */
+        section:nth-child(7) ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        section:nth-child(7) ul li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>要明白主轴和侧轴的概念，都具有方向性</header>
+    <section>
+        <header>属性justify-content:主轴方向对齐，可以调整元素在主轴方向上的对齐方式，属性值：flex-start,flex-end,center,space-around,space-between</header>
+        <div class="wrap-box">
+            <img class="flex-img" src="./images/flex.png" alt="">
+        </div>
+    </section>
+    <section>
+        <header>属性值：flex-start：主轴方向，开始方向对齐</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>属性值：flex-end：主轴方向，结尾方向对齐</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>属性值：center：主轴方向，居中对齐</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>属性值：space-around：主轴方向，环绕对齐，环绕中间元素</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>属性值：space-between：主轴方向，两端对齐（两端贴，中间平分）</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+</div>
+</body>
+</html>

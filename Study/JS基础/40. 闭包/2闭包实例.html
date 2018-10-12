@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>闭包的优点：不产生全局变量，实现属性私有化</p>
+<p>闭包的缺点：闭包中的数据会常驻内存，在不用的时候要删掉，否则会导致内存溢出</p>
+</body>
+</html>
+<script>
+    function outFun() {
+        var a = 0;
+        function innerFun() {
+            a++;
+            console.log(a);
+        }
+        return innerFun;
+    }
+
+    var demo1 = outFun();
+    demo1(),demo1();
+    var demo2 = outFun();
+    demo2(),demo2();
+
+    //  输出的是 1 2 1 2而不是1 2 3 4
+</script>

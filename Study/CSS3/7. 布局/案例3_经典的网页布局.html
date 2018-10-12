@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body,nav,ul,li{margin: 0;padding: 0;}
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            display: flex;
+
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        nav {
+            height: 60px;
+            background-color: lightgreen;
+        }
+        section {
+            flex: 1;
+            display: flex;
+        }
+        section aside {
+            background-color: pink;
+            flex: 1;
+        }
+        section .content {
+            background-color: #00cccc;
+            flex: 5;
+        }
+        footer {
+            height:40px;
+            background-color: #ec5c00;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        这是头部
+    </nav>
+    <section>
+        <aside>我是侧边栏</aside>
+        <div class="content">我是内容</div>
+    </section>
+    <footer>
+        这是底部
+    </footer>
+</body>
+</html>

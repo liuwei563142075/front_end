@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟节点==不常用</title>
+    <style>
+        div {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            /*自定义class类，使浏览器之间能够兼容*/
+            /*function nextSiblingNode() {
+                if(this.nextSibling){
+                    return this.nextSibling;
+                }else{
+                    return this.nextElementSibling;
+                }
+            }*/
+
+            /*function previousSiblingNode() {
+                if(this.previousSibling){
+                    return this.previousSibling;
+                }else{
+                    return this.previousElementSibling;
+                }
+            }*/
+
+            //要求必须先写正常浏览器的，后写ie678的
+            var s = document.getElementById("s3");
+            var next1 = s.nextElementSibling || s.nextSibling;
+            console.log(next1);
+            next1.style.backgroundColor="pink";
+
+            //反过来写就是错误的！！！！
+            /*
+            var next2 = s.nextSibling || s.nextElementSibling;
+            console.log(next2);
+            next2.style.backgroundColor="blue";
+            */
+        }
+    </script>
+</head>
+<body>
+<p>nextSibling 下一个兄弟节点 亲的 ie678认识</p>
+<p>nextElementSibling 下一个兄弟节点 亲的 其他浏览器认识</p>
+<p>previousSibling 上一个兄弟节点 亲的 ie678认识</p>
+<p>previousElementSibling 上一个兄弟节点 亲的 其他浏览器认识</p>
+<div>d1</div>
+<div>d2</div>
+<div>d3</div>
+<div>d4</div>
+<div class="box">
+    <span>1</span>
+    <span>2</span>
+    <span id="s3">3</span>
+    <div>4</div>
+    <span>5</span>
+    <span>6</span>
+</div>
+<div>d5</div>
+<div>d6</div>
+</body>
+</html>

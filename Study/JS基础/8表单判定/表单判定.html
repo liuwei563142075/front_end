@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单判定</title>
+    <style>
+        input {
+            width: 208px;
+            height: 40px;
+            background: url("images/left.jpg") no-repeat;
+            outline: none;
+            border: 0 none;
+            padding-left: 8px;
+        }
+        span {
+            width: 30px;
+            height: 40px;
+        }
+        .wrong {
+            color: red;
+            background: url("images/wrong.png") no-repeat 0 1px;
+        }
+        .right {
+            color: green;
+            background: url("images/right.png") no-repeat 0 1px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            function $(id) {
+                return document.getElementById(id);
+            }
+            $("inp").onblur = function() {
+                if(this.value == ""){
+                    $("score").className = "wrong";
+                    $("score").style.paddingLeft="18px";
+                    $("score").innerHTML = "输入的分数不能为空"
+                }else if(isNaN(this.value)) {
+                    $("score").className = "wrong";
+                    $("score").style.paddingLeft="18px";
+                    $("score").innerHTML = "输入的必须为数字"
+                }else if(this.value>150 || this.value < 0) {
+                    $("score").className = "wrong";
+                    $("score").style.paddingLeft="18px";
+                    $("score").innerHTML = "分数只能在0-150之间"
+                }else{
+                    $("score").className = "right";
+                    $("score").style.paddingLeft="18px";
+                    $("score").innerHTML = "输入正确"
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+        语文：<input type="text" id="inp" />
+        <span id="score">请输入分数</span>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>继承性，所有以font-，text-,line-开头的还有color都能被继承</title>
+		<style type="text/css">
+			/*所有以font-，text-,line-开头的还有color都能被继承*/
+			.box {
+				font-family: "微软雅黑";
+				color: blue;
+				text-align: center;
+				line-height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul><li><p>我是一个p</p></li><li><p>我是一个p</p></li></ul>
+			<p>我是一个p</p>
+			<p>我是一个p</p>
+			<p style="color:red">关于文字的样式都能被继承，关于盒子的、定位的、布局的属性都不能被继承</p>
+		</div>
+	</body>
+</html>

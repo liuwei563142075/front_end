@@ -1,0 +1,12 @@
+#export_word p {
+    width:200px;
+    height:200px;
+    background-color: yellowgreen;
+    color: purple;
+    padding-left: 200px;
+}
+#export_word img {
+    width:200px;
+    height:200px;
+    padding-left: 300px;
+}

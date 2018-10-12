@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索框制作</title>
+    <style>
+        * {margin: 0;padding: 0}
+        .search {
+            margin: 100px;
+            width: 258px;
+            height: 40px;
+        }
+        .search input {
+            width: 208px;
+            height: 40px;
+            color: #ccc;
+            background: url("images/left.jpg") no-repeat;
+
+            outline: none;
+            border: 0 none;
+            padding-left: 8px;
+            float: left;
+        }
+        .search button {
+            width: 42px;
+            height: 40px;
+            background: url("images/right.jpg") no-repeat;
+
+            outline: none;
+            border: 0 none;
+            float: left;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            function $(id) {
+                return document.getElementById(id);
+            }
+
+            /*  input 输入框获取焦点事件 */
+            $("sear-inp").onfocus = function() {
+                if($("sear-inp").value == "请输入...") {
+                    $("sear-inp").value = "";
+                    $("sear-inp").style.color = "#000"
+                }
+            }
+            /*  input 输入框失去焦点事件 */
+            $("sear-inp").onblur = function() {
+                if($("sear-inp").value == "") {
+                    $("sear-inp").value = "请输入...";
+                    $("sear-inp").style.color = "#ccc"
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="search">
+        <input type="text" value="请输入..." id="sear-inp" />
+        <button id="sear-btn"></button>
+    </div>
+</body>
+</html>

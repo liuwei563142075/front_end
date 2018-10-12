@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        #screen {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.2);
+            position: fixed;
+            z-index: 999;
+        }
+        .nva {
+            width: 100%;
+            height: 50px;
+            padding-left: 20px;
+            background-color:#369;
+        }
+        .nva a {
+            display: block;
+            height: 50px;
+            width: 100px;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            color: #FFF;
+        }
+        .box {
+            display: none;
+            width: 350px;
+            height: 350px;
+            background-color: white;
+            border:5px solid #eee;
+            box-shadow:2px 2px 2px 2px #666;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -175px;
+            margin-top: -175px;
+            z-index: 1000;
+        }
+        .box .cont {
+            height: 30px;
+            background-color: #7c9299;
+            cursor: move;
+        }
+        .cont span {
+            display: block;
+            height: 30px;
+            color: white;
+            font: 500 14px/30px "微软雅黑";
+        }
+        .cont span.cl {
+            padding-left: 10px;
+            float: left;
+        }
+        .cont span.cr {
+            width: 60px;
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="screen"></div>
+
+<div class="nva" id="nva">
+    <a href="javascript:;">注册信息</a>
+</div>
+<div class="box" id="box">
+    <div class="cont">
+        <span class="cl">注册信息(可以拖拽)</span>
+        <span class="cr">【关闭】</span>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var screen = document.getElementById("screen");
+    var zc = document.getElementById("nva").children[0];
+    var box = document.getElementById("box");
+    var cont = box.children[0];
+    var close = cont.children[1];
+    close.onclick = function() {
+        screen.style.display = "none";
+        box.style.display = "none";
+    }
+    zc.onclick = function() {
+        screen.style.display = "block";
+        box.style.display = "block";
+    }
+
+    //  current代表被点击的对象，move代表移动的对象
+    function tuodong(current,move) {
+        current.onmousedown = function(event) {
+            var event = event || window.event;
+            console.log(this.offsetLeft);
+            // 被点击时的位置
+            var valx = event.clientX - move.offsetLeft;
+            var valy = event.clientY - move.offsetTop;
+            document.onmousemove = function(event) {
+                var event = event || window.event;
+                var x = event.clientX - valx + move.offsetWidth / 2; // 加上175的margin-left
+                var y = event.clientY - valy + move.offsetHeight / 2;
+                move.style.left = x + "px";
+                move.style.top = y + "px";
+
+                // 清除选择拖动，不写这句话，会出现如果滑的快，弹起后依旧跟着鼠标走
+                window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+            }
+            document.onmouseup = function() {
+                document.onmousemove = null;
+            }
+        }
+    }
+
+    tuodong(cont,box);
+
+</script>

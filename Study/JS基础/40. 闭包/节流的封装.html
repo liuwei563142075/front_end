@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 节流函数==即使用了定时器，防止频繁的触发
+    function throttle(fn,delay) {
+        var timer = null;
+        return function () {
+            clearInterval(timer);
+            timer = setInterval(fn,delay);
+        }
+    }
+</script>

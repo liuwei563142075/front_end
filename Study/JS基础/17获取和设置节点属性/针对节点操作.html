@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>针对节点操作</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var box1 = document.getElementById("box1");
+
+            //获取节点的属性
+            console.log(box1.getAttribute("id"));
+            console.log(box1.getAttribute("class"));
+            console.log(box1.getAttribute("title"));
+
+            //设置节点的属性,不返回任何东西
+            box1.setAttribute("title","你是box1");
+            box1.setAttribute("class","box1");
+            box1.setAttribute("id","box");
+
+            //删除节点属性
+            box1.removeAttribute("title");
+
+        }
+    </script>
+</head>
+<body>
+<div class="box" id="box1" title="我是box1">
+    <div>
+        <span>1</span>
+        <span>2</span>
+    </div>
+    <div>
+        <p>
+            qwqo
+        </p>
+    </div>
+</div>
+</body>
+</html>

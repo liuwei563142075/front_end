@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+    <style>
+        .box {
+            margin: 50px auto;
+        }
+        .box {
+            text-align: center;
+            /*vertical-align:middle;*/
+        }
+    </style>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script>
+        $(function () {
+            var tab = $("#tab");
+            tab.children("tbody").remove();
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <table id="tab" class="table table-bordered">
+        <thead>
+            <tr>
+                <td rowspan="3" style='vertical-align:middle;'>医院名称</td>
+                <td colspan="2" valign="middle">出院人数</td>
+                <td colspan="2">住院病人手术人次数</td>
+                <td colspan="2">医院医疗费用</td>
+                <td colspan="5">出院均次费用</td>
+                <td colspan="2">平均住院日</td>
+            </tr>
+            <tr>
+                <td rowspan="2">人次</td>
+                <td rowspan="2">同比%</td>
+                <td rowspan="2">人次</td>
+                <td rowspan="2">同比%</td>
+                <td rowspan="2">万元</td>
+                <td rowspan="2">同比%</td>
+                <td rowspan="2">元</td>
+                <td rowspan="2">同比%</td>
+                <td colspan="3">其中医保病人</td>
+                <td rowspan="2">天</td>
+                <td rowspan="2">同比（天）</td>
+            </tr>
+            <tr>
+                <td>元</td>
+                <td>同比%</td>
+                <td>其中病人支付</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>我是1列</td>
+                <td>我是2列</td>
+                <td>我是3列</td>
+                <td>我是4列</td>
+                <td>我是5列</td>
+                <td>我是6列</td>
+                <td>我是7列</td>
+                <td>我是8列</td>
+                <td>我是9列</td>
+                <td>我是10列</td>
+                <td>我是11列</td>
+                <td>我是12列</td>
+                <td>我是13列</td>
+                <td>我是14列</td>
+            </tr>
+            <tr>
+                <td>我是1列</td>
+                <td>我是2列</td>
+                <td>我是3列</td>
+                <td>我是4列</td>
+                <td>我是5列</td>
+                <td>我是6列</td>
+                <td>我是7列</td>
+                <td>我是8列</td>
+                <td>我是9列</td>
+                <td>我是10列</td>
+                <td>我是11列</td>
+                <td>我是12列</td>
+                <td>我是13列</td>
+                <td>我是14列</td>
+            </tr>
+            <tr>
+                <td>我是1列</td>
+                <td>我是2列</td>
+                <td>我是3列</td>
+                <td>我是4列</td>
+                <td>我是5列</td>
+                <td>我是6列</td>
+                <td>我是7列</td>
+                <td>我是8列</td>
+                <td>我是9列</td>
+                <td>我是10列</td>
+                <td>我是11列</td>
+                <td>我是12列</td>
+                <td>我是13列</td>
+                <td>我是14列</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

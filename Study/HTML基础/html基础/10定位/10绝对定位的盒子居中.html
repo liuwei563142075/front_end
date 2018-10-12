@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>绝对定位的盒子脱离的标准流，所以margin:0 auto不在起作用</title>
+		<link rel="stylesheet" href="../../static/css/base.css" />
+		<style type="text/css">
+			.box{
+				margin: 0 auto;/*写在后面会不起作用？？？？？*/
+				width:100px;
+				height: 100px;
+				background-color: chocolate;
+				/*position: relative;*/		/*相对定位的盒子还是属于标准流的，所以margin:0 auto仍起作用*/
+				
+				/*绝对定位胆盒子居中*/
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -50px;/*宽度的一半*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件三要素：事件源，事件，处理程序</title>
+    <style>
+        #box {
+            display: none;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        #a_c {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="a_c">*</button>
+    <div id="box">
+
+    </div>
+    <script>
+        var box = document.getElementById("box");
+
+        //事件源
+        var a_c = document.getElementById("a_c");
+        //事件onclick
+        var flag = false;
+        a_c.onclick = function(){
+            //处理程序
+            if(flag == false) {
+                box.style.display="block";
+                flag = true;
+            }else{
+                box.style.display="none";
+                flag = false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="demo.css">
+    </head>
+    <body>
+    <div id="export_word">
+        <p style="font-size: 40px">要导出的页面内容</p>
+        <img src="1.jpg" alt="图片">
+    </div>
+    <a href="javascript:;" id="export">导出</a>
+    <script src="../js/jquery-1.9.1.js"></script>
+    <script src="../js/FileSaver.js"></script>
+    <script src="../js/jquery.wordexport.js"></script>
+    <script>
+        $(function() {
+            function exportWord(){
+                $("#export_word").wordExport();
+            }
+            $('#export').on('click',function() {
+                exportWord();
+            });
+        });
+    </script>
+    </body>
+    </html>
+</body>
+</html>

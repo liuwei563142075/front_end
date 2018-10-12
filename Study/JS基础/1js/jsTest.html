@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .demo {
+        width: 100px;
+        height: 100px;
+        background-color: #a83c3a;
+    }
+    .btn {
+        width: 50px;
+        height: 25px;
+    }
+</style>
+<body>
+<div class="demo" id="demo"></div>
+<button id="btn" class="btn" >点击</button>
+<script>
+    var demo = document.getElementById("demo");
+    var btn = document.getElementById("btn");
+    btn.onclick = function(){
+        demo.style.width="300px";
+        demo.style.height="300px";
+        demo.style.backgroundColor="pink";
+    }
+</script>
+</body>
+</html>

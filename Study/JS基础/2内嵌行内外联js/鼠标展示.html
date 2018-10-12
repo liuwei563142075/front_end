@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用函数，鼠标展示</title>
+    <style>
+        * {margin: 0;padding: 0}
+        #box {
+            margin: 100px;
+            padding-top: 360px;
+            width: 360px;
+            background: url("images/03big.jpg") no-repeat top center;
+            border: 1px solid #CCCCCC;
+            overflow: hidden;
+        }
+        #box ul {
+            border-top: 1px solid #CCCCCC;
+            list-style: none;
+        }
+        #box ul li {
+            float: left;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li><img src="images/01.jpg" alt="" id="im1"></li>
+            <li><img src="images/02.jpg" alt="" id="im2"></li>
+            <li><img src="images/03.jpg" alt="" id="im3"></li>
+            <li><img src="images/04.jpg" alt="" id="im4"></li>
+            <li><img src="images/05.jpg" alt="" id="im5"></li>
+        </ul>
+    </div>
+    <script>/*内嵌式*/
+        var bx = document.getElementById("box");
+        var checkImg = function(id,bgImg) {
+            var m = document.getElementById(id);
+            m.onmouseover = function() {
+                bx.style.backgroundImage = bgImg;
+            }
+        }
+        /*checkImg('im1','url("01big.jpg")');
+        checkImg('im2','url("02big.jpg")');
+        checkImg('im3','url("03big.jpg")');
+        checkImg('im4','url("04big.jpg")');
+        checkImg('im5','url("05big.jpg")');*/
+
+        for (var i=1;i<=5;i++) {
+            checkImg('im'+i,'url("images/0'+i+'big.jpg")');
+        }
+    </script>
+</body>
+</html>

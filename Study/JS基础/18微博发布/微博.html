@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        ul {
+            list-style: none;
+        }
+        .box {
+            margin: 100px;
+            width: 500px;
+            height: auto;
+            padding: 10px 0;
+            border: 1px solid #48484c;
+        }
+        .box textArea {
+            height: 200px;
+            width: 300px;
+            resize: none;/*不可拉伸*/
+        }
+        .box li {
+            margin: 0 110px 0 90px;
+            border-bottom: 1px dashed #eee;
+        }
+        .box li a {
+            float: right;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById("btn");
+            var ul = document.createElement("ul");
+            var bx = btn.parentNode;
+            bx.appendChild(ul);
+            var tax = bx.children[0];
+            btn.onclick = function () {
+                if(tax.value != "") {
+                    var li = document.createElement("li");
+                    li.innerHTML=tax.value + '<a href="javascript:;">删除</a>';
+                    ul.appendChild(li);
+                    tax.value = "";
+
+                    li.children[0].onclick = function() {
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    微博发布：
+    <textArea></textArea>
+    <button id="btn">发布</button>
+</div>
+</body>
+</html>

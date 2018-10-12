@@ -1,0 +1,2 @@
+使用input=file时没办法直接修改input的样式，我们可以使用input=button代替input=file，当点击
+input=button时触发一次input=file的click事件。这样我们可以只显示button的样式，把input=file给隐藏掉。

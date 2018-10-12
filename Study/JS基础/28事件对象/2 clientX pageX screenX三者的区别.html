@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>区别</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 在事件的函数里添加event参数，代表事件自身
+    document.onclick = function(event) {
+        // IE678不兼容event,所以要使用window.event
+        var event = event || window.event;
+        console.log(event);
+
+        // 现将屏幕缩小
+        console.log('先将屏幕缩小');
+
+        // 点击点 到浏览器窗口【可视区】的距离  【固定定位】
+        console.log(event.clientY);
+
+        // 点击点 到document文档顶部的距离   【绝对定位】 ie678不认识
+        console.log(event.pageY);
+
+        // 点击点 到电脑屏幕的距离
+        console.log(event.screenY);
+    }
+</script>

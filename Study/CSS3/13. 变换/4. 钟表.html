@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>钟表</title>
+    <style>
+        .clock {
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+            margin: 100px auto;
+            border-radius: 110px;
+            position: relative;
+        }
+        .line1,.line2,.line3,.line4,.line5,.line6 {
+            width: 4px;
+            height: 200px;
+            background-color: #BAA;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        .line2 {
+            transform: rotate(30deg);
+        }
+        .line3 {
+            transform: rotate(60deg);
+        }
+        .line4 {
+            transform: rotate(90deg);
+        }
+        .line5 {
+            transform: rotate(120deg);
+        }
+        .line6 {
+            transform: rotate(-30deg);
+        }
+        .line1,.line4 {
+            width: 6px;
+            margin-left: -3px;
+            background-color: #BAA;
+        }
+        .cover {
+            width: 160px;
+            height: 160px;
+            background-color: #fff;
+            border-radius: 80px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -80px 0 0 -80px;
+        }
+        .circle {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -10px 0 0 -10px;
+            z-index: 999;
+        }
+        .hour {
+            width: 8px;
+            height: 50px;
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -50px 0 0 -4px;
+            animation: rotate 43200s steps(60) infinite;
+            transform-origin: left bottom;
+        }
+        .minte {
+            width: 6px;
+            height: 60px;
+            background-color: yellow;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -60px 0 0 -3px;
+            animation: rotate 3600s steps(60) infinite;
+            transform-origin: left bottom;
+        }
+        .second {
+            width: 4px;
+            height: 70px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -70px 0 0 -2px;
+            /* steps按照每步行走 */
+            animation: rotate 60s steps(60) infinite;
+            transform-origin: left bottom;
+        }
+        @keyframes rotate {
+            from {
+            /* 初始状态如果和原状态一致可以不写 */
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="clock">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+    <div class="line4"></div>
+    <div class="line5"></div>
+    <div class="line6"></div>
+    <div class="cover"></div>
+    <div class="circle"></div>
+    <div class="hour"></div>
+    <div class="minte"></div>
+    <div class="second"></div>
+</div>
+</body>
+</html>

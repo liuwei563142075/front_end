@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        /* 记得你的项目里使用title去存储标记一个元素，今天学习H5以后，把项目里的这块换掉，别用title了  */
+        $(function () {
+            var mao = $("#mao");
+            console.log(mao.data("age"));
+            console.log(mao.data("sex"));
+        })
+    </script>
+</head>
+<body>
+<!-- data-yourvalue  -->
+<span data-age="24" data-sex="1" id="mao">毛毛，吉吉，可可，咪咪</span>
+</body>
+</html>

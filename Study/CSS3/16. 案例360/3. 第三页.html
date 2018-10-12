@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            height: 500px;
+            background-color: #ccc;
+            overflow: hidden;
+            position: relative;
+        }
+        .box .before {
+            width: 207px;
+            height: 200px;
+            background:url("../images/p3.png") no-repeat -370px -21px;
+            position: absolute;
+            bottom: -200px;
+            left: 300px;
+        }
+        .box:hover .before{
+            animation: fly 2s forwards;
+        }
+        @keyframes fly {
+            from {
+
+            }
+            to {
+                transform: translate(400px,-400px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <span class="before"></span>
+</div>
+</body>
+</html>

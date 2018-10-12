@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>孩子节点</title>
+    <style>
+        div {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var u = document.getElementById("u");
+            var lis = u.children;
+            alert(lis.length);
+        }
+    </script>
+</head>
+<body>
+<p>child它返回指定元素的子元素集合【HTML节点，所以属性，文本节点不包含】，获取的不只是嫡系，而是所有子孙等</p>
+<p>无兼容性问题【但是在ie678中会包含你的注释节点】</p>
+<ul id="u">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <!--注释-->
+</ul>
+</body>
+</html>

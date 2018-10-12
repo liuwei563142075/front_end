@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var PI = 3.141592653;
+
+    // 第一种保留两位小数方法
+    console.log(PI.toFixed(2));
+
+    // 第二种保留两位小数的方法
+    console.log(parseInt(PI*100)/100);
+
+    // 第三种保留两位小数的方法
+    var p = PI + '';
+    console.log(p.substr(0,p.indexOf('.')+3));
+
+
+</script>

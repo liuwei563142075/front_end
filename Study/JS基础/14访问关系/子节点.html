@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟节点==不常用</title>
+    <style>
+        div {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //要求必须先写正常浏览器的，后写ie678的
+            var s = document.getElementById("s3");
+            var sf = s.firstChild || s.firstElementChild;
+            console.log(sf);
+            sf.style.backgroundColor="pink";
+
+            //反过来写就是错误的！！！！
+            /*
+            var next2 = s.nextSibling || s.nextElementSibling;
+            console.log(next2);
+            next2.style.backgroundColor="blue";
+            */
+        }
+    </script>
+</head>
+<body>
+<p>firstChild/lastChild 第一个/最后一个孩子节点节点 ie678认识</p>
+<p>firstElementChild/lastElementChild 第一个/最后一个兄弟节点 其他浏览器认识</p>
+<div>d1</div>
+<div>d2</div>
+<div>d3</div>
+<div>d4</div>
+<div class="box">
+    <span>1</span>
+    <span>2</span>
+    <span id="s3">3</span>
+    <div>4</div>
+    <span>5</span>
+    <span>6</span>
+</div>
+<div>d5</div>
+<div>d6</div>
+</body>
+</html>

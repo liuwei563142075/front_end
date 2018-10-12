@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="imgFS">劫过九重城关 我座下马正酣
+    　　看那轻飘飘的衣摆 趁擦肩把裙掀
+    　　踏遍三江六岸 借刀光做船帆
+    　　任露水浸透了短衫 大盗睥睨四野
+    　　枕风宿雪多年 我与虎谋早餐
+    　　拎着钓叟的鱼弦 问卧龙几两钱
+    　　蜀中大雨连绵 关外横尸遍野
+    　　你的笑像一条恶犬 撞乱了我心弦
+    　　谈花饮月赋闲 这春宵艳阳天
+    　　待到梦醒时分睁眼 铁甲寒意凛冽
+    　　夙愿只隔一箭 故乡近似天边
+    　　不知何人浅唱弄弦 我彷徨不可前
+    　　枕风宿雪多年 我与虎谋早餐
+    　　拎着钓叟的鱼弦 问卧龙几两钱
+    　　蜀中大雨连绵 关外横尸遍野
+    　　你的笑像一条恶犬 撞乱了我心弦
+    　　烽烟万里如衔 掷群雄下酒宴
+    　　谢绝策勋十二转 想为你窃玉簪
+    　　入巷间吃汤面 笑看窗边飞雪
+    　　取腰间明珠弹山雀 立枇杷于庭前
+    　　入巷间吃汤面 笑看窗边飞雪
+    　　取腰间明珠弹山雀 立枇杷于庭前</p>
+<a id="btnFS" href="javascript:;"> FullScreen </a>
+<script src="../jquery/jquery-1.9.1.js"></script>
+<script>
+    $("#btnFS").on("click", function(){
+
+        var status = document.fullscreenEnabled ||
+            document.webkitFullscreenEnabled ||
+            document.mozFullscreenEnabled ||
+            document.msFullscrrenEnabled;
+        if (status) {
+            //var img = $("#imgFS");   //  必须是个DOM对象！！！
+            var img = document.querySelector("#imgFS");
+            if (img.requestFullscreen) {
+                img.requestFullscreen();
+            } else if (img.msRequestFullscreen) { // IE
+                img.msRequestFUllscreen();
+            } else if (img.mozRequestFullscreen) { // Firefox (Gecko)
+                img.mozRequestFullscreen();
+            } else if (img.webkitRequestFullscreen) { // Webkit
+                img.webkitRequestFullscreen();
+            }
+        } else {
+            alert("The document not allowed to fullscreen.");
+        }
+    });
+</script>
+</body>
+</html>
+<!--
+全屏API
+
+
+var element = 需要全屏的元素;
+if(element.requestFullscreen) {
+    element.requestFullscreen();
+} else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+} else if(element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+} else if(element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+}
+
+
+
+
+// 退出全屏    fullscreen
+function exitFullscreen() {
+if(document.exitFullscreen) {
+document.exitFullscreen();
+} else if(document.mozExitFullScreen) {
+document.mozExitFullScreen();
+} else if(document.webkitExitFullscreen) {
+document.webkitExitFullscreen();
+}
+}
+-->

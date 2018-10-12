@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>鼠标绘制点线面</title>
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="https://webapi.amap.com/maps?v=1.4.9&key=您申请的key值&plugin=AMap.MouseTool"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+</head>
+<body>
+<div id="container"></div>
+<div class="button-group">
+    <input type="button" class="button" value="鼠标绘制点" id="point"/>
+    <input type="button" class="button" value="鼠标绘制线" id="line"/>
+    <input type="button" class="button" value="鼠标绘制面" id="polygon"/>
+</div>
+<script>
+    var map = new AMap.Map("container", {
+        resizeEnable: true
+    });
+    //在地图中添加MouseTool插件
+    var mouseTool = new AMap.MouseTool(map);
+    var drawPolygon = mouseTool.polygon(); //用鼠标工具画多边形
+    AMap.event.addListener( mouseTool,'draw',function(e){ //添加事件
+        console.log(e.obj.getPath());//获取路径/范围
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>!imporent属性不打破就近原则，无法提升标签的权重，该0还是0</title>
+		<style type="text/css">
+			.box1 {
+				color: blue !important;
+			}
+			.box3 {
+				color: green;
+			}
+			.box1 #box2 .box3{
+				color: red;
+			}
+			#box2 {
+				color: yellow !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div id="box2">
+				<div class="box3">
+					<p>都没选中，本来是谁描述的近听谁的，加了!importent也没用</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

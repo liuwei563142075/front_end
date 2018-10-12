@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旁系？嫡系？</title>
+    <script>
+        window.onload = function () {
+            var u = document.getElementById("u");
+
+            //children只包含有元素节点（嫡系，不包括换行）【重要】
+            console.log(u.children.length);
+
+            //childNodes获取的子节点（嫡系，但包括换行！！！）【可以使用nodeType==1则为有元素的节点】
+            console.log(u.childNodes.length);
+        }
+    </script>
+</head>
+<body>
+<ul id="u">
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+</ul>
+</body>
+</html>

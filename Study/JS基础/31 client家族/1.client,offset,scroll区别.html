@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {margin:0;padding: 0;}
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px;
+
+            padding-top: 10px;
+            border-bottom: 13px solid royalblue;
+        }
+    </style>
+    <script src="../base.js"></script>
+    <script>
+        window.onload = function() {
+            console.log("offsetHeight:"+$("box").offsetHeight);
+            console.log("clientHeight:"+$("box").clientHeight);
+            console.log("scrollHeight:"+$("box").scrollHeight);
+        }
+    </script>
+</head>
+<body>
+<p>自己的宽高：offsetHeight = boxHeight + padding + border</p>
+<p>可视区域【不含border】：clientHeight = boxHeight + padding</p>
+<p>内容宽高： scrollHeight = contentHeight + padding </p>
+<div id="box">
+    scrollHeight内容宽高
+    scrollHeight内容宽高
+    scrollHeight内容宽高
+    scrollHeight内容宽高scrollHeight内容宽高scrollHeight内容宽高
+    scrollHeight内容宽高
+    scrollHeight内容宽高
+    scrollHeight内容宽高
+    scrollHeight内容宽高
+    scrollHeight内容宽高
+    scrollHeight内容宽高
+    scrollHeight内容宽高
+    scrollHeight内容宽高
+    scrollHeight内容宽高
+</div>
+</body>
+</html>

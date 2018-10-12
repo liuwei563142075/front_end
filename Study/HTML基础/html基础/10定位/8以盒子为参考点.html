@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>要听距离自己最近的已经定位的祖先，不一定是父亲</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box1{
+				width:100px;
+				height: 100px;
+				background-color: yellow;
+				position: relative;
+				top: 100px;
+				left: 100px;
+			}
+			/*box1定位，他的儿子box2没有定位，box1不在标准流中的限制中，但box2被限制box1内仍然处于标准流中*/
+			.box2{
+				width:20px;
+				height: 20px;
+				background-color: darkgreen;
+			}
+			
+			/*并不一定说非以定位的父盒子为参考点，祖先也行，不过是以最近的祖先为参考点*/
+			.box3{
+				width:20px;
+				height: 20px;
+				background-color: red;
+				position: absolute;
+				top: 40px;
+				left: 40px;
+			}
+			
+			/*是以离自己最近的定位的盒子为参考点*/
+			.box4{
+				width:20px;
+				height: 20px;
+				background-color: chocolate;
+				position: absolute;
+				top: 40px;
+				left: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<p class="box2">
+				<div class="box3">
+					<div class="box4">
+						
+					</div>
+				</div>
+			</p>
+		</div>
+		
+		<p>工程上子绝父绝没有任何意义，没有一个盒子在标准流里所以页面非常不稳固</p>
+		<p>工程上子绝父相有意义，父亲没有脱标，儿子脱标在父亲范围内移动</p>
+	</body>
+</html>

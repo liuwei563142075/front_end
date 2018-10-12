@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="../base.js"></script>
+<script>
+    f();
+    var wd = 0;
+    function f() {
+        wd = client().width;
+        if(wd > 960) {
+            document.body.style.backgroundColor = "green";
+        }else if (wd > 640) {
+            document.body.style.backgroundColor = "pink";
+        }else {
+            document.body.style.backgroundColor = "yellow";
+        }
+    }
+    window.onresize = f;
+</script>

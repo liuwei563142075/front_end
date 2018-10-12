@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>https://developer.mozilla.org/zh-CN/docs/Web/CSS/::after</title>
+    <style>
+        /* 如果希望通过css往box里内容的前面添加一些东西，可以使用【伪对象】【或者叫伪元素】 */
+        /* 清除浮动使用的是.clearfix:before{}是【伪类】，不是伪对象 */
+        .box::before {/*在其所有元素之前*/
+            content:'bbbb';/*内容*/
+            color:red;/*颜色*/
+        }
+        /*.box::after {
+            content:'bbbb';
+            color:red;
+        }*/
+    </style>
+</head>
+<body>
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-elements">伪对象</a>
+<div class="box">
+    <p>aaa</p>
+</div>
+</body>
+</html>

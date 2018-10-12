@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+            /* 检索或设置对象所应用的动画名称 */
+        }
+
+        .box {
+            /* autoplay为指定的动画名称 */
+            animation: autoplay 5s ease-in-out forwards;
+        }
+
+        @keyframes autoplay{
+            0%{transform:translate(0);opacity:0;}
+            50%{transform:translate(30px);opacity:1;}
+            70%{transform:translate(35px);opacity:1;}
+            100%{transform:translate(60px);opacity:0;}
+        }
+
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

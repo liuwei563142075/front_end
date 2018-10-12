@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的添加</title>
+    <script>
+        window.onload = function() {
+            var arr = [];
+            console.log("arr空数组：");
+            console.log(arr);
+
+            //  从数组的后面添加
+            arr.push("1");
+            arr.push("2");
+            arr.push("3");
+            console.log("arr数组添加元素：");
+            console.log(arr);
+
+            // 输出的是数组的长度
+            var dom = [1,2,3];
+            console.log("这样输出的是数组的长度，而不是数组里的所有元素：");
+            console.log(dom.push(8));//先添加，然后返回被添加的值
+
+            //从数组的前面添加元素
+            arr.unshift("0");
+            console.log("从arr数组的前面添加元素:"+arr);
+            console.log(arr);
+
+            var s = arr.pop();  //先弹出数组中最后一个，在将弹出的元素返回
+            //arr.pop();
+            //arr.pop(arr[2]);          错误用法
+            //arr.pop("1");          错误用法
+            console.log("从arr数组中取出【去除】最后一个元素:");
+            console.log(arr);
+            console.log("从arr数组中取出【去除】元素为:");
+            console.log(s);
+
+            var s2 = arr.shift();
+            console.log("从arr数组中取出【去除】第一个元素:");
+            console.log(arr);
+            console.log("从arr数组中取出【去除】元素为:");
+            console.log(s2);
+
+        }
+    </script>
+</head>
+<body>
+<p>添加数组元素push和unshift</p>
+<p>删除数组元素pop和shift</p>
+</body>
+</html>

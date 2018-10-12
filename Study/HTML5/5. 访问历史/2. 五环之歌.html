@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        aside {
+            background-color: #ccc;
+            width: 200px;
+            height: 100%;
+            float: left;
+        }
+
+        aside .song-name {
+            font-size: 20px;
+            line-height: 2;
+        }
+
+        .song-name li {
+            cursor: pointer;
+        }
+
+        article {
+            background-color: #f0f0f0;
+            height: 100%;
+            margin-left: 200px;
+            padding: 20px;
+            overflow: scroll;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<aside>
+    <ul class="song-name"></ul>
+</aside>
+<article>
+    <p class="song-content"></p>
+</article>
+</body>
+</html>
+<script src="../jquery/jquery-1.9.1.js"></script>
+<script src="data.js"></script>
+<script>
+    var $song_name = $(".song-name");
+    var $song_content = $(".song-content");
+    (function () {
+        /* 遍历创建节点 */
+        $.each(data, function (key, value) {
+            var $li = $("<li>" + key + "</li>");
+            $li.appendTo($song_name);
+        });
+        /* li事件  手动添加访问历史 */
+        $song_name.on("click", "li", function () {
+            $song_content.html(data[$(this).text()]);
+
+            /* 访问历史 */   //【H5新加的方法pushState(),要判断一下是否兼容】
+            if(window.history && history.pushState) { // 手动添加访问历史
+               var title = $(this).text();
+                history.pushState(title,"设置历史状态显示的标题，但是浏览器不支持","?t="+title);
+            }else{
+                console.log("不支持");
+            }
+        });
+
+        // 我们在伪造访问历史中前进或后退时会执行一个事件popstate
+        $(window).on("popstate",function(e){
+            var title = window.location.search.split("=")[1];
+            //console.log(decodeURI(title));
+            $song_content.html(data[decodeURI(title)]);
+        });
+
+        // 当你将链接分享给别人时，别人要想访问到，你要处理首次访问
+        var title = window.location.search.split("=")[1];
+        if(title) {
+            $song_content.html(data[decodeURI(title)]);
+        }
+    })();
+</script>

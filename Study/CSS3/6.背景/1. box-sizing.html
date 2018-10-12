@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            border: 10px solid black;
+            padding: 30px;
+            /* 该属性在C3用户界面中 */
+            /*标准盒模型*/
+           box-sizing: content-box;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            border: 10px solid black;
+            padding: 30px;
+            /*怪异模式下的盒模型*/
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">标准盒模型</div>
+<div class="box2">怪异模式下的盒模型</div>
+</body>
+</html>

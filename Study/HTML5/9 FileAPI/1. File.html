@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" id="myform">
+    <!-- 对于form里的表单来说：可以直接通过name找到 -->
+    <!-- document.form[0].input_file -->
+    <!-- $("#input_file").input_file -->
+    <!-- multiple属性可以让文件域多选 -->
+    <input id = "input_file" type="file" multiple>
+</form>
+<script>
+    /* window.document.forms[0].input_file.files */
+    (function () {
+        var input_file = document.querySelector("#input_file");
+        input_file.addEventListener("change",function () {
+            console.log(this.files);
+        })
+    })();
+</script>
+</body>
+</html>

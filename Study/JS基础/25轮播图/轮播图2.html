@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding: 0;}
+        img {
+            vertical-align: top;
+        }
+        .slider {
+            margin: 50px 300px;
+            height: 454px;
+            width: 730px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slider ul {
+            list-style: none;
+            width: 2000%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .slider ul li {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="slider">
+    <ul id="sliul">
+        <li><img src="images/slider1.jpg" alt=""></li>
+        <li><img src="images/slider2.jpg" alt=""></li>
+        <li><img src="images/slider3.jpg" alt=""></li>
+        <li><img src="images/slider4.jpg" alt=""></li>
+        <li><img src="images/slider5.jpg" alt=""></li>
+        <li><img src="images/slider6.jpg" alt=""></li>
+        <li><img src="images/slider7.jpg" alt=""></li>
+        <li><img src="images/slider8.jpg" alt=""></li>
+        <li><img src="images/slider9.jpg" alt=""></li>
+        <li><img src="images/slider1.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+        var ul = document.getElementById("sliul");
+        var timer = null;
+        var num = 0;
+        function f() {
+            num--;
+            if(num>=-6570) {
+                ul.style.left=num+'px';
+            }else{
+                num = 0;
+            }
+        }
+        timer = setInterval(f,30);
+</script>

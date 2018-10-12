@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab栏原理就是使用排他思想，想隐藏所有的盒子，再把鼠标当前所点击的显示出来</title>
+    <style>
+        .current {
+            background-color: pink;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var btns = document.getElementsByTagName("button");
+            for (var i=0;i<btns.length;i++){
+
+                //自定义属性
+                btns[i].index = i;
+
+                btns[i].onclick = function() {
+
+                    //获取索引号
+                    alert(this.index);
+
+                    for(var j=0;j<btns.length;j++){
+                        btns[j].className="";
+                    }
+                    this.className="current";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button>排他思想</button>
+<button>排他思想</button>
+<button>排他思想</button>
+<button>排他思想</button>
+<button>排他思想</button>
+</body>
+</html>

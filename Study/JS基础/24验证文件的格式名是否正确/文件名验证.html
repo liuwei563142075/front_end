@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" enctype="multipart/form-data">
+    <input type="file" name="" id="uplode">
+</form>
+</body>
+</html>
+<script>
+    //var uplode = document.getElementById("uplode");
+
+    // 总结一下：学了两个onchange事件的了，一个是下拉列表，一个就是文件的这个
+
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjcectURL != undefined) {
+            url = window.createOjcectURL(file);
+        } else if (window.URL != undefined) {
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) {
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+
+    uplode.onchange = function() {
+        /*  只能IE使用 var path = this.value;console.log(path); */
+        var objURL = getObjectURL(this.files[0]);
+        console.log(decodeURIComponent(objURL));
+    }
+</script>

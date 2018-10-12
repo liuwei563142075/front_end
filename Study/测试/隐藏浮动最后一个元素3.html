@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+    不管父盒子是不是浮动的：可以看到不管是直接使用ul width:707px还是width：500%都是可行的
+        与父盒子浮动不浮动无关。
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            margin: 100px;
+            width: 700px;
+            height: 100px;
+        }
+        .box2 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+        .box3 {
+            /* 首先父盒子要有宽子盒子才能用500% */
+            width: 600px;
+            float: right;
+        }
+        .box3 ul {
+            width: 500%;
+            _width:400%;
+            list-style: none;
+        }
+        .box3 li {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 1px;
+            background-color: #48484c;
+        }
+        li:hover {
+            background-color: #c43c35;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+
+        </div>
+        <div class="box3">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+               <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

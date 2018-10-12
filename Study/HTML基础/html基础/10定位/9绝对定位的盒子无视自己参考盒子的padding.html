@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>相对定位无视自己参考盒子的padding</title>
+		<link rel="stylesheet" href="../../static/css/base.css" />
+		<style type="text/css">
+			.box1{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				border: 10px solid red;
+				padding: 100px;
+				position: relative;
+				top: 0;
+				left: 0;
+			}
+			.box2{
+				width: 50px;
+				height: 50px;
+				background-color: chocolate;
+				border: 1px solid red;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<p class="box2">
+				
+			</p>
+		</div>
+		<p>相对定位无视自己参考盒子的padding</p>
+	</body>
+</html>

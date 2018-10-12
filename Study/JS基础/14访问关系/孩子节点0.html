@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>孩子节点</title>
+    <style>
+        div {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var u = document.getElementById("u");
+            var lis = u.childNodes;
+            alert(lis.length);
+        }
+    </script>
+</head>
+<body>
+<p>childNodes它返回指定元素的子元素集合，包括HTML节点，所以属性，文本节点。【只获取其直系子节点】</p>
+<p>火狐、谷歌等高级浏览器会把换行也看成节点</p>
+<p>火狐、谷歌等高级浏览器弹出的是7，ie678等低级浏览器弹出的是3</p>
+<p>利用 nodeType==1 才是节点</p>
+<ul id="u">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

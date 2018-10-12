@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 声明对象：
+    // 方式1：
+    var obj1 = new Object();// 效率稍微低一些，使用new创建出来的对象要牵扯到原型查找的问题
+    // 方式2：字面量声明对象【更提倡】
+    var obj2 = {}
+    //方式3：
+    var obj3 = Object.create();
+
+    var obj = {};
+    obj.name = "毛毛";
+    obj.age = 25;
+    obj.getName = function () {
+        return obj.name;
+    }
+    obj.getAge = function () {
+        return obj.age;
+    }
+    console.log(obj.name);
+    console.log(obj.getName())
+    console.log(obj.getAge())
+</script>

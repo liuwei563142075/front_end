@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+    不管父盒子是不是浮动的：【不想超过父盒子边，可以给父盒子加overflow：hidden】，扩大ul的宽度，这样最后一个li
+    就不会被挤下去，而且每个li直接又留出了空隙。
+    父盒子的宽度还是700px，每一个li都是100px宽。【加overflow：hidden后，最后一个li的宽度明显没有100px，整整减小了6px】
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            margin: 100px;
+            width: 700px;
+            height: 100px;
+            /*overflow: hidden;*/
+            background-color: #a83c3a;
+        }
+        .box1 ul {
+            width: 707px;
+            list-style: none;
+        }
+        .box1 li {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 1px;
+            background-color: #48484c;
+        }
+        .box1 li:hover {
+            background-color: #c43c35;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

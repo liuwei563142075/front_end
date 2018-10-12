@@ -1,0 +1,18 @@
+1.定位的盒子一定要有宽高，不写宽高就和内容一样宽了。
+
+2.事件冒泡: 当一个元素上的事件被触发的时候，比如说鼠标点击了一个按钮，
+同样的事件将会在那个元素的所有祖先元素中被触发。这一过程被称为事件冒泡；
+这个事件从原始元素开始一直冒泡到DOM树的最上层。
+
+3.理解什么是冒泡：如果一个大盒子box包裹着一个小盒子small，small里在包裹一个button,如果我给与大盒子box
+一个事件，那么点击small或者button都会触发大盒子事件，因为他俩都属于大盒子。如果你再给button一个事件，
+那么当你点击button时会触发该button的事件，然后还会触发大盒子box的事件。这就是冒泡。
+只要孩子和父亲有相同的事件，当触发该事件时就会一层一层向上冒。阻止冒泡事件的方式【具有兼容性】：
+标准【Propargation传播的意思】：event.stopPropargation()  ie678:event.cancelBubble = true;
+
+4.冒泡顺序：ie6:div->body->html->document  其他浏览器： div->body->html->document
+
+5.不显示滚动条：document.body.style.overflow = "hidden";
+
+6.学习使用：var target = event.target ? event.target:event.srcElement;只要在document.onclick事件里
+使用这种方式就可以获取文档中所有盒子。参见（3.3 或 4）【重要！！！】

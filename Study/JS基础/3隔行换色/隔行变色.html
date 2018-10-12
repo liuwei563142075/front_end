@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隔行变色小练习</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        li {
+            padding: 5px;
+        }
+        .current {
+            background-color: #ddd !important;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            /* 获取某id下的所有tag所指定的标签 */
+            var lis = document.getElementById("box").getElementsByTagName("li");
+            for (var i = 0;i<lis.length;i++){
+                if(i%2!=0){
+                    lis[i].style.backgroundColor="#eee";
+                }
+                lis[i].onmousemove = function() {
+                    this.className="current";
+                }
+                lis[i].onmouseout = function() {
+                    this.className = "";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li><span></span>中国<span></span>制造业<span>十分</span><span>发达</span></li>
+        <li><span></span>中国<span></span>制造业<span>十分</span><span>发达</span></li>
+        <li><span></span>中国<span></span>制造业<span>十分</span><span>发达</span></li>
+        <li><span></span>中国<span></span>制造业<span>十分</span><span>发达</span></li>
+        <li><span></span>中国<span></span>制造业<span>十分</span><span>发达</span></li>
+        <li><span></span>中国<span></span>制造业<span>十分</span><span>发达</span></li>
+        <li><span></span>中国<span></span>制造业<span>十分</span><span>发达</span></li>
+        <li><span></span>中国<span></span>制造业<span>十分</span><span>发达</span></li>
+    </ul>
+</div>
+</body>
+</html>

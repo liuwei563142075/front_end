@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的连接</title>
+    <script>
+        window.onload = function() {
+            var arr1 = [1,2,3];
+            var arr2 = ["4","5","6"];
+            console.log(arr1);
+            console.log(arr2);
+            arr3 = arr1.concat(arr2);
+            console.log(arr1);
+            console.log(arr2);
+            console.log(arr3);
+
+            //数组的join方法
+            var str = arr1.join(",");
+            console.log(str);
+
+            var sarr = str.split(",");
+            console.log(sarr);
+
+        }
+    </script>
+</head>
+<body>
+<p>数组的连接arrC = arrA.concat(arrB)</p>
+<p>
+    join()函数是将数组的各个元素通过指定的分隔符连接成字符串
+    语法：arr.join(separator)
+</p>
+</body>
+</html>

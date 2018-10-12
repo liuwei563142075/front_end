@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {margin: 0;padding: 0;}
+        ul {
+            list-style: none;
+        }
+        a {text-decoration: none;color: black;}
+        .box {
+            width: 340px;
+            height: 30px;
+            margin: 100px auto 0;
+            background: url("imgs/bg.jpg") no-repeat;
+        }
+        .first {
+            height: 30px;
+            padding-left: 10px;
+        }
+        .first li {
+            float: left;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin-right: 10px;
+            background: url("imgs/libg.jpg") no-repeat;
+            position: relative;
+        }
+        .second {
+            display: none;
+            width: 100px;
+            position: absolute;
+            top: 35px;
+            left: 0;
+        }
+        .second li {
+            float: none;
+            margin-top: 3px;
+        }
+    </style>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        console.log("这里需要说明一下onmouseenter和onmouseover的区别");
+        console.log("与 mouseover 事件不同，只有在鼠标指针穿过被选元素时，" +
+            "才会触发 mouseenter 事件。如果鼠标指针穿过任何子元素，" +
+            "同样会触发 mouseover 事件。")
+        console.log("也就是说onmouseover事件在鼠标穿过被选元素或者被选元素的子元素时都会触发，" +
+            "而onmouseenter只有在鼠标穿过被选元素时触发，穿过子元素不触发。" +
+            "大多数情况下用的更多的是onmouseenter," +
+            "onmouseenter与onmouserleave对应");
+
+        console.log("hover事件有两个参数【两个函数事件】，一个是经过事件，另一个是离开事件")
+        $(document).ready(function () {
+            $("#first").children().hover(function () {
+                $(this).children("ul").show();
+            },function () {
+                $(this).children("ul").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul class="first" id="first">
+        <li>
+            <a href="#">一级菜单1</a>
+            <ul class="second">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">一级菜单2</a>
+            <ul class="second">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">一级菜单3</a>
+            <ul class="second">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

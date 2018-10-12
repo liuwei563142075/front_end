@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(function(){
+
+            // 使用bind绑定多个相同的事件
+            /*$("#btn").bind("click mouseenter",function () {
+                alert("绑定两个相同的事件【click mouserenter】")
+            });*/
+
+            // 使用bind绑定多个不同的事件
+            /*$("#btn").bind({
+                "click":function () {
+                    alert("绑定click事件");
+                },
+                "mouseenter":function () {
+                    alert("绑定mouseenter事件")
+                }
+            });*/
+
+            // 传递参数
+            /*$("#btn").bind("click",{width:100,height:300},function (e) {
+                alert(e.data.width);
+            });*/
+
+            // one仅触发一次
+            /*$("#btn").one("click",function () {
+                alert("只绑定一次事件");
+            });*/
+
+        })
+    </script>
+</head>
+<body>
+<button id="btn">bind</button>
+</body>
+</html>

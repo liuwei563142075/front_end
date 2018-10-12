@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px 0 0 0;
+        }
+        .box1 {
+            position: absolute;
+            left: 0;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+<button id="bt1">200</button>
+<button id="bt2">400</button>
+<div class="box1" id="b1">
+
+</div>
+</body>
+</html>
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+    var step = 0;
+    $("bt1").onclick = function () {
+        step = 200;
+        autoplay();
+    }
+    $("bt2").onclick = function () {
+        step = 400;
+        autoplay();
+    }
+    function autoplay() {
+        $("b1").style.left = $("b1").offsetLeft + step + "px";
+    }
+</script>

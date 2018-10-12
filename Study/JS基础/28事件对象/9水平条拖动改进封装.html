@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>由于8的不适用复杂嵌套的盒子，如果父盒子太多且都定位的话，8不在适用，不利于后期封装</title>
+    <style>
+        *{margin:0;padding:0;}
+        .line {
+            width: 400px;
+            height: 10px;
+            background-color: #CCC;
+            margin: 100px;
+            position: relative;
+        }
+        .line .tag {
+            width: 10px;
+            height: 30px;
+            background-color: #ec5c00;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            cursor: pointer;
+        }
+        .line .bc {
+            width: 0;
+            height: 10px;
+            background-color: #0e90d2;
+        }
+    </style>
+</head>
+<body>
+<div class="line" id="line">
+    <div class="tag"></div>
+    <div class="bc"></div>
+</div>
+</body>
+</html>
+<script>
+    var line = document.getElementById("line");
+    var tag = line.children[0];
+    var bc = line.children[1];
+
+    leDrag(bc,tag);
+
+    /**
+     *  address:
+     *  水平拖动
+     * @param target 受bar拖动而改变背景的目标盒子
+     * @param bar
+     */
+    function leDrag(target,bar) {
+        var step = 0;
+        bar.onmousedown = function(event) {
+            var event = event || window.event;
+            // bar被按下的位置距离浏览器左窗口距离
+            var barLeft = event.clientX - this.offsetLeft;
+
+            document.onmousemove = function(event) {
+                var event = event || window.event;
+                step = event.clientX-barLeft;
+                if(step<0){
+                    step = 0;
+                }else if(step>bar.offsetParent.offsetWidth - bar.offsetWidth){
+                    step = bar.offsetParent.offsetWidth - bar.offsetWidth;
+                }
+                bar.style.left = step + "px";
+                target.style.width = step + "px";
+
+                // 清除选择拖动，不写这句话，会出现如果滑的快，弹起后依旧跟着鼠标走
+                window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+            }
+            //  是document的onmouseup事件，不是tag的
+            document.onmouseup = function() {
+                // 清除事件
+                document.onmousemove = null;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <script>
+        window.onload = function () {
+            var future = new Date('2018/07/31 16:10:00').getTime();
+
+            function fn() {
+                var now = new Date().getTime();
+
+                //剩余总秒数
+                var sTime = parseInt((future-now)/1000);
+                /*console.log(sTime);*/
+
+                //剩余天数
+                var d = parseInt(sTime/3600/24);
+                /*console.log(d);*/
+
+                //剩余小时数
+                var h = parseInt(sTime/3600%24);
+                /*console.log(h);*/
+
+                //剩余分钟
+                var m = parseInt(sTime/60%60);
+                /*console.log(m);*/
+
+                //剩余秒数
+                var s = parseInt(sTime%60);
+                /*console.log(s);*/
+
+                var demo = document.getElementById("demo");
+                demo.innerHTML = "剩余："+d+"天"+h+"时"+m+"分"+s+"秒";
+            }
+
+            setInterval(fn,1000);
+        }
+    </script>
+</head>
+<body>
+<div id="demo"></div>
+</body>
+</html>

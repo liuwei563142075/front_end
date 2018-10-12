@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历</title>
+    <script>
+        window.onload = function() {
+            var now = new Date();
+            var day = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六',];
+            var y = now.getFullYear();
+            /*console.log(y);*/
+            var m = now.getMonth();
+            /*console.log(m+1);*/
+            var d = now.getDate();
+            /*console.log(d);*/
+            var z = now.getDay()
+            /*console.log(day[z]);*/
+
+            var box = document.getElementById("box");
+            box.innerHTML=y+"-"+(m+1)+"-"+d+" "+day[z];
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+
+</div>
+</body>
+</html>

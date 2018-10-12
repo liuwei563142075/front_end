@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>筋斗云</title>
+    <style>
+        *{margin: 0;padding: 0}
+        body {
+            background-color: black;
+        }
+        .jdy {
+            margin: 50px auto;
+            width: 1000px;
+            height: 42px;
+            background: url("images/rss.png") no-repeat center right white;
+            position: relative;
+        }
+        .jdy ul {
+            list-style: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 奇了怪了。两个都没有z-index，明明是写在后面的亚盖住写在前面的，我这却不行！！！ */
+            /*z-index: 1;*/
+        }
+        .jdy li {
+            float: left;
+            width: 83px;
+            height: 42px;
+            text-align: center;
+            line-height: 42px;
+            cursor: pointer;
+        }
+        .jdy .cloud {
+            width: 83px;
+            height: 42px;
+            background: url("images/cloud.gif") no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="jdy">
+    <span class="cloud" id="cloud"></span>
+    <ul>
+        <li>首页新闻</li>
+        <li>师资力量</li>
+        <li>活动策划</li>
+        <li>企业文化</li>
+        <li>招聘信息</li>
+        <li>公司简介</li>
+        <li>上海校区</li>
+        <li>广州校区</li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    /* 重新理解z-index 如果都没写，指的是写在后面的标签亚盖住写在前面的标签！！！！！ */
+    var cl = document.getElementById('cloud');
+    var leader = 0;
+    var target = 0;
+    var lis = cl.parentNode.children[1].children;
+    var current = 0;
+    for(var i=0;i<lis.length;i++){
+        lis[i].onmouseover = function() {
+            target = this.offsetLeft;
+        }
+        lis[i].onmouseout = function() {
+            target = current;
+        }
+        lis[i].onclick =function() {
+            current = this.offsetLeft;
+        }
+    }
+    setInterval(function f(){
+        leader = leader + (target-leader)/10;
+        cl.style.left = leader + 'px';
+    },10)
+</script>

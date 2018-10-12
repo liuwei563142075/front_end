@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .parent{
+        width:100%;
+        height:200px;
+    <!--  border:1px solid red; -->
+    }
+    .child{
+    <!--  display:inline; -->
+
+        border:1px solid black;
+    }
+    .hide {
+        display: none;
+    }
+</style>
+<link rel="stylesheet" href="../../bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="test.css">
+<body>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<a href="javascript:;" id="export">导出</a>
+<div id="export_word">
+    <div style="width: 200px;height:300px;background-color: pink;display: inline-block">我是div1</div>
+    <div style="width: 200px;height:300px;background-color: pink;display: inline-block">我是div2</div>
+    <p style="font-size: 40px">夜，结束了一天的喧嚣后安静下来，伴随着远处路灯那微弱的光。</p>
+
+
+    <p>风，毫无预兆地席卷整片旷野，撩动人的思绪万千。</p>
+
+    <p>星，遥遥地挂在天空之中，闪烁着它那微微星光，不如阳光般灿烂却如花儿般如痴如醉。</p>
+    <div style="text-align: center;float: left;width: 300px; height:300px">
+        <h3>一张风景图</h3>
+        <img src="../static/1.jpg" alt="" width="200px" height="200px">
+    </div>
+    <p style="font-size: 40px">欲将沉醉换悲凉，清歌莫断肠。这混乱的尘世，究竟充斥了多少绝望和悲伤。你想去</p>
+    <p class="bg">做一个勇敢的男子，为爱，为信仰，轰轰烈烈的奋斗一场。你周身充斥着无人可比的灵气</p>
+    <p>和光芒。你有着与伟人比肩的才气和名声，你是那样高傲孤洁的男子。你的一寸狂心未</p>
+    <p>说，已经几度黄昏雨。</p>
+    <img src="file:///C:/Users/Administrator/Desktop/2.jpg" alt="" width="200px" height="200px">
+    <table id="tab" class="table table-bordered">
+        <thead>
+        <tr>
+            <td rowspan="3" style='vertical-align:middle;'>医院名称</td>
+            <td colspan="2" valign="middle">出院人数</td>
+            <td colspan="2">住院病人手术人次数</td>
+            <td colspan="2">医院医疗费用</td>
+            <td colspan="5">出院均次费用</td>
+            <td colspan="2">平均住院日</td>
+        </tr>
+        <tr>
+            <td rowspan="2">人次</td>
+            <td rowspan="2">同比%</td>
+            <td rowspan="2">人次</td>
+            <td rowspan="2">同比%</td>
+            <td rowspan="2">万元</td>
+            <td rowspan="2">同比%</td>
+            <td rowspan="2">元</td>
+            <td rowspan="2">同比%</td>
+            <td colspan="3">其中医保病人</td>
+            <td rowspan="2">天</td>
+            <td rowspan="2">同比（天）</td>
+        </tr>
+        <tr>
+            <td>元</td>
+            <td>同比%</td>
+            <td>其中病人支付</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>我是1列</td>
+            <td>我是2列</td>
+            <td>我是3列</td>
+            <td>我是4列</td>
+            <td>我是5列</td>
+            <td>我是6列</td>
+            <td>我是7列</td>
+            <td>我是8列</td>
+            <td>我是9列</td>
+            <td>我是10列</td>
+            <td>我是11列</td>
+            <td>我是12列</td>
+            <td>我是13列</td>
+            <td>我是14列</td>
+        </tr>
+        <tr>
+            <td>我是1列</td>
+            <td>我是2列</td>
+            <td>我是3列</td>
+            <td>我是4列</td>
+            <td>我是5列</td>
+            <td>我是6列</td>
+            <td>我是7列</td>
+            <td>我是8列</td>
+            <td>我是9列</td>
+            <td>我是10列</td>
+            <td>我是11列</td>
+            <td>我是12列</td>
+            <td>我是13列</td>
+            <td>我是14列</td>
+        </tr>
+        <tr>
+            <td>我是1列</td>
+            <td>我是2列</td>
+            <td>我是3列</td>
+            <td>我是4列</td>
+            <td>我是5列</td>
+            <td>我是6列</td>
+            <td>我是7列</td>
+            <td>我是8列</td>
+            <td>我是9列</td>
+            <td>我是10列</td>
+            <td>我是11列</td>
+            <td>我是12列</td>
+            <td>我是13列</td>
+            <td>我是14列</td>
+        </tr>
+        </tbody>
+    </table>
+    <img src="../static/3.png" alt="" width="200px" height="200px">
+</div>
+<div class="parent" id="parent">
+    <div id="main2" class="child" style="width:380px;height:180px;float:left;"></div>
+</div>
+
+<script src="../static/jquery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../static/echarts-3.5.8.min.js"></script>
+<script type="text/javascript" src="../static/getCSS.js"></script>
+<script src="../static/FileSaver.js"></script>
+<script src="../static/jquery.wordexport_extension.js"></script>
+<script>
+    var dom = document.getElementById("main2");
+    var myChart = echarts.init(dom);
+
+    // 指定图表的配置项和数据
+    var option = {
+        tooltip: {
+            trigger:'axis',
+            axisPointer:{
+                type:'shadow'
+            }
+        },
+        grid:{
+            top:'15',
+            left:'3%',
+            right:'4%',
+            bottom:'2%',
+            containLabel:true
+        },
+        xAxis: {
+            type:'value',
+        },
+        yAxis: {
+            type:'category',
+            data: ["衬衫","羊毛衫","雪纺衫","高跟鞋","袜子"]
+        },
+        series: [{
+            name: '销量',
+            type: 'bar',
+            barCategoryGap:'80%',
+            axisLabel:{
+                interval:1
+            },
+            data: [5, 20, 36, 10, 20]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+    // $('#hd').hide();
+    var image = new Image();
+    image.src = myChart.getDataURL();
+    // $('image').css('display','none');
+    $(image).attr({width:'400px',height:'500px'});
+    $('#export_word').append(image);
+
+    function exportWord(){
+        var src = "./test.css";
+        $("#export_word").wordExport('jQuery-Word-Export');
+    }
+    $('#export').on('click',function() {
+        exportWord();
+    });
+</script>
+</body>
+</html>
+</body>
+</html>

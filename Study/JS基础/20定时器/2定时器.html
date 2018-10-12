@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function() {
+            var demo = document.getElementById("demo");
+            var num = 0;
+            var dataIn = function () {
+                num++;
+                demo.innerHTML=num;
+            }
+            setInterval(dataIn,1000);//每隔1秒执行一次dataIn函数
+
+            //调用定时器的集中方式
+            //setInterval('dataIn()',1000);
+            //setInterval(function dataIn(){函数体},1000);
+        }
+    </script>
+</head>
+<body>
+<div id="demo">
+
+</div>
+</body>
+</html>

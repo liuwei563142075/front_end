@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        /*window.onload = function() {
+            document.getElementById("btn").onclick = function () {
+                alert(1);
+            }
+        }*/
+
+        $(function () {
+            // 1.不在是onclick了，而是click.jQuery事件不带on
+            //2. 事件处理程序直接写在click的括号里
+            $("#btn").click(function () {
+                alert(2);
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="button" id="btn">
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包是一种曲线救国的方式</title>
+</head>
+<body>
+<p>闭包的优点：不产生全局变量，实现属性私有化</p>
+<p>闭包的缺点：闭包中的数据会常驻内存，在不用的时候要删掉，否则会导致内存溢出</p>
+</body>
+</html>
+<script>
+    function outFun() {
+        var num = 0;
+        function innerFun() {
+            num++;
+            console.log(num);
+        }
+        return innerFun;
+    }
+
+    // 闭包：既然外部函数不能直接访问局部变量而内部函数可以访问，那就用内部函数访问。
+    var demo = outFun();
+    demo();
+</script>

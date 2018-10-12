@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function Person(name,age) {  // 这不在是一个普通的函数，而是一个构造函数
+        // 【构造函数首字母大写，而且里面使用了this】
+        this.name = name;
+        this.age = age;
+    }
+
+    var  demo = new Person("毛毛",23);
+    console.log(demo.name);
+</script>

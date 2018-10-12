@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/wangyi.css">
+</head>
+<body>
+<div class="slider">
+    <div class="slider-img">
+        <div><img src="images/1.jpg" alt=""></div>
+        <div><img src="images/2.jpg" alt=""></div>
+        <div><img src="images/3.jpg" alt=""></div>
+        <div><img src="images/4.jpg" alt=""></div>
+        <div><img src="images/5.jpg" alt=""></div>
+        <div><img src="images/6.jpg" alt=""></div>
+    </div>
+    <div class="slider-contr" id="slider_contr">
+        <span class="slider-contr-pre"></span>
+        <span class="slider-contr-next"></span>
+    </div>
+</div>
+</body>
+</html>
+<script src="js/animate.js"></script>
+<script>
+    var slider_contr = document.getElementById("slider_contr");
+    var slider_img = slider_contr.parentNode.children[0];
+    var d_imgs = slider_img.children;
+    var s_contr = slider_contr.children;
+    var clientWidth = slider_img.clientWidth;
+
+    for(var i=0;i<d_imgs.length;i++) {
+        d_imgs[i].style.left = clientWidth + "px";
+
+        var span = document.createElement("span");
+        span.className = "slider-contr-icon";
+        span.innerHTML = d_imgs.length-i;
+        slider_contr.insertBefore(span,slider_contr.children[1]);
+    }
+    d_imgs[0].style.left = 0;
+    slider_contr.children[1].className = "slider-contr-icon current";
+
+    var now = 0;
+    for(var s in s_contr) {
+        s_contr[s].onclick = function () {
+            if(this.className == "slider-contr-pre") {
+                animate(d_imgs[now],{left:-clientWidth});
+                now++;
+                /*  思路错误！ 老师的思路是：当每次点击时，上一张缓缓出去，
+                下一张不管在哪，都立即回到clientWidth位置，然后在缓缓进框*/
+                /*if(now >= d_imgs.length) {
+                    for (var re = 0; re < d_imgs.length-1; re++) {
+                        d_imgs[re].style.left = clientWidth + "px";
+                    }
+                    now = 0;
+                }*/
+                animate(d_imgs[now],{left:0});
+            }else if(this.className == "slider-contr-next") {
+                animate(d_imgs[now],{left:clientWidth});
+                now--;
+                animate(d_imgs[now],{left:0});
+            }else {
+                var inNum = this.innerHTML - 1;
+                if(now > inNum){
+                    for(var l=now;l>inNum;l--) {
+                        animate(d_imgs[l],{left:clientWidth});
+                        now--;
+                        animate(d_imgs[l-1],{left:0});
+                    }
+                }else if(now < inNum){
+                    for(var l=now;l<inNum;l++) {
+                        animate(d_imgs[l],{left:-clientWidth});
+                        now++;
+                        animate(d_imgs[l+1],{left:0});
+                    }
+                }
+            }
+            console.log(now);
+        }
+    }
+</script>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab栏目封装</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            margin: 100px;
+        }
+        .tab {
+            height: 50px;
+            overflow: hidden;
+        }
+        .tab span {
+            display: block;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+        .content ul {
+            list-style: none;
+        }
+        .content li {
+            display: none;
+            width: 250px;
+            height: 250px;
+            background-color: pink;
+        }
+        .current {
+            background-color: pink;
+        }
+        li.show {
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            function method(id){
+                var bx = document.getElementById(id);
+                var sps = bx.getElementsByTagName("span");
+                var lis = bx.getElementsByTagName("li");
+                for (var i=0;i<sps.length;i++){
+                    // 闭包版的tab栏切换可以去除索引，使用传参的方式替代
+                    //sps[i].index = i;
+                    sps[i].onmousemove = function bibao(i) {
+                        return function() { //这个函数如果要传参数一定是event
+                            for(var j=0;j<sps.length;j++){
+                                sps[j].className="";
+                                lis[j].className="";
+                            }
+                            sps[i].className="current";
+                            lis[i].className="show";
+                        }
+                    }(i);
+                }
+            }
+            method("box1");
+            method("box2");
+        }
+    </script>
+</head>
+<body>
+<div class="box" id="box1">
+    <div class="tab">
+        <span class="current">新闻</span>
+        <span>娱乐</span>
+        <span>八卦</span>
+        <span>美女</span>
+        <span>军事</span>
+    </div>
+    <div class="content">
+        <ul>
+            <li class="show">新闻</li>
+            <li>娱乐</li>
+            <li>八卦</li>
+            <li>美女</li>
+            <li>军事</li>
+        </ul>
+    </div>
+</div>
+<div class="box" id="box2">
+    <div class="tab">
+        <span class="current">新闻</span>
+        <span>娱乐</span>
+        <span>八卦</span>
+        <span>美女</span>
+        <span>军事</span>
+    </div>
+    <div class="content">
+        <ul>
+            <li class="show">新闻</li>
+            <li>娱乐</li>
+            <li>八卦</li>
+            <li>美女</li>
+            <li>军事</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: #00cccc;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+
+</div>
+</body>
+</html>
+<script src="../base.js"></script>
+<script>
+    var box = document.getElementById("box");
+    box.onclick = function (event) {
+        stopBubble();
+    }
+    document.onclick = function () {
+        box.style.display = "none";
+    }
+</script>

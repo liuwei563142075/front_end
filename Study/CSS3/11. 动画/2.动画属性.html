@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+
+            /* 检索或设置对象所应用的动画名称 */
+        }
+
+        .box {
+            /* autoplay为指定的动画名称 */
+            animation-name: autoplay;
+            /* 检索或设置对象动画的持续时间 */
+            animation-duration: 5s;
+            /* 检索或设置对象动画的过渡类型 */
+            animation-timing-function: ease-in-out;
+            /* 检索或设置对象动画延迟的时间 */
+            animation-delay: 1s;
+            /* 检索或设置对象动画的循环次数 */
+            animation-iteration-count: infinite;
+            /* 检索或设置对象动画在循环中是否反向运动 */
+            animation-direction: alternate;
+            /* 检索或设置对象动画时间之外的状态 */
+            animation-fill-mode:none;
+            /*检索或设置对象动画的状态。w3c正考虑是否将该属性移除，因为动画的状态可以通过其它的方式实现，比如重设样式*/
+            /*animation-play-state:running;*/
+        }
+
+        /* 如果只有两部就完成，可以使用from-to */
+        @keyframes autoplay{
+            0% {
+                width: 20px;
+                height: 20px;
+            }
+            50% {
+                width: 20px;
+                height: 200px;
+                background-color: yellow;
+            }
+            70% {
+                width: 200px;
+                height: 200px;
+                background-color: green;
+            }
+            100% {
+                width: 200px;
+                height: 200px;
+                background-color: yellow;
+                opacity: 20%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

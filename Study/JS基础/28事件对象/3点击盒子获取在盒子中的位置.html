@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding: 0;}
+        #box {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            position: absolute;
+            top: 50px;
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
+<script>
+    // 在事件的函数里添加event参数，代表事件自身
+    // IE678不兼容event,所以要使用window.event
+    var box = document.getElementById("box");
+    box.onmousemove = function(event) {
+        var event = event || window.event;
+        var x = event.clientX - this.offsetLeft;
+        var y = event.clientY - this.offsetTop;
+        this.innerHTML = x + 'px ' + y +'px';
+    }
+</script>

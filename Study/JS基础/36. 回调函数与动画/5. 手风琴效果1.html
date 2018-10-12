@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {margin:0;padding: 0;}
+        ul {
+            list-style: none;
+        }
+        .hmc {
+            width: 1150px;
+            height: 500px;
+            margin: 50px auto;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        .hmc ul {
+            width: 200%;
+        }
+        .hmc ul li {
+            float: left;
+            width: 240px;
+            height: 500px;
+            margin-left: -1px;
+            margin-top: -1px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="hmc" id="hm">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    var color = ["pink","orange","#00cccc","#1c9b47","#9760b3"];
+    var hm = document.getElementById("hm");
+    var lis = hm.children[0].children;
+    for (var i=0;i<lis.length;i++ ){
+        lis[i].style.backgroundImage = "url(images/"+(i+1)+".jpg)";
+        lis[i].onmouseover = function () {
+            for(var j=0;j<lis.length;j++) {
+                if(parseInt(lis[j].style.width) != 100) {
+                    animate(lis[j],{width:100});
+                }
+            }
+            animate(this,{width:800});
+        }
+    }
+    /*hm.onmouseout = function () {
+        for(var j=0;j<lis.length;j++) {
+            if(parseInt(lis[j].style.width) != 240) {
+                animate(lis[j],{width:240});
+            }
+        }
+    }*/
+
+    function animate(obj,json,fn) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var flag = true;
+            var step = 0;
+            var current = 0;
+            for (var k in json) {
+                if(k == "opacity") {
+                    current = Math.round(parseInt(getStyle(obj,k)*100)) || 0;
+                }else {
+                    current = parseInt(getStyle(obj,k));
+                }
+
+                step = (json[k] - current) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+                if(k == "opacity") {
+                    if(k in obj.style) {  // 判断浏览器是否支持opacity
+                        obj.style.opacity = (current + step) / 100;
+                    }else {
+                        obj.style.filter = "alpha(opacity="+(current + step) * 10+")";
+                    }
+                }else if (k == "zIndex") {  /*  zIndex不需要缓动！要立马执行 */
+                    obj.style[k] = json[k];
+                }else {
+                    obj.style[k] = current + step + "px";
+                }
+
+                if(current != json[k]) {
+                    flag = false;
+                }
+            }
+            if(flag) {
+                clearInterval(obj.timer);
+                /*  回调函数只有在上级函数执行完才去执行，在这里即清除了定时器时，上级函数执行完 */
+                if(fn) {  /* 如果定义了fn，则执行fn  */
+                    fn();
+                }
+            }
+        },10);
+    }
+
+    function getStyle(obj,attr) {
+        if(obj.currentStyle) {
+            return obj.currentStyle[attr];
+        }else {
+            return window.getComputedStyle(obj,null)[attr];
+        }
+    }
+</script>

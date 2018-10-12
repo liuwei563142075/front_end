@@ -1,0 +1,4 @@
+body::before {
+    content: '这是CSS写入的内容';
+    font-size: 100px;
+}

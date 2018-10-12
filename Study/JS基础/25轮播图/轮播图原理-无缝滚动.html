@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>当最后两个图片暂满盒子时，立刻切换，从头开始</title>
+    <style>
+        *{margin:0;padding: 0;}
+        img {
+            vertical-align: top;
+        }
+        .slider {
+            margin: 50px 300px;
+            height: 200px;
+            width: 600px;
+            overflow: auto;
+            position: relative;
+        }
+        .slider ul {
+            list-style: none;
+            width: 350%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .slider ul li {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="slider">
+    <ul id="sliul">
+        <li><img src="images/01.jpg" alt=""></li>
+        <li><img src="images/02.jpg" alt=""></li>
+        <li><img src="images/03.jpg" alt=""></li>
+        <li><img src="images/04.jpg" alt=""></li>
+        <li><img src="images/01.jpg" alt=""></li>
+        <li><img src="images/02.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+        var ul = document.getElementById("sliul");
+        var num = 0;
+        var timer = null;
+        function lunbo() {
+            num--;
+            if(num>=-1200){
+                //console.log(parseInt(ul.style.left));
+                ul.style.left = num + "px";
+            }else {
+                num = 0;
+            }
+        }
+        timer = setInterval(lunbo,30);
+</script>

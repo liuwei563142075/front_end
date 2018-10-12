@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../bootstrap-3.3.7/css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+    <form action="">
+        <input id="input_file" type="file" multiple>
+        <input id="btn_show" type="button" value="展现">
+        <ul id="file_list">
+
+        </ul>
+    </form>
+</div>
+<script>
+    (function () {
+        var input_file = document.querySelector("#input_file");
+        var btn_show = document.querySelector("#btn_show");
+        var file_list = document.querySelector("#file_list");
+        btn_show.addEventListener("click", function () {
+            var files = input_file.files;
+            for (var i = 0; i < files.length; i++) {
+                var li = document.createElement("li");
+                li.innerHTML = files[i].name;
+                file_list.appendChild(li);
+            }
+        });
+    })();
+</script>
+</body>
+</html>

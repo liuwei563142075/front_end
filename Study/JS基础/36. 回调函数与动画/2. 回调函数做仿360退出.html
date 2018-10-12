@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            vertical-align: top;
+        }
+        .box {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+        .box span {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div>
+        <img src="images/t.jpg" alt="">
+    </div>
+    <div id="bom">
+        <img src="images/b.jpg" alt="">
+    </div>
+    <span id="close"></span>
+</div>
+</body>
+</html>
+<script>
+    var bom = document.getElementById("bom");
+    console.log("测试一下如果我css里没写样式，能否获取该盒子的实际样式");
+    console.log("答案是能的!!");
+    /* 这里你取不到实际的宽高是应为页面还没加载完！图片还没有，所以你取不到！！！ */
+    console.log(getStyle(bom,"height"));
+
+    var close = document.getElementById("close");
+    close.onclick = function () {
+        /*  当程序加载完后，你点击事件时，页面已经加载完，使用getStyle就可以获取到实际的宽高了 */
+        console.log(getStyle(bom,"width"));
+        console.log(window.getComputedStyle(bom,null)["width"]);
+
+        animate(bom,{height:0},function () {
+            animate(bom.parentNode,{width:0},function () {alert("完成！")});
+        });
+    }
+
+
+    function animate(obj,json,fn) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var flag = true;
+            var step = 0;
+            var current = 0;
+            for (var k in json) {
+                current = parseInt(getStyle(obj,k));
+                console.log(current);
+                step = (json[k] - current) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                obj.style[k] = current + step + "px";
+                if(current != json[k]) {
+                    flag = false;
+                }
+            }
+            if(flag) {
+                clearInterval(obj.timer);
+                /*  回调函数只有在上级函数执行完才去执行，在这里即清除了定时器时，上级函数执行完 */
+                if(fn) {  /* 如果定义了fn，则执行fn  */
+                    fn();
+                }
+            }
+        },30);
+    }
+
+    function getStyle(obj,attr) {
+        if(obj.currentStyle) {
+            return obj.currentStyle[attr];
+        }else {
+            return window.getComputedStyle(obj,null)[attr];
+        }
+    }
+</script>

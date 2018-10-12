@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。*/
+        .box {
+            width: 310px;
+            height: 438px;
+            border: 1px solid red;
+            margin: 100px auto;
+            perspective: 200px;
+            perspective-origin: 300px 38px;
+        }
+        .box img {
+            transform: rotateY(0);
+            transition: all 3s;
+        }
+        .box:hover img {
+            transform: rotateY(90deg);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="../images/pk1.png" alt="">
+</div>
+</body>
+</html>

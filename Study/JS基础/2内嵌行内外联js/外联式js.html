@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用函数，鼠标展示</title>
+    <style>
+        * {margin: 0;padding: 0}
+        #box {
+            margin: 100px;
+            padding-top: 360px;
+            width: 360px;
+            background: url("images/03big.jpg") no-repeat top center;
+            border: 1px solid #CCCCCC;
+            overflow: hidden;
+        }
+        #box ul {
+            border-top: 1px solid #CCCCCC;
+            list-style: none;
+        }
+        #box ul li {
+            float: left;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+
+    <!-- 外联式 + 行内式 -->
+    <script type="text/javascript" src="test.js"></script>
+    <script>
+        window.onload = function() {
+            for (var i=1;i<=5;i++) {
+                checkImg('im'+i,'url("images/0'+i+'big.jpg")');
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li><img src="images/01.jpg" alt="" id="im1"></li>
+        <li><img src="images/02.jpg" alt="" id="im2"></li>
+        <li><img src="images/03.jpg" alt="" id="im3"></li>
+        <li><img src="images/04.jpg" alt="" id="im4"></li>
+        <li><img src="images/05.jpg" alt="" id="im5"></li>
+    </ul>
+</div>
+</body>
+</html>

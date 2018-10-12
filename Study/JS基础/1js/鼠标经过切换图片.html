@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/1.jpg" alt="" id="box">
+    <script>
+        var box_1 = document.getElementById("box");
+
+        //是onmouseover不是mouseover
+        box_1.onmouseover = function() {
+            box_1.src = "../images/2.jpg";
+        }
+        //是onmouseout不是mouseleave
+        box_1.onmouseout = function() {
+            box_1.src = "../images/1.jpg";
+        }
+    </script>
+</body>
+</html>

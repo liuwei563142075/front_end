@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3转换</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            background-color: #F7F7F7;
+        }
+        img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #DDD;
+            background-color: #FFF;
+        }
+
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            transition: all 1s;
+
+        }
+
+        /* 旋转 */
+        section:nth-child(2) .box:hover {
+            transform: rotate(360deg);
+        }
+
+        /* 缩放 */
+        section:nth-child(3) .box:hover {
+            transform: scale(.2);
+        }
+
+        /* 移动 */
+        section:nth-child(4) .box:hover {
+            transform: translate(500px,0);
+        }
+
+        /* 倾斜 */
+        section:nth-child(5) .box:hover {
+            transform: skewY(-50deg);
+        }
+
+        /* 3d-x旋转 */
+        section:nth-child(6) .box:hover {
+            transform: rotatex(360deg);
+        }
+        /* 3d-y旋转 */
+        section:nth-child(7) .box:hover {
+            transform: rotatey(360deg);
+        }
+        /* 3d-z旋转 */
+        section:nth-child(8) .box img {
+            /* 设置旋转的中心点 */
+            transform-origin(80%,80%);
+        }
+        section:nth-child(8) .box:hover {
+            transform: rotatez(360deg);
+            transition: all 3s;
+        }
+
+        /* 竖直移动 */
+        section:nth-child(9) .box:hover {
+            transform: translate(0,100px);
+        }
+
+        /* 指定对象Z轴的平移常常搭配旋转 */
+        section:nth-child(10) .box:hover {
+            transform: rotateX(360deg)
+
+            translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>CSS3-转换</header>
+    <section class="rotate">
+        <header>旋转</header>
+        <div class="wrap-box">
+            <div class="box"></div>
+        </div>
+    </section>
+    <section class="scale">
+        <header>缩放</header>
+        <div class="wrap-box">
+            <div class="box"></div>
+        </div>
+    </section>
+    <section class="translate">
+        <header>水平移动</header>
+        <div class="wrap-box">
+            <div class="box"></div>
+        </div>
+    </section>
+    <section class="skew">
+        <header>倾斜</header>
+        <div class="wrap-box">
+            <div class="box"></div>
+        </div>
+    </section>
+    <section class="skew">
+        <header>3D旋转-绕x轴旋转</header>
+        <div class="wrap-box">
+            <div class="box"></div>
+        </div>
+    </section>
+    <section class="skew">
+        <header>3D旋转-绕y轴旋转</header>
+        <div class="wrap-box">
+            <div class="box"></div>
+        </div>
+    </section>
+    <section class="skew">
+        <header>3D旋转-绕z轴旋转</header>
+        <div class="wrap-box">
+            <div class="box">
+                <img src="../images/test.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="skew">
+        <header>指定对象Y轴（垂直方向）的平移</header>
+        <div class="wrap-box">
+            <div class="box">
+                <img src="../images/test.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="skew">
+        <header>指定对象Z轴的平移</header>
+        <div class="wrap-box">
+            <div class="box">
+                <img src="../images/test.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <script>
+        window.onload = function() {
+            var demo = document.getElementById("demo");
+
+            //不带参数，默认是指当前时间
+            var now = new Date();
+            console.log('now:');
+            console.log(now);
+
+            //两种表示未来时间的方式【推荐使用第一种】：第二种月份是：未来月-1
+            var startTime = new Date('2018/12/12 12:30:00');
+            var endTime = new Date(2018,11,12,12,30,0);
+            console.log('startTime:');
+            console.log(startTime);
+            console.log('endTime:');
+            console.log(endTime);
+        }
+    </script>
+</head>
+<body>
+<div id="demo">
+
+</div>
+</body>
+</html>

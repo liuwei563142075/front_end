@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送短信</title>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById("btn");
+            btn.onclick = function() {
+                this.disabled = "disabled";
+                var dt = 60;
+                btn.innerHTML = "剩余时间"+dt+"s";
+
+                //定时器函数返回一个该定时器编号（Number类型）
+                var int1 = setInterval(function changeText() {
+                    if(dt>1){
+                        dt--;
+                        btn.innerHTML = "剩余时间"+dt+"s";
+                    }else{
+                        clearInt();
+                    }
+                },1000);
+                function clearInt() {
+                    btn.innerHTML = "发送短信";
+                    btn.disabled = "";
+                    //清除定时器
+                    window.clearInterval(int1);
+                }
+            }
+        }
+    </script>
+</head>
+<body><!--剩余时间60s-->
+<input type="text"> <button id="btn">发送短信</button>
+</body>
+</html>

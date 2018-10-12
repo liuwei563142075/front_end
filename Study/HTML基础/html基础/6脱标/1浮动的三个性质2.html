@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用浮动来脱标</title>
+		<style type="text/css">
+			.b1{
+				float: left;
+				width: 100px;
+				height: 100px;
+				border: 1px solid red;
+				background-color: black;
+			}
+			.b2{
+				width: 300px;
+				height: 300px;
+				border: 1px solid red;
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<span class="b1"></span>
+		<div class="b2">
+			
+		</div>
+		<p>一个标签不需要转成块级元素也能设置宽高了</p>
+		<p>一旦一个元素浮动了，就能够并排了，并且能设置宽高了，无论它原来是块级元素还是行内元素</p>
+		<p>在浮动的眼里不区分块级元素和行内元素</p>
+	</body>
+</html>

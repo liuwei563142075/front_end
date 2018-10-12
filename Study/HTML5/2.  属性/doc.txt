@@ -1,0 +1,2 @@
+富文本编译器：直接在浏览器的console栏下输入：document.body.contentEditable=true回车，
+既可以直接在页面上编辑文本内容。

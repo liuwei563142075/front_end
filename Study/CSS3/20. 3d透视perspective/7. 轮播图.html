@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {margin:0;padding:0}
+        .box {
+            position: relative;
+        }
+        ul {
+            list-style: none;
+            width: 200px;
+            height:200px;
+            margin: 100px auto;
+            position: relative;
+            /*perspective: 300px;*/
+            transform-style: preserve-3d;
+            transition: all 2s;
+            transform: scalex(2.5) rotateX(0deg);
+        }
+        /*ul:hover{*/
+            /*transform: scalex(2.5) rotateX(360deg);*/
+        /*}*/
+        ul li {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 40px;
+            margin: auto;
+            position: absolute;
+        }
+        ul li:nth-child(1) {
+            background: url("../images/1.jpg") no-repeat;
+            transform: rotateX(0) translateZ(100px);
+        }
+        ul li:nth-child(2) {
+            background: url("../images/2.jpg") no-repeat;
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        ul li:nth-child(3) {
+            background: url("../images/3.jpg") no-repeat;
+            transform: rotateX(-180deg) translateZ(100px);
+        }
+        ul li:nth-child(4) {
+            background: url("../images/4.jpg") no-repeat;
+            transform: rotateX(-270deg) translateZ(100px);
+        }
+        span {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-top: 3px solid black;
+            border-right: 3px solid black;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+        }
+        span.prev {
+            transform: rotate(45deg);
+            margin-left: 150px;
+        }
+        span.next {
+            transform: rotate(-135deg);
+            margin-left: -150px;
+        }
+    </style>
+    <script src="../../jQuery/jquery/jquery-1.8.3.js"></script>
+    <script>
+        $(function() {
+            var num = 0
+            $('.prev').on('click',function() {
+                num++;
+                $('ul').css('transform',"scalex(2.5) rotateX("+num*90+"deg)")
+            });
+            $('.next').on('click',function() {
+                num--;
+                $('ul').css('transform',"scalex(2.5) rotateX("+num*90+"deg)")
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <span class="prev"></span>
+    <span class="next"></span>
+</div>
+</body>
+</html>

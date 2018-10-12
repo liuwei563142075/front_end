@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../bootstrap-3.3.7/css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+    <form action="">
+        <input id="input_file" class="hidden" type="file" multiple>
+        <input id="btn_select" class="btn btn-success" type="button" value="选择文件">
+        <ul id="file_list">
+        </ul>
+    </form>
+</div>
+<script>
+    (function () {
+        var input_file = document.querySelector("#input_file");
+        var btn_select = document.querySelector("#btn_select");
+        var file_list = document.querySelector("#file_list");
+        btn_select.addEventListener("click", function () {
+            /* 触发一次input_file的点击事件 */
+            input_file.click();
+
+            input_file.addEventListener("change",function () {
+                var files = input_file.files;
+                for (var i = 0; i < files.length; i++) {
+                    var li = document.createElement("li");
+                    li.innerHTML = files[i].name;
+                    file_list.appendChild(li);
+                }
+            })
+        });
+    })();
+</script>
+</body>
+</html>

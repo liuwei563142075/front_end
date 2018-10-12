@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body {
+            height: 1000px;
+        }
+        img {vertical-align: top}
+        .box {
+            width: 460px;
+            margin: 50px 100px;
+            position: relative;
+        }
+        .box .bbox {
+            width: 420px;
+            height: 420px;
+            margin:0 20px;
+            background: url("images/b1.jpg") no-repeat;
+            position: relative;
+        }
+        .bbox .sbbox {
+            display: none;
+            width: 220px;
+            height: 220px;
+            background-color: rgba(0,255,0,0.4);
+            cursor: move;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .box .bbox-enlarge {
+            display: none;
+            width:420px;
+            height: 420px;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 450px;
+        }
+        .box .bbox-enlarge img {
+            position: absolute;
+            top: 0;
+            left: 0px;
+        }
+        .sbox {
+            height: 70px;
+            padding-top: 20px;
+        }
+        .sbox ul {
+            list-style: none;
+            font-size: 0;
+            text-align: center;
+        }
+        .sbox ul li {
+            display: inline-block;
+            font-size: 0;
+            margin: 0 8px;
+        }
+        .sbox a {
+            display: block;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            position: relative;
+        }
+        .sbox img {
+            position: relative;
+        }
+        .tl { /* 图像不加top:-2,left:-2会有晃动 */
+            top:-2px;
+            left:-2px;
+        }
+        .whb {
+            width:56px !important;
+            height: 56px !important;
+            border: 2px solid black !important;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="bbox" id="bbox">
+        <div class="sbbox">
+
+        </div>
+    </div>
+    <div class="bbox-enlarge" id="lbox">
+        <img src="images/l1.jpg" alt="">
+    </div>
+    <div class="sbox" id="sbox">
+        <ul>
+            <li><a href="#"><img src="images/s1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/s2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/s3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/s4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/s5.jpg" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    as = $("sbox").getElementsByTagName("a");
+    for(var i=0;i<as.length;i++) {
+        as[i].index = i+1;
+        as[i].onmouseover = function() {
+            for(var j=0;j<as.length;j++) {
+                as[j].className = "";
+                as[j].children[0].className = "";
+            }
+            this.className = "whb";
+            this.children[0].className = "tl";
+            $("bbox").style.backgroundImage = "url('images/b"+this.index+".jpg')";
+        }
+    }
+
+    var leaderX = 0,leaderY=0;
+   $("bbox").onmouseover = function() {
+        this.children[0].style.display = "block";
+        $("lbox").style.display = "block";
+   }
+    $("bbox").onmouseout = function() {
+        this.children[0].style.display = "none";
+        $("lbox").style.display = "none";
+    }
+    $("bbox").onmousemove = function(event) {
+        var event = event || window.event;
+        console.log(event.clientX);
+        console.log(this.offsetParent.offsetLeft);
+        console.log(this.offsetLeft);
+        console.log(this.offsetWidth / 2);
+        leaderX = event.clientX - this.offsetParent.offsetLeft - this.offsetLeft - this.children[0].offsetWidth / 2;
+        leaderY = event.clientY - this.offsetParent.offsetTop - this.offsetTop - this.children[0].offsetHeight / 2;
+        leaderX = xy(leaderX);
+        leaderY = xy(leaderY);
+        leaderX = dy(leaderX);
+        leaderY = dy(leaderY);
+        this.children[0].style.left = leaderX + "px";
+        this.children[0].style.top =  leaderY + "px";
+        
+        $("lbox").children[0].style.left =  -leaderX*1.9 + "px";
+        $("lbox").children[0].style.top = -leaderY*1.9 + "px";
+   }
+   function xy(x) {
+       if(x <= 0)
+           x = 0;
+       return x;
+   }
+   function dy(x) {
+       if(x >= 200)
+           x = 200;
+       return x;
+   }
+</script>

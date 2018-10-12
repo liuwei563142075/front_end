@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3伸缩布局</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            background-color: #F7F7F7;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .wrapper > section {
+            min-height: 300px;
+            margin-bottom: 30px;
+            box-shadow: 1px 1px 4px #DDD;
+            background-color: #FFF;
+        }
+
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #EEE;
+        }
+
+        .wrapper .wrap-box {
+            padding: 20px;
+        }
+
+        .wrapper .flex-img {
+            width: 100%;
+        }
+        section ul {
+            height: 800px;
+            display: flex;
+        }
+        section ul li {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            text-align: center;
+            line-height: 200px;
+            background-color: pink;
+        }
+        /* 以上为默认样式 */
+
+        /* 不使用任何换行【默认是不换行】 */
+
+
+        /* wrap换行 */
+        section:nth-child(4) ul {
+            flex-wrap: wrap;
+        }
+
+        /* flex-start对换行后进行控制 */
+        section:nth-child(5) ul {
+            flex-wrap: wrap;
+            align-content:flex-start;
+        }
+
+        /* flex-end对换行后进行控制 */
+        section:nth-child(6) ul {
+            flex-wrap: wrap;
+            align-content:flex-end;
+        }
+
+        /* center对换行后进行控制 */
+        section:nth-child(7) ul {
+            flex-wrap: wrap;
+            align-content:center;
+        }
+
+        /* space-between对换行后进行控制 */
+        section:nth-child(8) ul {
+            flex-wrap: wrap;
+            align-content:space-between;
+        }
+
+        /* space-around对换行后进行控制 */
+        section:nth-child(9) ul {
+            flex-wrap: wrap;
+            align-content:space-around;
+        }
+
+        /* stretch对换行后进行控制 */
+        section:nth-child(10) ul {
+            flex-wrap: wrap;
+            align-content:stretch;
+        }
+        section:nth-child(10) ul li {
+            height: auto;  /* 设置li */
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>要明白主轴和侧轴的概念，都具有方向性</header>
+    <section>
+        <header>属性align-content【侧轴】堆栈排列，可对【使用flex-wrap:wrap后产生的换行】进行控制，属性值：flex-start,flex-end,center,space-between,space-around,streth[不给宽高才起作用]</header>
+        <div class="wrap-box">
+            <img class="flex-img" src="./images/flex.png" alt="">
+        </div>
+    </section>
+    <section>
+        <header>默认不换行 no-wrap</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>换行 wrap</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>flex-start:各行向弹性盒容器的起始位置堆叠。弹性盒容器中第一行的侧轴起始边界紧靠住该弹性盒容器的侧轴起始边界，之后的每一行都紧靠住前面一行。</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>flex-end:各行向弹性盒容器的结束位置堆叠。弹性盒容器中最后一行的侧轴起结束界紧靠住该弹性盒容器的侧轴结束边界，之后的每一行都紧靠住前面一行。</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>center:各行向弹性盒容器的中间位置堆叠。各行两两紧靠住同时在弹性盒容器中居中对齐，保持弹性盒容器的侧轴起始内容边界和第一行之间的距离与该容器的侧轴结束内容边界与第最后一行之间的距离相等。（如果剩下的空间是负数，则各行会向两个方向溢出的相等距离。）</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>space-between:各行在弹性盒容器中平均分布。如果剩余的空间是负数或弹性盒容器中只有一行，该值等效于'flex-start'。在其它情况下，第一行的侧轴起始边界紧靠住弹性盒容器的侧轴起始内容边界，最后一行的侧轴结束边界紧靠住弹性盒容器的侧轴结束内容边界，剩余的行则按一定方式在弹性盒窗口中排列，以保持两两之间的空间相等</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>space-around:各行在弹性盒容器中平均分布，两端保留子元素与子元素之间间距大小的一半。如果剩余的空间是负数或弹性盒容器中只有一行，该值等效于'center'。在其它情况下，各行会按一定方式在弹性盒容器中排列，以保持两两之间的空间相等，同时第一行前面及最后一行后面的空间是其他空间的一半。</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <header>stretch:各行将会伸展以占用剩余的空间。如果剩余的空间是负数，该值等效于'flex-start'。在其它情况下，剩余空间被所有行平分，以扩大它们的侧轴尺寸。</header>
+        <div class="wrap-box">
+            <p></p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+        </div>
+    </section>
+</div>
+</body>
+</html>

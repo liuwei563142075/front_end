@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn200">btn200</button>
+<div id="box"></div>
+</body>
+</html>
+<script>
+    var btn200 = document.getElementById("btn200");
+    var box = document.getElementById("box");
+
+    btn200.onclick = function () {
+        animate(box,{width:400,height:50,top:80,left:5});
+    }
+
+    function animate(obj,json) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var flag = true;
+            var step = 0;
+            var current = 0;
+            for (var k in json) {
+                current = parseInt(getStyle(obj,k));
+                step = (json[k] - current) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                obj.style[k] = current + step + "px";
+                if(current != json[k]) {
+                    flag = false;
+                }
+            }
+            if(flag) {
+                clearInterval(obj.timer);
+                console.log("清除了定时器！")
+            }
+        },30);
+    }
+
+    function getStyle(obj,attr) {
+        if(obj.currentStyle) {
+            return obj.currentStyle[attr];
+        }else {
+            return window.getComputedStyle(obj,null)[attr];
+        }
+    }
+</script>

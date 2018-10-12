@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>没选中，通过继承性影响的权重就是0，还比不过权重最低但选中的</title>
+		<style type="text/css">
+			
+			.box1 #box2 .model .u li{
+				color: red;
+			}
+			
+			p{
+				color: blueviolet;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div id="box2">
+				<div class="model">
+					<ul class="u">
+						<li><p>你好</p></li>
+						<li><p>你好呀</p></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

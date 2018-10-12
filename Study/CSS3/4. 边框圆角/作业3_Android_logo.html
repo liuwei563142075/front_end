@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安卓logo</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid blue;
+        }
+        .android {
+            width: 336px;
+            margin: 38px auto;
+        }
+        .android .head {
+            width: 220px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: #A4CA39;
+            border-radius: 110px 110px 0 0/100px 100px 0 0;
+            position: relative;
+        }
+        .head::before {
+            content: "";
+            width: 5px;
+            height: 40px;
+            background-color: #A4CA39;
+            border-radius: 5px 5px;
+            transform: rotate(30deg);
+            position: absolute;
+            top: -27px;
+            left: 160px;
+        }
+        .head::after {
+            content: "";
+            width: 5px;
+            height: 40px;
+            background-color: #A4CA39;
+            border-radius: 5px 5px;
+            transform: rotate(-30deg);
+            position: absolute;
+            top: -27px;
+            left: 52px;
+        }
+        .eye::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border: 12px solid #FFFFFF;
+            border-radius: 50%;
+            position: absolute;
+            top: 40px;
+            left: 47px;
+        }
+        .eye::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border: 12px solid #FFFFFF;
+            border-radius: 50%;
+            position: absolute;
+            top: 40px;
+            left: 150px;
+        }
+        .android .a-body {
+            width: 220px;
+            height: 170px;
+            margin: 10px auto 0;
+            background-color: #A4CA39;
+            border-radius: 0px 0px 25px 25px;
+            position: relative;
+        }
+        .a-body::before {
+            content: "";
+            width: 50px;
+            height: 92px;
+            background-color: #A4CA39;
+            border-radius: 43px;
+            position: absolute;
+            top: 145px;
+            left: 40px;
+        }
+        .a-body::after {
+            content: "";
+            width: 50px;
+            height: 92px;
+            background-color: #A4CA39;
+            border-radius: 43px;
+            position: absolute;
+            top: 145px;
+            right: 40px;
+        }
+        .arm::before {
+            content: "";
+            width: 50px;
+            height: 150px;
+            background-color: #A4CA39;
+            border-radius: 43px;
+            position: absolute;
+            top: 0px;
+            left: -60px;
+        }
+        .arm::after {
+            content: "";
+            width: 50px;
+            height: 150px;
+            background-color: #A4CA39;
+            border-radius: 43px;
+            position: absolute;
+            top: 0px;
+            right: -60px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="android">
+        <div class="head">
+            <div class="eye"></div>
+        </div>
+        <div class="a-body">
+            <div class="arm"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

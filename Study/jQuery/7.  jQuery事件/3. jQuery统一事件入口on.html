@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(function () {
+            console.log("什么是事件委托？")
+            console.log("事件委托可以提高事件绑定的效率：只需要给" +
+                "父元素绑定某个事件，其参数内的指定的元素都将有该事件");
+
+            // 未使用委托，给li绑定click事件
+            /*$("li").bind("click",function () {
+                alert($(this).html());
+            });*/
+
+            // 使用事件委托==内部使用事件冒泡原理
+            /*$("ul").delegate("li","click",function () {
+                alert($(this).html());
+            })*/
+
+            // 更高效的方式on  注意对比delegate参数的差别
+            $("ul").on("click","li",function () {
+                alert($(this).html());
+            })
+
+            /*$("ul").on("click","li:eq(1)",function () { // 可以传递筛选
+                alert($(this).html());
+            })*/
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>我是li1</li>
+    <li>我是li2</li>
+    <li>我是li3</li>
+    <li>我是li4</li>
+    <li>我是li5</li>
+    <li>我是li6</li>
+    <li>我是li7</li>
+    <li>我是li8</li>
+    <li>我是li9</li>
+    <li>我是li10</li>
+</ul>
+</body>
+</html>

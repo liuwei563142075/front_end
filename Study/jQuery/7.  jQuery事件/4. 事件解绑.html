@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(function () {
+            console.log("bind-unbind," +
+                "on=off," +
+                "delegate-undelegate");
+
+            $("ul").on("click","li",function () {
+                alert($(this).html());
+            })
+
+            // 事件解绑
+            $("ul").off("click");
+
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>我是li1</li>
+    <li>我是li2</li>
+    <li>我是li3</li>
+    <li>我是li4</li>
+    <li>我是li5</li>
+    <li>我是li6</li>
+    <li>我是li7</li>
+    <li>我是li8</li>
+    <li>我是li9</li>
+    <li>我是li10</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .heart {
+            width: 0;
+            height: 0;
+            border-width: 200px;
+            margin: 300px auto;
+            border-style: solid;
+            border-color: orangered transparent transparent transparent;
+            position: relative;
+            animation: center 1s ease-in-out infinite alternate;
+        }
+        .heart::before {
+            content: '';
+            width: 250px;
+            height: 250px;
+            background-color: orangered;
+            border-radius: 50%;
+            position: absolute;
+            top: -400px;
+            left: -225px;
+            animation: left 1s ease-in-out infinite alternate;
+        }
+        .heart::after {
+            content: '';
+            width: 250px;
+            height: 250px;
+            background-color: orangered;
+            border-radius: 50%;
+            position: absolute;
+            top: -400px;
+            left: -25px;
+            animation: right 1s ease-in-out infinite alternate;
+        }
+        
+        @keyframes left {
+           0% {
+               width: 250px;
+               height: 250px;
+           }
+            100% {
+                width: 280px;
+                height: 280px;
+            }
+        }
+        @keyframes right {
+            0% {
+                width: 250px;
+                height: 250px;
+            }
+            100% {
+                width: 280px;
+                height: 280px;
+            }
+        }
+        @keyframes center {
+            0% {
+                border-width: 200px;
+            }
+            100% {
+                border-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="heart"></div>
+</body>
+</html>

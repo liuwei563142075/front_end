@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            display: none;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<a href="javascript:;" id="a-1">出现</a>
+<a href="javascript:void(0);" id="a-2">消失</a>
+<div id="box"></div>
+<script>
+    var box_1 = document.getElementById("box");
+    var a1 = document.getElementById("a-1");
+    var a2 = document.getElementById("a-2");
+    a1.onclick = function() {
+        box_1.style.display="block";
+    }
+    a2.onclick = function() {
+        box_1.style.display="none";
+    }
+</script>
+</body>
+</html>

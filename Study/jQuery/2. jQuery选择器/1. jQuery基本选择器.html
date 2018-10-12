@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 1.jQuery的id选择器
+            //$("#box1").css("background-color","red");
+
+            // 2.jQuery类名选择器
+            //$(".u").css("font-size","20px");  // font-size具有继承性
+
+            // 3.jQuery标签选择器
+            //$("div").css("background-color","pink");
+
+            // 4.通配符选择器 （包括html,body等所有）【少用通配符选择器，通配符选择器一般搭配其他选择器一起使用】
+            //$("*").css("background-color","pink");
+
+            // 5.并集选择器
+            //$(".uu,.u2").css("background-color","pink");
+
+        });
+    </script>
+</head>
+<body>
+<div id="box1">
+    <ul class="u">
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+        <li>我是li5</li>
+        <li class="uu">我是li6</li>
+        <li>我是li7</li>
+        <li>我是li8</li>
+        <li>我是li9</li>
+        <li>我是li10</li>
+    </ul>
+</div>
+<div id="box2">
+    <ul>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li class="u">我是li4</li>
+        <li>我是li5</li>
+        <li>我是li6</li>
+        <li>我是li7</li>
+        <li class="u">我是li8</li>
+        <li>我是li9</li>
+        <li class="u2">我是li10</li>
+    </ul>
+</div>
+</body>
+</html>

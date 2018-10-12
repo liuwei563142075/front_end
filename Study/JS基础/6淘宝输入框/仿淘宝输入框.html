@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿淘宝输入框,淘宝是用一个label定位到search里的</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .search {
+            margin: 100px;
+            position: relative;
+        }
+        .search input {
+            width: 200px;
+            height: 25px;
+        }
+        #lab {
+            display: block;
+            color: #ccc;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            cursor: text;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            function $(id) {
+                return document.getElementById(id);
+            }
+
+            /*
+            oninput事件大部分浏览器支持，ie678不支持，
+            ie678的该事件是onpropertychange[案例：6淘宝输入框/仿淘宝输入框]
+            都表示检测用户表单输入内容.
+            下面使用js连写
+            */
+            $("txt").oninput = $("txt").onpropertychange = function() {
+                if($("txt").value != ""){
+                    $("lab").style.display="none";
+                }else{
+                    $("lab").style.display="block";
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="search">
+        <input type="text" id="txt"/>
+        <label for="txt" id="lab">必败的国际大牌</label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 20px;
+            position: absolute;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="b" style="width: 100px"></div>
+</body>
+</html>
+<script>
+    var b = document.getElementById("b");
+    console.log("方式1：使用点余式【只能获取行内式】：");
+    document.write("点余式【行内式】："+b.style.width);
+
+    console.log("方式2：使用[] 【只能获取行内式】：");
+    document.write("使用[] 【行内式】："+b.style["width"]);
+</script>

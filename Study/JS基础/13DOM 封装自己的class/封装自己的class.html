@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    window.onload = function() {
+        function getElementByClass(classname,id) {
+            if(id != null) {//存在id
+                if(document.getElementsByClassName){//兼容getElementsByClassName
+                    return document.getElementById(id).getElementsByClassName(classname);
+                }
+
+                //不兼容getElementsByClassName
+                var arr=[];
+                var allNodes = document.getElementById(id).getElementsByTagName("*");
+                for (var i=0;i<allNodes.length;i++){
+                    var ename = allNodes[i].className;
+                    var sarr = ename.split(" ");
+                    for (var j=0;j<sarr.length;j++){
+                        if(sarr[j] == classname){
+                            arr.push(allNodes[i]);
+                        }
+                    }
+                }
+                return arr;
+            }else{//不存在id
+                if(document.getElementsByClassName){
+                    return document.getElementsByClassName(classname);
+                }
+                var arr=[];
+                //获取文档所有节点
+                var allNodes = document.getElementsByTagName("*");
+                for (var i=0;i<allNodes.length;i++){
+                    var ename = allNodes[i].className;
+                    var sarr = ename.split(" ");
+                    for (var j=0;j<sarr.length;j++){
+                        if(sarr[j] == classname){
+                            arr.push(allNodes[i]);
+                        }
+                    }
+                }
+                return arr;
+            }
+        }
+
+        console.log(getElementByClass("o","b").length);
+    }
+</script>
+<body>
+<div id="b">
+    <ul>
+        <li class="o">
+            <span></span>
+        </li>
+        <li>
+            <span class="o"></span>
+        </li>
+        <li>
+            <span></span>
+        </li>
+        <li>
+            <span class="o"></span>
+        </li>
+        <li>
+            <span></span>
+        </li>
+        <li>
+            <span></span>
+        </li>
+        <li class="o">
+            <span></span>
+        </li>
+        <li>
+            <span class="o"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

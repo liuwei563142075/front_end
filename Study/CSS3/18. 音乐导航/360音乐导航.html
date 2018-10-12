@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        ul{list-style:none;}
+        nav{
+            width: 800px;
+            height:35px;
+            border:1px solid #ccc;
+            margin: 100px auto;
+        }
+        nav li{
+            width: 99px;
+            height:35px;
+            border-right:1px dashed #ccc;
+            float:left;
+            text-align: center;
+            line-height: 35px;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        nav li ins{
+            position: absolute;
+            top:35px;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color: pink;
+            z-index: -1;
+        }
+        nav li:last-child {
+            border-right:0;
+        }
+    </style>
+    <script src="jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(function() {
+            // 隐式遍历
+            $('nav li').append('<ins></ins>');
+            var color = new Array("red","blue","green","yellow","pink","deeppink","orange","purple");
+            $('nav li ins').each(function(index,value) {
+                $(this).css('background-color',color[index]);
+            });
+            $('nav li').on('mouseenter',function () {
+                $(this).children().stop().animate({top:0},200);
+                $('audio').get($(this).index()).load();
+                $('audio').get($(this).index()).play();
+            });
+            $('nav li').on('mouseleave',function () {
+                $(this).children().stop().animate({top:35},200);
+            });
+            $(window).keydown(function (event) {
+                //49-56
+                $('nav li').eq(event.keyCode-49).trigger('mouseenter');
+                setTimeout(function () {
+                    $('nav li').eq(event.keyCode-49).trigger('mouseleave');
+                },300);
+            });
+        });
+    </script>
+</head>
+<body>
+<nav>
+    <ul>
+        <li>邓紫棋</li>
+        <li>邓紫棋</li>
+        <li>邓紫棋</li>
+        <li>邓紫棋</li>
+        <li>邓紫棋</li>
+        <li>邓紫棋</li>
+        <li>邓紫棋</li>
+        <li>邓紫棋</li>
+    </ul>
+</nav>
+<audio src="music/1.ogg"></audio>
+<audio src="music/2.ogg"></audio>
+<audio src="music/3.ogg"></audio>
+<audio src="music/4.ogg"></audio>
+<audio src="music/5.ogg"></audio>
+<audio src="music/6.ogg"></audio>
+<audio src="music/7.ogg"></audio>
+<audio src="music/8.ogg"></audio>
+</body>
+</html>

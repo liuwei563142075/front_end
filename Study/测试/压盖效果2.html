@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>未压盖效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box1 {
+            margin: 100px;
+            width: 300px;
+            height: 300px;
+        }
+        ul {
+            width: 304px;
+            height: 303px;
+            list-style: none;
+        }
+        li.box2 {
+            float: left;
+            width: 100px;
+            height: 150px;
+            margin-left: -1px;
+            margin-top: -1px;
+            border: 1px solid orchid;
+            position: relative;  /* 加上相对定位，写在后面的盒子的左边框会压盖住写在前面盒子的右边框，不写也行 */
+        }
+        .box2:hover {
+            z-index: 10;
+            border: 1px solid orangered;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <ul>
+            <li class="box2"></li>
+            <li class="box2"></li>
+            <li class="box2"></li>
+            <li class="box2"></li>
+            <li class="box2"></li>
+            <li class="box2"></li>
+        </ul>
+    </div>
+</body>
+</html>

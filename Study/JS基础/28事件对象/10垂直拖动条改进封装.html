@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直拖动条==有bug:来回上下多次，发现拉倒底部文字不能完全显示</title>
+    <style>
+        .box {
+            width: 280px;
+            height: 500px;
+            background-color: pink;
+            padding-right: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        .box .content {
+            padding-right: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .box .bar {
+            width: 20px;
+            height: 100%;
+            background-color: #ccc;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .bar .mask {
+            width: 100%;
+            height: 40px;
+            border-radius: 10px 10px 10px 10px;
+            background-color: #a83c3a;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="content">
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+    </div>
+    <div class="bar">
+        <div class="mask"></div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var box = document.getElementById("box");
+    var content = box.children[0];
+    var mask = box.children[1].children[0];
+
+    /**
+     * 垂直拖动
+     * @target 受bar控制而移动的目标
+     * @bar 滑动的bar
+     */
+    function veDrag(target,bar) {
+
+        // 算出滚动条的高度，内容越多滚动条越短 h/bh = bh/ch;
+        var barHeight = target.offsetParent.offsetHeight/target.offsetHeight*target.offsetParent.offsetHeight;
+        bar.style.height = barHeight + "px";
+
+        bar.onmousedown = function(event) {
+            var event = event || window.event;
+            // 按在bar身上某处的点距离该bar顶端距离 + box盒子距离浏览器距离
+            var val = event.clientY - this.offsetTop;
+            var that = this;
+            document.onmousemove = function() {
+                var event = event || window.event;
+                // bar移动的距离
+                var barY = event.clientY - val;
+                //目标盒子移动的距离 （boxH-barH）*比例因子 = contentH-BoxH   【比例因子：bar走一步的像素相当于content走多少像素】
+                var targetTop = (target.offsetHeight-target.offsetParent.offsetHeight)/(target.offsetParent.offsetHeight-that.offsetHeight)*barY;
+
+                if(barY < 0 || targetTop < 0){
+                    barY = 0;
+                    target.style.top = 0; //去除标题中所说的bug
+                }else if(barY > target.offsetParent.offsetHeight-that.offsetHeight || targetTop > (target.offsetHeight-target.offsetParent.offsetHeight)/(target.offsetParent.offsetHeight-that.offsetHeight)*barY) {
+                    barY = target.offsetParent.offsetHeight-that.offsetHeight;
+                    //去除标题中所说的bug
+                    target.style.top = -(target.offsetHeight-target.offsetParent.offsetHeight)/(target.offsetParent.offsetHeight-that.offsetHeight)*barY + "px";
+                }else {
+                    target.style.top = -targetTop + "px";
+                }
+                that.style.top = barY + "px";
+
+                // 清除选择拖动，不写这句话，会出现如果滑的快，弹起后依旧跟着鼠标走
+                window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();   // 防止拖动滑块的时候， 选中文字
+            }
+
+            document.onmouseup = function() {
+                document.onmousemove = null;
+            }
+        }
+    }
+
+    veDrag(content,mask);
+
+</script>

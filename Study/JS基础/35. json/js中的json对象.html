@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json在js中是一个对象，类似与数组，都是对象</title>
+</head>
+<body>
+<p>json中只允许key值为英文【可以是字符串或非字符串】，不允许键值为汉字或数值</p>
+<p>json中只允许值为数值或字符串</p>
+</body>
+</html>
+<script>
+    var json1 = {name:'毛毛',age:25,'性别':'男','like':'apple'};
+    console.log(json1);
+    console.log(json1.name);
+    console.log(json1[name]); /*  undefined */
+    console.log(json1['name']);
+    console.log(json1.like);
+    console.log(json1['like']);
+    // json中只允许key值为英文【可以是字符串或非字符串】，不允许键值为汉字或数值
+    // json中只允许值为数值或字符串
+
+</script>

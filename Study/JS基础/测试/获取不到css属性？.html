@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+
+</div>
+</body>
+</html>
+<script>
+    // 发现一个问题就是：初始时你是没法获取元素样式中写的的css属性值的。
+    // 你必须先设置值，才能获取
+    var box = document.getElementById("box");
+    console.log(box.style.backgroundColor);
+    box.style.backgroundColor="yellow";
+    console.log(box.style.backgroundColor);
+
+    // 新知识！可以通过offset获取自身css属性
+    console.log(box.offsetWidth);
+    console.log(box.offsetHeight);
+    console.log(box.offsetLeft);
+    console.log(box.offsetTop);
+
+</script>

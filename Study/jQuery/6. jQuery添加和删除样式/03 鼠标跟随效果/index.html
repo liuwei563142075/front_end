@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            /*$(document).on("mousemove", function (e) {
+                /!*$("img").css({
+                    "position": "absolute",
+                    "top": e.pageY,
+                    "left": e.pageX
+                });*!/
+
+                $("img").offset({
+                    "top": e.pageY,
+                    "left": e.pageX
+                });
+            });*/
+
+            $(document).keydown(function (e) {
+                console.log(e);
+                var data = $("div").data();
+                data.a = "";
+
+
+            });;
+        });
+    </script>
+</head>
+<body>
+<img src="img/ts.gif" alt=""/>
+</body>
+</html>

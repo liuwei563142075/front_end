@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: pink;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="b"></div>
+</body>
+</html>
+<script>
+    /* 既能获取行内式也能获取内联、外联  【获取的是盒子实际内容的宽高！！！详情见（回调函数做仿360）】*/
+    function getStyle(obj,attr) {
+        if(obj.currentStyle) {
+            return obj.currentStyle[attr];
+        }else {
+            return window.getComputedStyle(obj,null)[attr];
+        }
+    }
+
+    var b = document.getElementById("b");
+    console.log(getStyle(b,"height"));
+</script>

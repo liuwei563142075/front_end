@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function scroll() {
+        if(window.pageXOffset != null) {    // 非IE 678
+            return {
+                left:window.pageXOffset,
+                top:window.pageYOffset
+            }
+        }
+        return {
+            left:document.documentElement.scrollLeft,
+            top:document.documentElement.scrollTop
+        }
+    }
+
+    window.onscroll = function() {
+        document.title = scroll().top;
+    }
+</script>

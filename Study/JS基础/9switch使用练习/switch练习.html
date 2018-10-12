@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch练习</title>
+    <script>
+        window.onload = function() {
+            var sel = document.getElementById("sel");
+            sel.onchange = function(){
+                switch (this.value) {
+                    case "1":
+                        alert("苹果5块一斤");
+                        break;
+                    case "2":
+                        alert("香蕉4.8块一斤");
+                        break;
+                    case "3":
+                        alert("梨2块一斤");
+                        break;
+                    case "4":
+                        alert("芒果7块一斤");
+                        break;
+                    case "5":
+                        alert("西瓜1.8块一斤");
+                        break;
+                    default:
+                        alert("未进货");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<select name="sel" id="sel">
+    <option value="1">苹果</option>
+    <option value="2">香蕉</option>
+    <option value="3">梨</option>
+    <option value="4">芒果</option>
+    <option value="5">西瓜</option>
+</select>
+</body>
+</html>

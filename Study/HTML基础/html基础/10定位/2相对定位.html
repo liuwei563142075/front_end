@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="不脱标，老家留坑，形影分离" />
+		<title>不脱标，老家留坑，形影分离</title>
+		<style type="text/css">
+			.box1{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+			}
+			.box2{
+				width: 100px;
+				height: 100px;
+				background-color: gray;
+/*这个盒子的本体还在标准流中，位置任然在老家，浏览器渲染的灰色盒子只是一个影子*/
+				position: relative;
+				top:100px;
+				/*影子会覆盖标准流里的东西*/
+				left: 50px;
+			}
+			.box3{
+				width: 100px;
+				height: 100px;
+				background-color: chocolate;
+				/*如果两个人都是影子，后写的影子会覆盖之前的*/
+				/*position: relative;
+				top:0px;
+				left: 0px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<p>相对定位的作用：由于相对定位在老家留坑，所以一般不用于“压盖”效果</p>
+		<p>用途1：微调元素位置</p>
+		<p>用途2：做绝对定位定位的参考，子绝父相！</p>
+	</body>
+</html>

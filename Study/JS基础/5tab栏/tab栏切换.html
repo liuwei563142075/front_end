@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab栏目切换</title>
+    <style>
+        div{
+            display: none;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .current {
+            background-color: pink;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var btns = document.getElementsByTagName("button");
+            var divs = document.getElementsByTagName("div");
+            for (var i=0;i<btns.length;i++) {
+                btns[i].index = i;
+                btns[i].onclick = function () {
+                    /*tab栏切换*/
+                    for(var m=0;m<btns.length;m++){
+                        btns[m].className="";
+                    }
+                    this.className="current";
+
+                    /*tab栏内容切换*/
+                    //方法1
+                    /*for(var j=0;j<divs.length;j++){
+                        if(j == this.index){
+                            divs[j].style.display="block";
+                        }else{
+                            divs[j].style.display="none";
+                        }
+                    }*/
+                    //方法2
+                    for(var j=0;j<divs.length;j++){
+                        divs[j].style.display="none";
+                    }
+                    divs[this.index].style.display="block";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button class="current">tab1</button>
+<button>tab2</button>
+<button>tab3</button>
+<div style="display: block">1</div>
+<div>2</div>
+<div>3</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+1. 当你尝试想改进度条的样式时，F12会发现直接改progress的样式，没反应。这里只有使用谷歌，按F12后close
+旁边的三个竖点-settings-Elemets下勾选Show user agent shadow DOM，这样隐藏的dom就会展现，但是你会发现
+鼠标移动上去并不会有什么反应，这时候将progress的样式中添加-webkit-appearance: none;【即覆盖
+默认的样式-webkit-appearance: progress-bar;】，这样就可以了，滑到某个元素某个元素就会高亮了。看到
+#shadow-root(user-agent)下面的元素带有pseudo----伪对象，结合进度条看。

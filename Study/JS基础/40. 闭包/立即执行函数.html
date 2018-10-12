@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>立即执行函数语法：function() {} ()，条件是该函数必须return一个函数体</p>
+<p>立即执行函数语法：function() {} (arg)，其return的函数需要的参数</p>
+</body>
+</html>
+<script>
+    function outFun1(a) {
+        return function inFun1(b) {
+            alert(a+b);
+        }
+    }
+
+    var demo1 = outFun1(3)(1);
+
+    var demo2 = function outFun2() {
+        return function inFun2(a) {
+            alert(a);
+        }
+    }
+    console.log(demo2());
+    console.log(demo2()(5));
+
+    /*  外层函数无法传递参数??
+   var demo2 = function outFun2(a) {
+       return function inFun2(b) {
+           alert(a+b);
+       }
+   }(4);*/
+
+
+    var demo3 = function outFun3() {
+        return function inFun3(a) {
+            alert(a);
+        }
+    }()(6);
+
+
+    var demo4 = function outFun4(a) {
+        return function inFun4(b) {
+            alert(a+b);
+        }
+    }(4)(3);
+</script>

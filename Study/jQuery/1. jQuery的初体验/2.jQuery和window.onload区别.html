@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        // Js的window.onload是等所有的内容，以及我们的外部图片之类的文件都加载完之后才回去执行
+        /*window.onload = function () {
+            console.log(document.getElementById("dv").clientHeight);
+            console.log(document.getElementById("img").clientHeight);
+        }*/
+
+        // jQuery是等到所有的标签都加载完之后，就回去执行
+        $(function () {
+            // 这里获取不到图片的宽度
+            console.log($("#dv img").width());
+        })
+    </script>
+</head>
+<body>
+<p>jQuery和js入口函数的执行时机</p>
+<div id="dv">
+    <img src="images/eg_cute.gif" alt="" id="img">
+</div>
+</body>
+</html>

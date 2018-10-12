@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 怎么理解这个原型？我理解这个原型就是java 中的class类体
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Person是个一个类，prototype类似与java中的类体{ }   固定写法和java及其相似
+    // 更趋近于java ,趋近于面向对象
+    Person.prototype.getAge = function () { // js中没有继承
+        return this.age;
+    }
+
+    // 相当于java中的
+   /* class Person {
+        Person(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        public String getAge() {
+            return this.name;
+        }
+    }*/
+</script>

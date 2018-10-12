@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历json</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var json = {width:300,height:700,'name':'maomao'}
+    for (var k in json) {
+        //console.log(typeof(k));  /*  都是string */
+        console.log(k);
+        //console.log(json.k);  /*  错误用法 undefined */
+        console.log(typeof(json[k]));
+        console.log(json[k]);
+    }
+
+    /*for (var k,v in json) {    不支持这种用法！！！
+
+    } */
+</script>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>星座运势https://www.xzw.com/astro/</title>
+    <style>
+        *{margin: 0;padding: 0}
+        ul{
+            list-style: none;
+        }
+        .box {
+            margin: 100px;
+            width: 284px;
+            height: 305px;
+            background-color: pink;
+        }
+        .today {
+            height: 45px;
+            background: url(xz_skin_1.gif) no-repeat 0 -56px;
+        }
+        .starpot {
+            height: 82px;
+            padding: 0 14px;
+        }
+        .starpot li{
+            float: left;
+            width: 36px;
+            height: 36px;
+            margin: 5px 8px 0 0;
+            background: url("xz_skin_1.gif") no-repeat;
+            cursor: pointer;
+        }
+        .top {
+            overflow: hidden;
+        }
+        .starpot li.last{
+            margin-right: 0;
+        }
+        .star-content {
+            width: 275px;
+            height: 163px;
+            background-color: #FFF9FC;
+            margin: 5px auto;
+        }
+        .star-content .starname {
+            display: block;
+            float: left;
+            width: 45px;
+            height: 35px;
+            font: 700 16px/35px "宋体";
+            color: #D74283;
+            margin: 0 0 0 10px;
+        }
+        .star-content .star {
+            display: block;
+            float: left;
+            width: 78px;
+            height: 13px;
+            background: url("icon_star.gif") repeat-x 0 -2px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .star-content .starheight {
+            width: 100%;
+            height: 13px;
+            background: url("icon_star.gif") repeat-x 0 -18px;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        .star-content .foot {
+            width: 255px;
+            font: 13px/29px "微软雅黑";
+            color: #666666;
+            margin: 0 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var lis = document.getElementById("stap").getElementsByTagName("li");
+            var names = document.getElementById("star-name").getElementsByTagName("span");
+            var conts = document.getElementById("fot");
+            var star_height = document.getElementById("star-height");
+
+            var txtArr = ["今天与客户多沟通说说好话，谈判则会顺顺利利，能谈成好的合作案。人际关系好，会适合参加一些活动，或是执行新的方案。可以多跟同事们...更多详情","心里的许多不开心、烦恼事都慢慢消散，压力自然减少。手上的工作做好了可以做做新的规划，自己的份内事做得不错。晚上可以好好理清楚头...更多详情","今日职场上会有较多的阻碍，受到同事领导的一些束缚，但切忌冲动，也别抱怨太多，少管闲事，不要给自己惹麻烦上身，低调做人做事最安全...更多详情","今天动力十足，有很好的工作态度，好能力能让你得到大家的认可赏识。但职场小人比较多，某些人会心生嫉妒而给你惹麻烦，闲言闲语左耳听...更多详情","有什么说什么的一天，若有什么可以积极发言，今天身边的人对你印象都很不错。笑容增多，时刻都笑脸迎人，一天都有好的心情。单身者想要...更多详情","今天个人的表现力很强，在人群中显得特别耀眼。各方面的行动力都相当积极，而且社交运势高，一整天都很欢乐，与所有人相处甚好。人际关...更多详情","今天很多事情上客观一点表示观点，才不会引来他人的不满，工作中更不要强迫他人接受自己的想法。部分人会喜欢与人作对，易跟人有争执。...更多详情","人际关系不太顺的一天，他人的每一句话都有可能让你心情受挫。另外，今天喜怒哀乐不宜表露在脸上，即使内心有多多的埋怨。平时多笑笑，...更多详情","今天凡事都要谨言慎行，一旦出错了有可能会被他人无限放大，被小人抓住把柄。不要做力所不能及的事情，也别把有要求定的太高，以免做不...更多详情","那些旧问题一直没得到解决，而且很容易变成更加棘手的问题，一个人无法处理，奈何需要帮忙时候却无人能出手相助。另外在某些工作上也得...更多详情","今天的小问题小纠纷有点多，人际关系比较紧张，但你的口才了得，任何的矛盾小误会被你三言两语就可以解决了。好好地表现自己很重要，但...更多详情","运势回升的一天，有很多事情都需要积极、用心去处理，有些棘手的问题需要慢慢寻找方法解决。今天单身者有好运，桃花运势旺盛，与异性多...更多详情"];
+            var starArr = [45,80,12,78,33,90,67,76,53,65,48,95]
+            conts.innerHTML=txtArr[0];
+            star_height.style.width=starArr[0]+"%";
+            var t = 7;
+
+            for(var i=0;i<lis.length;i++) {
+                lis[i].style.backgroundPosition= -i*36-390+"px -60px";
+                lis[i].index = -i*36-390;
+                lis[i].num = i;
+
+                lis[i].onmousemove = function() {
+                    if(this.now != true && this.num != t){
+                        this.style.backgroundPosition= this.index+"px -96px";
+                    }
+                }
+                lis[i].onmouseout = function() {
+                    if(this.now != true && this.num != t){
+                        this.style.backgroundPosition= this.index+"px -60px";
+                    }
+                }
+
+
+                lis[t].style.backgroundPosition= -t*36-390+"px -132px";
+
+                lis[i].onclick = function() {
+                    for(var j=0;j<lis.length;j++){
+                        lis[j].now = false;
+                        lis[j].style.backgroundPosition= lis[j].index+"px -60px";
+                        names[j].className="hidden";
+                    }
+                    this.style.backgroundPosition= this.index+"px -132px";
+                    this.now = true;
+                    names[this.num].className="";
+
+                    /* 几颗星和文字内容是变化的，应该把这两个放在数组中，从后台获取 */
+                    conts.innerHTML=txtArr[this.num];
+                    star_height.style.width=starArr[this.num]+"%";
+            }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="today"></div>
+    <div class="starpot" id="stap">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="last"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="last"></li>
+        </ul>
+    </div>
+    <div class="star-content">
+        <div class="top">
+            <span class="starname" id="star-name">
+                <span>白羊</span>
+                <span class="hidden">金牛</span>
+                <span class="hidden">双子</span>
+                <span class="hidden">巨蟹</span>
+                <span class="hidden">狮子</span>
+                <span class="hidden">处女</span>
+                <span class="hidden">天秤</span>
+                <span class="hidden">天蝎</span>
+                <span class="hidden">射手</span>
+                <span class="hidden">摩羯</span>
+                <span class="hidden">水瓶</span>
+                <span class="hidden">双鱼</span>
+            </span>
+            <span class="star">
+                <span class="starheight" id="star-height"></span>
+            </span>
+        </div>
+        <div class="foot" id="fot"></div>
+    </div>
+
+</div>
+</body>
+</html>

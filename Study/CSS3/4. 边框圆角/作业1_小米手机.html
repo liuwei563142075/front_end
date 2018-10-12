@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米手机</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 400px;
+            border: 1px solid blue;
+            margin: 100px auto;
+        }
+        .out-ring {
+            margin: 100px auto;
+            width: 240px;
+            height: 240px;
+            border: 2px solid #789CB6;
+            border-radius: 120px;
+            box-shadow: 6px 4px 7px rgba(0,0,0,.3);
+            position: relative;
+        }
+        .out-ring .inner-ring {
+            content: "";
+            display: block;
+            width: 230px;
+            height: 230px;
+            border: 5px solid #B1E4FF;
+            border-radius: 115px;
+            background-color: #3B99E3;
+        }
+        .inner-ring::before {
+            content: "";
+            width: 84px;
+            height: 67px;
+            border: 33px solid #FFFFFF;
+            border-bottom-width: 0;
+            border-radius: 10px 20px 5px 5px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -75px;
+            margin-top: -50px;
+        }
+        .inner-ring::after {
+            content: "";
+            width: 0;
+            height: 36px;
+            border: 18px solid #FFFFFF;
+            border-bottom-width: 0;
+
+            position: absolute;
+            top: 69%;
+            left: 73%;
+            margin-left: -75px;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="out-ring">
+        <div class="inner-ring">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

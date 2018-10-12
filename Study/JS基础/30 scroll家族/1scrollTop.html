@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height:5500px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    window.onscroll = function() {
+        //【<!DOCTYPE html> 别名DTD】
+        // ie9以上及其他高版本浏览器都支持window.pageYOffset（无论有没有DTD）,但是ie678不认识（无论有没有DTD）。
+        // ie678 认识document.documentElement.scrollTop（加不加DTD都认识） 火狐必须加上DTD才认识，谷歌加不加都不认识
+        //document.body.scrollTop 只有谷歌认识（加不加DTD都认识）
+
+        var scrollTop = window.pageYOffset  || document.documentElement.scrollTop
+            || document.body.scrollTop || 0;;
+        document.title = scrollTop;
+
+        /* window.pageYOffset  || document.documentElement.scrollTop
+            || document.body.scrollTop || 0;*/
+    }
+</script>

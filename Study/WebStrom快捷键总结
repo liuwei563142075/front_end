@@ -1,0 +1,30 @@
+1.自动格式化代码：Ctrl + Alt + L
+2.自动生成.attr("selected","false")代码：Ctrl + Alt + Shift + V
+3.shift+enter 重新开始一行（无论光标在哪个位置）
+4.自动换行:点击左边代码列序号右键soft-Wrap Current File
+
+
+
+
+
+
+
+
+
+
+
+自定义模板：
+File-setting-Editor-Live Templates-[+Live Templates]-
+在Abbreviation里定义快捷键-在Template text里写模板【$END$是将最后的光标定在这里】
+-Define[选择该快捷键在那里面使用]-OK
+
+自定义生成模板的快捷键：
+1.sc生成：
+<script src=""></script>
+
+2.sc$生成：
+<script>
+   $(function() {
+
+   })
+</script>

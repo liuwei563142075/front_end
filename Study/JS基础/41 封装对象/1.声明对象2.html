@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 声明对象：
+    // 方式1：
+    var obj1 = new Object(); // 效率稍微低一些，使用new创建出来的对象要牵扯到原型查找的问题
+    // 方式2：字面量声明对象【更提倡】
+    var obj = { // 这个和json很像，js中json也是一个对象，我感觉json也只是一方面的表现形式或者说别名
+        // 而已。不管是json也好不是json也好，这都是代表着一个对象，你可以将
+        // 它看做json的表现形式，但是它本身就是一个对象。
+        name:"毛毛",
+        age:"25",
+        getName:function () {
+            return this.name;
+        },
+        getAge:function () {
+            return this.age;
+        }
+    };
+
+    console.log(obj.name)
+    console.log(obj["age"])
+    console.log(obj.getAge)
+    console.log(obj["getName"])
+    console.log(obj.getName())
+</script>

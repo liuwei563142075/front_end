@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#box").animate({width:"+500px"},5000);
+            });
+            console.log("当.finish()在一个元素上被调用，立即停止当前正在运行的" +
+                "动画和所有排队的动画（如果有的话），并且他们的CSS属性设置为它们" +
+                "的目标值（所有动画的目标值）。所有排队的动画将被删除。");
+
+            // 即立即将他们的动画设置为最终值，然后停止动画
+            $("#btn2").click(function () {
+                $("#box").finish();
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="btn1">div动</button>
+<button id="btn2">停止该div元素动画</button>
+<div class="box" id="box">
+
+</div>
+</body>
+</html>

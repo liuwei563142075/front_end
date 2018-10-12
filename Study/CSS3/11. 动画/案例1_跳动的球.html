@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 动画</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ball-wrap {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .ball {
+            width: 200px;
+            height: 200px;
+            margin-left: -100px;
+            border-radius: 100px;
+            background-color: blue;
+            background-image: radial-gradient(140px at center 40px, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            animation: move 1.5s  infinite;
+            animation-timing-function: ease-in;
+            animation-direction: alternate;
+        }
+
+        .ball-wrap::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 276px;
+            width: 200px;
+            height: 10px;
+            margin-left: -100px;
+            border-radius: 100px/5px;
+            background-color: #CCC;
+        }
+
+        @keyframes move {
+            0% {
+                top:30px;
+            }
+            100% {
+                top:157px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="ball-wrap">
+    <div class="ball"></div>
+</div>
+</body>
+</html>

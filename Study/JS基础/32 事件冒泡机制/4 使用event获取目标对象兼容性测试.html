@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>参见：点击空白处隐藏3</title>
+</head>
+<body>
+<p>document.onclick中</p>
+<a href="javascript:;" id="login">注册</a>
+<a href="javascript:;">登录</a>
+<div id="mask"></div>
+<div id="show"></div>
+</body>
+</html>
+<script>
+    document.onclick = function (event) {
+        var event = event || window.event;
+        console.log("获取被点击的目标对象，标准浏览器：event.target，ie678只支持:event.srcElement");
+        var target = event.target ? event.target:event.srcElement;
+        console.log(event.target);
+        console.log(event.srcElement);
+        console.log("有了这个方法，使用document.onclick事件就可以获取文档中所有元素")
+    }
+</script>

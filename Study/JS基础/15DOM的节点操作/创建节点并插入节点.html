@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function(){
+            var u = document.getElementById("u");
+            var l4 = document.createElement("li");
+            l4.innerHTML=4;
+
+            //插入节点方法1       appendChild(Node node)
+            u.appendChild(l4);
+
+            //插入节点方法2       insertBefore(Node node,Node referencenode)
+            u.insertBefore(l4,u.children[0]);
+
+            //如果第二个参数为null则插入最后
+            //u.insertBefore(l4,null);
+
+            //一个节点只能被插入一次！！
+
+        }
+    </script>
+</head>
+<body>
+<p>appendChild是将新建的节点添加到子节点的最后</p>
+<ul id="u">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

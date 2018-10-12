@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<link rel="stylesheet" href="../../static/css/base.css" />
+		<style type="text/css">
+			.box1{
+				width:100px;
+				height: 100px;
+				background-color: orange;
+				position: relative;
+				z-index: 445;
+			}
+			.box11{
+				width:50px;
+				height: 50px;
+				background-color: orange;
+				position: fixed;
+				top: 200px;
+				left: 200px;
+				z-index: 0;
+			}
+			.box2{
+				width:100px;
+				height: 100px;
+				background-color: coral;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				z-index: 444;
+			}
+			.box21{
+				width:50px;
+				height: 50px;
+				background-color: coral;
+				position: relative;
+				top: 200px;
+				left: 200px;
+				z-index: 888;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box11">
+				
+			</div>
+		</div>
+		<div class="box2">
+			<div class="box21">
+				
+			</div>
+		</div>
+		<p>只有定位的元素才有压盖效果，浮动的元素没有</p>
+		<p>z_index表示压盖，A的z_index的值大于B，则A压盖B</p>
+		<p>z_index没有单位，只有一个正整数，默认是0，如果大家都不写，则后面的压盖前面的【与css前后位置无关，前后指的是标签的位置！！！！】</p>
+		<p>从父现象，父盒子A的z_index小于父盒子B的z_index，A盒子内孩子的z_index即使大于B盒子孩子的z_index，A盒子的孩子也不能压盖住B盒子的孩子！父亲怂了，孩子再牛逼也不行</p>
+		<p>可以用于导航栏的压盖效果，即将导航栏的z_index设置非常大</p>
+	</body>
+</html>

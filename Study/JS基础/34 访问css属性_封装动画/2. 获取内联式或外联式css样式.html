@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取外联式css样式</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: pink;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="b" style="margin: 10px"></div>
+</body>
+</html>
+<script>
+    var box = document.getElementById("b");
+
+    console.log("IE678以及Opera能识别的方式：");
+    //console.log(box.currentStyle["height"]);
+
+    console.log("ie9以上 及 标准浏览器能识别的方式：");
+    console.log("语法：window.getComputedStyle(目标对象,伪类)['']   ");
+    console.log(window.getComputedStyle(box,null)["height"]);
+
+    console.log("能否获取行内式");
+    console.log(window.getComputedStyle(box,null)["margin"]);
+
+</script>

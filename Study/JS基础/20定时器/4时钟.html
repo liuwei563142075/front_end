@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <style>
+        .clock {
+            width: 600px;
+            height: 600px;
+            background: url("images/clock.jpg") no-repeat;
+            margin: 50px auto;
+            position: relative;
+        }
+        .clock div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .h {
+            background: url("images/hour.png") no-repeat center;
+        }
+        .m {
+            background: url("images/minute.png") no-repeat center;
+        }
+        .s {
+            background: url("images/second.png") no-repeat center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $(id) {
+                return document.getElementById(id);
+            }
+
+            function setTime(id,time) {
+                $(id).style.transform = "rotate("+time+"deg)";
+            }
+
+            setInterval(function  clock() {
+                var date = new Date();
+                //获取当前秒，不要使用getTime(),因为getTime获取的是距离1970年的毫秒数
+                //如果使用getTime，还要减去1970年的时间才是现在的，除非是计算时间差才用到getTime
+                var ms = date.getMilliseconds();//当前毫秒数
+                var s = date.getSeconds()+ms/1000;//当前秒数
+                var m = date.getMinutes();//当前分数
+                var h = date.getHours()%12;//当前时数【12小时制】
+
+                setTime("hour",(h+m/60+s/3600)*30);
+                setTime("minute",(m+s/60)*6);
+                setTime("second",s*6);
+            },1);
+        }
+    </script>
+</head>
+<body>
+<div class="clock">
+    <div class="h" id="hour"></div>
+    <div class="m" id="minute"></div>
+    <div class="s" id="second"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+透视效果是写在父亲身上。当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+perspective属性，经常和translateZ的结合起来使用。
+transform-style属性也是写在父亲身上，它是3D空间一个重要属性，指定嵌套元素如何在3D空间中呈现。他主要有两个属性值：flat（平面的）和preserve-3d。[pri’z3:rv]
+其中flat值为默认值，表示所有子元素在2D平面呈现。preserve-3d表示所有子元素在3D空间中呈现。
+
+过渡是谁做过渡给谁加。

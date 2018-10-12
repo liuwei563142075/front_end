@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>当购物车为空的时候，红色提示框不显示</title>
+    <style>
+        .shopping-car {
+            margin: 50px auto;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #CCC;
+            position: relative;
+        }
+        .shopping-car span {
+            display: block;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            background-color: deeppink;
+            border-radius: 10px 10px 10px 0px;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+        }
+        /* span内没有任何内容时，不在显示 */
+        .shopping-car span:empty {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="shopping-car">
+    <span>1</span>
+</div>
+</body>
+</html>

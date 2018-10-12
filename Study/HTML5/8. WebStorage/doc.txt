@@ -1,0 +1,5 @@
+session storage和local storage是两种在浏览器数据存储的方式。
+其中session storage只存在于一次浏览器会话中，当浏览器关闭之后，就获取不到存储的内容了。
+local storage将永久的存储在浏览器中，当浏览器关闭之后，再次打开依旧可以获取local storage里存储的内容。
+
+F12-Resources-[Local storage] | [Session storage]

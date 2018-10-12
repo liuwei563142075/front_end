@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        img {vertical-align: top}
+        .box {
+            width: 460px;
+            margin: 50px 100px;
+        }
+        .box .bbox {
+            width: 420px;
+            height: 420px;
+            margin:0 20px;
+            background: url("images/b1.jpg") no-repeat;
+        }
+        .sbox {
+            height: 70px;
+            padding-top: 20px;
+        }
+        .sbox ul {
+            list-style: none;
+            font-size: 0;
+            text-align: center;
+        }
+        .sbox ul li {
+            display: inline-block;
+            font-size: 0;
+            margin: 0 8px;
+        }
+        .sbox a {
+            display: block;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            position: relative;
+        }
+        .sbox img {
+            position: relative;
+        }
+        .tl { /* 图像不加top:-2,left:-2会有晃动 */
+            top:-2px;
+            left:-2px;
+        }
+        .whb {
+            width:56px !important;
+            height: 56px !important;
+            border: 2px solid black !important;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="bbox" id="bbox">
+
+    </div>
+    <div class="sbox" id="sbox">
+        <ul>
+            <li><a href="#"><img src="images/s1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/s2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/s3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/s4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/s5.jpg" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    as = $("sbox").getElementsByTagName("a");
+    for(var i=0;i<as.length;i++) {
+        as[i].index = i+1;
+        as[i].onmouseover = function() {
+            for(var j=0;j<as.length;j++) {
+                as[j].className = "";
+                as[j].children[0].className = "";
+            }
+            this.className = "whb";
+            this.children[0].className = "tl";
+            $("bbox").style.backgroundImage = "url('images/b"+this.index+".jpg')";
+        }
+    }
+</script>

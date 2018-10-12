@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维码</title>
+</head>
+<style>
+    *{margin: 0;padding: 0}
+    a {
+        text-decoration: none;
+    }
+    .box {
+        margin: 100px;
+        width: 437px;
+        height: 283px;
+        border: 1px solid royalblue;
+    }
+    .box #db-code {
+        display: block;
+        width: 115px;
+        height: 136px;
+        margin: 12px 0 0 167px;
+        background: url("../images/ddcode.png") no-repeat top center;
+        position: relative;
+        cursor: pointer;
+    }
+    .box #db-code s {
+        display: none;
+        width: 24px;
+        height: 23px;
+        background: url("../images/close.png") no-repeat top center;
+        position: absolute;
+        top: 0;
+        left: -23px;
+    }
+    .box #db-code span {
+        display: block;
+        width: 154px;
+        height: 31px;
+        border: 1px solid #1F497D;
+        text-align: center;
+        padding-top: 15px;
+        background-color: #fff;
+        position: absolute;
+        top: 146px;
+        left: -20px;
+    }
+    .special-china {
+        margin-top: 15px;
+    }
+    .special-china span {
+        padding-left: 22px;
+        font: 700 16px "微软雅黑";
+    }
+
+    .special-china .new {
+        margin-top: 9px;
+        border-top: 2px solid #FF4400;
+    }
+    .special-china .new .content {
+        width: 278px;
+        height: 30px;
+        margin-top: 8px;
+        margin-left: 2px;
+        font: 13px/30px "微软雅黑";
+        border: 1px solid #EEEEEE;
+    }
+    .content a {
+        display: block;
+        float: left;
+        width: 69px;
+        height: 30px;
+        text-align: center;
+        color: #916691;
+    }
+</style>
+<body>
+    <div class="box">
+        <p>
+            <img src="../images/_c1.png" alt="">
+        </p>
+        <div id="db-code">
+            <s id="db-close"></s>
+            <span id="db-closes">关闭二维码</span>
+        </div>
+        <div class="special-china">
+            <span>特色中国</span>
+            <div class="new">
+                <div class="content">
+                    <a href="">规则</a>
+                    <a href="">论坛</a>
+                    <a href="">安全</a>
+                    <a href="">公益</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var db_code = document.getElementById("db-code");
+        var db_close = document.getElementById("db-close");
+        var db_closes = document.getElementById("db-closes");
+        db_code.onmouseover = function() {
+            db_close.style.display = "block";
+            db_closes.style.display = "block";
+        }
+        db_code.onmouseout = function() {
+            db_close.style.display = "none";
+        }
+        db_close.onclick = function() {
+            db_code.style.display = "none";
+            db_close.style.display = "none";
+            db_closes.style.display = "none";
+        }
+        db_closes.onclick = function() {
+            db_code.style.display = "none";
+            db_closes.style.display = "none";
+        }
+    </script>
+</body>
+</html>

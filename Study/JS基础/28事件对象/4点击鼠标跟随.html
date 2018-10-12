@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <style>
+        *{margin:0;padding: 0;}
+        #ig {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<img src="images/img.jpg" alt="" id="ig">
+</body>
+</html>
+<script>
+    var img = document.getElementById("ig");
+    document.onclick = function(event) {
+        var event = event || window.event;
+        targetX = event.clientX - img.offsetWidth / 2;
+        targetY = event.clientY - img.offsetHeight / 2;
+    }
+    var leaderX = 0,leaderY = 0,targetX = 0,targetY = 0;
+    setInterval(function () {
+        leaderX = leaderX + (targetX - leaderX) / 10;
+        leaderY = leaderY + (targetY - leaderY) / 10;
+        img.style.left = leaderX + 'px';
+        img.style.top = leaderY + 'px';
+    },30)
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 130px;
+            height: 130px;
+            background: url("../images/bg.jpg") no-repeat;
+            margin: 100px auto;
+            position: relative;
+        }
+        .box::before,.box::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            box-sizing: border-box;/* 怪异模式 */
+        }
+        .box::before {
+            background-color: #FFFFFF;
+            background-clip: content-box; /* 按照内容切割，只留内容，内容以外切割掉 */
+        }
+        .box::after {
+            background: url("../images/bg.jpg") no-repeat;
+            background-clip: content-box; /* 按照内容切割，只留内容，内容以外切割掉 */
+            right: -120px;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div>
+    首先必须要在怪异模式下进行：因为只有在怪异模式下盒模型才能完全包裹住图片且！能使用padding，盒子真实宽度也不会变宽！
+    在此要说明一下怪异模式下的盒模型和标准模式下的盒模型：
+        标准模式下：真实宽度 = width + padding + border
+        怪异模式下：真实宽度 = width  【其中width = (width-padding-border) + padding + border】
+    所以我们只有使用怪异模式，我们才能用clip时使用content-box切割【以内容切割】
+    内容 = 真实宽度 - padding - border
+</div>
+</body>
+</html>

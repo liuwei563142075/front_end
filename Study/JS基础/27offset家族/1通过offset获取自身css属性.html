@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>没有定位</title>
+    <style>
+        *{margin:0;padding: 0}
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px;
+        }
+        #ch {
+            width: 50px;
+            height: 50px;
+            background-color: orangered;
+            border: 1px solid #48484c;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="ch">
+
+    </div>
+</div>
+</body>
+</html>
+<script>
+        var ch = document.getElementById("ch");
+
+        // ch.style.width只能获取行内式的宽度，获取不了内联式
+        // offset获取的是元素本身的宽度，不一定以内联式里给定具体宽度为准，它是以元素自身为准
+        console.log('offsetWidth = width + border + padding');
+        console.log(ch.offsetWidth);
+
+        // offset获取css属性值的只有四种offsetWidth,offsetHeight,offsetTop,offsetLeft
+
+        // offsetLeft返回距离上级盒子【最近的，带有定位的】左边的位置，
+        // 如果上级盒子都没有定位，则以其自己距离body的距离为准
+        console.log(ch.offsetLeft); // 父级没有定位，则以body为准
+</script>

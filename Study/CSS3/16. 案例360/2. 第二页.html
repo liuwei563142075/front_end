@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dun {
+            width: 1200px;
+            height: 600px;
+            background-color: #C2CCD1;
+            position: relative;
+        }
+        .dun span {
+            background:url("../images/shield.png") no-repeat;
+            position: absolute;
+        }
+        .dun span:nth-child(1) {
+            width: 111px;
+            height: 120px;
+            background-position: -10px -35px;
+            top: 35px;
+            left: 10px;
+            transform: translate(200%,30%) rotate(18deg);
+        }
+        .dun span:nth-child(2) {
+            width: 175px;
+            height: 149px;
+            background-position: -124px -6px;
+            top: 6px;
+            left: 124px;
+            transform: translate(140%,230%) rotate(541deg);
+        }
+        .dun span:nth-child(3) {
+            width: 116px;
+            height: 120px;
+            background-position: -302px -35px;
+            top: 35px;
+            left: 302px;
+            transform: translate(250%,45%) rotate(351deg);
+        }
+        .dun span:nth-child(4) {
+            width: 106px;
+            height: 175px;
+            background-position: -15px -158px;
+            top: 158px;
+            left: 15px;
+            transform: translate(600%,60%) rotate(546deg);
+        }
+
+        .dun span:nth-child(5) {
+            width: 175px;
+            height: 175px;
+            background-position: -124px -158px;
+            top: 158px;
+            left: 124px;
+            transform: translate(750%,20%) rotate(250deg);
+        }
+        .dun span:nth-child(6) {
+            width: 110px;
+            height: 175px;
+            background-position: -302px -158px;
+            top: 158px;
+            left: 302px;
+            transform: translate(260%,59%) rotate(190deg);
+        }
+        .dun span:nth-child(7) {
+            width: 80px;
+            height: 100px;
+            background-position: -41px -336px;
+            top: 336px;
+            left: 41px;
+            transform: translate(260%,84%) rotate(367deg);
+        }
+        .dun span:nth-child(8) {
+            width: 175px;
+            height: 152px;
+            background-position: -124px -336px;
+            top: 336px;
+            left: 124px;
+            transform: translate(-300%,-900%) rotate(142deg);
+        }
+        .dun span:nth-child(9) {
+            width: 83px;
+            height: 100px;
+            background-position: -302px -336px;
+            top: 336px;
+            left: 302px;
+            transform: translate(-250%,90%) rotate(112deg);
+        }
+        .dun:hover span{
+            animation: play 2s forwards;
+        }
+        @keyframes play {
+            from {
+
+            }
+            to {
+                transform: translate(0,0) rotate(0);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="dun">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</body>
+</html>

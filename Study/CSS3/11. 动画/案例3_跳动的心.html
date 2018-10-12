@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .heart {
+            width: 600px;
+            height: 600px;
+            margin: 30px auto;
+            background-color: #CCCCCC;
+            position: relative;
+        }
+        .heart .left {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 88px;
+            left: 18%;
+            animation: left 1s ease infinite alternate;
+        }
+        .heart .right {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 88px;
+            right: 19%;
+            animation: right 1s ease infinite alternate;
+        }
+        .heart .bottom {
+            width: 194px;
+            height: 194px;
+            background-color: red;
+            transform: rotate(45deg);
+            position: absolute;
+            bottom: 227px;
+            left: 33%;
+            animation: bottom 1s ease infinite alternate;
+        }
+        .left,.right{
+            border-radius: 50%;
+        }
+
+        /* 如果只有两部完成，可以使用from-to */
+        @keyframes left {
+            from {
+                width: 200px;
+                height: 200px;
+            }
+            to {
+                width: 230px;
+                height: 230px;
+            }
+        }
+        @keyframes right {
+            0% {
+                width: 200px;
+                height: 200px;
+            }
+            100% {
+                width: 230px;
+                height: 230px;
+            }
+        }
+        @keyframes bottom {
+            0% {
+                width: 194px;
+                height: 194px;
+                bottom: 227px;
+                left: 33%;
+            }
+            100% {
+                width: 210px;
+                height: 210px;
+                bottom: 207px;
+                left: 32%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="heart">
+    <span class="left"></span>
+    <span class="right"></span>
+    <span class="bottom"></span>
+</div>
+</body>
+</html>

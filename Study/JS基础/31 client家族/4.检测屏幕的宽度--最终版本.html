@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>检测发现1:所有浏览器都支持怪异模式了，所以没必要在单独判断</p>
+<p>检测发现2：ie9以上版本标准模式都适用，但是ie9以下只有标准模式适用</p>
+</body>
+</html>
+<script>
+    function client() {
+        return {
+            width:document.documentElement.clientWidth,
+            height:document.documentElement.clientHeight
+        }
+    }
+
+    console.log("ie9及以上版本"+window.innerWidth);
+    console.log("标准版本"+document.documentElement.clientWidth);
+    console.log("怪异模式:"+document.body.clientWidth);
+
+    var c = client();
+    document.write(c.width);
+</script>

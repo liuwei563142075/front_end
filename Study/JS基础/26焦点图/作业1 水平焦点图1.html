@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击左右让图片走</title>
+    <style>
+        *{margin:0;padding: 0;}
+        img {
+            vertical-align: top;
+        }
+        .slider {
+            margin: 50px 100px;
+            width: 520px;
+            height: 280px;
+            border: 1px solid #eee;
+            overflow: hidden;
+            position: relative;
+        }
+        .slider ul{
+            list-style: none;
+            width: 800%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .slider ul li {
+            float: left;
+        }
+        .slider .lr {
+            display: none;
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            top: 120px;
+            left: 0;
+        }
+        .lr span {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font: 35px/50px "微软雅黑";
+            color: #48484c;
+            background-color: #eee;
+            cursor: pointer;
+        }
+        .lr .left {
+            float: left;
+        }
+        .lr .right {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="slider" id="slider">
+    <ul>
+        <li><img src="images/5.jpg" alt=""></li>
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+        <li><img src="images/5.jpg" alt=""></li>
+        <li><img src="images/1.jpg" alt=""></li>
+    </ul>
+    <div class="lr">
+        <span class="left"><</span>
+        <span class="right">></span>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var slider = document.getElementById("slider");
+    var ul = slider.children[0];
+    var lrs = slider.children[1];
+    var left = lrs.children[0];
+    var right = lrs.children[1];
+    var leader = -520;//起始位置
+    var target = -520;//目标位置
+    slider.onmousemove = function () {
+        lrs.style.display="block";
+    }
+    slider.onmouseout = function () {
+        lrs.style.display="none";
+    }
+    left.onclick = function() {
+        target -= 520;
+    }
+    right.onclick = function() {
+        target += 520;
+    }
+    function f(){
+        if(target >= 520){
+            leader = -2600;
+            target = -2080;
+        }else if(target<-2600){
+            leader = 0;
+            target = -520;
+        }
+        leader = leader + (target-leader)/10;
+        ul.style.left = leader + "px";
+    }
+    setInterval(f,30);
+</script>

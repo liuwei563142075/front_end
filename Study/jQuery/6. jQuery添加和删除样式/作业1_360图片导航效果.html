@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {margin:0;padding: 0;}
+        .wrap {
+            width: 752px;
+            margin: 50px auto 0;
+            padding: 10px 0 0 10px;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+        ul {
+            list-style: none;
+        }
+        ul li {
+            float: left;
+            margin: 0 10px 10px 0;
+            width: 178px;
+            height: 125px;
+            overflow: hidden;
+            position: relative;
+        }
+        .wrap li div {
+            opacity: 0.3;
+            width: 100%;
+            height: 25px;
+            background-color: #000;
+            position: absolute;
+            bottom: -27px;
+            left: 0;
+        }
+        .wrap li p {
+            width: 100%;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            color: white;
+            position: absolute;
+            bottom: -27px;
+            left: 0;
+        }
+    </style>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(function () {
+            $(".wrap li").hover(function () {
+                $(this).children("div,p").stop().animate({"bottom":"0"});
+            },function () {
+                $(this).children("div,p").stop().animate({"bottom":"-27px"});
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li>
+            <a href=""><img src="images/01.JPG" alt=""></a>
+            <div></div>
+            <p>百度一下，你就知道</p></li>
+        <li>
+            <a href=""><img src="images/02.JPG" alt=""></a>
+            <div></div>
+            <p>百度一下，你就知道</p>
+        </li>
+        <li>
+            <a href=""><img src="images/03.JPG" alt=""></a>
+            <div></div>
+            <p>百度一下，你就知道</p>
+        </li>
+        <li>
+            <a href=""><img src="images/04.JPG" alt=""></a>
+            <div></div>
+            <p>百度一下，你就知道</p>
+        </li>
+        <li>
+            <a href=""><img src="images/05.JPG" alt=""></a>
+            <div></div>
+            <p>百度一下，你就知道</p>
+        </li>
+        <li>
+            <a href=""><img src="images/06.JPG" alt=""></a>
+            <div></div>
+            <p>百度一下，你就知道</p>
+        </li>
+        <li>
+            <a href=""><img src="images/07.JPG" alt=""></a>
+            <div></div>
+            <p>百度一下，你就知道</p>
+        </li>
+        <li>
+            <a href=""><img src="images/08.JPG" alt=""></a>
+            <div></div>
+            <p>百度一下，你就知道</p>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

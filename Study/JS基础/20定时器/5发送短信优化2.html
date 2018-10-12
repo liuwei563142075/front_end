@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送短信</title>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById("btn");
+            btn.onclick = function() {
+                this.disabled = "disabled";
+                var dt = 10;
+                btn.innerHTML = "剩余时间"+dt+"s";
+
+                var timeout = false;
+                var time = function() {
+                    if(timeout)
+                        return;
+                    dt--;
+                    if(dt>0){
+                        btn.innerHTML = "剩余时间"+dt+"s";
+                    }else{
+                        timeout = true;
+                        btn.innerHTML = "发送短信";
+                        btn.disabled = "";
+                    }
+                    //1秒钟后执行这个函数，只执行一次
+                    setTimeout(time,1000);
+                }
+                time();
+
+
+            }
+        }
+    </script>
+</head>
+<body><!--剩余时间60s-->
+<input type="text"> <button id="btn">发送短信</button>
+<p>一般不用setInterval，而用setTimeout的延时递归来代替interval。
+    setInterval会产生回调堆积，特别是时间很短的时候。 </p>
+<p>setTimeout(fn,t):t秒后执行一次fn函数，只执行一次</p>
+<p>setInterval(fn,t):每隔t秒就执行一次fn函数</p>
+</body>
+</html>

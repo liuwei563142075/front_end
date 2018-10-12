@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 1. 获取第一个元素 【只匹配了第一个ul里的第一个li，第二个ul里的li并没有被匹配】
+            //$("ul>li:first").css("font-size","20px");
+
+            // 2.去除所有与给定选择器匹配的元素
+            //$(".u>li:not(.uu)").css("background-color","pink");
+
+            // 3.匹配所有索引为偶数的元素，从0开始计数
+            //$(".u>li:even").css("background-color","pink");
+
+            //4.匹配所有索引为奇数的元素，从0开始
+            //$(".u>li:odd").css("background-color","blue");
+
+            // 5.匹配一个给定索引值的元素=== index为整数型【从0开始计数】
+            //$(".u>li:eq(3)").css("font-size","20px");
+
+            // 6.匹配所有大于给定索引值的元素
+            //$(".u>li:gt(4)").css("font-size","20px");
+
+            // 7.匹配所有小于给定索引值的元素
+            //$(".u>li:lt(5)").css("background-color","pink");
+
+            // 8.获取最后一个元素
+            //$(".u>li:last").css("font-size","20px");
+
+            //9. 匹配所有正在执行动画的元素
+
+            //10.匹配当前获取焦点的元素
+        });
+    </script>
+</head>
+<body>
+<div id="box1">
+    <ul class="u">
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+        <li>我是li5</li>
+        <li class="uu">我是li6</li>
+        <li>我是li7</li>
+        <li>我是li8</li>
+        <li>我是li9</li>
+        <li>我是li10</li>
+    </ul>
+</div>
+<div id="box2">
+    <ul>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li class="u">我是li4</li>
+        <li>我是li5</li>
+        <li>我是li6</li>
+        <li>我是li7</li>
+        <li class="u">我是li8</li>
+        <li>我是li9</li>
+        <li class="u2">我是li10</li>
+    </ul>
+</div>
+</body>
+</html>

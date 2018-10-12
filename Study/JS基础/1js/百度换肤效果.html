@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度换肤效果</title>
+    <style>
+        *{margin: 0;padding: 0}
+        body {
+            background: url("../images/1.jpg") no-repeat top left;
+        }
+        .bgbox {
+            margin: 100px 0 0 400px;
+        }
+        .box{
+            float: left;
+            margin-left: 10px;
+            width: 100px;
+            height: 100px;
+        }
+        .box img {
+            width: 100%;
+            height: 100px;
+            /*鼠标经过时显示小手*/
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="bgbox">
+    <div id="box1" class="box"><img src="../images/1.jpg" alt=""></div>
+    <div id="box2" class="box"><img src="../images/2.jpg" alt=""></div>
+    <div id="box3" class="box"><img src="../images/3.jpg" alt=""></div>
+</div>
+<script>
+    var box_1 = document.getElementById("box1");
+    var box_2 = document.getElementById("box2");
+    var box_3 = document.getElementById("box3");
+    box_1.onclick = function() {
+        document.body.style.backgroundImage="url(../images/1.jpg)";
+    }
+    box_2.onclick = function() {
+        document.body.style.backgroundImage="url(../images/2.jpg)";
+    }
+    box_3.onclick = function() {
+        document.body.style.backgroundImage="url(../images/3.jpg)";
+    }
+</script>
+</body>
+</html>

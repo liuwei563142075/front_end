@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送短信</title>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById("btn");
+            btn.onclick = function() {
+                this.disabled = "disabled";
+                var dt = 10;
+                btn.innerHTML = "剩余时间"+dt+"s";
+
+                var timeout = false;
+                var time = function () {
+                    if(timeout)
+                        return;
+                    if(dt>1){
+                        dt--;
+                        btn.innerHTML = "剩余时间"+dt+"s";
+                    }else{
+                        timeout = true;
+                        btn.innerHTML = "发送短信";
+                        btn.disabled = "";
+                    }
+                }
+                setInterval(time,1000);
+            }
+
+            time();
+        }
+    </script>
+</head>
+<body><!--剩余时间60s-->
+<input type="text"> <button id="btn">发送短信</button>
+</body>
+</html>

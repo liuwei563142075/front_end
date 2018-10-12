@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {margin: 0;padding: 0;}
+        div {
+            width: 400px;
+            height: 400px;
+            margin: 50px;
+            overflow: hidden;
+        }
+        .mask {
+            display: none;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script src="../base.js"></script>
+    <script>
+        window.onload = function () {
+            function $(id) {return document.getElementById(id);}
+            
+            $("con").onmouseup = function (event) {
+                var event = event || window.event;
+                var x = event.clientX;
+                var y = event.clientY;
+                stopBubble(event);
+
+                /* 获取被选择的内容 具有兼容性 */
+                var txt = '';
+                if(window.getSelection){
+                    txt = window.getSelection().toString();
+                }else {
+                    txt = window.section.createRange().text;
+                }
+                if(txt != ''){
+                    pinkshow("msk",x,y,txt);
+                }else {
+                    $("msk").style.display = "none";
+                }
+
+            }
+            
+            document.onmouseup = function () {
+                $("msk").style.display = "none";
+            }
+            
+            function pinkshow(id,x,y,txt) {
+                setTimeout(function () {
+                    $(id).style.display = "block";
+                    $(id).style.left = x + "px";
+                    $(id).style.top = y + "px";
+                    $(id).innerHTML = txt;
+                },1000);
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="mask" id="msk"></div>
+<div id="con">
+    我可以被选择我可以被选择我可以被选择
+    我可以被选择我可以被选择我可以被选择我
+    可以被选择我可以被选择我可以被选择我可
+    以被选择我可以被选择我可以被选择我可以被选择
+    我可以被选择我可以被选择我可以被选择
+    我可以被选择我可以被选择我可以被选择我
+    可以被选择我可以被选择我可以被选择我可
+    以被选择我可以被选择我可以被选择我可以被选择
+    我可以被选择我可以被选择我可以被选择
+    我可以被选择我可以被选择我可以被选择我
+    可以被选择我可以被选择我可以被选择我可
+    以被选择我可以被选择我可以被选择我可以被选择
+    我可以被选择我可以被选择我可以被选择
+    我可以被选择我可以被选择我可以被选择我
+    可以被选择我可以被选择我可以被选择我可
+    以被选择我可以被选择我可以被选择我可以被选择
+    我可以被选择我可以被选择我可以被选择
+    我可以被选择我可以被选择我可以被选择我
+    可以被选择我可以被选择我可以被选择我可
+    以被选择我可以被选择我可以被选择我可以被选择
+</div>
+<div>
+    我不可以被选择我不可以被
+    我不可以被选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被选择我不可以被选择
+    选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被
+    我不可以被选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被选择我不可以被选择
+    选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被
+    我不可以被选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被选择我不可以被选择
+    选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被
+    我不可以被选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被选择我不可以被选择
+    我不可以被选择我不可以被选择我不可以被选择
+    选择我不可以被选择我不可以被选择
+</div>
+</body>
+</html>

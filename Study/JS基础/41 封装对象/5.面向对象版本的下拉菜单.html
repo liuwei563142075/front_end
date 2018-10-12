@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+    <style type="text/css">
+        *{ padding:0; margin:0; list-style:none;}
+        .all{ width:330px; height:30px; background:url(img/bg.jpg) no-repeat; margin:100px auto; line-height:30px; text-align:center; padding-left:10px; margin-bottom:0;}
+        .all ul li{ width:100px; height:30px; background:url(img/libg.jpg); float:left; margin-right:10px; position:relative; cursor:pointer;}
+        .all ul ul{ position:absolute; left:0; top:30px; display:none;}
+    </style>
+</head>
+
+<body>
+<div class="all" id="list">
+    <ul>
+        <li>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    // 获取对象     遍历对象操作     显示模块   隐藏模块
+    // 当一级li的onmouseover事件时ul显示
+
+    // 封装成一个类，类代表的是什么，是一个下拉菜单，也就是说要封装一个下拉菜单类
+    function DropDown(id) {
+        this._div = document.getElementById(id);
+        this.firstLis = this._div.children[0].children;
+    }
+
+    // 初始化其内一级菜单的鼠标事件
+    DropDown.prototype.init = function () {
+        var that = this;
+        for(var i = 0;i<this.firstLis.length;i++) {
+            this.firstLis[i].onmouseover = function () {
+                // 显示事件一级li其内的ul显示
+                that.show(this.children[0]);
+            }
+            this.firstLis[i].onmouseout = function () {
+                // 显示事件一级li其内的ul隐藏
+                that.hide(this.children[0]);
+            }
+        }
+    }
+
+    DropDown.prototype.show = function (secondLi) {
+        secondLi.style.display = "block";
+    }
+
+    DropDown.prototype.hide = function (secondLi) {
+        secondLi.style.display = "none";
+    }
+
+    var example = new DropDown("list");
+    example.init();
+</script>
