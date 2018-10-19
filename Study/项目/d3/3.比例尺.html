@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <title>
+                线性比例尺
+            </title>
+            <script src="../../jQuery/jquery/jquery-1.9.1.min.js">
+            </script>
+            <script src="https://d3js.org/d3.v5.min.js">
+            </script>
+            <script>
+                $(function(){
+
+                // 线性比例尺：domain域和range域都可以连续变化
+                var dataset = [1.2,2.3,0.9,1.5,3.3];
+            	var min = d3.min(dataset);
+            	var max = d3.max(dataset);
+            	var scaleLinear = d3.scaleLinear().domain([min,max]).range([0,300]);
+            	document.write("scaleLinear(0)输出：" + scaleLinear(0.9));
+            	d3.select("body").append("br");
+            	document.write("scaleLinear(1)输出：" + scaleLinear(1));
+            	d3.select("body").append("br");
+            	document.write("scaleLinear(2)输出：" + scaleLinear(2));
+            	d3.select("body").append("br");
+            	document.write("scaleLinear(3)输出：" + scaleLinear(3.3));
+
+            	//序数比例尺： domain域和range域是离散的，也就是数组
+            	var index = [0,1,2,3,4];
+            	var color = ["red","blue","yellow","black","green"];
+            	var scaleOrdinal = d3.scaleOrdinal().domain(index).range(color);
+            	d3.select("body").append("br");
+            	d3.select("body").append("br");
+            	document.write("scaleOrdinal(0)输出：" + scaleOrdinal(0));
+            	d3.select("body").append("br");
+            	document.write("scaleOrdinal(1)输出：" + scaleOrdinal(1));
+            	d3.select("body").append("br");
+            	document.write("scaleOrdinal(2)输出：" + scaleOrdinal(2));
+            	d3.select("body").append("br");
+            	document.write("scaleOrdinal(3)输出：" + scaleOrdinal(3));
+
+                });
+            </script>
+        </meta>
+    </head>
+    <body>
+    </body>
+</html>

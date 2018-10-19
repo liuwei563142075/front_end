@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <title>
+                Document
+            </title>
+        </meta>
+        <script src="../../jQuery/jquery/jquery-1.9.1.min.js">
+        </script>
+        <script src="https://d3js.org/d3.v5.min.js">
+        </script>
+        <script>
+        	$(function() {
+        		// 1.数据准备
+        		var merge = {top:0,bottom:60,left:0,right:60};//设置内边距
+        		var rectData = [250,110,40,120,80];//准备矩形条的数据
+
+        		// 2.得到画布，并创建分组，设置位置
+        		var svg = d3.select("body").select("svg");
+        		var g = svg.append("g").attr("transform","translate("+merge.top+","+merge.left+")");// 设置g的内边距
+
+        		// 3.画出矩形
+        		var rectHeight = 30;//设置每一个矩形的高度
+        		g.selectAll("rect")
+        		.data(rectData)
+        		.enter()
+        		.append("rect")
+        		.attr("x",0) // 设置左上角的x
+        		.attr("y",function(d,i) { // 设置左上角的y
+        			return i*rectHeight;
+        		})
+        		.attr("width",function(d) {
+        			return d;
+        		})
+        		.attr("height",rectHeight-5)
+        		.attr("fill","blue");//设置颜色填充
+        	});
+        </script>
+    </head>
+    <body>
+    	<svg></svg>
+    </body>
+</html>

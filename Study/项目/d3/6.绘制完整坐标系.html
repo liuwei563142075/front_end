@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制完整坐标系</title>
+	<script src="../../jQuery/jquery/jquery-1.9.1.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+    	$(function() {
+    		var svg = d3.select("body").select("svg");
+    		var width = parseInt($("svg").css("width"));
+    		var height = parseInt($("svg").css("height"));
+
+// 数据
+    		var rentData = [180,80,250,20,128,180];
+    		var locat = {top:0,left:40,right:0,bottom:-20} 
+    		
+
+    		// 创建g
+    		var g = svg.append("g").attr("transform","translate("+locat.left+","+locat.bottom+")");
+    		var rentWidth = 60;
+    		var spaceWidth = 10;
+    		var gs = g.selectAll("rect")
+    		.data(rentData)
+    		.enter();
+
+    		gs.append("rect")
+    		.attr("x",function(d,i) {
+    			return i*rentWidth;
+    		})
+    		.attr("y",function(d,i) {
+    			return height-d;
+    		})
+    		.attr("width",rentWidth-spaceWidth)
+    		.attr("height",function(d,i) {
+    			return d;
+    		})
+    		.attr("fill","blue");
+
+    		//文字
+    		gs.append("text")
+    		.attr("x",function(d,i) { // 距离x轴
+    			return i*rentWidth+spaceWidth;
+    		})
+    		.attr("y",function(d,i) {
+    			return height-d;
+    		})
+    		.attr("dx",function() { // 距离x轴偏移量
+    			return 0;
+    		})
+    		.attr("dy",function() {
+    			return 0;
+    		})
+    		.text(function(d) {
+    			return d;
+    		})
+
+        	//定义坐标系
+        	var xScale = d3.scaleBand()
+    		.domain(d3.range(rentData.length))
+    		.rangeRound([0,rentWidth*rentData.length]);
+    	    var xAxis = d3.axisBottom(xScale);
+
+        	g.append("g")
+        	.attr("transform","translate(0,"+(height)+")")
+        	.call(xAxis);
+
+        	var yScale = d3.scaleLinear().domain([0,height]).range([height,0]);
+        	var yAxis = d3.axisLeft(yScale);
+        	g.append("g")
+        	.attr("transform","translate(0,0)")
+        	.call(yAxis);
+    	});
+    </script>
+    <style>
+    	svg {
+    		width:500px;
+    		height:300px;
+    	}
+    </style>
+</head>
+<body>
+	<svg></svg>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <title>
+                使用比例尺实现2中图表
+            </title>
+            <script src="../../jQuery/jquery/jquery-1.9.1.min.js">
+            </script>
+            <script src="https://d3js.org/d3.v5.min.js">
+            </script>
+            <script>
+            	$(function() {
+            		var dataset = [1.2,2.3,0.9,1.5,3.3];
+            		var scaleLinear = d3.scaleLinear().domain([0,d3.max(dataset)]).range([0,300]);
+
+            		var svg = d3.select("body").select("svg");
+
+            		//
+            		var rectHeight = 20;
+            		var g = svg.append("g");
+            		g.selectAll("rect")
+            		.data(dataset)
+            		.enter()
+            		.append("rect")
+            		.attr("x",0)
+            		.attr("y",function(d,i) {
+            			return i*rectHeight;
+            		})
+            		.attr("width",function(d,i) {
+            			return scaleLinear(d3.max(dataset)/i);
+            		})
+            		.attr("height",rectHeight-5)
+            		.attr("fill","blue");
+            	});
+            </script>
+        </meta>
+    </head>
+    <body>
+    	<svg></svg>
+    </body>
+</html>

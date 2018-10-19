@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图标过渡效果</title>
+	<script src="../../jQuery/jquery/jquery-1.9.1.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+    	$(function() {
+    		var width = parseInt($("svg").css("width"));
+    		var height = parseInt($("svg").css("height"));
+    		// 数据
+    		var data = [180,279,12,43,260,115,49,130];
+    		var merge = {top:0,left:30,right:0,bottom:-30};
+    		// g
+    		var g = d3.select("body").select("svg").append("g").attr("transform","translate("+merge.left+","+merge.bottom+")");
+    		var gs = g.selectAll("rect").data(data).enter().append("rect");
+
+    		var spaceWidth = 10;
+    		var rectWidth = 60;
+    		gs.attr("x",function(d,i) {
+    			return rectWidth*i;
+    		})
+    		.attr("y",function(d,i) {
+    			return height-d;
+    		})
+    		.attr("width",rectWidth-spaceWidth)
+    		.attr("height",function(d) {
+    			return d;
+    		})
+    		.attr("fill","red")
+    		.on("mouseenter",function() { // 交互操作
+    			var rect = d3.select(this).transition().duration(300).attr("fill","yellow");
+    		})
+    		.on("mouseleave",function() {
+    			d3.select(this).transition().duration(300).attr("fill","red");
+    		})
+    		
+    		
+    		
+
+    		// 坐标系
+    		var xScale = d3.scaleLinear().domain([0,width]).range([0,width]);
+    		var xAxis = d3.axisBottom(xScale);
+    		var yScale = d3.scaleLinear().domain([0,height]).range([height,0]);
+    		var yAxis = d3.axisLeft(yScale);
+    		g.append("g")
+            .attr("transform","translate(0,"+height+")")
+    		.call(xAxis);
+
+    		g.append("g")
+    		.attr("transform","translate(0,0)")
+    		.call(yAxis);
+
+    	});
+    </script>
+    <style>
+    	svg {
+    		width: 500px;
+    		height: 300px;
+    	}
+    </style>
+</head>
+<body>
+	<svg></svg>
+</body>
+</html>

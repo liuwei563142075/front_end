@@ -1,0 +1,29 @@
+{
+  "nodes":[
+    {"id":0,"name":"安徽阜阳"},
+    {"id":1,"name":"安徽淮南"},
+    {"id":2,"name":"江苏江阴"},
+    {"id":3,"name":"安徽安庆"},
+    {"id":4,"name":"毛毛"},
+    {"id":5,"name":"吉吉"},
+    {"id":6,"name":"可可"},
+    {"id":7,"name":"咪咪"},
+    {"id":8,"name":"德马"},
+    {"id":9,"name":"盖盖"},
+    {"id":10,"name":"寝室长"}
+  ],
+  "links":[
+    {"source":6,"target":1,"type":"籍贯"},
+    {"source":7,"target":1,"type":"籍贯"},
+    {"source":5,"target":2,"type":"籍贯"},
+    {"source":4,"target":3,"type":"籍贯"},
+    {"source":9,"target":3,"type":"籍贯"},
+    {"source":8,"target":0,"type":"籍贯"},
+    {"source":8,"target":4,"type":"室友"},
+    {"source":8,"target":5,"type":"室友"},
+    {"source":8,"target":6,"type":"室友"},
+    {"source":8,"target":7,"type":"室友"},
+    {"source":8,"target":9,"type":"室友"},
+    {"source":8,"target":10,"type":"职位"}
+  ]
+}

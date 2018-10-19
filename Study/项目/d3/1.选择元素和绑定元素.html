@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <title>
+                Document
+            </title>
+        </meta>
+        <script src="../../jQuery/jquery/jquery-1.9.1.min.js">
+        </script>
+        <script src="https://d3js.org/d3.v5.min.js">
+        </script>
+        <script>
+        	$(function() {
+        		// 选择元素
+        		var body = d3.select("body");
+        		var div = d3.select("div"); // 选择第一个元素
+        		var divs = body.selectAll("div"); // 选择所有元素
+        		console.log(body);
+        		console.log(div);
+        		console.log(divs);
+
+        		// 1.绑定数据datum
+        		// var str = "is an animal";
+        		// var div_add = d3.selectAll("div");
+        		// // datum将一个数据绑定到所有选择集上
+        		// div_add.datum(str).text(function(d,i){
+        		// 	return "第"+i+"个"+d;
+        		// })
+
+        		// 2.绑定数据：data
+        		// var dataset = ["so cute","cute","fat"];
+        		// var div_add = d3.selectAll("div");
+        		// div_add.data(dataset).text(function(d,i){
+        		// 	return "第"+i+"个动物"+d;
+        		// });
+
+        		// update,enter,exit
+        		//enter
+        		// var arr = [2,6,9,12,15];
+        		// var ps = d3.select("body").selectAll("p");
+        		// var update = ps.data(arr); // 调用data返回的是update部分
+        		// var enter = update.enter(); // 得到enter部分
+
+        		// update.text(function(d,i) {
+        		// 	return "update："+d+",index:"+i;
+        		// })
+
+        		// // 要先创建一些元素
+        		// var ap = enter.append("p");
+        		// ap.text(function(d,i) {
+        		// 	return "enter:"+d+",index:"+i;
+        		// });
+
+        		// exit        		
+        		// var arr = [3];
+        		// var ps = d3.select("body").selectAll("p");
+        		// var update = ps.data(arr); // 调用data返回的是update部分
+        		// var enter = update.exit(); // 得到exit部分
+
+        		// update.text(function(d,i) {
+        		// 	return "update："+d+",index:"+i;
+        		// })
+
+        		// enter.text(function(d,i) {
+        		// 	return "exit:"+d+",index:"+i;
+        		// });
+
+        	});
+        </script>
+    </head>
+    <body>
+    	<p></p>
+    	<p></p>
+    	<p></p>
+    </body>
+</html>
