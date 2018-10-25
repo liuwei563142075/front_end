@@ -50,22 +50,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CSS3/16. 案例360/1. 第一页.html" />
-        <option value="$PROJECT_DIR$/CSS3/16. 案例360/2. 第二页.html" />
-        <option value="$PROJECT_DIR$/CSS3/16. 案例360/3. 第三页.html" />
-        <option value="$PROJECT_DIR$/CSS3/16. 案例360/4. 第四页.html" />
-        <option value="$PROJECT_DIR$/CSS3/17. 换屏/copy.html" />
-        <option value="$PROJECT_DIR$/CSS3/16. 案例360/5. 第五页.html" />
-        <option value="$PROJECT_DIR$/WebStrom快捷键总结" />
-        <option value="$PROJECT_DIR$/CSS3/18. 音乐导航/music.html" />
-        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/1.泡泡.html" />
-        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/2.手风琴.html" />
-        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/3.旋转.html" />
-        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/4. 鼠标进入方向.html" />
-        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/5. 鼠标进入方向案例.html" />
-        <option value="$PROJECT_DIR$/测试/页面导出到word.html" />
-        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/1. perspective.html" />
-        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/2. transform-style.html" />
         <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/3. 案例.html" />
         <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/doc.txt" />
         <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/4. translateZ.html" />
@@ -101,6 +85,22 @@
         <option value="$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/ajax.html" />
         <option value="$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/test.html" />
         <option value="$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/doc.txt" />
+        <option value="$PROJECT_DIR$/项目/d3/data.json" />
+        <option value="$PROJECT_DIR$/测试/json中文字访问.html" />
+        <option value="$PROJECT_DIR$/项目/d3/实例2.html" />
+        <option value="$PROJECT_DIR$/项目/d3/6.绘制完整坐标系.html" />
+        <option value="$PROJECT_DIR$/项目/d3/7.图表过渡效果.html" />
+        <option value="$PROJECT_DIR$/项目/d3/8.交互操作.html" />
+        <option value="$PROJECT_DIR$/项目/d3/10.力导向图.html" />
+        <option value="$PROJECT_DIR$/项目/d3/实例.html" />
+        <option value="$PROJECT_DIR$/项目/d3/1.选择元素和绑定元素.html" />
+        <option value="$PROJECT_DIR$/项目/d3/2.制作简单的图表.html" />
+        <option value="$PROJECT_DIR$/项目/d3/3.比例尺.html" />
+        <option value="$PROJECT_DIR$/项目/d3/4.使用比例尺实现2中图表.html" />
+        <option value="$PROJECT_DIR$/项目/d3/5.坐标轴.html" />
+        <option value="$PROJECT_DIR$/测试/$.type.html" />
+        <option value="$PROJECT_DIR$/项目/d3-project/实例.html" />
+        <option value="$PROJECT_DIR$/测试/test.html" />
       </list>
     </option>
   </component>
@@ -127,7 +127,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,18 +137,13 @@
             <path>
               <item name="Study" type="b2602c69:ProjectViewProjectNode" />
               <item name="Study" type="462c0819:PsiDirectoryNode" />
-              <item name="ajax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Study" type="462c0819:PsiDirectoryNode" />
-              <item name="ajax" type="462c0819:PsiDirectoryNode" />
-              <item name="1. 原生ajax模拟的登录" type="462c0819:PsiDirectoryNode" />
+              <item name="测试" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -160,22 +154,22 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\前端\Study\项目\js" />
       <recent name="E:\Study\ajax\1. 原生ajax模拟的登录" />
       <recent name="E:\Study\echarts学习\static" />
       <recent name="E:\Study\CSS3\13. 变换" />
       <recent name="E:\Study\CSS3\images" />
-      <recent name="E:\Study\echarts学习\1.echarts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\前端\Study\测试\导出word" />
       <recent name="E:\Study\ajax\1. 原生ajax模拟的登录" />
       <recent name="E:\Study" />
       <recent name="E:\Study\echarts学习\1.echarts" />
       <recent name="E:\Study\echarts学习\static\jquery" />
-      <recent name="E:\Study\测试\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -314,11 +308,14 @@
       <workItem from="1539131678677" duration="1215000" />
       <workItem from="1539168214498" duration="677000" />
       <workItem from="1539306170438" duration="831000" />
+      <workItem from="1540008445379" duration="231000" />
+      <workItem from="1540174016711" duration="6229000" />
+      <workItem from="1540299902801" duration="9072000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="926985000" />
+    <option name="totallyTimeSpent" value="942517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -327,6 +324,7 @@
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.044025157" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.37519872" />
       <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -335,11 +333,10 @@
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.37580645" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,101 +358,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CSS3/7. 布局/1. 伸缩布局介绍.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2520" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS3/7. 布局/doc.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS3/6.背景/1. box-sizing.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/3. 案例_旋转导航栏.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/1. perspective.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/6. 长方体.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试/js/FileSaver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="187" column="1" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试/js/jquery.wordexport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="69" lean-forward="true" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/demo-e3 Bar.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试/js/FileSaver.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试/cavas保存为图片.html" />
-    <entry file="file://$PROJECT_DIR$/测试/导出word/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试/导出word/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/cavans与img互转.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/demo-e4 Bar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyWeb/static/bootstrap-3.3.7/docs/assets/js/vendor/FileSaver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="33" column="49" lean-forward="true" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/echarts学习/static/jquery.wordexport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="22" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/7. 轮播图.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -663,6 +565,117 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/json中文字访问.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/js/d3.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/7.图表过渡效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/8.交互操作.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/9.绘制饼图.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/10.力导向图.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/1.选择元素和绑定元素.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/2.制作简单的图表.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/3.比例尺.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/4.使用比例尺实现2中图表.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/5.坐标轴.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/6.绘制完整坐标系.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1296">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/$.type.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/实例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3384">
+          <caret line="118" column="37" lean-forward="true" selection-start-line="118" selection-start-column="37" selection-end-line="118" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/项目/d3-project/实例2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1423">
+          <caret line="182" column="6" lean-forward="true" selection-start-line="182" selection-start-column="6" selection-end-line="182" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
         </state>
       </provider>
     </entry>

@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="../../jQuery/jquery/jquery-1.9.1.min.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../js/d3.min.js"></script>
 </head>
 <body>
 <svg></svg>
 <script>
     //get json file
-    d3.json("data.json").then(function(dataJson){
+    d3.json("./data.json").then(function(dataJson){
         //GroupExplorer constructing function
         //this is one way to create a javascript object
         function GroupExplorer(data){
@@ -126,9 +126,9 @@
             nodes_g.append("circle")
                 .attr("r",30)
                 .attr("fill",function(e){
-                    var id = e.id;
-                    var linkdata = defaultConfig.data.links[id];
-                    var colorid = linkdata.source.id;
+                    var index = e.index;
+                    var linkdata = defaultConfig.data.links[index];
+                    var colorid = linkdata.source.index;
                     console.log(colorid);
                     return colorScale(colorid);
                 });

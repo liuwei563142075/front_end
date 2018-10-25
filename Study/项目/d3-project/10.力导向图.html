@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<title>力导向图</title>
 	<script src="../../jQuery/jquery/jquery-1.9.1.min.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../js/d3.min.js"></script>
     <script>
     	$(function() {
-    		/*d3.forceSimulation() ，新建一个力导向图
-    		d3.forceSimulation().force(),添加或者移除一个力
-    		d3.forceSimulation().nodes()，输入是一个数组，然后将这个输入的数组进行一定的数据转换
-    		d3.forceLink.links()，这里输入的也是一个数组（边集），然后对输入的边集进行转换
+    		/*d3-project.forceSimulation() ，新建一个力导向图
+    		d3-project.forceSimulation().force(),添加或者移除一个力
+    		d3-project.forceSimulation().nodes()，输入是一个数组，然后将这个输入的数组进行一定的数据转换
+    		d3-project.forceLink.links()，这里输入的也是一个数组（边集），然后对输入的边集进行转换
     		tick函数，这个函数对于力导向图来说非常重要，因为力导向图是不断运动的，每一时刻都在发生更新，所以需要不断更新节点和连线的位置
-    		d3.drag(),是力导向图可以被拖动*/
+    		d3-project.drag(),是力导向图可以被拖动*/
 
     		var svg = d3.select("body").select("svg");
     		var width = parseInt($("svg").css("width"));

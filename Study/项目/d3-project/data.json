@@ -8,7 +8,7 @@
     {"id":5,"name":"吉吉"},
     {"id":6,"name":"可可"},
     {"id":7,"name":"咪咪"},
-    {"id":8,"name":"德马"},
+    {"id":1993,"name":"德马"},
     {"id":9,"name":"盖盖"},
     {"id":10,"name":"寝室长"}
   ],
@@ -18,12 +18,12 @@
     {"source":5,"target":2,"type":"籍贯"},
     {"source":4,"target":3,"type":"籍贯"},
     {"source":9,"target":3,"type":"籍贯"},
-    {"source":8,"target":0,"type":"籍贯"},
-    {"source":8,"target":4,"type":"室友"},
-    {"source":8,"target":5,"type":"室友"},
-    {"source":8,"target":6,"type":"室友"},
-    {"source":8,"target":7,"type":"室友"},
-    {"source":8,"target":9,"type":"室友"},
-    {"source":8,"target":10,"type":"职位"}
+    {"source":1993,"target":0,"type":"籍贯"},
+    {"source":1993,"target":4,"type":"室友"},
+    {"source":1993,"target":5,"type":"室友"},
+    {"source":1993,"target":6,"type":"室友"},
+    {"source":1993,"target":7,"type":"室友"},
+    {"source":1993,"target":9,"type":"室友"},
+    {"source":1993,"target":10,"type":"职位"}
   ]
 }

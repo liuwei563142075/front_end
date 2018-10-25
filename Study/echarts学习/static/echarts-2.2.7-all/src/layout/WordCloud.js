@@ -2,7 +2,7 @@
  * @author clmtulip(车丽美, clmtulip@gmail.com) liyong(liyong1239@163.com)
  */
 
-// Modified from d3-cloud
+// Modified from d3-project-cloud
 /*
 Copyright (c) 2013, Jason Davies.
 All rights reserved.

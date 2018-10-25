@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>图标过渡效果</title>
 	<script src="../../jQuery/jquery/jquery-1.9.1.min.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../js/d3.min.js"></script>
     <script>
     	$(function() {
     		var width = parseInt($("svg").css("width"));
@@ -21,22 +21,25 @@
     		gs.attr("x",function(d,i) {
     			return rectWidth*i;
     		})
-    		.attr("y",function(d,i) {
-    			return height-d;
+    		.attr("y",function(d,i) { //初始状态
+    			return height;
     		})
     		.attr("width",rectWidth-spaceWidth)
-    		.attr("height",function(d) {
-    			return d;
+    		.attr("height",function(d) { //初始状态
+    			return 0;
     		})
     		.attr("fill","red")
-    		.on("mouseenter",function() { // 交互操作
-    			var rect = d3.select(this).transition().duration(300).attr("fill","yellow");
+    		.transition()
+    		.duration(2000)
+    		.delay(function(d,i) {
+    			return 300*i;
     		})
-    		.on("mouseleave",function() {
-    			d3.select(this).transition().duration(300).attr("fill","red");
+    		.attr("y",function(d,i) { //截至状态
+    			return height-d;
     		})
-    		
-    		
+    		.attr("height",function(d) { //截至状态
+    			return d;
+    		})
     		
 
     		// 坐标系
@@ -51,7 +54,6 @@
     		g.append("g")
     		.attr("transform","translate(0,0)")
     		.call(yAxis);
-
     	});
     </script>
     <style>
