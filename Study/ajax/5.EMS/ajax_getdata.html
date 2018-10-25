@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./../../jquery/jquery-1.9.1.js"></script>
+	<script>
+		$(function() {
+			$("#btn").on("click",function(){
+				var number = $("input[name='number']").val();
+				// 1.创建对象
+				var xhr = null;
+				try {
+					xhr = new XMLHttpRequest();
+				}catch (e) {
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				var url = "./info.php?" + number;
+				xhr.open("get",url);
+				xhr.onreadystatechange = function() {
+					if(this.readyState == 4 && this.status == 200) {
+						var result = JSON.parse(this.responseText);
+						if(result.status == 0) {
+							var arr = result.data.info.context;
+							var inner = '<ul>';
+							$.each(arr,function(index,value){
+								var dt = arr[index].time;
+								var local = arr[index].desc;
+								var tm = new Date();
+								tm.setTime(dt+"000");
+								var dtext = tm.getFullYear()+"年"+(tm.getMonth()+1)+"月"+tm.getDate()+"日-"+(tm.getHours() > 12 ? "下午":"上午")+tm.getHours()%12+":"+tm.getMinutes()+":"+tm.getSeconds();
+								inner += '<li><span>'+dtext+'</span><span>'+local+'</span></li>';
+							});
+							
+							inner += '</ul>';
+							$("#list").html(inner);
+						}else{
+							$("#list").html(data.msg);
+						}
+					}
+				}
+				xhr.send(null);
+
+			});
+		});
+	</script>
+</head>
+<body>
+	<form>
+		订单号: <input type="text" name="number"><!-- 122222222223 -->
+		<input id="btn" type="button" value="提交">
+	</form>
+	<div id="list"></div>
+</body>
+</html>

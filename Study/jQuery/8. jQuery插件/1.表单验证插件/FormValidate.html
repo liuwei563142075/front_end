@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery/jquery-1.9.1.js"></script>
+    <script src="../plugins/validate/jquery.validate.js"></script>
+    <script src="../plugins/validate/messages_zh.js"></script>
+    <script>
+        $(function() {
+            $("#validateForm").validate();
+        });
+    </script>
+    <style>
+        .error {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<form id="validateForm" action="#" method="post">
+    <fieldset>
+        <legend>一个简单的验证带验证提示的评论例子</legend>
+        <p>
+            <label for="username">姓名</label><em>*</em>
+            <input id="username" type="text" name="username" size="25" class="required" minlength="2">
+        </p>
+        <p>
+            <label for="email">电子邮件</label><em>*</em>
+            <input id="email" type="text" name="email" size="25" class="required email">
+        </p>
+        <p>
+            <label for="curl">网址</label><em>*</em>
+            <input id="curl" type="text" name="url" size="25" class="url" value="">
+        </p>
+        <p>
+            <label for="comme">你的评论</label><em>*</em>
+            <textarea name="comme" id="comme" cols="22" class="required"></textarea>
+        </p>
+        <p>
+            <input class="submit" type="submit" valur="提交">
+        </p>
+    </fieldset>
+</form>
+</body>
+</html>

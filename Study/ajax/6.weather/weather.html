@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取第三方天气数据</title>
+	<style type="text/css">
+		#div1{
+			position:relative;
+			left: 50%;
+			background: lightGreen;
+			width: 300px;
+			height: 500px;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			margin-left: -150px;
+			padding-bottom: 20px;
+		}
+		#div1 select{
+			margin-left : 80px;
+			margin-top : 10px;
+			height: 30px;
+		}
+		#div1 input{
+			height: 30px;
+		}
+		#div1 div{
+			width: 300px;
+			background: lightBlue;
+			border-bottom: red solid 1px;
+		}
+		#div1 div ul li{
+			list-style-type: none;  
+			padding-left: 10px;
+		}
+
+
+	</style>
+	<script src="../../jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#btn").on("click",function() {
+				var cityCode = $("#city option:checked").attr("value");
+				var url = 'http://cdn.weather.hao.360.cn/api_weather_info.php?app=hao360';
+
+				$.ajax({
+					type:"get",
+					url:url,
+					data:{code:cityCode},
+					dataType:"jsonp",
+					success:function(result) {
+						console.log(result);
+						var data = JSON.Stringfy(result);
+						console.log(data);
+					}
+				});
+			})
+		});
+
+	function callback(data){
+		var d = data.weather;
+		var info = document.getElementById('info');
+		info.innerHTML = '';
+		
+		for(var i=0;i<d.length;i++){
+			var date = d[i].date;
+			
+			var tag = '';
+			tag += '<span>日期：'+date+'</sapn><ul>';
+			tag += '</ul>';
+			var div = document.createElement('div');
+			div.innerHTML = tag;
+			info.appendChild(div);
+			
+		}
+	}
+	</script>
+</head>
+<body>
+<div id="div1">
+	<select id="city">
+		<option value="101010100">北京</option>
+		<option value="101020100">上海</option>
+		<option value="101280101">广州</option>
+		<option value="101280601">深圳</option>
+	</select>
+	<input type="button" value="查看天气" id="btn">
+	<div id="info"></div>
+</div>
+</body>
+</html>

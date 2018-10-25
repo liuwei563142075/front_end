@@ -13,7 +13,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/实战/微金所/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="复杂表格.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/测试/复杂表格.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/实战/微金所/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -50,6 +78,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< Updated upstream
+=======
+        <option value="$PROJECT_DIR$/CSS3/16. 案例360/3. 第三页.html" />
+        <option value="$PROJECT_DIR$/CSS3/16. 案例360/4. 第四页.html" />
+        <option value="$PROJECT_DIR$/CSS3/17. 换屏/copy.html" />
+        <option value="$PROJECT_DIR$/CSS3/16. 案例360/5. 第五页.html" />
+        <option value="$PROJECT_DIR$/WebStrom快捷键总结" />
+        <option value="$PROJECT_DIR$/CSS3/18. 音乐导航/music.html" />
+        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/1.泡泡.html" />
+        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/2.手风琴.html" />
+        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/3.旋转.html" />
+        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/4. 鼠标进入方向.html" />
+        <option value="$PROJECT_DIR$/CSS3/19. 泡泡和旋转/5. 鼠标进入方向案例.html" />
+        <option value="$PROJECT_DIR$/测试/页面导出到word.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/1. perspective.html" />
+        <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/2. transform-style.html" />
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/3. 案例.html" />
         <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/doc.txt" />
         <option value="$PROJECT_DIR$/CSS3/20. 透视perspective/4. translateZ.html" />
@@ -85,6 +130,7 @@
         <option value="$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/ajax.html" />
         <option value="$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/test.html" />
         <option value="$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/doc.txt" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/项目/d3/data.json" />
         <option value="$PROJECT_DIR$/测试/json中文字访问.html" />
         <option value="$PROJECT_DIR$/项目/d3/实例2.html" />
@@ -101,6 +147,10 @@
         <option value="$PROJECT_DIR$/测试/$.type.html" />
         <option value="$PROJECT_DIR$/项目/d3-project/实例.html" />
         <option value="$PROJECT_DIR$/测试/test.html" />
+=======
+        <option value="$PROJECT_DIR$/实战/微金所/index.html" />
+        <option value="$PROJECT_DIR$/实战/微金所/README.md" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -114,13 +164,13 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/MyWeb/static/bootstrap-3.3.7/package.json" />
       <path value="$PROJECT_DIR$/echarts学习/static/echarts-2.2.7-all/package.json" />
+      <path value="$PROJECT_DIR$/jQuery/jquery-validation-1.14.0/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="220" />
     <option name="width" value="1033" />
-    <option name="height" value="728" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -137,6 +187,32 @@
             <path>
               <item name="Study" type="b2602c69:ProjectViewProjectNode" />
               <item name="Study" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
+=======
+              <item name="jQuery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="jQuery" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="jQuery" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery-1.9.1.js" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="实战" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
               <item name="测试" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -157,6 +233,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
+<<<<<<< Updated upstream
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\前端\Study\项目\js" />
       <recent name="E:\Study\ajax\1. 原生ajax模拟的登录" />
@@ -164,12 +241,21 @@
       <recent name="E:\Study\CSS3\13. 变换" />
       <recent name="E:\Study\CSS3\images" />
     </key>
+=======
+>>>>>>> Stashed changes
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\前端\Study\测试\导出word" />
       <recent name="E:\Study\ajax\1. 原生ajax模拟的登录" />
       <recent name="E:\Study" />
       <recent name="E:\Study\echarts学习\1.echarts" />
       <recent name="E:\Study\echarts学习\static\jquery" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\前端\Study\实战\微金所\lib\jquery" />
+      <recent name="E:\前端\Study\ajax" />
+      <recent name="E:\Study\ajax\1. 原生ajax模拟的登录" />
+      <recent name="E:\Study\echarts学习\static" />
+      <recent name="E:\Study\CSS3\13. 变换" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -308,19 +394,30 @@
       <workItem from="1539131678677" duration="1215000" />
       <workItem from="1539168214498" duration="677000" />
       <workItem from="1539306170438" duration="831000" />
+<<<<<<< Updated upstream
       <workItem from="1540008445379" duration="231000" />
       <workItem from="1540174016711" duration="6229000" />
       <workItem from="1540299902801" duration="9072000" />
+=======
+      <workItem from="1540008487423" duration="1475000" />
+      <workItem from="1540011396054" duration="1330000" />
+      <workItem from="1540377981960" duration="7061000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="942517000" />
+=======
+    <option name="totallyTimeSpent" value="936851000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="220" y="0" width="1033" height="788" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16398244" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25172076" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.044025157" />
@@ -337,6 +434,10 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+<<<<<<< Updated upstream
+=======
+      <window_info anchor="bottom" id="Find" order="5" weight="0.37580645" />
+>>>>>>> Stashed changes
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,6 +459,72 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< Updated upstream
+=======
+    <entry file="file://$PROJECT_DIR$/测试/js/FileSaver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="187" column="1" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/js/jquery.wordexport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="69" lean-forward="true" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/demo-e3 Bar.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/js/FileSaver.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/cavas保存为图片.html" />
+    <entry file="file://$PROJECT_DIR$/测试/导出word/demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/导出word/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/cavans与img互转.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/1.echarts/demo-e4 Bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyWeb/static/bootstrap-3.3.7/docs/assets/js/vendor/FileSaver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="33" column="49" lean-forward="true" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts学习/static/jquery.wordexport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/CSS3/20. 3d透视perspective/7. 轮播图.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -519,35 +686,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/测试/复杂表格.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/check.php">
+    <entry file="file://$PROJECT_DIR$/ajax/0.0原生ajax模拟的登录/check.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/doc.txt">
+    <entry file="file://$PROJECT_DIR$/ajax/0.0原生ajax模拟的登录/doc.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/ajax.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/1. 原生ajax模拟的登录/test.html">
+    <entry file="file://$PROJECT_DIR$/ajax/0.0原生ajax模拟的登录/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
@@ -568,6 +721,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/测试/json中文字访问.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -676,6 +830,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+=======
+    <entry file="file://$PROJECT_DIR$/ajax/0.0原生ajax模拟的登录/ajax.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/gdMap.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/0.ajax_test/ajax.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/实战/微金所/lib/jquery/jquery-1.9.1.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/实战/微金所/lib/jquery/jquery-1.9.1.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/实战/微金所/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/实战/微金所/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试/复杂表格.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="16" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>

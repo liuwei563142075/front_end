@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./../../jquery/jquery-1.9.1.js"></script>
+	<script>
+		$(function() {
+			$("#btn").on("click",function(){
+				var username = $("input[name='username']").val();
+				var password = $("input[name='password']").val();
+				$.ajax({
+					type:"post",
+					url:"../1.ajax/check.php",
+					async:true,
+					data:{"username":username,"password":password},
+					success:function(result){
+						console.log(result);
+					}
+				});
+
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+	</div>
+	<form> <!-- form表单提交的默认编码方式enctype="application/x-www-form-urlencoded" -->
+		用户名: <input type="text" name="username">
+		密码: <input type="password" name="password">
+		<input id="btn" type="button" value="提交">
+	</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../jquery/jquery-1.9.1.min.js"></script>
+	<script>
+		$.ajax({
+			type:"get",
+			url:"./jquery_jsonp.php",
+			dataType:"jsonp",
+			success:function(json){
+				console.log(json);
+			},
+			error:function(data){
+				console.log(data);
+				console.log(456);
+			}
+		});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

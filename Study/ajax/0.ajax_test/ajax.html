@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生ajax模拟登录</title>
+</head>
+<body>
+<div id="info"></div>
+<form id="from">
+    用户名：<input type="text" name="username"><br>
+    密码：<input type="password" name="password"><br>
+    <input id="btn" type="button" value="登录">
+</form>
+<script src="./../jquery/jquery-1.9.1.js"></script>
+<script>
+    $(function() {
+        $("#btn").on("click",function () {
+			var username = $("input[name='username']").val();
+			var password = $("input[name='password']").val();
+            // 创建xhr
+            var  xhr = null;
+            // 兼容性
+            if(window.XMLHttpRequest) { // 标准浏览器
+                xhr = new XMLHttpRequest();
+            }else { // ie
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            var url = "./check.php?username="+username+"&password="+password;
+            xhr.open("get",url,true); // 最后一个参数true代表是异步
+            // 请求完成的回调函数
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState == 4) {
+                    if(xhr.status = 200) {
+                        alert(1);
+						var data = xhr.responseText;
+						if(data == 1) {
+							$("#info").html("登录成功！");
+						}else if(data == 2) {
+							$("#info").html("登录失败！用户名或密码错误！");
+						}
+                    }
+                }
+            }
+
+            // 开始执行ajax
+            xhr.send(null);
+            alert(2);
+        });
+    });
+</script>
+</body>
+</html>
