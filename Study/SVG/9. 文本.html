@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG文本</title>
+</head>
+<body>
+<svg width="700px" height="700px">
+    <text x="0" y="15" fill="red">SVG is very good!</text>
+    
+    <!-- 旋转文字 -->
+    <text x="0" y="50" fill="red" transform="rotate(30 20,40)">SVG is very good!</text>
+    
+    <!-- 路径上的文字 -->
+    <defs><!-- 是一不是L -->
+        <path id="path1" d="M200,200 a 1,1 0 0,0 300,0"></path>
+    </defs>
+    <text x="50" y="100" style="fill:red;" >
+        <textPath xlink:href="#path1">SVG is very good!</textPath>
+    </text>
+    
+    <!--作为链接文本-->
+    <a xlink:href="http://www.w3cschool.cc/svg/" target="_blank">
+        <text x="0" y="125" fill="red">这是链接文本</text>
+    </a>
+
+
+</svg>
+</body>
+</html>

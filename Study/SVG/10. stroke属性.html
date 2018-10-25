@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stroke属性可以应用于任何种类的线条，文字和元素（如一个圆的轮廓）</title>
+</head>
+<body>
+    <svg width="800px" height="800px">
+        <!-- stroke定义颜色 -->
+        <g fill="none">
+            <path stroke="red" d="M5 20 l215 0"></path>
+            <path stroke="black" d="M5 40 l215 0"></path>
+            <path stroke="blue" d="M5 60 l215 0"></path>
+        </g>
+
+        <!-- 设定宽度 -->
+        <g fill="none">
+            <path stroke="red" stroke-width="3px" d="M5 100 l215 0"></path>
+            <path stroke="black" stroke-width="5px" d="M5 120 l215 0"></path>
+            <path stroke="blue" stroke-width="10px" d="M5 140 l215 0"></path>
+        </g>
+
+        <!-- 定义不同类型的开放路径的终结 -->
+        <g fill="none" stroke="black" stroke-width="6px">
+            <path stroke-linecap="butt" d="M5 180 l215 0"></path>
+            <path stroke-linecap="inherit" d="M5 200 l215 0"></path>
+            <path stroke-linecap="round" d="M5 220 l215 0"></path>
+            <path stroke-linecap="square" d="M5 240 l215 0"></path>
+        </g>
+
+        <!-- 虚线 -->
+        <g fill="none" stroke="black" stroke-width="4">
+            <path stroke-dasharray="5,5" d="M5 280 l215 0" />
+            <path stroke-dasharray="10,10" d="M5 300 l215 0" />
+            <path stroke-dasharray="20,10,5,5,5,10" d="M5 320 l215 0" />
+        </g>
+    </svg>
+</body>
+</html>

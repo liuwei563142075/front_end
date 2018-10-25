@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二次方贝塞尔曲线：A,C是起点，B是控制点</title>
+</head>
+<body>
+    <svg width="700px" height="600px">
+        <path id="lineAB" d="M100 350 l150 -300" stroke="red" stroke-width="3px" fill="none"></path>
+        <path id="lineCB" d="M400 350 l-150 -300" stroke="red" stroke-width="3px" fill="none"></path>
+        <path d="M175 200 l150 0" stroke="green" stroke-width="3px" fill="none"></path>
+        <path d="M100 350 q150 -300 300 0" stroke="blue" stroke-width="3px" fill="none"></path>
+
+        <!-- <g> 用于把相关元素进行组合的容器元素-->
+        <g stroke="black" stroke-width="3" fill="black">
+            <circle id="pointA" cx="100" cy="350" r="4"></circle>
+            <circle id="pointB" cx="250" cy="50" r="4"></circle>
+            <circle id="pointC" cx="400" cy="350" r="4"></circle>
+        </g>
+        <g font-size="30" font="sans-serif" fill="black" stroke="none" text-anchor="middle">
+            <text x="100" y="350" dx="-20" dy="0">A</text>
+            <text x="250" y="50" dx="0" dy="-20">B</text>
+            <text x="400" y="350" dx="20" dy="0">C</text>
+        </g>
+    </svg>
+</body>
+</html>

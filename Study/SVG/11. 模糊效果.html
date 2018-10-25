@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模糊</title>
+</head>
+<body>
+<svg>
+    <!--
+        filter元素id属性定义一个滤镜的唯一名称
+        feGaussianBlur元素定义模糊效果
+        in=SourceGraphic 定义了由整个图像创建效果
+        stdDeviation属性定义模糊量
+        rect元素的滤镜属性来把元素链接到f1滤镜
+    -->
+    <defs>
+        <filter id="f1" x="0" y="0">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="15"></feGaussianBlur>
+        </filter>
+    </defs>
+    <rect width="90px" height="90px" stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)"></rect>
+</svg>
+</body>
+</html>
