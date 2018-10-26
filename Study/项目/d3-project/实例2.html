@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="../../jQuery/jquery/jquery-1.9.1.min.js"></script>
-    <script src="../js/d3.min.js"></script>
+    <script src="../../static/jquery/jquery-1.9.1.min.js"></script>
+    <script src="../../static/d3/js/d3.min.js"></script>
 </head>
 <body>
 <svg></svg>
@@ -69,8 +69,8 @@
             console.log(defaultConfig.data.nodes);
             console.log(defaultConfig.data.links);
             //define arrow
-            svg.append("svg:defs")
-                .append("svg:marker")
+            var defs = svg.append("svg:defs");
+            defs.append("svg:marker")
                 .attr("id", "marker")
                 .attr('viewBox', '0 -5 10 10')
                 .attr("refX", 25)
@@ -109,7 +109,9 @@
                 })
                 .attr("font-size",10)
                 .text(function(e){return e.type});
-            //draw nodes group = node+node-text
+
+            //draw nodes group = node+node-text+outer-ring
+            // create nodes_g contains all
             var nodes_g = svg.append("g")
                 .selectAll("g")
                 .data(defaultConfig.data.nodes)
@@ -122,9 +124,59 @@
                     .on("start",started)
                     .on("drag",dragged)
                     .on("end",ended));
+
+            //outer-ring
+            var database = [1, 1, 1];
+            var pie = d3.pie();
+            var piedata = pie(database);
+            var outer = defs.append("g")
+                .attr("id", 'out_circle')
+                .selectAll(".group")
+                .data(piedata)
+                .enter()
+                .append("g")
+                .attr("class", function (d, i) {
+                    return "action_" + i + " three_circle"
+                });
+
+            var arc = d3.arc()
+                .innerRadius(30)
+                .outerRadius(60);
+            outer.append("path")
+                .attr("d", function (d) {
+                    return arc(d)
+                })
+                .attr("fill", "#bbcdc5")
+                .attr("stroke", "#f0f0f4")
+                .attr("stroke-width", 2);
+
+            outer.append("text")
+                .attr("transform", function (d, i) {
+                    return "translate(" + arc.centroid(d) + ")";
+                })
+                .attr("text-anchor", "middle")
+                .text(function (d, i) {
+                    var zi = new Array()
+                    zi[0] = "释放";
+                    zi[1] = "扩展";
+                    zi[2] = "删除";
+                    return zi[i]
+                })
+                .attr("font-size", 10);
+            // nodes_g add outer-ring
+            //添加 三瓣式圆环
+            var three_part_pie = nodes_g.append("use") //  为每个节点组添加一个 use 子元素
+                .attr("xlink:href", "#out_circle") //  指定 use 引用的内容
+                .attr("id", function (d) {
+                    return d.index
+                })
+                .attr("class", function (d, i) {
+                    return "ingroup_pie_" + d.id + "   three_part_pie"
+                });
+
             //draw nodes
             nodes_g.append("circle")
-                .attr("r",30)
+                .attr("r",20)
                 .attr("fill",function(e){
                     var index = e.index;
                     var linkdata = defaultConfig.data.links[index];
@@ -140,6 +192,7 @@
                 .attr('text-anchor',"middle") // 水平居中
                 .attr('dy',5)
                 .text(function(e){return e.name});
+
             function started(d){
                 if(!d3.event.active){
                     forceSimulation.alphaTarget(0.8).restart();

@@ -1,0 +1,10 @@
+.three_part_pie {
+    display: none;
+}
+.pie_display {
+    display: block !important;
+}
+.outline:hover {
+    stroke: rgb(106, 198, 255);
+    opacity: 0.4;
+}

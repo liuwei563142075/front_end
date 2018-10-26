@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>use svg</title>
+    <script src="../static/svg/svg.js"></script>
+    <script src="../static/jquery/jquery-1.9.1.min.js"></script>
+    <script>
+        $(function() {
+            var draw = SVG('drawing')
+
+            var path = draw.path('M0 0 A50 50 0 0 1 50 50 A50 50 0 0 0 100 100')
+
+            path.fill('none').move(20, 20).stroke({ width: 1, color: '#ccc' })
+
+            path.marker('start', 10, 10, function(add) {
+                add.circle(10).fill('#f06')
+            })
+            path.marker('mid', 10, 10, function(add) {
+                add.rect(5, 10).cx(5).fill('#ccc')
+            })
+            path.marker('end', 20, 20, function(add) {
+                add.circle(6).center(4, 5)
+                add.circle(6).center(4, 15)
+                add.circle(6).center(12, 10)
+
+                this.fill('#0f9')
+            })
+        });
+    </script>
+</head>
+<body>
+<div id="drawing"></div>
+</body>
+</html>
