@@ -1220,7 +1220,7 @@ h1[id] {
  * Generate a set of tests to show the responsive utilities in action.
  */
 
-/* Responsive (scrollable) doc tables */
+/* Responsive (scrollable) README.md tables */
 .table-responsive .highlight pre {
   white-space: normal;
 }

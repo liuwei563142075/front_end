@@ -27,7 +27,7 @@ function requireCallback (ec, defaultTheme) {
 var themeSelector = $('#theme-select');
 if (themeSelector) {
     themeSelector.html(
-        '<option selected="true" name="macarons">macarons</option>' 
+        '<option selected="true" name="macarons">macarons</option>'
         + '<option name="infographic">infographic</option>'
         + '<option name="shine">shine</option>'
         + '<option name="dark">dark</option>'
@@ -47,7 +47,7 @@ if (themeSelector) {
         $(themeSelector).val(theme);
         if (theme != 'default') {
             window.location.hash = value + (enVersion ? '-en' : '');
-            require(['http://echarts.baidu.com/doc/example/theme/' + theme], function(tarTheme){
+            require(['http://echarts.baidu.com/README.md/example/theme/' + theme], function(tarTheme){
                 curTheme = tarTheme;
                 setTimeout(refreshTheme, 500);
             })
@@ -112,7 +112,7 @@ function refresh(isBtnRefresh){
             return;
         }
         needRefresh = false;
-        
+
         domMessage.innerHTML = '';
         (new Function(editor.doc.getValue()))();
     });
@@ -138,7 +138,7 @@ if (developMode) {
         var script = document.createElement('script');
         script.async = true;
 
-        script.src = '../../../doc/asset/js/esl/esl.js';
+        script.src = '../../../README.md/asset/js/esl/esl.js';
         if (script.readyState) {
             script.onreadystatechange = fireLoad;
         }
@@ -146,7 +146,7 @@ if (developMode) {
             script.onload = fireLoad;
         }
         (document.getElementsByTagName('head')[0] || document.body).appendChild(script);
-        
+
         function fireLoad() {
             script.onload = script.onreadystatechange = null;
             setTimeout(loadedListener,100);
@@ -204,7 +204,7 @@ function launchExample() {
     require(
         [
             'echarts',
-            'http://echarts.baidu.com/doc/example/theme/' + hash.replace('-en', ''),
+            'http://echarts.baidu.com/README.md/example/theme/' + hash.replace('-en', ''),
             needMap() ? 'echarts/chart/map' : 'echarts'
         ],
         requireCallback

@@ -1,0 +1,68 @@
+/* 约定：
+        -为了防止样式层叠，推荐使用直接子代选择器
+        -样式书写，请带上最顶部id
+        -所有模块分割线，统一使用底部方式
+ */
+
+/* 全局样式 */
+/* 字体 */
+body {
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+@font-face {
+    font-family: 'itcast';
+    src: url(../font/MiFie-Web-Font.eot) format('embedded-opentype');
+    src: url(../font/MiFie-Web-Font.svg) format('svg');
+    src: url(../font/MiFie-Web-Font.ttf) format('truetype');
+    src: url(../font/MiFie-Web-Font.woff) format('woff');
+}
+[class^='icon-'],[class*=' icon-'] {
+    font-family: itcast !important;
+    font-style: normal;
+}
+/* 字体图标 */
+.icon-mobilephone:before {
+    content: "\e908";
+    font-size: 13px;
+}
+.icon-telephone:before {
+    content: "\e909";
+    font-size: 15px;
+}
+
+#topbar {
+    height: 40px;
+    line-height: 40px;
+    color: #777;
+    font-size: 12px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+#topbar .container .row div+div {
+    border-left: 1px solid #c0c0c0;
+}
+
+#topbar .mobile {
+    color: #777;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#topbar .mobile:hover {
+    text-decoration: none;
+}
+
+#topbar .mobile img {
+    display: none;
+    position: absolute;
+    top: 29px;
+    left: 50%;
+    margin-left: -60px;
+}
+
+#topbar .mobile:hover > img {
+    display: block;
+}
+
+/* #全局样式 */

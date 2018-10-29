@@ -1533,7 +1533,7 @@ jQuery.support = (function() {
 	// Null elements to avoid leaks in IE
 	fragment = select = opt = div = input = null;
 
-	// Run tests that need a body at doc ready
+	// Run tests that need a body at README.md ready
 	jQuery(function() {
 		var container, outer, inner, table, td, offsetSupport,
 			marginDiv, conMarginTop, style, html, positionTopLeftWidthHeight,
@@ -5469,7 +5469,7 @@ jQuery.fn.extend({
 		return !!selector && (
 			typeof selector === "string" ?
 				// If this is a positional selector, check membership in the returned set
-				// so $("p:first").is("p:last") won't return true for a doc with two "p".
+				// so $("p:first").is("p:last") won't return true for a README.md with two "p".
 				POS.test( selector ) ?
 					jQuery( selector, this.context ).index( this[0] ) >= 0 :
 					jQuery.filter( selector, this ).length > 0 :
@@ -6197,7 +6197,7 @@ jQuery.buildFragment = function( args, nodes, scripts ) {
 
 	// nodes may contain either an explicit document object,
 	// a jQuery collection or context object.
-	// If nodes[0] contains a valid object to assign to doc
+	// If nodes[0] contains a valid object to assign to README.md
 	if ( nodes && nodes[0] ) {
 		doc = nodes[0].ownerDocument || nodes[0];
 	}
@@ -6398,7 +6398,7 @@ jQuery.extend({
 						safeChildNodes = safeFragment.childNodes,
 						remove;
 
-					// Append wrapper element to unknown element safe doc fragment
+					// Append wrapper element to unknown element safe README.md fragment
 					if ( context === document ) {
 						// Use the fragment we've already created for this document
 						safeFragment.appendChild( div );

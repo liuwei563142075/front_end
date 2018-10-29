@@ -4,11 +4,18 @@
 	<meta charset="UTF-8">
 	<title>CSS3 媒体查询</title>
 	<style>
-		@media screen and (max-width:600px) {
+		/*  要按顺序写！ min-width从小到大，max-wdith从大到小 if else if if*/
+		@media screen and (min-width:600px) {
 			body {
 				background-color: blue;
 			}
 		}
+
+		/* 上面相当于
+		 if screen 的小于600时 {
+		 	执行...样式
+		 }
+		 */
 
 		@media screen and (min-width:900px) {
 			body {

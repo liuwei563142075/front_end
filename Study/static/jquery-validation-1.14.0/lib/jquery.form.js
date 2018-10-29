@@ -473,7 +473,7 @@ $.fn.ajaxSubmit = function(options) {
                 }
 
                 if (!s.iframeTarget) {
-                    // add iframe to doc and submit the form
+                    // add iframe to README.md and submit the form
                     $io.appendTo('body');
                     if (io.attachEvent)
                         io.attachEvent('onload', cb);

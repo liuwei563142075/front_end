@@ -3675,7 +3675,7 @@
                 return this
             }
 
-            // Removes the doc from the DOM
+            // Removes the README.md from the DOM
             , remove: function() {
                 if(this.parent()) {
                     this.parent().removeChild(this.node)

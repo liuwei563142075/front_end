@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function() {
+            // 必须使用document获取的元素才能createShadowRoot
+            const shadowRoot = document.querySelector('.box').createShadowRoot();
+            // const html = '<div id="tabs"><slot id="tabSlot" name="title"></slot><div id="panels"><slot id="panelsSlot"></slot></div></div>';
+            const html = '<fancy-tabs>\n' +
+                '  <h2 slot="title">Title</h2>\n' +
+                '  <section>content panel 1</section>\n' +
+                '  <h2 slot="title" selected>Title 2</h2>\n' +
+                '  <section>content panel 2</section>\n' +
+                '  <h2 slot="title">Title 3</h2>\n' +
+                '  <section>content panel 3</section>\n' +
+                '</fancy-tabs>'
+            shadowRoot.innerHTML = html;
+        });
+    </script>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

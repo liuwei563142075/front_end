@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>const</title>
+    <script>
+        window.onload = function() {
+            // const 定义常量类型
+            //const a; // 编译器报错：must be initialize
+            const a = 50;
+            console.log(a);
+            //a = 70;  // 编译器报错：说a是readonly
+            console.log(a);
+
+            // const 定义数组对象类型：可见const定义的数组是可以被修改的，
+            // 也仅仅支持修改数组内容，不支持修改数组引用指向
+            const arr = new Array();
+            arr.push(1);
+            arr.push(2);
+            console.log(arr);
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

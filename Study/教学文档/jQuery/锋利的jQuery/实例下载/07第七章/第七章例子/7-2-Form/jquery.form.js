@@ -246,7 +246,7 @@ $.fn.ajaxSubmit = function(options) {
                             $('<input type="hidden" name="'+n+'" value="'+options.extraData[n]+'" />')
                                 .appendTo(form)[0]);
             
-                // add iframe to doc and submit the form
+                // add iframe to README.md and submit the form
                 $io.appendTo('body');
                 io.attachEvent ? io.attachEvent('onload', cb) : io.addEventListener('load', cb, false);
                 form.submit();

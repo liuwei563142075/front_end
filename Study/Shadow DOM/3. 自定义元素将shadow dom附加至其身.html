@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        window.onload = function() {
+            // 自定义dom对象
+            var XFooPrototype = Object.create(HTMLElement.prototype);
+            XFooPrototype.createdCallback = function() {
+                var shadowRoot = this.createShadowRoot();
+                shadowRoot.innerHTML = '<style>#tabs { width: 100px;height: 100px;background-color: pink }</style> <!-- styles are scoped to fancy-tabs! -->\n' +
+                    '      <div id="tabs"></div>\n' +
+                    '      <div id="panels">panels</div>';
+            };
+            XFooPrototype.foo = function() {
+                console.log('foo() called');
+            };
+            var XFoo = document.registerElement('x-foo', {
+                prototype: XFooPrototype
+            });
+
+            var box = $('.box');
+            var fc = $('<x-foo></x-foo>');
+            box.append(fc);
+        }
+    </script>
+</head>
+<body>
+<div class="box"></div>
+<p>自定义dom请看:https://www.npmjs.com/package/customelements</p>
+</body>
+</html>

@@ -50,7 +50,7 @@ else {
     // for echarts online home page
     require.config({
         paths:{ 
-            echarts: '../../doc/example/www/js'
+            echarts: '../../README.md/example/www/js'
         }
     });
     launchExample();
@@ -128,7 +128,7 @@ function launchExample() {
         function (ec) {
             echarts = ec;
 
-            http('../../doc/example/data/webkit-dep.json', function (data) {
+            http('../../README.md/example/data/webkit-dep.json', function (data) {
                 data = JSON.parse(data);
 
                 optionMap.force2.series[0] = {

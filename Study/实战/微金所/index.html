@@ -2,29 +2,110 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <!--设置浏览器的兼容模式版本（让IE使用最新的渲染引擎工作）-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 声明当前网页在移动端浏览器中展示的相关设置 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <title>手机微金所</title>
+    <link href="./lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
     <!--[if lt IE 9]>
-    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <script src="./lib/html5shiv/html5shiv.min.js"></script>
+        <script src="./lib/responsejs/response.min.js"></script>
     <![endif]-->
 </head>
 <body>
-<h1>你好，世界！</h1>
+<!-- 顶部 -->
+<header id="header">
+    <div id="topbar">
+        <div class="container">
+            <div class="row text-center">
+                <div class="tb-1 col-md-2">
+                    <a class="mobile" href="#">
+                        <i class="icon-mobilephone"></i>
+                        <span>手机微金所</span>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <img src="./img/c_06.jpg" alt="扫一扫">
+                    </a>
+                </div>
+                <div class="tb-2 col-md-5">
+                    <i class="icon-telephone"></i>
+                    <span>4006-89-4006（服务时间：9:00-21:00）</span>
+                </div>
+                <div class="tb-3 col-md-2 text-center">
+                    <a href="#">常见问题</a>
+                    <a href="#">财富登录</a>
+                </div>
+                <div class="tb-4 col-md-3 text-center">
+                    <a href="#" class="btn btn-danger btn-sm">免费注册</a>
+                    <a href="" class="btn btn-link">登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">微金所</a>
+            </div>
 
-<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">我要投资 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">我要借款</a></li>
+                    <li><a href="#">平台介绍</a></li>
+                    <li><a href="#">新手专区</a></li>
+                    <li><a href="#">最新动态</a></li>
+                    <li><a href="#">微论坛</a></li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">个人中心</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+<!-- #顶部-->
+
+<!--  轮播 -->
+<section></section>
+<!-- #轮播 -->
+
+<!--  产品 -->
+<section></section>
+<!-- #产品 -->
+
+<!--  预约 -->
+<section></section>
+<!-- #预约 -->
+
+<!--  推荐 -->
+<section></section>
+<!-- #推荐 -->
+
+<!--  新闻 -->
+<section></section>
+<!-- #新闻 -->
+
+<!--  合作伙伴 -->
+<section></section>
+<!-- #合作伙伴 -->
+
+<!-- 底部 -->
+<footer></footer>
+<!-- #底部 -->
+
+<script src="./lib/jquery/jquery-1.9.1.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>

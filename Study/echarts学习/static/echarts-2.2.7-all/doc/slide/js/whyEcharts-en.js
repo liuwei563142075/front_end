@@ -29,7 +29,7 @@ if (developMode) {
             // for develop
             require.config({
                 paths : {
-                    webkitDep : '../../doc/example/webkit-dep'
+                    webkitDep : '../../README.md/example/webkit-dep'
                 },
                 packages: [
                     {
@@ -53,8 +53,8 @@ else {
     // for echarts online home page
     require.config({
         paths:{ 
-            echarts: '../../doc/example/www/js',
-            webkitDep : '../../doc/example/webkit-dep'
+            echarts: '../../README.md/example/www/js',
+            webkitDep : '../../README.md/example/webkit-dep'
         }
     });
     launchExample();

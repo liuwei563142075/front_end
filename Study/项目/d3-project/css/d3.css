@@ -1,10 +1,16 @@
+.node {
+    cursor: pointer;
+}
 .three_part_pie {
     display: none;
 }
-.pie_display {
-    display: block !important;
+.node .select {
+    display: block;
 }
-.outline:hover {
+.ring {
+    display: none;
     stroke: rgb(106, 198, 255);
     opacity: 0.4;
 }
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建shadow dom</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            // const box = document.querySelector(".box");
+            // const shadowRoot = box.attachShadow({mode:'open'});
+            // shadowRoot.innerHTML = '<h1>Hello Shadow DOM</h1>';
+
+            const host = document.querySelector('.box');
+            const shadowRoot = host.createShadowRoot();
+            shadowRoot.innerHTML = '<h1>Hello Shadow DOM</h1>';
+        }
+    </script>
+</head>
+<body>
+<div class="box"></div>
+<div class="introduce">
+    <p>shadow dom 是附加至“宿主”元素的文档片段。元素通过附加影子根来获取其shadow dom.</p>
+    <p>要为元素创建shadow dom,请调用element.attachShadow();</p>
+</div>
+</body>
+</html>

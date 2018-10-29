@@ -356,13 +356,13 @@ test("extension", function() {
 		return $.validator.methods.extension.call(v, value, $("#text1")[0], param);
 	};
 	ok( method( "picture.doc", "doc" ), "Valid custom accept type" );
-	ok( method( "picture.pdf", "doc|pdf" ), "Valid custom accept type" );
-	ok( method( "picture.pdf", "pdf|doc" ), "Valid custom accept type" );
+	ok( method( "picture.pdf", "README.md|pdf" ), "Valid custom accept type" );
+	ok( method( "picture.pdf", "pdf|README.md" ), "Valid custom accept type" );
 	ok(!method( "picture.pdf", "doc" ), "Invalid custom accept type" );
 	ok(!method( "picture.doc", "pdf" ), "Invalid custom accept type" );
 
-	ok( method( "picture.pdf", "doc,pdf" ), "Valid custom accept type, comma separated" );
-	ok( method( "picture.pdf", "pdf,doc" ), "Valid custom accept type, comma separated" );
+	ok( method( "picture.pdf", "README.md,pdf" ), "Valid custom accept type, comma separated" );
+	ok( method( "picture.pdf", "pdf,README.md" ), "Valid custom accept type, comma separated" );
 	ok(!method( "picture.pdf", "gop,top" ), "Invalid custom accept type, comma separated" );
 });
 

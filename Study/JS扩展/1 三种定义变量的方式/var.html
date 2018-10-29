@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>var</title>
+    <script>
+        window.onload = function() {
+            // var 定义常量类型
+            var a; // 编译器不会报错
+            console.log(a); // 输出undefined
+            a = 50; // 支持修改
+            console.log(a);
+
+            // var 定义的对象支持修改
+            var arr = new Array();
+            arr.push(1);
+            arr.push(2);
+            console.log(arr);
+
+            arr = '2';// 支持类型修改
+            console.log(arr);
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

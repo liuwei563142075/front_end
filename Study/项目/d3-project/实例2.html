@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="../../static/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="./css/d3.css">
+    <script src="../../static/jquery/jquery-3.2.1.min.js"></script>
     <script src="../../static/d3/js/d3.min.js"></script>
 </head>
 <body>
@@ -15,6 +16,11 @@
         //GroupExplorer constructing function
         //this is one way to create a javascript object
         function GroupExplorer(data){
+            var deal_data_links = {
+                deal_data:{"nodes":[],"links":[]}
+            }
+            $.extend(true,deal_data_links,data);
+
             //create an object-include some data
             //this is an another way to create a javascript object
             var defaultConfig = {
@@ -110,13 +116,14 @@
                 .attr("font-size",10)
                 .text(function(e){return e.type});
 
-            //draw nodes group = node+node-text+outer-ring
+            //draw nodes group = node + node-text + outer-ring + three-outer-ring
             // create nodes_g contains all
             var nodes_g = svg.append("g")
                 .selectAll("g")
                 .data(defaultConfig.data.nodes)
                 .enter()
                 .append("g")
+                .attr("class","node groupstyle")
                 .attr("transform",function(e){
                     return "translate("+e.x+","+e.y+")";
                 })
@@ -125,7 +132,7 @@
                     .on("drag",dragged)
                     .on("end",ended));
 
-            //outer-ring
+            // create three-outer-ring
             var database = [1, 1, 1];
             var pie = d3.pie();
             var piedata = pie(database);
@@ -146,7 +153,7 @@
                 .attr("d", function (d) {
                     return arc(d)
                 })
-                .attr("fill", "#bbcdc5")
+                .attr("fill", "#D2D5DA")
                 .attr("stroke", "#f0f0f4")
                 .attr("stroke-width", 2);
 
@@ -163,8 +170,8 @@
                     return zi[i]
                 })
                 .attr("font-size", 10);
-            // nodes_g add outer-ring
-            //添加 三瓣式圆环
+
+            // nodes_g add three-outer-ring
             var three_part_pie = nodes_g.append("use") //  为每个节点组添加一个 use 子元素
                 .attr("xlink:href", "#out_circle") //  指定 use 引用的内容
                 .attr("id", function (d) {
@@ -174,15 +181,24 @@
                     return "ingroup_pie_" + d.id + "   three_part_pie"
                 });
 
+            // draw outer ring
+            nodes_g.append("circle")
+                .attr("class","ring")
+                .attr("r",29)
+                .attr("stroke-width",8);
             //draw nodes
             nodes_g.append("circle")
-                .attr("r",20)
+                .attr("class","outline")
+                .attr("r",25)
+                .attr("stroke",function(e) {
+                    return colorScale(e.id);
+                })
+                .attr("stroke-width",2)
                 .attr("fill",function(e){
-                    var index = e.index;
-                    var linkdata = defaultConfig.data.links[index];
-                    var colorid = linkdata.source.index;
-                    console.log(colorid);
-                    return colorScale(colorid);
+                    var targetId = e.id;
+                    var sourceId = getSourceId(deal_data_links.data.links,targetId);
+                    var index = getIndex(defaultConfig.data.nodes,sourceId);
+                    return colorScale(index);
                 });
             //draw node-text
             nodes_g.append("text")
@@ -228,12 +244,74 @@
                     .attr("transform",function(e){
                         return "translate("+e.x+","+e.y+")";
                     })
+            };
+
+        }
+
+        // 根据targetId获取sourceId的
+        function getSourceId(deal_data_links,targetId) {
+            /* <![CDATA[ */
+            for(var i = 0;i < deal_data_links.length;i++) {
+                var value = deal_data_links[i];
+                if(value.target == targetId) {
+                    return value.source;
+                }
+            }
+            /* ]]> */
+            return "null";
+        }
+
+        function getIndex(config_data_nodes,sourceId) {
+            if(sourceId != "null") {
+                /* <![CDATA[ */
+                for(var i = 0;i < config_data_nodes.length;i++) {
+                    var value = config_data_nodes[i];
+                    if(value.id == sourceId) {
+                        if(value.index != 3) {
+                            return value.index;
+                        }else {
+                            return 10;
+                        }
+                    }
+                }
+                /* ]]> */
+            }else {
+                return 20;
             }
         }
+
         //because in the way of creating a javascript object,
         //you need to use "new" to use it
         new GroupExplorer({data:dataJson});
-    })
+
+        //// some event
+        $(function() {
+            // outer-ring
+            $(".node").hover(function() {
+                $(this).find(".ring").css("display","block");
+            },function() {
+                $(this).find(".ring").css("display","none");
+            });
+
+            $(".outline,text").on("click",function() {
+                var flag = $(this).parent().find(".three_part_pie").hasClass('select');
+                $(".three_part_pie").removeClass("select");
+                if(!flag) {
+                    $(this).parent().find(".three_part_pie").addClass("select");
+                }
+            });
+
+            // three-outer-ring click
+            // var three_circle = document.querySelectorAll(".three_circle");
+            // $(three_circle).on("click",function() {
+            //     console.log(123);
+            // });
+
+        });
+
+    });
+
+
 </script>
 </body>
 </html>

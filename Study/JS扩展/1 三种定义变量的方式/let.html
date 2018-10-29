@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let</title>
+    <script>
+        window.onload = function() {
+            // let 常常用于块级作用域
+            let a;
+            console.log(a);// undefined
+            a = 10;
+            console.log(a); // 10
+
+            b = 20;
+            var b; // 不会报错，编译期会将变量b的声明提前
+
+            //c = 30;
+            //let c;// 报错，块级变量，编译期不会提前？？？
+
+            // var 在闭包循环内定义的变量外部依然可以访问
+            for(var j = 0;j < 2;j++) {
+                console.log("var for:"+j);
+            }
+            console.log("外部依然可以访问var闭包内定义的变量："+j);
+
+            // let 常用于闭包循环
+            for(let i = 0;i < 2;i++) {
+                console.log("let for:"+i);
+            }
+            // console.log("外部可以访问let闭包内定义的变量吗？"+i);
+
+            // 将let用在函数内
+            function letf() {
+                let fl = 10;
+            }
+
+            function varf() {
+                var fv = 10;
+            }
+            // console.log(fv); // undefined
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
