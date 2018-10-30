@@ -16,11 +16,18 @@
         //GroupExplorer constructing function
         //this is one way to create a javascript object
         function GroupExplorer(data){
+<<<<<<< Updated upstream
             var deal_data_links = {
                 deal_data:{"nodes":[],"links":[]}
             }
             $.extend(true,deal_data_links,data);
 
+=======
+            var deal_data = {
+                data:{"nodes":[],"links":[]}
+            }
+            $.extend(true,deal_data,data);
+>>>>>>> Stashed changes
             //create an object-include some data
             //this is an another way to create a javascript object
             var defaultConfig = {
@@ -110,7 +117,6 @@
                     return (e.source.x+e.target.x)/2;
                 })
                 .attr("y",function(e){
-                    console.log(e.source.y+"+"+e.target.y)
                     return (e.source.y+e.target.y)/2;
                 })
                 .attr("font-size",10)
@@ -123,7 +129,11 @@
                 .data(defaultConfig.data.nodes)
                 .enter()
                 .append("g")
+<<<<<<< Updated upstream
                 .attr("class","node groupstyle")
+=======
+                .attr("class","node")
+>>>>>>> Stashed changes
                 .attr("transform",function(e){
                     return "translate("+e.x+","+e.y+")";
                 })
@@ -196,7 +206,11 @@
                 .attr("stroke-width",2)
                 .attr("fill",function(e){
                     var targetId = e.id;
+<<<<<<< Updated upstream
                     var sourceId = getSourceId(deal_data_links.data.links,targetId);
+=======
+                    var sourceId = getSourceId(deal_data.data.links,targetId);
+>>>>>>> Stashed changes
                     var index = getIndex(defaultConfig.data.nodes,sourceId);
                     return colorScale(index);
                 });
@@ -278,12 +292,103 @@
             }else {
                 return 20;
             }
+
+            /*------定义 ACTION -- 开始--------------------------------*/
+            //根据 用户点击的外轮廓的不同位置， 决定采取哪种动作。给 action 赋值，配合其他函数进行操作。
+
+            var ACTION = '';
+            svg.selectAll(".action_0")
+                .on("click", function (d, i) {
+                    ACTION = "FREE"
+                });
+
+            svg.selectAll(".action_2").on("click", function (d, i) {
+                ACTION = "DELETE"
+            });
+            svg.selectAll(".action_1").on("click", function (d, i) {
+                ACTION = "EXTENDS"
+            });
+            /*-------- 定义 ACTION -- 结束--------------------------------------------------*/
+
+            /*---------------------- 三个动作------开始-----------------------*/
+            svg.selectAll(".node").on("click", function (d, i) {
+                if (ACTION) {
+                    switch (ACTION) {
+                        case 'FREE':
+                            console.log(d);
+                            d.fixed = false;
+                            ACTION = '';//重置 ACTION
+                            break;
+                        case 'DELETE':
+                            console.log(d);
+                            var node_index = defaultConfig.data.nodes.indexOf(d);
+                            deal_data.data.nodes.splice(node_index,1);
+                            var tmp_array = new Array(); //新建一个空列表，盛放 NODES_LINK　数据集中　不符合删除条件的 关系。
+                            for (var link_index = 0; link_index < deal_data.data.links.length; ++link_index) {
+                                var curr_link = deal_data.data.links[link_index];
+                                if (curr_link.source != d.id && curr_link.target != d.id) {
+                                    tmp_array.push(curr_link)
+                                }
+                            }
+                            deal_data.data.links = tmp_array;
+                            $("svg > g").remove();// 删除 已经在 DOM 中渲染的元素
+                            var newData = {'nodes':deal_data.data.nodes,'links':deal_data.data.links};
+                            new GroupExplorer({data:newData});// 用删除后的 节点和 关系重建
+                            ACTION = '';
+                            console.log(node_index);
+                            break;
+                        case 'EXTENDS':
+                            console.log(d);
+                            $.getJSON('/getData',{'name':d.name},function(result) {
+
+                            })
+                            break;
+                    }
+                }
+            })
+            /*---------------------- 三个动作------结束-----------------------*/
         }
 
+<<<<<<< Updated upstream
+=======
+        // 根据targetId获取sourceId的
+        function getSourceId(deal_data_links,targetId) {
+            /* <![CDATA[ */
+            for(var i = 0;i < deal_data_links.length;i++) {
+                var value = deal_data_links[i];
+                if(value.target == targetId) {
+                    return value.source;
+                }
+            }
+            /* ]]> */
+            return "null";
+        }
+
+        function getIndex(config_data_nodes,sourceId) {
+            if(sourceId != "null") {
+                /* <![CDATA[ */
+                for(var i = 0;i < config_data_nodes.length;i++) {
+                    var value = config_data_nodes[i];
+                    if(value.id == sourceId) {
+                        if(value.index != 3) {
+                            return value.index;
+                        }else {
+                            return 10;
+                        }
+                    }
+                }
+                /* ]]> */
+            }else {
+                return 20;
+            }
+        }
+
+>>>>>>> Stashed changes
         //because in the way of creating a javascript object,
         //you need to use "new" to use it
         new GroupExplorer({data:dataJson});
 
+<<<<<<< Updated upstream
         //// some event
         $(function() {
             // outer-ring
@@ -312,6 +417,10 @@
     });
 
 
+=======
+
+    })
+>>>>>>> Stashed changes
 </script>
 </body>
 </html>
