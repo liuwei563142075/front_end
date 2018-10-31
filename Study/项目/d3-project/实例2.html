@@ -16,18 +16,11 @@
         //GroupExplorer constructing function
         //this is one way to create a javascript object
         function GroupExplorer(data){
-<<<<<<< Updated upstream
             var deal_data_links = {
                 deal_data:{"nodes":[],"links":[]}
             }
             $.extend(true,deal_data_links,data);
 
-=======
-            var deal_data = {
-                data:{"nodes":[],"links":[]}
-            }
-            $.extend(true,deal_data,data);
->>>>>>> Stashed changes
             //create an object-include some data
             //this is an another way to create a javascript object
             var defaultConfig = {
@@ -86,10 +79,10 @@
             defs.append("svg:marker")
                 .attr("id", "marker")
                 .attr('viewBox', '0 -5 10 10')
-                .attr("refX", 25)
+                .attr("refX", 35)
                 .attr("refY",0)
-                .attr('markerWidth', 20)
-                .attr('markerHeight', 20)
+                .attr('markerWidth', 10)
+                .attr('markerHeight', 10)
                 .attr('orient', 'auto')
                 .append('svg:path')
                 .attr('d', 'M0,-5L10,0L0,5')
@@ -129,11 +122,7 @@
                 .data(defaultConfig.data.nodes)
                 .enter()
                 .append("g")
-<<<<<<< Updated upstream
                 .attr("class","node groupstyle")
-=======
-                .attr("class","node")
->>>>>>> Stashed changes
                 .attr("transform",function(e){
                     return "translate("+e.x+","+e.y+")";
                 })
@@ -206,11 +195,7 @@
                 .attr("stroke-width",2)
                 .attr("fill",function(e){
                     var targetId = e.id;
-<<<<<<< Updated upstream
                     var sourceId = getSourceId(deal_data_links.data.links,targetId);
-=======
-                    var sourceId = getSourceId(deal_data.data.links,targetId);
->>>>>>> Stashed changes
                     var index = getIndex(defaultConfig.data.nodes,sourceId);
                     return colorScale(index);
                 });
@@ -349,8 +334,6 @@
             /*---------------------- 三个动作------结束-----------------------*/
         }
 
-<<<<<<< Updated upstream
-=======
         // 根据targetId获取sourceId的
         function getSourceId(deal_data_links,targetId) {
             /* <![CDATA[ */
@@ -383,12 +366,11 @@
             }
         }
 
->>>>>>> Stashed changes
         //because in the way of creating a javascript object,
         //you need to use "new" to use it
         new GroupExplorer({data:dataJson});
 
-<<<<<<< Updated upstream
+
         //// some event
         $(function() {
             // outer-ring
@@ -415,12 +397,6 @@
         });
 
     });
-
-
-=======
-
-    })
->>>>>>> Stashed changes
 </script>
 </body>
 </html>
