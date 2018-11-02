@@ -1,0 +1,290 @@
+/* 约定：
+        -为了防止样式层叠，推荐使用直接子代选择器
+        -样式书写，请带上最顶部id
+        -所有模块分割线，统一使用底部方式
+ */
+
+/* 全局样式 */
+/* 字体 */
+body {
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+@font-face {
+    font-family: 'itcast';
+    src: url(../font/MiFie-Web-Font.eot) format('embedded-opentype');
+    src: url(../font/MiFie-Web-Font.svg) format('svg');
+    src: url(../font/MiFie-Web-Font.ttf) format('truetype');
+    src: url(../font/MiFie-Web-Font.woff) format('woff');
+}
+[class^='icon-'],[class*=' icon-'] {
+    font-family: itcast !important;
+    font-style: normal;
+}
+/* 字体图标 */
+.icon-mobilephone:before {
+    content: "\e908";
+    font-size: 13px;
+}
+.icon-telephone:before {
+    content: "\e909";
+    font-size: 15px;
+}
+.icon-logo::before {
+    content: "\e93e";
+}
+
+.icon-icon::before {
+    content: "\e920";
+}
+
+/* /全局样式 */
+
+/* header */
+#header {
+    border-bottom: 1px solid #c0c0c0;
+}
+
+#header > .topbar {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+#header > .topbar > .container .row > div {
+    height: 40px;
+    color: #777;
+    font-size: 12px;
+}
+
+.topbar .container .row div+div {
+    border-left: 1px solid #c0c0c0;
+}
+
+.topbar .mobile {
+    color: #777;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#topbar .mobile:hover {
+    text-decoration: none;
+}
+
+#header .mobile > img {
+    display: none;
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+    top: 30px;
+    z-index: 1001;
+}
+
+#header .mobile:hover > img {
+    display: block;
+}
+#header .icon-icon {
+    font-size: 50px;
+    color: #E92322;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+#header .icon-logo {
+    font-size: 32px;
+    color: #333;
+    line-height: 50px;
+    vertical-align: middle;
+}
+/* /header */
+
+/* 轮播 */
+#carousel-itcast-generic > .carousel-inner > .item {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+    #carousel-itcast-generic > .carousel-inner > .item {
+        height: 410px;
+    }
+}
+#carousel-itcast-generic > .carousel-inner > .item > img{
+    width: 100%;
+}
+
+/* /轮播 */
+
+/* 产品 */
+.products {
+    padding:50px 0 50px 0;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.products .media {
+    margin: 20px 0 20px 0;
+}
+
+.products .media [class^='icon-'],[class*=' icon-'] {
+    font-size: 34px;
+}
+
+.icon-uniE907:before {
+    content: "\e907";
+}
+/* /产品 */
+
+/* 预约 */
+.order {
+    line-height: 60px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.order p {
+    margin-bottom: 0;
+}
+
+.order span {
+    color: #c12e2a;
+}
+
+.order span a {
+    color: #c12e2a;
+    border-bottom: 1px dashed #e92322;
+}
+
+.icon-uniE906:before {
+    content: "\e906";
+}
+
+.icon-uniE905:before {
+    content: "\e905";
+}
+/* /预约 */
+
+
+
+
+
+
+
+
+
+/* bootstrap 扩展 */
+.navbar-itcast {
+    height: 82px;
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    margin-bottom: 0;
+}
+.navbar-itcast .navbar-brand {
+    color: #777;
+}
+.navbar-itcast .navbar-brand:hover,
+.navbar-itcast .navbar-brand:focus {
+    color: #5e5e5e;
+    background-color: transparent;
+}
+.navbar-itcast .navbar-text {
+    color: #777;
+}
+.navbar-itcast .navbar-nav > li > a {
+    padding-top:30px;
+    padding-bottom:30px;
+    color: #777;
+}
+
+
+.navbar-itcast .navbar-nav > li > a:hover,
+.navbar-itcast .navbar-nav > li > a:focus {
+    color: #333;
+    background-color: transparent;
+    border-bottom:2px solid #E92322;
+
+}
+.navbar-itcast .navbar-nav > .active > a,
+.navbar-itcast .navbar-nav > .active > a:hover,
+.navbar-itcast .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+    border-bottom:2px solid #E92322;
+}
+.navbar-itcast .navbar-nav > .disabled > a,
+.navbar-itcast .navbar-nav > .disabled > a:hover,
+.navbar-itcast .navbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+.navbar-itcast .navbar-toggle {
+    border-color: #ddd;
+}
+.navbar-itcast .navbar-toggle:hover,
+.navbar-itcast .navbar-toggle:focus {
+    background-color: #ddd;
+}
+.navbar-itcast .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+.navbar-itcast .navbar-collapse,
+.navbar-itcast .navbar-form {
+    border-color: #e7e7e7;
+}
+.navbar-itcast .navbar-nav > .open > a,
+.navbar-itcast .navbar-nav > .open > a:hover,
+.navbar-itcast .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 22px;
+    margin-right: 15px;
+    margin-bottom: 26px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.navbar-toggle:focus {
+    outline: 0;
+}
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
+.navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 4px;
+}
+
+.nav > li {
+    position: relative;
+    display: block;
+    background-color: #f8f8f8;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: #eee;
+}
+.nav > li.disabled > a {
+    color: #777;
+}
+.nav > li.disabled > a:hover,
+.nav > li.disabled > a:focus {
+    color: #777;
+    text-decoration: none;
+    cursor: not-allowed;
+    background-color: transparent;
+}
+/*  /bootstrap 扩展 */
