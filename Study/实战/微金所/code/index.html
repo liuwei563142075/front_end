@@ -198,7 +198,7 @@
 <!-- #产品 -->
 
 <!--  预约 -->
-<section class="order">
+<section class="order hidden-xs">
     <div class="container">
         <p class="pull-left"><i class="icon-uniE906"></i>现在有<span>458</span>人在排队，累计预约交易成功<span>7409</span>次。 什么是预约投标？ <span><a href="#">立即预约</a></span></p>
         <p class="pull-right"><a href="#"><i class="icon-uniE905"></i>微金所企业宣传片</a></p>
@@ -210,7 +210,8 @@
 <section id="application">
     <div class="container">
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs nav-application" role="tablist">
+        <div class="nav-container">
+            <ul class="nav nav-tabs nav-application" role="tablist">
             <li role="presentation" class="active">
                 <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">
                     特别推荐
@@ -241,16 +242,25 @@
                     微转让
                 </a>
             </li>
+            <li class="hidden-xs" role="presentation">
+                <a href="#tab7" aria-controls="tab7" role="tab" data-toggle="tab">
+                    更多
+                </a>
+            </li>
         </ul>
+        </div>
 
         <!-- Tab panes -->
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="tab1">
                 <div class="row">
                     <div class="item col-xs-12 col-sm-6 col-md-4">
-                        <div class="panel panel-itcast">
+                        <div class="panel panel-itcast active">
                             <div class="panel-heading text-center">
-                                Panel heading without title
+                                <div class="panel-title">
+                                    <p><span class="strong">8</span>%</p>
+                                    <p>年利率</p>
+                                </div>
                             </div>
                             <div class="panel-body">
                                 <h4>新手体验表0008期</h4>
@@ -278,7 +288,14 @@
                     <div class="item col-xs-12 col-sm-6 col-md-4">
                         <div class="panel panel-itcast">
                             <div class="panel-heading text-center">
-                                <h3 class="panel-title">Panel title</h3>
+                                <div class="panel-title">
+                                    <p class="tooltips">
+                                        <a href="#">京</a>
+                                        <a href="#">沪</a>
+                                    </p>
+                                    <p><span class="strong">8</span>%</p>
+                                    <p>年利率</p>
+                                </div>
                             </div>
                             <div class="panel-body">
                                 <h4>新手体验表0008期</h4>
@@ -306,7 +323,10 @@
                     <div class="item col-xs-12 col-sm-6 col-md-4">
                         <div class="panel panel-itcast">
                             <div class="panel-heading text-center">
-                                <h3 class="panel-title">Panel title</h3>
+                                <div class="panel-title">
+                                    <p><span class="strong">8</span>%</p>
+                                    <p>年利率</p>
+                                </div>
                             </div>
                             <div class="panel-body">
                                 <h4>新手体验表0008期</h4>
@@ -334,7 +354,10 @@
                     <div class="item col-xs-12 col-sm-6 col-md-4">
                         <div class="panel panel-itcast">
                             <div class="panel-heading text-center">
-                                <h3 class="panel-title">Panel title</h3>
+                                <div class="panel-title">
+                                    <p><span class="strong">8</span>%</p>
+                                    <p>年利率</p>
+                                </div>
                             </div>
                             <div class="panel-body">
                                 <h4>新手体验表0008期</h4>
@@ -362,7 +385,10 @@
                     <div class="item col-xs-12 col-sm-6 col-md-4">
                         <div class="panel panel-itcast">
                             <div class="panel-heading text-center">
-                                <h3 class="panel-title">Panel title</h3>
+                                <div class="panel-title">
+                                    <p><span class="strong">8</span>%</p>
+                                    <p>年利率</p>
+                                </div>
                             </div>
                             <div class="panel-body">
                                 <h4>新手体验表0008期</h4>
@@ -390,7 +416,10 @@
                     <div class="item col-xs-12 col-sm-6 col-md-4">
                         <div class="panel panel-itcast">
                             <div class="panel-heading text-center">
-                                <h3 class="panel-title">Panel title</h3>
+                                <div class="panel-title">
+                                    <p><span class="strong">8</span>%</p>
+                                    <p>年利率</p>
+                                </div>
                             </div>
                             <div class="panel-body">
                                 <h4>新手体验表0008期</h4>
@@ -432,6 +461,9 @@
             <div role="tabpanel" class="tab-pane fade" id="tab6">
                 F
             </div>
+            <div role="tabpanel" class="tab-pane fade hidden-xs" id="tab7">
+                more
+            </div>
         </div>
     </div>
 </section>
@@ -439,11 +471,92 @@
 
 
 <!--  新闻 -->
-<section></section>
+<section id="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-md-offset-3">
+                <div class="news-title text-center">
+                    晚间新闻
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="list-group">
+                    <a href="#newsgroup1" class="list-group-item active" aria-controls="newsgroup1" role="tab" data-toggle="tab">
+                        <i class="icon-news01"></i>
+                    </a>
+                    <a href="#newsgroup2" class="list-group-item" aria-controls="newsgroup2" role="tab" data-toggle="tab">
+                        <i class="icon-news02"></i>
+                    </a>
+                    <a href="#newsgroup3" class="list-group-item" aria-controls="newsgroup3" role="tab" data-toggle="tab">
+                        <i class="icon-news03"></i>
+                    </a>
+                    <a href="#newsgroup4" class="list-group-item" aria-controls="newsgroup4" role="tab" data-toggle="tab">
+                        <i class="icon-news04"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="newsgroup1">
+                        <ul>
+                            <li>我成功啦</li>
+                            <li>我成功啦</li>
+                            <li>我成功啦</li>
+                            <li>我成功啦</li>
+                            <li>我成功啦</li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="newsgroup2">
+                        <ul>
+                            <li>小猪佩奇</li>
+                            <li>小猪佩奇</li>
+                            <li>小猪佩奇</li>
+                            <li>小猪佩奇</li>
+                            <li>小猪佩奇</li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="newsgroup3">
+                        <ul>
+                            <li>小猪</li>
+                            <li>小猪</li>
+                            <li>小猪</li>
+                            <li>小猪</li>
+                            <li>小猪</li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="newsgroup4">
+                        <ul>
+                            <li>who is pei qi?</li>
+                            <li>who is pei qi?</li>
+                            <li>who is pei qi?</li>
+                            <li>who is pei qi?</li>
+                            <li>who is pei qi?</li>
+                            <li>who is pei qi?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- #新闻 -->
 
 <!--  合作伙伴 -->
-<section></section>
+<section id="cooperation">
+    <div class="container">
+        <ul class="cooper-icon">
+            <li><a href="#"><i class="icon-uniE930"></i></a></li>
+            <li><a href="#"><i class="icon-uniE92F"></i></a></li>
+            <li><a href="#"><i class="icon-uniE92E"></i></a></li>
+            <li><a href="#"><i class="icon-uniE92A"></i></a></li>
+            <li><a href="#"><i class="icon-uniE929"></i></a></li>
+            <li><a href="#"><i class="icon-uniE931"></i></a></li>
+            <li><a href="#"><i class="icon-uniE92C"></i></a></li>
+            <li><a href="#"><i class="icon-uniE92B"></i></a></li>
+            <li><a href="#"><i class="icon-uniE92D"></i></a></li>
+        </ul>
+    </div>
+</section>
 <!-- #合作伙伴 -->
 
 <!-- 底部 -->

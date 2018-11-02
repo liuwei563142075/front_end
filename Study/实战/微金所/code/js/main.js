@@ -20,9 +20,24 @@ $(function() {
             }
         });
     }
-
     $(window).on('resize',resize).trigger('resize');
 
+    // 设置特别推荐标签页可横向滚动
+    var navappWidth = 50;
+    $("#application>.container>.nav-container>.nav-application>li").each(function(index,element) {
+        navappWidth += element.clientWidth;
+    });
+    if(navappWidth > $(window).width()) {
+        $("#application>.container>.nav-container>.nav-application").css('width',navappWidth);
+        $("#application>.container>.nav-container").css({"overflow-x":"scroll"});
+    }else {
+        $("#application>.container>.nav-container>.nav-application").css('width','100%');
+        $("#application>.container>.nav-container").css({"overflow-x":"visible"});
+    }
 
-
+    /* news */
+    $("#news .list-group-item").on("click",function() {
+        $("#news .list-group-item").removeClass("active");
+        $(this).addClass("active");
+    })
 });
