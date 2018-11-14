@@ -301,7 +301,6 @@ fieldset[disabled] .btn-itcast.active {
 
 - __hidden-xx__ : 在某种屏幕下隐藏 
 - __visible-xx__ : 在某种屏幕尺寸下显示
-  + visible-xx-xx：最后一个xx是决定显示时的display到底是啥
 
 ## 4.导航通栏
 
@@ -367,24 +366,108 @@ fieldset[disabled] .btn-itcast.active {
 
 ### 5.1.Bootstrap JS插件使用
 
+> 对于Bootstrap的JS插件，我们只需要将文档实例中的代码粘到我们自己的代码中
+> 让后作出相应的样式调整
 
-- 在一个较小屏幕下展示一个超宽的图片，想让图片居中显示
-  + 背景图
-  + p-a l 50% m-l -width/2
+#### 5.1.1.Bootstrap中轮播图插件叫作Carousel
+
+#### 5.1.2.基本的轮播图实现
+
+```html
+<!--
+  以下容器就是整个轮播图组件的整体，
+  注意该盒子必须加上 class="carousel slide" data-ride="carousel" 表示当前是一个轮播图
+  bootstrap.js会自动为当前元素添加图片轮播的特效
+-->
+<div id="轮播图的ID" class="carousel slide" data-ride="carousel">
+  <!-- ol标签是图片轮播的控制点 -->
+  <ol class="carousel-indicators">
+    <!--
+      每一个li就是一个单独的控制点
+        data-target属性就是指定当前控制点控制的是哪一个轮播图，其目的是如果界面上有多个轮播图，便于区分到底控制哪一个
+        data-slide-to属性是指当前的li元素绑定的是第几个轮播项
+      注意，默认必须给其中某个li加上active，展示的时候就是焦点项目
+    -->
+    <li data-target="#轮播图的ID" data-slide-to="0" class="active"></li>
+    <li data-target="#轮播图的ID" data-slide-to="1"></li>
+    <!-- ...更多的 -->
+  </ol>
+  <!--
+    .carousel-inner是所有轮播项的容器盒子，
+    注意role="listbox"代表当前div是一个列表盒子，作用就是给当前div添加一个语义
+  -->
+  <div class="carousel-inner" role="listbox">
+    <!-- 每一个.item就是单个轮播项目，注意默认要给第一个轮播项目加上active，表示为焦点 -->
+    <div class="item active">
+      <!-- 轮播项目中展示的图片 -->
+      <img src="example.jpg" alt="示例图片">
+      <div class="carousel-caption">
+        <!-- 标题或说明性文字，如果不需要，直接删除当前div.carousel-caption -->
+      </div>
+    </div>
+    <div class="item">
+      <!-- ... -->
+    </div>
+    <!-- ... -->
+  </div>
+  <!-- 图片轮播上左右两个控制按钮，分别点击可以滚动到上一张和下一张 -->
+  <!-- 此处需要注意的是 该a链接的href属性必须指向需要控制的轮播图ID -->
+  <!-- 另外a链接中的data-slide="prev"代表点击该链接会滚到上一张，如果设置为next的话则相反 -->
+  <a class="left carousel-control" href="#轮播图的ID" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">上一张</span>
+  </a>
+  <a class="right carousel-control" href="#轮播图的ID" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">下一张</span>
+  </a>
+</div>
+```
+
+#### 5.1.3.由于轮播图片超宽造成的影响
+
+- 美工为了在不同屏幕下更好地展示将图片两边做的非常宽，但是我们大多数情况的页面宽度都无法满足这样的图片宽度
+- 而且Bootstrap的样式中默认将图片的max-width设置为100%；
+- 造成界面图片缩放
+- 想在一个较小屏幕下展示一个超宽的图片，并让图片居中显示
+  + 两种办法：
+    * 换用背景图的方式，background-position: center center;
+    * 使img元素绝对定位，left:50%，margin-left: -width/2
 
 ### 5.2.background使用
+
+- 将容器的高度固定（410px）
+- 将轮播图改为背景显示
+- 由于可能图片的高度不一定是410px
+- 所以需要设置css3中的background-size
 
 #### 5.2.1.background-size
 
 - length
-  + 如100px 100px
+  + 如 background-size: 100px 100px，将背景图固定到多大尺寸
 - percentage
-  + 如90% 90%
+  + 如 background-size: 90% 90%，以百分比的形式设置背景大小
 - cover
-  + 背景图片的较小边放大到目标大小结束
+  + 1.背景图片等比例缩放
+  + 2.让背景图相对较小边放大到目标容器大小结束
+    * 如：一张100\*200的背景图放到一个300\*400的盒子中，最终背景图片的大小是300\*600
+    * 因为背景图的较小边为100，将100放大到目标容器300的宽度，放大了3倍，最终结果300\*600
 - contain
-  + 相反
+  + 1.背景图片等比例缩放
+  + 2.让背景图相对较大边放大到目标容器大小结束
+    * 如：一张100\*200的背景图放到一个300\*400的盒子中，最终背景图片的大小是200\*400
+    * 因为背景图的较大边为200，将200放大到目标容器400的高度，放大了2倍，最终结果200\*400
 
+##### demo
+
+###### cover
+
+<div style="width: 400px;height: 200px;border:1px dashed #c0c0c0;background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUxOWU5ZmNjZDAgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTE5ZTlmY2NkMCI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+');background-repeat:no-repeat;background-size: cover;"></div>
+
+###### contain
+
+
+<div style="width: 400px;height: 200px;border:1px dashed #c0c0c0;background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUxOWU5ZmNjZDAgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTE5ZTlmY2NkMCI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+');background-repeat:no-repeat;background-size: contain;"></div>
 
 ### 5.3.图片响应式
 
@@ -392,59 +475,198 @@ fieldset[disabled] .btn-itcast.active {
   + 各种终端都需要正常显示图片
   + 移动端应该使用更小（体积）的图片
 - 实现方式
+  + 将元素中直接设置的图片背景删除，换成两个data-属性（如：data-img-sm="小图路径"，data-img-lg="大图路径"）
+  + 通过JS的方式获取屏幕的宽度；
+  + 判断屏幕宽度是否小于一定的值（如：768）
+  + 根据判断情况决定使用具体的大图还是小图
 
+```javascript
+// 获取屏幕宽度
+var windowWidth = $(window).width();
+// 判断屏幕属于大还是小
+var isSmallScreen = windowWidth < 768;
+// 根据大小为界面上的每一张轮播图设置背景
+// $('#main_ad > .carousel-inner > .item') // 获取到的是一个DOM数组（多个元素）
+$('#main_ad > .carousel-inner > .item').each(function(i, item) {
+  // 因为拿到是DOM对象 需要转换
+  var $item = $(item);
+  // var imgSrc = $item.data(isSmallScreen ? 'image-xs' : 'image-lg');
+  var imgSrc =
+    isSmallScreen ? $item.data('image-xs') : $item.data('image-lg');
 
+  // 设置背景图片
+  $item.css('backgroundImage', 'url("' + imgSrc + '")');
+});
+```
 
 ### 5.4.window resize事件
 
+- 由于上一步我们实现的过程是指在页面加载完成判断一次，
+- 当用户手动调整页面宽度过后没有及时发生变化，
+- 所以我们可以通过window的resize事件中重新完成以上操作来解决这个问题
 
+```javascript
+function 窗口变化后执行的函数名(){
+  // 具体的操作
+}
+$(window).on('resize', 窗口变化后执行的函数名);
+```
 
+- 这个事件只会在窗口尺寸发生变化后执行，但是我们需要一开始时执行一次
+
+```javascript
+...
+$(window).on('resize', 窗口变化后执行的函数名).trigger('resize');
+```
+
+### 5.5.小图片不需要使用背景的方式
+
+- 小图如果还是使用背景的方式，当屏幕特别小时，效果很差
+- 所以当使用小图时，改用img的方式
+
+```javascript
+// 因为我们需要小图时 尺寸等比例变化，所以小图时我们使用img方式
+if (isSmallScreen) {
+  $item.html('<img src="' + imgSrc + '" alt="" />');
+} else {
+  $item.empty();
+}
+```
+
+- 按照目前的情况，如果是小图展示则不需要给容器加上410px的固定高度
+- 所以我们可以通过CSS媒体查询的方式解决
+
+```css
+#main_ad > .carousel-inner > .item {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  #main_ad > .carousel-inner > .item {
+    height: 410px;
+  }
+}
+#main_ad > .carousel-inner > .item > img {
+  width: 100%;
+}
+```
 
 ## 6.网站特性
 
 ### 6.1.网格系统
 
+- 该板块当屏幕为中等尺寸时分为3列，较小屏幕是分为2列
+- 所以使用网格系统划分
 
+```html
+<div class="col-sm-6 col-md-4">
+  <!-- ... -->
+</div>
+<!-- ... -->
+```
 
 ### 6.2.媒体对象样式
 
+- 每一个小块的样式可以通过Bootstrap中的媒体对象样式实现
 
+```html
+<a href="#">
+  <div class="media">
+    <div class="media-left">
+      <i class="icon-uniE907"></i>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">支付交易保障</h4>
+      <p>银联支付全称保证支付安全</p>
+    </div>
+  </div>
+</a>
+```
 
 ### 6.3.响应式辅助类型
 
-    - hidden-xx
+- 整个板块在超小屏幕下是隐藏起来的
+  + 只需要给当前板块加上hidden-xs的class
 
 ## 7.预约投标
 
 ### 7.1.pull-left
 
-
+- 左边文字段落
 
 ### 7.2.pull-right
 
-
+- 右边文字段落
 
 ## 8.投资产品
 
 ### 8.1.Tab选项卡
 
+> 选项卡功能可以通过Bootstrap中提供的相应组件实现
+> http://v3.bootcss.com/javascript/#tabs
 
+```html
+<div class="container">
+  <!-- 所有的选项卡标签，每个标签点击分别对应面板展示出来 -->
+  <ul class="nav nav-tabs" role="tablist">
+    <!--
+      下面的li定义了一个选项卡的标签，其中a标签的href属性指向的就是对应要展开的面板ID
+      aria-controls属性是说当前a链接控制的是哪个元素（注意此属性和功能无关，只是语义）
+      注意一定要给a标签加上data-toggle="tab"，如果不加则boostrap无法知道这是一个选项卡标签，也就不会有相应的效果
+    -->
+    <li role="presentation" class="active"><a href="#第一个标签的ID" aria-controls="第一个标签的ID" role="tab" data-toggle="tab">标签页1</a></li>
+    <li role="presentation"><a href="#第二个标签的ID" aria-controls="第二个标签的ID" role="tab" data-toggle="tab">标签页2</a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <!-- .tab-pane定义当前是一个tab面板，通过id和选项卡标签关联起来 -->
+    <div role="tabpanel" class="tab-pane active" id="第一个标签的ID">
+      <!-- 标签展开后的内容 -->
+    </div>
+    <div role="tabpanel" class="tab-pane" id="第二个标签的ID">...</div>
+  </div>
+</div>
+```
 
 ### 8.2.网格系统
 
+- 和网站特色板块的网格系统定义一样
 
+### 8.3.::before ::after
 
-### 8.3.::before
+```css
+.panel-czbk > .panel-heading::before,
+.panel-czbk > .panel-heading::after {
+  content: ' ';
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  position: absolute;
+}
 
+.panel-czbk > .panel-heading::before {
+  top: -8px;
+  left: -8px;
+}
 
-
-### 8.4.::after
-
-
+.panel-czbk > .panel-heading::after {
+  bottom: -8px;
+  left: -8px;
+  box-shadow: 0 2px 1px #ccc inset;
+}
+```
 
 ### 8.5.tooltip插件
 
+- 注意，bootstrap中的tooltip插件必须通过js方式初始化
 
+### 8.6.选项卡标签横向滚动
+
+1. 要给ul加一个容器，这个容器有横向滚动条
+2. 动态设置ul的宽度，宽度是根据内容大小决定的
+  width= sum (li.width)
 
 ## 9.新闻资讯
 
@@ -474,7 +696,7 @@ fieldset[disabled] .btn-itcast.active {
 
 ## 12.导航吸顶
 
-### 12.1affix组件
+### 12.1.affix组件
 
 
 
@@ -482,4 +704,7 @@ fieldset[disabled] .btn-itcast.active {
 
 ### 13.1.http://v3.bootcss.com/customize
 
-### 13.2通过 Less 文件修改
+### 13.2.通过 Less 文件修改
+
+## 14.version 4
+http://www.cnblogs.com/micua/p/bootstrap-version4-alpha.html

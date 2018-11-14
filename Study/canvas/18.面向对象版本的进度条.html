@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象版本的进度条</title>
+    <script src="./../static/konva/konva.js"></script>
+    <script src="./entity/ProgressBar.js"></script>
+</head>
+<body>
+<div id="container">
+
+</div>
+<script>
+    var stage = new Konva.Stage({
+        container:"container",
+        width:window.innerWidth,
+        height:window.innerHeight
+    });
+
+    var layer = new Konva.Layer();
+    stage.add(layer);
+
+    var progressBar = new ProgressBar({
+        x:100,
+        y:300,
+        width:500,
+        height:50,
+        fill:"pink",
+        stroke:"black"
+    });
+
+    progressBar.show(layer);
+
+    layer.draw();
+
+    progressBar.changeValue(.7);
+</script>
+</body>
+</html>

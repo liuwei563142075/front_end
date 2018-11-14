@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+	//创建对象的方式：
+	//第一种： json的方式创建对象
+	// var o = { key: val };
+	// var arry = [ 1,2, 4, {}];
+	// var kong = {};
+	// var kong2 = new Object();
+
+	var o = {
+		name: 'itcast',
+		age : 18,
+		sayHi: function() {
+			//this === o // true
+			console.log( 'name: ' + this.name +' ' + this.age);
+		}
+	};
+
+	//缺点： 不能把json对象当成一个模板， 通过new来构造一个新对象。
+	//-> 给json对象添加属性
+	o.color = 'red';// javascript:一个动态语言。
+	//->给json对象添加方法
+	o.show = function() {
+	};
+
+
+	//第二种：创建对象的方式
+	var o2 = new Object();// 创建一个 object对象。
+	o2.age = 19;
+	o2.show = function() {};
+	//缺点： 不能把json对象当成一个模板， 通过new来构造一个新对象。
+
+	//第三种： 创建对象的方式
+	// Cat.prototype
+	function Cat() { 	//cat： 猫
+		// this = {}  让this 指向一个空对象。
+		// var t = {};
+		// this  = t;
+		//  t.__proto__ = Cat.prototype;
+
+		this.age = 18;
+		this.show = function() {
+			console.log(this.age);
+		}
+		
+		this.name = '1123';//污染全局
+
+		// return this;
+	}
+	// new： 操作符，   a+b    -  * 
+	var cat = new Cat(); //通过构造函数 构造一个对象出来。
+	cat.show();//
+	var cat1  = new Cat();
+	// cat === cat1;  false
+
+	// new: 内部的原理，
+		// 第0步： 在内存中开辟一块空间。
+		// 第一步：创建一个新空对象。
+		// 第二步： 把this 指向到这个空对象。
+		// 第三步： 把空对象的 内部原型 指向 构造函数的原型对象。
+		// 第四步： 当构造函数执行完成后，如果么有return的话，那么把当前
+		// 空对象返回。
+
+	// cat.name
+
+
+
+	//如果构造函数有return：
+	function Bird() {
+		this.age = 19;
+		this.show = function() {};
+		return this;
+		
+		// return {
+		// 	demo: '123'
+		// };
+	}
+
+	var t  = new Bird();
+	console.log(t.demo);
+	</script>
+</body>
+</html>

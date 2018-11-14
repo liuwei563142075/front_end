@@ -1,0 +1,63 @@
+// variables
+@theme-color: rgba(201,21,35,0.85);
+
+
+header {
+  width: 100%;
+  position: fixed;
+}
+
+.jd_header {
+  min-width: 300px;
+  max-width: 640px;
+  height:40px;
+  margin: 0 auto;
+  position: relative;
+  background-color: @theme-color;
+
+  .icon_logo {
+    width: 60px;
+    height: 36px;
+    background-position: 0 -103px;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+  }
+
+  form {
+    height: 40px;
+    margin-left: 75px;
+    padding-right: 55px;
+    position: relative;
+
+    .icon_search {
+      background-position: -60px -109px;
+      width: 20px;
+      height: 20px;
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    input {
+      height: 30px;
+      width: 100%;
+      margin-top: 5px;
+      border-radius: 15px;
+      padding-left: 40px;
+    }
+  }
+
+  a.login {
+    text-align: center;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Cat() {
+    }
+    Cat.prototype.sayHi = function() {
+        console.log(this.PI);
+    }
+    Cat.prototype.PI = 3.14;
+
+    var cat = new Cat();
+    cat.sayHi();
+
+    cat.__proto__.PI = 123;
+    cat.sayHi();
+
+    Cat.prototype.PI = 456;
+    cat.sayHi();
+</script>
+</body>
+</html>

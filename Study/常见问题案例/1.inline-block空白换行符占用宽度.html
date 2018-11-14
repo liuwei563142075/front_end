@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解决方案：font-size:0</title>
+    <style>
+        * {margin:0;padding:0;}
+        .container {
+            width: 800px;
+            height: 1000px;
+
+            /* 解决方案：font-size:0;或者把两个div之间的间隙去掉 */
+            font-size: 0;
+        }
+        .container > div {
+            height: 500px;
+            display: inline-block;
+        }
+        .left {
+            width: 40%;
+            background-color: pink;
+        }
+        .right {
+            width: 60%;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1. 函数执行模式
+    function fn() {
+        console.log(this);
+    }
+    fn(); // this === Window  本质上和第二种一样，只是把window对象省略了而已
+
+    // 2. 函数调用模式
+    function Cat() {
+        this.show = function() {
+            console.log(this);
+        }
+    }
+    var c = new Cat();
+    c.show(); // 使用对象.函数的方式调用，this === c
+
+    // 3.函数构造模式
+    function Dog() {
+        // create a null object and null object = this
+        // begin
+        console.log(this); // this指向dog，此时dog为空
+        var that = this;
+        this.show = function() {
+            console.log(this); // this指向dog，此时dog中有一个函数
+            console.log(this === that);
+        }
+    }
+    var d = new Dog();// 构造函数调用的方式
+    d.show();
+
+    //第四种 call 和 apply
+
+
+</script>
+</body>
+</html>

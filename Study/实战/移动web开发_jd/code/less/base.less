@@ -1,0 +1,41 @@
+*,::before,::after {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;//清除点击默认的高亮效果
+  -webkit-box-sizing: border-box;//以你的border开始计算你的宽度
+}
+
+body {
+  font-size: 14px;
+  font-family: "Microsoft YaHei",sans-serif;//第二个是手机的一个默认字体
+}
+
+a {
+  text-decoration: none;
+  color:#000;
+}
+
+ul {
+  list-style: none;
+}
+
+input,textarea {
+  border: none;
+  resize: none;
+  outline: none;//清空选中效果
+  -webkit-appearance: none;//清除浏览器默认样式
+}
+
+.clearfix::before,.clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+[class^="icon_"] {
+  background: url("../img/sprites.png") no-repeat;
+  background-size: 200px 200px;
+}

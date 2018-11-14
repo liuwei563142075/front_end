@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>唯一画布和旋转缩放</title>
+    <script src="./entity/Circle.js"></script>
+</head>
+<body>
+<!--canvas的宽高不能在css中设置-->
+<canvas width="500px" height="400px">
+    IE9 以上才支持canvas
+    请升级你的浏览器、
+    <!--flash代替-->
+</canvas>
+<script>
+    // 要等canvas标签加载完成之后才能使用script标签
+    var canvas = document.getElementsByTagName("canvas")[0];
+    // canvas就相当于一个画布程序
+    canvas.style.border = "1px dashed #000";
+    // 拿到canvas的上下文：就相当于画布程序的工具栏
+    var  ctx = canvas.getContext("2d"); /* webgl  代表3d */
+
+    var cricle = new Circle({
+        x:100,
+        y:100,
+        r:100,
+        fillStyle:"pink",
+        strokeStyle:"blue",
+        opacity:.3
+    });
+    cricle.render(ctx);
+
+</script>
+</body>
+</html>

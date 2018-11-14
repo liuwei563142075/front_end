@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>坐标系</title>
+</head>
+<body>
+<canvas width="800" height="600">
+    IE9 以上才支持canvas
+    请更新你的浏览器
+</canvas>
+<script>
+    (function() {
+        var canvas = document.getElementsByTagName("canvas")[0];
+        var ctx = canvas.getContext("2d");
+
+        // x轴400px
+        moleTo(ctx,200,500,600,500);
+        leTo(ctx,590,490);
+        moleTo(ctx,600,500,590,510);
+
+        // y轴400px
+        moleTo(ctx,200,500,200,100);
+        leTo(ctx,190,110);
+        moleTo(ctx,200,100,210,110);
+
+        // 绘制折线图
+        moleTo(ctx,250,450,280,350);
+        leTo(ctx,375,200);
+        leTo(ctx,430,440);
+        leTo(ctx,500,330)
+        leTo(ctx,600,500)
+
+        ctx.stroke();
+    })();
+
+    function leTo(ctx,x,y) {
+        ctx.lineTo(x,y);
+    }
+
+    function moleTo(ctx,x,y,vx,vy) {
+        ctx.moveTo(x,y);
+        ctx.lineTo(vx,vy);
+    }
+</script>
+</body>
+</html>

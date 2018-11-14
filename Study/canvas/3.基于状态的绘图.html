@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基于状态的绘图</title>
+</head>
+<body>
+<!--canvas的宽高不能在css中设置-->
+<canvas width="500px" height="400px">
+    IE9 以上才支持canvas
+    请升级你的浏览器、
+    <!--flash代替-->
+</canvas>
+<script>
+    // 要等canvas标签加载完成之后才能使用script标签
+    var canvas = document.getElementsByTagName("canvas")[0];
+    // canvas就相当于一个画布程序
+
+    // 拿到canvas的上下文：就相当于画布程序的工具栏
+    var  ctx = canvas.getContext("2d"); /* webgl  代表3d */
+
+    ctx.lineWidth = 30;
+    ctx.strokeStyle = "red";
+
+    ctx.beginPath();// 开启一个新的路径状态，刚开始时有一个默认状态，不过还是建议加上
+    ctx.moveTo(100,100);
+    ctx.lineTo(300,100);
+    ctx.stroke(); // 预示一个状态结束
+
+    ctx.beginPath();// 开启一个新的状态
+    ctx.strokeStyle = "blue";
+    ctx.moveTo(100,150);
+    ctx.lineTo(300,150);
+    ctx.stroke();
+
+    ctx.beginPath();// 开启一个新的状态
+    ctx.strokeStyle = "orange";
+    ctx.moveTo(100,200);
+    ctx.lineTo(300,200);
+    ctx.stroke();
+
+</script>
+</body>
+</html>

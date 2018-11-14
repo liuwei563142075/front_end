@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <canvas width="500px" height="400px">
+        !--canvas的宽高不能在css中设置-->
+        IE9 以上才支持canvas
+        请升级你的浏览器、
+        <!--flash代替-->
+    </canvas>
+</div>
+<button class="dir-btn" data-dir = "left">←</button>
+<button class="dir-btn" data-dir = "up">↑</button>
+<button class="dir-btn" data-dir = "right">→</button>
+<button class="dir-btn" data-dir = "down">↓</button>
+<script src="../static/jquery/jquery-1.9.1.min.js"></script>
+<script src="./entity/Sprite.js"></script>
+<script>
+    (function() {
+        // 要等canvas标签加载完成之后才能使用script标签
+        var canvas = document.getElementsByTagName("canvas")[0];
+        // canvas就相当于一个画布程序
+
+        // 拿到canvas的上下文：就相当于画布程序的工具栏
+        var  ctx = canvas.getContext("2d"); /* webgl  代表3d */
+
+        var sprite = new Sprite({
+            imgSrc:"./img/gameImgs/DMMoprator2.png",
+            originWidth:40,
+            originHeight:65,
+            drawX:100,
+            drawY:100,
+            drawWidth:80,
+            drawHeight:130,
+            frame:10,
+        });
+        sprite.show( ctx );
+        $(".dir-btn").on("click",function() {
+            var dir = $(this).data("dir");
+            switch (dir) {
+                case "left":
+                    dirIndex = 1;
+                    sprite.changeDir("left");
+                    break;
+                case "right":
+                    sprite.changeDir("right");
+                    break;
+                case "up":
+                    sprite.changeDir("up");
+                    break;
+                case "down":
+                    sprite.changeDir("down");
+                    break;
+            }
+        });
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 在升级
+
+    function Cat( option ) {
+        this._init(option);
+    }
+    Cat.prototype._init = function( option ) {
+        this.age = option.age || '';
+    }
+    Cat.prototype.show = function() {
+        console.log(123);
+    }
+    // 缺陷：当类中方法过多时，要写很多Cat.prptotype.***，使得类不够整体化，很零碎
+    var cat = new Cat();
+
+    // 再次改进
+    function Cat( option ) {
+        this._init(option);
+    }
+    // 使得类整体化
+    Cat.prototype = {
+        _init: function( option ) {
+            this.age = option.age || '';
+        },
+        show: function() {
+            console.log(this.age);
+        }
+    };
+
+    var c1 = new Cat();
+
+</script>
+</body>
+</html>

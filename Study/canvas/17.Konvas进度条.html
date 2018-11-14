@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koncas是一套专门操作canvas的库</title>
+    <style>
+        *{margin:0;padding: 0}
+    </style>
+    <script src="../static/konva/konva.js"></script>
+</head>
+<body>
+<!--放我们的舞台-->
+<div id="container">
+
+</div>
+<script>
+    // 创建舞台
+    var stage = new Konva.Stage({
+        container:"container",
+        width:window.innerWidth,
+        height:window.innerHeight
+    });
+
+    // 创建一个层
+    var layer = new Konva.Layer();
+
+    // 将层添加到舞台
+    stage.add(layer);
+
+    var innerRect = new Konva.Rect({
+        x:100,
+        y:300,
+        width:0,
+        height:20,
+        fill:"red"
+    })
+
+    layer.add(innerRect);
+
+    var outRect = new Konva.Rect({
+        x:100,
+        y:300,
+        width:500,
+        height:20,
+        stroke:"black",
+        strokeWidth:3
+    })
+    layer.add(outRect);
+
+    layer.draw();
+
+    var loadIndex = 0
+    var imgsrc = ["./img/1.png","./img/1.png","./img/1.png","./img/1.png","./img/1.png","./img/1.png"];
+    for(var i = 0;i<imgsrc.length;i++) {
+        var img = new Image();
+        img.src = imgsrc[i];
+        img.onload = function() {
+            loadIndex++;
+            var lg = loadIndex/imgsrc.length * 500;
+            innerRect.to({
+                width:lg,
+                duration: 1.4,
+                easing: Konva.Easings.EaseIn
+            })
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

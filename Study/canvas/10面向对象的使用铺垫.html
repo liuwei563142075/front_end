@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// // 第三种创建对象方式
+	// function Cat() {
+	// 	this.age = 19;
+	// 	this.show = function() {
+
+	// 	}
+	// }
+
+	// var cat = new Cat();
+	// var cat1 = new Cat();
+
+	// cat.age = 20;
+	// cat1.age = 23;
+
+	// 把 函数放到 原型里面去创建对象
+	// function Cat() {
+	// 	this.age = 19;
+	// }
+
+	// Cat.prototype.show = function() {
+	// 	console.log(this.age);
+	// }
+
+	// var cat = new Cat();
+	// var cat1 = new Cat();
+
+	// cat.age = 20;
+	// cat1.age = 23;
+
+	// cat.show(); // 20 
+	// cat1.show(); // 23
+
+	//再升级
+
+	// function Cat( age, x, y) {
+	// 	this.age = age;
+	// 	this.x = x;
+	// }
+
+	// Cat.prototype.show = function() {
+	// 	console.log(this.age);
+	// }
+
+	// var cat = new Cat();
+	// var cat1 = new Cat();
+
+	// cat.age = 20;
+	// cat1.age = 23;
+
+	// cat.show(); // 20 
+	// cat1.show(); // 23
+
+	// 参数改造一下
+	function Cat( option ) {
+		this.age = option.age;
+		this.x = option.x;
+	}
+
+	Cat.prototype.show = function() {
+		console.log(this.age);
+	}
+
+	// Cat.prototype.name = '122';
+
+	var cat = new Cat({
+		x: 19,
+		age: 18
+	});
+
+	cat.name
+
+
+
+// 在升级
+
+	function Cat( option ) {
+		// this.age = option.age;
+		// this.x = option.x;
+		// this._iinit= function(){}
+		this._init(option);
+	}
+
+	Cat.prototype = {
+		_init: function( option ) {
+			this.age = option.age || '';
+		},
+		show: function() {
+			console.log(this.age);
+		}
+	};
+	
+	var c = new Cat();
+
+	</script>
+</body>
+</html>

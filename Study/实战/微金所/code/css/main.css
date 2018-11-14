@@ -301,6 +301,7 @@ body {
 #cooperation {
     height: 200px;
     padding: 50px 0 50px 0;
+    overflow: hidden;
 }
 #cooperation .cooper-icon {
     list-style:none;

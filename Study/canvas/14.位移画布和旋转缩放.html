@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>唯一画布和旋转缩放</title>
+</head>
+<body>
+<!--canvas的宽高不能在css中设置-->
+<canvas width="500px" height="400px">
+    IE9 以上才支持canvas
+    请升级你的浏览器、
+    <!--flash代替-->
+</canvas>
+<script>
+    // 要等canvas标签加载完成之后才能使用script标签
+    var canvas = document.getElementsByTagName("canvas")[0];
+    // canvas就相当于一个画布程序
+    canvas.style.border = "1px dashed #000";
+    // 拿到canvas的上下文：就相当于画布程序的工具栏
+    var  ctx = canvas.getContext("2d"); /* webgl  代表3d */
+
+    // 状态1：相对于上下文原点
+    ctx.fillStyle = "red";
+    ctx.rect(10,10,50,50);
+    ctx.fill();
+
+    ctx.save();// 保存状态1
+
+    // 状态2：相对于位移后的位置
+
+    // 将整张画布：canvas移动到相对上下文起点（100,100）的位置
+    ctx.translate(100,100);
+    // 整张画布放大两倍
+    ctx.scale(2,2);
+    // 旋转
+    ctx.rotate(30*Math.PI/180);
+
+    ctx.moveTo(0,0);
+    ctx.lineTo(100,0);
+    ctx.moveTo(0,0);
+    ctx.lineTo(0,100);
+    ctx.rect(10,10,50,50);
+    ctx.stroke();
+
+    ctx.restore();// 回到状态1时状态【又变成相对于原点了】
+
+    // 状态3 ： 相对于上下文原点
+    ctx.rect(30,30,70,70);
+    ctx.stroke();
+
+</script>
+</body>
+</html>

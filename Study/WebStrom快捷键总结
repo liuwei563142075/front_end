@@ -2,6 +2,7 @@
 2.自动生成.attr("selected","false")代码：Ctrl + Alt + Shift + V
 3.shift+enter 重新开始一行（无论光标在哪个位置）
 4.自动换行:点击左边代码列序号右键soft-Wrap Current File
+5.文件夹下shift+右键才有在此处打开命令行窗口
 
 
 
