@@ -2,9 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koncas是一套专门操作canvas的库</title>
+    <style>
+        *{margin:0;padding: 0}
+        body {
+            background-color: #efefef;
+        }
+    </style>
+    <script src="../static/konva/konva.js"></script>
+    <script src="./entity/Star.js"></script>
 </head>
 <body>
+<!--放我们的舞台-->
+<div id="container">
 
+</div>
+<script>
+    // 创建舞台
+    var stage = new Konva.Stage({
+        container:"container",
+        width:window.innerWidth,
+        height:window.innerHeight
+    });
+
+    // 创建背景层
+    var bglayer = new Konva.Layer();
+    // 将背景层添加到舞台
+    stage.add(bglayer);
+
+    var cenx = window.innerWidth / 2;
+    var ceny = window.innerHeight / 2
+
+    // 创建一个组
+    var bggroup = new Konva.Group({
+        x: cenx,
+        y: ceny
+    });
+    // 给背景层添加内容--背景环 + web开发
+    var starData1 = {
+        x:0,
+        y:0,
+        innerRadius: 170,
+        outerRadius:250,
+        stroke: '#c0c0c0',
+        strokeWidth:3,
+        dash:[10,4]
+    }
+    var starData2 = {
+        x:0,
+        y:0,
+        innerRadius: 80,
+        outerRadius:100,
+        fill: '#727898',
+        opacity: .2,
+        text:'WEB开发',
+        fontSize:20,
+        color: '#fff'
+    }
+    var star1 = new Star( starData1 );
+    var star2 = new Star( starData2 );
+    bggroup.add(star1.getGroup());
+    bggroup.add(star2.getGroup());
+    bglayer.add(bggroup);
+    bglayer.draw();
+
+    // 创建一个动画层
+    var animiteLayer = new Konva.Layer();
+    stage.add(animiteLayer);
+
+    var angroup = new Konva.Group({
+        x: cenx + 170 * Math.cos( 30 * Math.PI / 180 ),
+        y: ceny - 170 * Math.sin( 30 * Math.PI / 180 )
+    })
+
+    // 给动画层添加内容--h5 + c3
+    var starData3 = {
+        x: 0,
+        y: 0,
+        innerRadius: 40,
+        outerRadius:50,
+        fill: '#F8D5DB',
+        opacity: .2,
+        text:'CSS3',
+        fontSize:16,
+        color: '#fff'
+    }
+    var star3 = new Star( starData3 );
+    angroup.add(star3.getGroup());
+    animiteLayer.add(angroup);
+
+
+    animiteLayer.draw();
+
+
+</script>
 </body>
 </html>
