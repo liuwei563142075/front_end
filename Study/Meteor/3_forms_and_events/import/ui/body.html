@@ -1,0 +1,20 @@
+<body>
+<div class="container">
+    <header>
+        <h1>Meteor是一个用于开发现代web和移动应用程序的 全栈JavaScript平台</h1>
+        <form class="new-task">
+            <input type="text" name="text" placeholder="Type to add new tasks" />
+        </form>
+    </header>
+
+    <ul>
+        {{#each tasks}}
+            {{> task}}
+        {{/each}}
+    </ul>
+</div>
+</body>
+<!--类似于定义一个变量-->
+<template name="task">
+    <li>{{text}}</li>
+</template>

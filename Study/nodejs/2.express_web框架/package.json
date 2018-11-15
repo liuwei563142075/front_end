@@ -1,0 +1,23 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "hahaha",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runoob/runoob.git%20%20.git# Github 地址"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/runoob/runoob.git%20%20/issues"
+  },
+  "homepage": "https://github.com/runoob/runoob.git%20%20/tree/%20Github%20%E5%9C%B0%E5%9D%80#readme"
+}

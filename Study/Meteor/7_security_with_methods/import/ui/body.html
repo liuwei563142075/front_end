@@ -1,0 +1,27 @@
+<body>
+<div class="container">
+    <header>
+        <h1>Meteor是一个用于开发现代web和移动应用程序的 全栈JavaScript平台</h1>
+
+        <label for="" class="hide-completed">
+            <input type="checkbox" />
+            Hide Completed Tasks
+        </label>
+
+        {{> loginButtons}}
+
+        {{#if currentUser}}
+            <form class="new-task">
+                <input type="text" name="text" placeholder="Type to add new tasks" />
+            </form>
+        {{/if}}
+
+    </header>
+
+    <ul>
+        {{#each tasks}}
+            {{> task}}
+        {{/each}}
+    </ul>
+</div>
+</body>

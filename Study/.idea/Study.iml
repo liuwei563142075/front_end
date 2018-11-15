@@ -3,10 +3,22 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/1_templates/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/2_collections/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/3_forms_and_events/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/4_update_add_remove/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/5_reactive_dictionary/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/6_addUserAccounts/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/6_user_account/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/7_security_with_methods/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/8_publish_and_subscribe/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/demo1/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/Meteor/my_cool_app/.meteor/local" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="meteor-packages-auto-import-browser" level="project" />
   </component>
 </module>
