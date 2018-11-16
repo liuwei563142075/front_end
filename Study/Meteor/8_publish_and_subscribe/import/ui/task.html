@@ -1,7 +1,23 @@
-<template name="task">
-    <li class="{{#if checked}}checked{{/if}}">
-        <button class="delete">&times;</button>
+<template name="task"><!--将私有类添加到私有任务-->
+    <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+
+        {{#if isOwner}}
+            <button class="delete">&times;</button>
+        {{/if}}
+
         <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+        <!--添加私人按钮,仅显示给发布的人看-->
+        {{#if isOwner}}
+            <button class="toggle-private">
+                {{#if private}}
+                    Private
+                {{else}}
+                    Public
+                {{/if}}
+            </button>
+        {{/if}}
+
         <span class="text"><strong>{{username}}</strong>-{{text}}</span>
     </li>
 </template>

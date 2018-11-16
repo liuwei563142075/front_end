@@ -10,6 +10,8 @@ import  './body.html';
 // 渲染模板
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
+    // 订阅任务
+    Meteor.subscribe('tasks');
 });
 
 Template.body.helpers({

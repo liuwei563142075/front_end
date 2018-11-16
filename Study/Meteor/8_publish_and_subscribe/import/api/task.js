@@ -5,6 +5,19 @@ import { check } from 'meteor/check';
 // 第一步：创建任务集合
 export const Tasks = new Mongo.Collection('tasks');
 
+// 为任务添加发布
+if(Meteor.isServer) {
+    // this code only runs on server
+    Meteor.publish('tasks',function tasksPublication() {
+        return Tasks.find({
+            $or:[// where private != true or owner == this.userId
+                { private : {$ne:true} },
+                { owner : this.userId },
+            ]
+        });
+    });
+}
+
 Meteor.methods({
     'tasks.insert'(text) {
         console.log(text);
@@ -26,13 +39,28 @@ Meteor.methods({
         check(taskId,String);
         check(setChecked,Boolean);
 
+        const task = Tasks.findOne(taskId);
+        if(task.private && task.owner !== Meteor.userId()) {
+            throw new Meteor.Error('not-authorized')
+        }
         Tasks.update(taskId,{ $set : { checked:setChecked }});
     },
     'tasks.remove'(task) {
-        console.log(Meteor.userId());
-        console.log(task.owner);
-        // 只能删除自己创建的任务
-        check(Meteor.userId(),task.owner);
+        if(task.private && task.owner !== Meteor.userId()) {
+            throw new Meteor.Error('not-authorized');
+        }
         Tasks.remove(task);
+    },
+    'tasks.setPrivate'(taskId,setToPrivate) {
+        check(taskId,String);
+        check(setToPrivate,Boolean);
+
+        const task = Tasks.findOne(taskId);
+
+        // Make sure the task owner can make a task private
+        if(task.owner !== Meteor.userId()) {
+            throw new Meteor.Error('not-authorized');
+        }
+        Tasks.update(taskId, { $set: { private: setToPrivate } });
     }
 });
