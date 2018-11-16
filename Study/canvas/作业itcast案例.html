@@ -44,7 +44,7 @@
         x:0,
         y:0,
         innerRadius: 170,
-        outerRadius:250,
+        outerRadius:300,
         stroke: '#c0c0c0',
         strokeWidth:3,
         dash:[10,4]
@@ -71,29 +71,104 @@
     var animiteLayer = new Konva.Layer();
     stage.add(animiteLayer);
 
-    var angroup = new Konva.Group({
-        x: cenx + 170 * Math.cos( 30 * Math.PI / 180 ),
-        y: ceny - 170 * Math.sin( 30 * Math.PI / 180 )
-    })
+    var angroupC3 = new Konva.Group({
+        x: cenx,
+        y: ceny
+    });
+    var angroupH5 = new Konva.Group({
+        x: cenx,
+        y: ceny
+    });
+    var angroupJS = new Konva.Group({
+        x: cenx,
+        y: ceny
+    });
 
-    // 给动画层添加内容--h5 + c3
+    // 给动画层添加内容--H5
     var starData3 = {
-        x: 0,
-        y: 0,
+        x: 170 * Math.cos( 240 * Math.PI / 180 ),
+        y:  170 * Math.sin( 240 * Math.PI / 180 ),
         innerRadius: 40,
         outerRadius:50,
         fill: '#F8D5DB',
+        opacity: .2,
+        text:'H5',
+        fontSize:16,
+        color: '#fff'
+    }
+
+    // 给动画层添加内容--CSS3
+    var starData4 = {
+        x: 170 * Math.cos( 30 * Math.PI / 180 ),
+        y:  170 * Math.sin( 30 * Math.PI / 180 ),
+        innerRadius: 40,
+        outerRadius:50,
+        fill: '#FCB430',
         opacity: .2,
         text:'CSS3',
         fontSize:16,
         color: '#fff'
     }
-    var star3 = new Star( starData3 );
-    angroup.add(star3.getGroup());
-    animiteLayer.add(angroup);
 
+    // 给动画层添加内容--JS
+    var starData5 = {
+        x: 300 * Math.cos( 180 * Math.PI / 180 ),
+        y: - 300 * Math.sin( 180 * Math.PI / 180 ),
+        innerRadius: 60,
+        outerRadius:80,
+        fill: '#A4C9F6',
+        opacity: .2,
+        text:'JS',
+        fontSize:16,
+        color: '#fff'
+    }
+
+    var star3 = new Star( starData3 );
+    angroupC3.add(star3.getGroup());
+    animiteLayer.add(angroupC3);
+
+    var star4 = new Star( starData4 );
+    angroupH5.add(star4.getGroup());
+    animiteLayer.add(angroupH5);
+
+    var star5 = new Star( starData5 );
+    angroupJS.add(star5.getGroup());
+    animiteLayer.add(angroupJS);
 
     animiteLayer.draw();
+
+    // 动画
+    var roatespeed = 30;
+    var anim = new Konva.Animation(function(frame) {
+        //console.log("frameTime:"+frame.time+" " + "frameDiff:" + frame.timeDiff + " " + "frameRate:" + frame.frameRate);
+
+        //timeDiff: 是两帧之间的时间差。是变化的，根据电脑性能和浏览器的状态动态变化。
+        //计算 当前帧需要旋转的角度。
+        var angleDiff = frame.timeDiff * roatespeed / 1000;  //上一帧和当前帧的时间差，毫秒。
+
+        angroupC3.rotate(angleDiff);// 不是弧度，是角度
+        star3.getGroup().rotate(-angleDiff);
+
+        angroupH5.rotate(angleDiff); // 外面组正向旋转，则内部组要反向旋转，才能保证文字不转
+        star4.getGroup().rotate(-angleDiff);
+
+        angroupJS.rotate(-angleDiff);
+        star5.getGroup().rotate(angleDiff);
+
+    }, animiteLayer);
+
+    anim.start();
+
+    //frameTime:0.22999999999979082 frameDiff:0.22999999999979082 frameRate:4347.8260869604765
+
+    // 事件
+    animiteLayer.on("mouseover",function(event) {
+        roatespeed = 10;
+    });
+    animiteLayer.on("mouseout",function(event) {
+        roatespeed = 30;
+    });
+
 
 
 </script>
