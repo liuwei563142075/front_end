@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template(filename, content)</title>
+    <script src="../../static/artTemplate/template-web.js"></script>
+
+
+    <script id="temp" type="text/html">
+
+    </script>
+
+
+</head>
+<body>
+<div id="dv"></div>
+<script>
+
+    /*template(filename, content)
+    * 返回值：
+    *   如果 content 为 Object，则渲染模板并返回 string
+    *   如果 content 为 string，则编译模板并返回 function
+    * */
+
+    // 编译模板并返回一个function
+    var fun = template('temp','hi, <%=value%>.');
+    console.log(fun);
+    var html = fun({
+        value:30
+    });
+
+    // 渲染模板并返回一个string
+    /*var html = template('temp',{
+        value:30
+    });*/
+
+    console.log(html);
+    document.getElementById("dv").innerHTML = html;
+</script>
+</body>
+</html>

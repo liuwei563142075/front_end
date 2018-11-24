@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../static/artTemplate/template-web.js"></script>
+</head>
+<body>
+<div id="dv"></div>
+<script>
+    var obj = template('./index.art','hi, <%=value%>.');
+    console.log(obj);
+    // document.getElementById("dv").innerHTML = html;
+</script>
+</body>
+</html>

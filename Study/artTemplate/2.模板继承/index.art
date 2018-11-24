@@ -1,0 +1,13 @@
+{{extends './layout.art'}}
+
+{{block 'title'}}
+    模板继承
+{{/block}}
+
+{{block 'head'}}
+    <link rel="stylesheet" href="custom.css">
+{{/block}}
+
+{{block 'content'}}
+    <p>这是内容</p>
+{{/block}}

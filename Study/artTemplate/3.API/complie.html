@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>.compile(source, options)</title>
+    <script src="../../static/artTemplate/template-web.js"></script>
+</head>
+<div id="dv"></div>
+<body>
+<script>
+    // 编译模板，并返回一个渲染函数
+    // var render = template.compile('hi, <%=value%>.');
+    //
+    // var html = render({value: 'aui'});
+
+    var html = template.compile('hi, <%=value%>.');
+
+    document.getElementById("dv").innerHTML = html;
+
+</script>
+</body>
+</html>

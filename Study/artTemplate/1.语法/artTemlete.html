@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输出</title>
+    <script src="../../static/artTemplate/template-web.js"></script>
+    <!-- 定义一个模板 -->
+    <script id="test" type="text/html">
+        {{if flag}}
+            <h3>{{value}}</h3>
+            <ul>
+                {{each info}}
+                    <li>{{$index}}:{{$value}}</li>
+                {{/each}}
+            </ul>
+        {{/if}}
+        <!--设置变量-->
+        {{set temp = value}}
+        <p>{{temp}}</p>
+    </script>
+</head>
+<body>
+<div id="dv"></div>
+<script>
+    var data = {
+        value:"水果",
+        flag:true,
+        info:['苹果','香蕉','梨','哈密瓜','柚子']
+    }
+
+    var html = template('test',data);
+    document.getElementById("dv").innerHTML = html;
+</script>
+</body>
+</html>

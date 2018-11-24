@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{block 'title'}}My Site{{/block}}</title>
+
+    {{block 'head'}}
+        <link rel="stylesheet" href="main.css">
+    {{/block}}
+</head>
+<body>
+{{block 'content'}}
+
+{{/block}}
+</body>
+</html>
