@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./entity/Product.js"></script>
+</head>
+<body>
+<table id="product"></table>
+
+<script>
+    var p1 = new Prodect({
+        picture:200
+    });
+    var p2 = new Prodect({
+        picture:180
+    });
+    var p3 = new Prodect({
+        picture:230
+    });
+    var ps = [p1,p2,p3];
+
+    var str = '';
+    for(var i = 0;i<ps.length;i++) {
+        str += ps[i].bindDOM();
+    }
+    var product = document.getElementById("product");
+    product.innerHTML = str;
+
+
+    var Product = function () {
+        this.name = 'name';
+        this.constructor // 是一个隐藏属性
+    }
+
+    var iphone = new Prodect();
+    console.log(iphone.constructor);
+</script>
+</body>
+</html>

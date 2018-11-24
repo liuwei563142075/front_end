@@ -464,7 +464,7 @@
   function detectMode(elem) {
     // Normalize to lowercase to ensure compatibility across HTML/XHTML/XML.
     // These are the elems that can use src attr per the W3 spec:
-    //dev.w3.org/html5/spec-author-view/index.html#attributes-1
+    //dev.w3.org/html5/spec-author-view/template.html#attributes-1
     //stackoverflow.com/q/8715689/770127
     //stackoverflow.com/a/4878963/770127
     var srcElems = { img:1, input:1, source:3, embed:3, track:3, iframe:5, audio:5, video:5, script:5 }

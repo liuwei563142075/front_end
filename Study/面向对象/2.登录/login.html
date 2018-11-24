@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a id="$login" href="#">登录</a>
+<script>
+
+
+
+    window.onload = function () {
+        // 模拟登录
+        var loginFlag = false;
+
+        // 访客
+        if(!loginFlag) {
+            // 显示登录俩字
+        }else{
+            // 显示：刘毛毛您已登录
+            var user = {'name':'刘毛毛','role':'青铜段位'};
+            var $login = document.getElementById("$login");
+            $login.innerHTML = login('欢迎#{name},您的段位是#{role}',user);
+        }
+
+    }
+
+    function login(info,user) {
+        return info.replace(/#{(\w+)}/g,function(match,ele){
+            console.log(ele)
+            return user[ele];
+        });
+    }
+
+
+
+
+</script>
+</body>
+</html>

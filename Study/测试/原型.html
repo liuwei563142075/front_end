@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Pro() {
+
+    }
+    Pro.prototype = {
+        foo:{
+            name:'maomao'
+        }
+    }
+
+    var p1 = new Pro();
+    var p2 = new Pro();
+
+    p1.foo.name = 'p1';
+    p2.foo.name = 'p2';
+
+    console.log(p1.foo.name); // p2
+    console.log(p2.foo.name); // p2
+    console.log(Pro.prototype.foo.name) // p2
+    console.log(p1.__proto__.foo.name) // p2
+</script>
+</body>
+</html>
