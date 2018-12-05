@@ -10,6 +10,7 @@
 
     }
     Pro.prototype = {
+        PI:3.14,
         foo:{
             name:'maomao'
         }
@@ -19,12 +20,17 @@
     var p2 = new Pro();
 
     p1.foo.name = 'p1';
+    p1.PI = 10;
     p2.foo.name = 'p2';
+    p2.PI = 20;
 
     console.log(p1.foo.name); // p2
+    console.log(p1.PI); // 10
     console.log(p2.foo.name); // p2
+    console.log(p2.PI); // 20
     console.log(Pro.prototype.foo.name) // p2
     console.log(p1.__proto__.foo.name) // p2
+    console.log(p1.__proto__.PI) // 3.14
 </script>
 </body>
 </html>
