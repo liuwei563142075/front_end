@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>其他事件</title>
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+
+
+        /*jquery基础事件*/
+       /* jQuery提供的函数
+        用于browers事件
+        error(fn)    load(fn)     unload(fn)    resize(fn)    scroll(fn)
+
+        用于form事件
+        change(fn)    select(fn)    submit(fn)
+
+        用于keyboard事件
+        keydown(fn)    keypress(fn)    keyup(fn)
+
+        用于mouse事件
+        click(fn)    dblclick(fn)    mousedown(fn)   mousemove(fn)
+        mouseout(fn)  mouseover(fn)     mouseup(fn)
+
+        用于UI事件
+        blur(fn)    focus(fn)*/
+
+
+
+        $(function(){
+            /*为每个匹配元素的特定事件绑定事件处理函数*/
+          /*  $("#button").bind("click mouseover",function(){
+                $("#button").attr("value","14797710665");
+                console.log('111')
+            });*/
+
+          /*    $("#button").one("click",function(){
+             $("#button").attr("value","14797710665");
+             console.log('111')
+             });*/
+
+//            on()在选择元素上绑定一个或多个事件的事件处理函数
+            $("#button").on("click mouseover",function(){
+                $("#button").attr("value","14797710665");
+                console.log('111')
+            });
+        })
+    </script>
+</head>
+
+<body>
+<div>
+    <input id="button" type="button" value="查看联系方式" class="btn"/>
+</div>
+</body>
+</html> 

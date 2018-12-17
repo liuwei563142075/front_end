@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    //    apply的一些其他巧妙用法
+    //细心的人可能已经察觉到,在我调用apply方法的时候,
+    //        第一个参数是对象(this),
+    //        第二个参数是一个数组集合,
+    //        在调用Person的时候,他需要的不是一个数组,
+    //        但是为什么他给我一个数组我仍然可以将数组解析为一个一个的参数,
+    //        这个就是apply的一个巧妙的用处：可以将一个数组默认的转换为一个参数列表([param1,param2,param3] 转换为 param1,param2,param3) 这个如果让我们用程序来实现将数组的每一个项,来装换为参数的列表,
+    //        可能都得费一会功夫,借助apply的这点特性,所以就有了以下高效率的方法:
+
+
+
+
+    //      max函数用法
+//        Math.max后面可以接任意个参数，最后返回所有参数中的最大值。
+        console.log(Math.max(5,8))   //8
+        console.log(Math.max(5,7,9,3,1,6))   //9
+
+//但是在很多情况下，我们需要找出数组中最大的元素。
+
+var arr=[5,7,9,1]
+alert(Math.max(arr))    //   这样却是不行的。因为其不支持传递数组过去 那么怎么做呢，就要考察我们的算法功底了。。
+
+function getMax(arr){
+    var arrLen=arr.length;
+    for(var i=0,ret=arr[0];i<arrLen;i++){
+        ret=Math.max(ret,arr[i]);
+    }
+    return ret;
+}
+
+
+//        获取数组中的最大值
+    var max=Math.max.apply(null,[1,10,122,3335,333,34343,34343,5657767,2,34455,445466,45454,343434,46466,56556,464646,464646,466,4646464])
+    alert('最大值：'+max)
+
+//    整体解析：
+//           因为Math.max 参数里面不支持Math.max([param1,param2]) 也就是数组
+//           但是它支持Math.max(param1,param2,param3…),所以可以根据刚才apply的那个特点来解决
+//           var max=Math.max.apply(null,array),这样轻易的可以得到一个数组中最大的一项
+//           (apply会将一个数组装换为一个参数接一个参数的传递给方法)
+//    第一个参数为什么是null：
+//             这块在调用的时候第一个参数给了一个null,这个是因为没有对象去调用这个方法,
+//             我只需要用这个方法帮我运算,得到返回的结果就行,.所以直接传递了一个null过去
+
+
+
+
+
+//      计算最小值
+      var min=Math.min.apply(null,[1,10,122,3335,333,34343,34343,5657767,2,34455,445466,45454,343434,46466,56556,464646,464646,466,4646464])
+      alert('最小值：'+min)
+
+//Math.min  可以实现得到数组中最小的一项
+//同样和 max是一个思想
+
+
+//     Array.prototype.push 可以实现两个数组合并
+//     同样push方法没有提供push一个数组,但是它提供了push(param1,param,…paramN)
+//      所以同样也可以通过apply来装换一下这个数组,即:
+
+        var arr1=new Array("1","2","3");
+        var arr2=new Array("4","5","6");
+        Array.prototype.push.apply(arr1,arr2);
+        alert(arr1)
+        alert(arr2)
+//也可以这样理解,arr1调用了push方法,参数是通过apply将数组装换为参数列表的集合.
+
+
+//     传统写法
+      function PushArray(arr1,arr2){
+          var arrLen=arr2.length
+          for(var i=0;i<arrLen;i++){
+              arr1.push(arr2[i])
+          }
+          return arr1;
+      }
+        var result = PushArray(arr1,arr2);
+        console.log(result)
+
+</script>

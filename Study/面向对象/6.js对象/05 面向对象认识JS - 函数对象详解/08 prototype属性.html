@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//    prototype属性 -- 原型创建对象的底层原理 - 明天重点  __proto__
+//
+//获取对象的原型。
+//每一个构造函数都有一个prototype属性，指向另一个对象。
+//这个对象的所有属性和方法，都会被构造函数的实例继承。
+//这意味着，我们可以把那些不变的属性和方法，直接定义在prototype对象上。
+
+//    目前只需要掌握通俗理解方式：对象的创建其实包含两个部分：构造函数部分，原型部分
+//    当我们new一个对象的实例的时候，这个实例能够同时拥有构造函数对象和原型对象的属性和方法就是通过prototype属性来实现的
+//    具体实现方式，下次详细讲解
+
+
+//古代的男人
+function Man(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+
+//这里其实是两个对象 Man 和 Man.prototype
+//这两个对象通过prototype属性实现关联
+//关联后的结果，Man对象继承Man.prototype,从而使得Man拥有Man.prototype的所有属性和方法
+
+
+Man.prototype.sex = "纯爷们";
+//方法：战斗
+Man.prototype.struggle = function () {
+    alert("方天画戟，赤兔，征战沙场！！");
+}
+
+//实例化一个男人
+var 吕布 = new Man("吕布", 20);
+alert(吕布.sex);//纯爷们
+吕布.struggle();//方天画戟，赤兔，征战沙场！！
+
+
+//古代女人
+function Woman(name, age) {
+    this.name = name;
+    this.age = age;
+}
+Woman.prototype.sex = "小家碧玉";
+Woman.prototype.zhibu = function () {
+    alert("织布 歌舞 琴棋书画");
+}
+var 貂蝉 = new Woman("貂蝉", 16);
+alert(貂蝉.sex);//小家碧玉
+貂蝉.zhibu();//d织布 歌舞 琴棋书画
+
+
+
+</script>

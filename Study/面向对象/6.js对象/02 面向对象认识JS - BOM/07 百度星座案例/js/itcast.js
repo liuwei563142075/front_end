@@ -26,9 +26,9 @@ $$.prototype = {
     },
     //简单的数据绑定formateString
     formateString:function(str, data){
-        return str.replace(/@\((\w+)\)/g, function(match, key){
-            return typeof data[key] === "undefined" ? '' : data[key]});
-    },
+    return str.replace(/@\((\w+)\)/g, function(match, key){
+        return typeof data[key] === "undefined" ? '' : data[key]});
+},
     //arttemplate
     bindTemplate:function (data, Template) {
         var html = template(Template, data);
@@ -40,13 +40,6 @@ $$.prototype = {
     artTemplate:function (str,data){
         var render = template.compile(str);
         return render(data)
-    },
-    //扩展插件
-    extend:function(target,source) {
-        for (var i in source) {
-            target[i] = source[i];
-        }
-        return target;
     }
 }
 //在框架中实例化，这样外面使用的使用就不用实例化了

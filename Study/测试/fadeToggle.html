@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p style="display:none">这是一个段落</p>
+<button id="btn">点击</button>
+<script src="../static/jquery/jquery-1.9.1.min.js"></script>
+<script>
+    $(function() {
+        $("#btn").on("click",function() {
+            $("p").fadeToggle(1000,function () {
+                $("p").fadeToggle(1000);
+            })
+        })
+    })
+</script>
+</body>
+</html>

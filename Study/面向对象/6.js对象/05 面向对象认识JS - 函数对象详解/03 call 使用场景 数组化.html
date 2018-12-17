@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>122</div>
+<div>122</div>
+<div>122</div>
+</body>
+</html>
+<script>
+    /*伪数组：只有数组的部分功能：length，下标，无法访问数组对象中的方法*/
+    var divs = document.getElementsByTagName("div")
+    console.log(divs.length)
+    /*说明他不是一个数组，无法访问里面的方法*/
+//    divs.pop().style.background='green'
+
+    /*我们通过如下方式将其转换成数组*/
+    var domNodes =  Array.prototype.slice.call(divs);
+    /*这样domNodes就可以应用Array下的所有方法了。*/
+
+
+    /* slice ： 截取数组，返回的还是数组，这里我们截取全部  */
+    domNodes.pop().style.background='green'
+
+
+</script>
+
