@@ -9,8 +9,8 @@
         {{if flag}}
             <h3>{{value}}</h3>
             <ul>
-                {{each info}}
-                    <li>{{$index}}:{{$value}}</li>
+                {{each info val i}}
+                    <li>{{i}}:{{val}}</li>
                 {{/each}}
             </ul>
         {{/if}}
