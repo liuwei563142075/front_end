@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>这是一个p</p>
+<script>
+    window.onload = function() {
+        var currentHref1 = window.location.href;
+        var currentHref2 = location.href;
+        console.log(currentHref1);
+        console.log(currentHref2);
+
+        /* search获取的是地址栏后的  ?参数 */
+        var params = window.location.search;
+        console.log(params);//?_ijt=5dvt5e0slbpf7cpgnvbadrp5k4
+    }
+</script>
+</body>
+</html>

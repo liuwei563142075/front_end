@@ -21,6 +21,7 @@
        }
    };
     //借用 供爷法则
-    myclass.getAllStudentsNumbers.call(student)
+    // student向myclass借用一下myclass中的getAllStudentsNumbers方法
+    console.log(myclass.getAllStudentsNumbers.call(student))
 
 </script>

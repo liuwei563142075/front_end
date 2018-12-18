@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="vv" type="text" value="123">
+<script>
+    var FunClass = {
+        fun:function() {
+            return 100;
+        }
+    }
+    var MetClass = {
+        value:10,
+        mefun:function() {
+            return this.value
+        }
+    }
+    console.log(MetClass.mefun.call(document.getElementById("vv")));//123
+    console.log(FunClass.fun.call(MetClass));//100
+</script>
+</body>
+</html>
