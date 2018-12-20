@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script src='simple.js'></script>
+<script>
+    var Person = Class.extend({
+        init: function(age,name){
+            this.age = age;
+            this.name = name;
+        },
+        dance: function(){
+            alert("跳舞");
+        }
+    });
+    var Student = Person.extend({
+        init: function(age,name,height){
+            this._super(age,name);
+            this.height = height;
+        },
+        dance: function(){
+            /*调用父类的同名方法*/
+            this._super();
+            /*同时又可以调用自己的方法*/
+            alert("唱歌");
+        }
+    });
+
+
+    var xiaozhang = new Student(21,'小张','121');
+    xiaozhang.dance();
+
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+String.prototype.format = function () {  
+    var str = this;   
+    for(var i = 0, j = arguments.length; i < j; i++){  
+        str = str.replace(new RegExp('\\{' + i +'\\}', 'g'), arguments[i]);  
+    }  
+  
+    return str;  
+}  
+var name ='王书奎';
+var role ='系统管理员';
+alert('登陆成功，用户名：{0}角色：({1})'.format(name, role));  
+</script>

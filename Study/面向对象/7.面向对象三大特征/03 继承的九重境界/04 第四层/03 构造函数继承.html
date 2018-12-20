@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+
+	function People(){
+		this.race = '人类';
+	}
+    People.prototype={
+        eat:function(){
+            alert('123')
+        }
+    }
+
+    /*学生对象*/
+	function Student(name, skin) {
+		People.apply(this, arguments);
+		this.name = name;
+		this.skin = skin;
+	}
+	//实例化 yellow2
+	var zhangsan = new Student('张三', '黄皮肤')
+	console.log(zhangsan.name); //张三
+	console.log(zhangsan.race); //人类
+    zhangsan.eat()
+</script>

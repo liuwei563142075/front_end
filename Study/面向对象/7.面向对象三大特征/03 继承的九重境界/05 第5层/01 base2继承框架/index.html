@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script src='base2.js'></script>
+<script>
+    /*基类*/
+    var Person = Class.extend ( {
+        init: function (name ) {
+            this.name = name;
+        },
+        dance: function ( ) {
+            alert('跳舞')
+        }
+    } );
+
+    /*子类*/
+    var Student = Person.extend({
+        init: function(){
+            //false表示什么意思
+            this._super( false );
+        },
+        /*重写父类方法*/
+        dance: function(){
+            /*调用父类*/
+            this._super();
+            alert('唱歌')
+        },
+        /*实现自己的方法*/
+        swingSword: function(){
+            return true;
+        }
+    });
+
+
+    var xiaozhang = new Student();
+    xiaozhang.dance();
+
+
+</script>

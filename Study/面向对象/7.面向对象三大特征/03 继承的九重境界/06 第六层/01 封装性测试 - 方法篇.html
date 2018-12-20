@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+	 //现有一个人。。。
+	 // 球员：人
+	 //教练：人
+	 //采用原型方式定义对象
+	var person = function(firstname,lastname){
+			this.firstname =firstname;
+			this.lastname = lastname;
+		};
+	
+	person.prototype = {
+		   getName:function(){return this.firstname+this.lastname}
+		
+		};
+	 
+	 var jiaolian =function(firstname,lastname){
+		    person.call(this, firstname, lastname);
+			this.score = 10;
+			var age=100;  
+			var add=function(){alert("我是私有的方法，外界看不到我");}
+		 
+		 }
+	 jiaolian.prototype = new person();
+	 jiaolian.prototype.zhidao = function(){alert("zhidao");add()};
+	 
+	 var david = new jiaolian('wang','shukui');
+	 //alert(david.firstname);
+	 //alert(david.score);
+	 //alert(david.age);
+	 david.zhidao();
+	 
+	 
+	// david.firstname='david';
+//	 david.lastname=' jone';
+//	 alert(david.getName());
+	 
+
+
+</script>

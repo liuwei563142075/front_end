@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var Person = function () {}
+    Person.prototype = {
+        getId:function() {
+            return 0;
+        }
+    }
+
+    var Zhangsan = function () {
+        Person.call(this,arguments);
+    }
+    Zhangsan.prototype = {
+        say:function() {
+            console.log('123');
+        }
+    }
+
+    Zhangsan.prototype = new Person();
+
+    var zs = new Person();
+
+    console.log(zs.getId());
+
+
+</script>
+</body>
+</html>

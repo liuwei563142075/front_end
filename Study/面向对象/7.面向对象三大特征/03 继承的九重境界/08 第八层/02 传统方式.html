@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<h1>产品最终价格：</h1>
+<div id='mydiv'></div>
+</body>
+</html>
+<script>
+function Price(personType, price) {
+    //大客户 5 折
+    if (personType == 'vip') {
+        return price * 0.5;
+    } 
+    else if (personType == 'old'){
+        //老客户 3 折
+        return price * 0.3;
+    } else {
+        return price; //其他都全价
+    }
+}
+
+document.getElementById('mydiv').innerHTML=Price('vip',1000);
+</script>

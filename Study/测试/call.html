@@ -8,8 +8,9 @@
 <input id="vv" type="text" value="123">
 <script>
     var FunClass = {
+        value:100,
         fun:function() {
-            return 100;
+            return this.value;
         }
     }
     var MetClass = {
@@ -18,8 +19,19 @@
             return this.value
         }
     }
+    // 修改this指针
     console.log(MetClass.mefun.call(document.getElementById("vv")));//123
-    console.log(FunClass.fun.call(MetClass));//100
+    console.log(FunClass.fun.call(MetClass));//10
+
+    // call传递参数
+    function add(a,b) {
+        return a+b;
+    }
+    function done() {
+        return 100;
+    }
+    console.log(add.call(done,10,20));// 30
+    console.log(add.apply(done,[10,20]));
 </script>
 </body>
 </html>

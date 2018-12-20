@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+ 	~(function(){
+		
+			var o = new Object();
+			//这里其实就是继承，我新创建的一个对象，然后继承Object的所有属性和方法，也就是可以使用Object的所有属性和方法
+			//这里继承并不是新的概念，只是前面我们没讲这个玩意有个学名叫做继承
+			//alert(o.toString()); //能否访问，说明确实继承了Object
+			 alert(o.__proto__ === Object.prototype);  //true 继承的本质 -- 为什么能访问Object对象的方法，其实访问的是其原型对象的方法 所有的方法都是放在原型中而不是类中
+			//alert(o.__proto__ === Object);
+			//alert(Object.__proto__ === Function.prototype);
+			//alert(Function.prototype.__proto__ === Object.prototype);
+			//alert(Number.__proto__ === Function.prototype);
+			
+			
+			//object是万物祖先
+			
+		}());
+
+    
+
+</script>
