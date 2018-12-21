@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--canvas的宽高不能在css中设置-->
-<canvas width="500px" height="400px">
+<canvas width="512px" height="512px">
     IE9 以上才支持canvas
     请升级你的浏览器、
     <!--flash代替-->
@@ -20,18 +20,18 @@
     var  ctx = canvas.getContext("2d"); /* webgl  代表3d */
 
     var img = new Image();
-    img.src = "./img/a.jpg";
+    img.src = "./img/000008.png";
     img.onload = function() {// 图片一加载完就执行的方法
-        // ctx.drawImage(img,200,200,200,200);// (图片,起始位置，终止位置，绘制的宽度，绘制的高度)
+        ctx.drawImage(img,0,0,512,512);// (图片,相对canvas原点起始位置，相对canvas原点终止位置，绘制的宽度，绘制的高度)
 
         // oh/ow = h/w
         // var oh = img.height;
         // var ow = img.width;
         // ctx.drawImage(img,200,200,200,oh*200/ow); // 根据宽高比绘制图片
 
-        for(var i = 0;i < 10; i++) {
+        /*for(var i = 0;i < 10; i++) {
             ctx.drawImage(img,100 + i*20,100 + i*20,293,220);
-        }
+        }*/
     }
 
 </script>
