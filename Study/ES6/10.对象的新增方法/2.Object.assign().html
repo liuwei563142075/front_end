@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用于对象的合并，将源对象（source）的所有可枚举属性 ，复制到目标对象（target）
+    </title>
+    <script>
+        // assign合并对象
+        console.log('assign合并对象')
+        const target0 = {a:1};
+        const source01 = {b:2};
+        const source02 = {c:3};
+        Object.assign(target0,source01,source02);
+        console.log(target0); // {a:1,b:2,c:3}
+
+        // 属性覆盖
+        console.log('assign属性覆盖原则')
+        const target1 = { a: 1, b: 2}
+        const source11 = { b: 3, c: 4}
+        const source12 = { c: 8}
+        Object.assign(target1,source11,source12)
+        console.log(target1)
+
+        // 只有一个参数则直接返回该对象
+        console.log('只有一个参数则直接返回该对象')
+        const target3 = { a: 1}
+        Object.assign(target3)
+        console.log(target3) // { a: 1}
+
+        // 该对象如果不是对象则会先转为对象
+        console.log('该对象如果不是对象则会先转为对象')
+        console.log(typeof Object.assign(2)) // object
+
+        // undefined 和 null无法转为对象，所以如果作为参数会报错
+        console.log('undefined 和 null无法转为对象，所以如果作为参数会报错')
+        //Object.assign(undefined) // Cannot convert undefined or null to object
+        //Object.assign(null) // Cannot convert undefined or null to object
+
+        // 浅拷贝:如果源对象某个属性的值是对象，那么目标对
+        // 象拷贝得到的是这个对象的引用。
+        console.log('浅拷贝')
+        const obj1 = {a: {b: 1}};
+        const obj2 = Object.assign({}, obj1);
+        console.log(obj1.a.b = 2)
+        console.log(obj2.a.b)
+
+
+    </script>
+</head>
+<body>
+<script>
+
+</script>
+</body>
+</html>

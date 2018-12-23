@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>比较两个值是否相等</title>
+</head>
+<body>
+<script>
+    // 1.Object.is是ES6提出的"Same-value equality"(同值相等)算法，用来
+    //比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致
+    console.log('is函数测试值是否相等： ',Object.is('foo','foo')); // true
+    console.log('==测试值相等： ','foo'=='foo') // true
+    console.log('===测试值相等： ','foo'==='foo') // true
+
+    console.log('============================================')
+
+    console.log('is函数测试对象是否相等： ',Object.is({},{})); // false
+    console.log('==测试对象相等： ',{}=={}) // false
+    console.log('===测试对象相等： ',{}==={}) // false
+
+    console.log('============================================')
+
+    // ==和===存在的缺点
+    console.log('==会自动转换数据类型','123'==123) // true
+    console.log('===中NaN不等于自身',NaN === NaN) // false
+    console.log('==中+0等于-0',+0 == -0) // true
+    console.log('===中+0等于-0',+0 === -0) // true
+    // Object.is()
+    console.log('Object.is不会数据类型转换',Object.is('123',123)) // false
+    console.log('Object.is中NaN等于自身',Object.is(NaN,NaN)) // true
+    console.log('Object.is中+0不等于-0',Object.is(+0,-0)) // false
+
+</script>
+</body>
+</html>

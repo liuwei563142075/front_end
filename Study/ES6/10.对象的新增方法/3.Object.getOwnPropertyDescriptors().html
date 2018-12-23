@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>返回指定对象所有自身属性（非继承）的描述对象</title>
+</head>
+<body>
+<script>
+    const obj = {
+        foo: 123,
+        get bar() {
+            return 'abc'
+        }
+    }
+
+    console.log(Object.getOwnPropertyDescriptors(obj))
+</script>
+</body>
+</html>

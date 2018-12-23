@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数和this</title>
+</head>
+<body>
+<script>
+    function IceCream() {
+        this.scoops = 0;
+    }
+
+    // 为 IceCream 添加 addScoop 方法
+    IceCream.prototype.addScoop = function() {
+        setTimeout(function() {
+            this.scoops++;
+            console.log('scoop added!');
+            console.log(this.scoops); // undefined+1=NaN
+            console.log(dessert.scoops); //0
+        }, 500);
+    };
+
+    const dessert = new IceCream();
+    dessert.addScoop();
+
+</script>
+</body>
+</html>

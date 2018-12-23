@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展开运算符</title>
+</head>
+<body>
+<script>
+    // 展开运算符
+    const books = ['js','css','java','c#'];
+    console.log(...books);
+
+    // 在ES6之前，合并数组的方式：concat,apply
+    const fruit = ['apple','pan','香蕉']
+
+    // 合并数组方式1
+    var newarr1 = books.concat(fruit)
+    console.log(newarr1)
+
+    // 合并数组方式2
+    Array.prototype.push.apply(books,fruit)
+    console.log(books)
+
+    // ES6新语法:使用展开符合并两个新数组
+    var newarr2 = [...books,...fruit]
+    console.log(newarr2)
+</script>
+</body>
+</html>

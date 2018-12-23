@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>默认参数函数</title>
+</head>
+<body>
+<script>
+    // ES6之前，默认参数函数是怎么写的？
+    function greet(name,greeting) {
+        name = (typeof name != 'undefined') ? name : 'Student';
+        greeting = (typeof greeting != 'undefined') ? greeting : 'Welcome';
+        return `${greeting} ${name}`
+    }
+
+    console.log(greet()) // Welcome Student
+    console.log(greet('maomao'))// Welcome maomao
+    console.log(greet('maomao','hehe'))//hehe maomao
+
+    // ES 6
+    function creat(name = 'Student',greeting = 'Welcome') {
+        return `${greeting} ${name}`
+    }
+    console.log(creat())// Welcome Student
+    console.log(creat('maomao'))// Welcome maomao
+    console.log(creat('maomao','hehe'))//hehe maomao
+</script>
+</body>
+</html>

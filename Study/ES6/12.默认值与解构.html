@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>默认参数函数</title>
+</head>
+<body>
+<script>
+    console.log('==========1.默认值与解构数组=========')
+// 1.默认值与解构数组
+    function createGrid([width = 5,height = 5] = []) {
+        return `Generates a ${width} x ${height} = ${width*height}`
+    }
+
+    console.log(createGrid([])) // Generates a 5 x 5 = 25
+    console.log(createGrid([3]))// Generates a 3 x 5 = 15
+    console.log(createGrid([3,7]))// Generates a 3 x 7 = 21
+    console.log(createGrid([undefined,7]))// Generates a 5 x 7 = 35
+
+    console.log(createGrid()) // Generates a 5 x 5 = 25
+
+    console.log('==========2.默认值与解构函数=========')
+    // 2. 默认值与解构函数
+    function createSundae({scoops = 1,toppings = ['Hot Fudge']} = {}) {
+        const scoopText = scoops === 1 ? 'scoop':'scoops';
+        return `Your sunde has ${scoops} ${scoopText} width ${toppings.join(' and ')} toppings.`
+    }
+
+    console.log(createSundae({})); // Your sundae has 1 scoop with Hot Fudge toppings.
+    console.log(createSundae({scoops: 2})); // Your sundae has 2 scoops with Hot Fudge toppings.
+    console.log(createSundae({scoops: 2, toppings: ['Sprinkles']})); // Your sundae has 2 scoops with Sprinkles toppings.
+    console.log(createSundae({toppings: ['Cookie Dough']})); // Your sundae has 1 scoop with Cookie Dough toppings.
+    console.log(createSundae()); // Your sundae has 1 scoop with Hot Fudge toppings.
+
+    console.log('==========3.数组默认值和对象默认值=========')
+    // 3. 数组默认值和对象默认值
+    // var defaultPerson = {age = 25,likes = ['sports','apple']} // ERROR
+    function addPerson({scoops = 1,toppings = ['Hot Fudge']} = {}) {
+        const scoopText = scoops === 1 ? 'scoop':'scoops';
+        return `Your sunde has ${scoops} ${scoopText} width ${toppings.join(' and ')} toppings.`
+    }
+
+    addPerson({toppings:['cat','dog']})
+
+    function createSundae([scoops = 1, toppings = ['Hot Fudge']] = []) {
+        const scoopText = scoops === 1 ? 'scoop':'scoops';
+        return `Your sunde has ${scoops} ${scoopText} width ${toppings.join(' and ')} toppings.`
+    }
+
+    createSundae([undefined, ['Hot Fudge', 'Sprinkles', 'Caramel']]);
+
+</script>
+</body>
+</html>

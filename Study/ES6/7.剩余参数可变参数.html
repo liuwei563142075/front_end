@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>剩余参数（可变参数）</title>
+</head>
+<body>
+<script>
+    // 将变量赋值数组时
+    const arr = [12,32,5343,'eqw','fwe',23,'fvds','grt']
+
+
+    const [x,y,z,...info] = arr
+    // const [x,y,z,info] = arr // info = eqw
+
+    console.log(x,y,z,info)
+
+
+    // ES6之前对于参数不固定的函数进行处理是下面这样的：
+    function es6Before() {
+        let total = 0;
+        for(let argument in arguments) {
+            total += argument;
+        }
+        return total;
+    }
+
+    // ES6
+    function es6(...params) {
+        let total = 0;
+        for(var param in params) {
+            total += param;
+        }
+        return total;
+    }
+
+    console.log(es6Before(1,2,3,4,5))
+    console.log(es6(1,2,3,4,5))
+</script>
+</body>
+</html>

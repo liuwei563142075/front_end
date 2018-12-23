@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6箭头函数</title>
+</head>
+<body>
+<script>
+    let person = ['liuwei','liupeng','jiangzhenghui','nijingwan'];
+
+    // ES6之前将数组中每一个元素变为大写
+    person = person.map(function(item) {
+        return item.toUpperCase();
+    })
+
+    // ES6
+    console.log('ES6');
+    person = person.map(name=>name.toUpperCase())
+
+    //     1.存储在变量中，
+    //     2.当做参数传递给函数，
+    //     3.存储在对象的属性中。
+
+    // 1.参数个数只有一个可以不用圆括号括起来
+    const greet = name=>`Hello ${name}`;
+    greet('maomao')
+
+    // 2.参数个数一个没有，则必须用圆括号括起来
+    const getAge = () =>`15`;
+    console.log(getAge())
+
+    // 3.参数为一个以上时
+    const getAFriend = (name,age) => `${name} 是 ${age} 岁！`
+    console.log(getAFriend('maomao',25))
+
+    // 常规主体写法：
+    console.log('常规主体写法：')
+    roommate = person.map(name=>{
+        console.log(name);
+        return name.toUpperCase()
+    })
+    console.log(roommate)
+
+
+</script>
+</body>
+</html>

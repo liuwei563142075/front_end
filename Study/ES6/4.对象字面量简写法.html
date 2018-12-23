@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象字面量简写法</title>
+</head>
+<body>
+<script>
+    let type = 'fruit';
+    let color = 'red';
+    let small = 'xiang';
+
+    // 更早
+    const apple = {
+        type:type,
+        color:color,
+        small:small
+    };
+    console.log(apple)
+
+    // ES6
+    const ap = {type,color,small};
+    console.log(ap)
+    console.log(ap.type)
+
+
+    //===================简写方法名称
+    // 更早
+    const nana = {
+        type:type,
+        color:color,
+        small:small,
+        getOne:function () { // 匿名函数给了getOne
+            return 1;
+        }
+    };
+    console.log(nana.getOne())
+
+    //ES6
+    const na = {
+        type,
+        color,
+        small,
+        getOne () { // ES6不在需要function!
+            return 1;
+        }
+    };
+    console.log(na.getOne())
+
+
+    getMore() {
+
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>默认参数函数</title>
+</head>
+<body>
+<script>
+    // 1.ES5创建类的方式
+    var Person = function(propo) {
+        this.name = propo.name;
+        this.age = propo.age;
+    }
+    Person.prototype = {
+        getName:function() {
+            return this.name;
+        },
+        getAge:function() {
+            return this.age;
+        }
+    }
+
+    // ES6
+    class PersonES6 {
+        //constructor方法虽然在类中,但不是原型上的方法,只是用来生成实例的.
+        constructor(propo) {
+            this.name = propo.name;
+            this.age = propo.age;
+            this.sex = propo.sex;
+        }
+        //原型上的方法, 由所有实例对象共享.
+        getName(){
+            return this.name
+        }
+        getAge(){
+            return this.age
+        }
+        static getSex() {
+            return this.sex
+        }
+    }
+
+    var mx = new PersonES6({name:'mx001',age:20,sex:0})
+    console.log(mx.getName())
+
+    // ES6 静态方法
+
+</script>
+</body>
+</html>

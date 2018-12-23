@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for...of循环</title>
+    <script src="../static/jquery/jquery-1.9.1.js"></script>
+</head>
+<body>
+<script>
+
+    function tests() {
+
+        const ts = [29,236,54,23,7,1];
+        // const ts = {name:'猫',age:2,sex:0}
+
+        // 1.for循环
+       /*
+       console.log('===========for===========')
+       for (let i = 0;i<ts.length;i++) {
+            console.log('for:',i,ts[i]);
+        }*/
+
+        // 2.for...in循环
+        /*console.log('===========for...in===========')
+        for(let i in ts) { // only one params and It's index
+            console.log(`for...in:${i} ${ts[i]}`);
+        }*/
+
+
+        Array.prototype.decimalfy = function() {
+            console.log(9090090);
+        }
+        // 3.会遍历数组中所有属性
+        /*const dist = [12,324,54,678,3,87,23]
+        for (let i in dist) {
+            console.log(i);
+        }*/
+
+        // 4.for in能遍历json对象，for循环不可以
+        /*const inarr = {name:'猫猫',age:2};
+        for(let i in inarr) {
+            console.log(inarr[i]);
+        }
+        console.log('========================')
+        console.log(inarr.length);//undefined
+        console.log(inarr.size);//undefined
+        for(let j = 0;j<inarr.length;i++) {
+            console.log(j,inarr[j])
+        }*/
+
+        // 5.foreach
+        // array.forEach(function(currentValue【必选】, index【可选】, arr【可选】), thisValue【可选】)
+        /*
+        console.log('===========foreach===========')
+        function eh(currentValue,index,arr) {
+            console.log(currentValue,index,arr)
+        }
+        ts.forEach(eh);*/
+
+        // 6.for...of
+        /*console.log('===========for...of===========')
+
+        const ts = {name:'猫',age:2,sex:0}
+
+        for(let value of ts) { // only one params and It's value
+            console.log(`for...of:${value}`);
+        }*/
+
+        // for...of及时停，及时止
+        /*for(let t of ts) {
+            if(t % 10 >= 5) {
+                console.log(`continue:${t}`);
+                continue;
+            }else {
+                console.log(`break:${t}`);
+                break;
+            }
+        }*/
+
+        $.each(ts,function(index,value) {
+            console.log(`jayery:${index} ${value}`)
+        })
+    }
+    tests();
+
+</script>
+</body>
+</html>

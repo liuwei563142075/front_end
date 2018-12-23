@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript中的this对象</title>
+</head>
+<body>
+<script>
+    var Student = {
+        value:30,
+        getAge:function() {
+            return this.value;
+        }
+    }
+
+    var People = {
+        value:5,
+        getNum:function() {
+            return this.value;
+        }
+    }
+
+    console.log(People.getNum.call(Student));// 30
+
+    // const result = obj1.printName.call(obj2);
+
+</script>
+<script src="test.js"></script>
+</body>
+</html>

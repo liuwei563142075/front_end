@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构</title>
+</head>
+<body>
+<script>
+    // 解构数组中的值：
+    const arr = [1,2,'das'];
+    const [a,b,c] = arr;
+    console.log(a,b,c)
+
+    // 解构数组中时忽略值：
+    const [x,,z] = arr;
+    console.log(x,z)
+
+    // 解构对象
+    const student = {
+        name:'maomao',
+        age:23
+    }
+    const {name,age} = student;
+    console.log(name,age)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板字面量</title>
+</head>
+<body>
+<script>
+
+    const student = {
+        name: 'Richard Kalehoff',
+        guardian: 'Mr. Kalehoff'
+    };
+
+    const teacher = {
+        name: 'Mrs. Wilson',
+        room: 'N231'
+    }
+    // ES6之前
+    let message1 = student.name + ' please see ' + teacher.name + ' in ' + teacher.room + ' to pick up your report card.';
+    // ES6
+    let message2 =  `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
+
+    console.log(message1);
+    console.log(message2);
+</script>
+</body>
+</html>
