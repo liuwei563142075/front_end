@@ -14703,7 +14703,7 @@ function doResolve(fn, promise) {
 },{"asap/raw":99}],105:[function(require,module,exports){
 'use strict';
 
-//This file contains the ES6 extensions to the core Promises/A+ API
+//This file contains the ES6新特性 extensions to the core Promises/A+ API
 
 var Promise = require('./core.js');
 
