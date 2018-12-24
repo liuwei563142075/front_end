@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Set实例的属性和方法</title>
+</head>
+<body>
+<script>
+    let set = new Set();
+
+    // 1.add
+    set.add(1).add(2).add(3).add({name:'猫咪'})
+    console.log(set.size)
+    console.log(set) // true
+
+    // 2.has
+    console.log(set.has(1)) // true
+
+    // 3.delete
+    console.log(set.delete(1))
+    console.log(set) // Set(3) {2, 3, {…}}
+
+    // set转为数组
+    let setArr = Array.from(set)
+    console.log(setArr) // (3) [2, 3, {…}]
+
+    // 去除数组重复的方法
+    function dedupe(arr) {
+        return Array.from(new Set(arr))
+    }
+    let arrdedupe = [1,2,3,4,5,5,5]
+    console.log(dedupe(arrdedupe))
+
+</script>
+</body>
+</html>

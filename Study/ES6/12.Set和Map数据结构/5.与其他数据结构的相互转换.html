@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>与其他数据类型的相互转换</title>
+</head>
+<body>
+<script>
+    // Map转为数组
+    console.log('Map转为数组')
+    const mapToArr = new Map().set(true,7).set({foo:3},['abc'])
+    console.log([...mapToArr])
+
+    // 数组转Map
+    console.log('数组转Map')
+    const arrToMap = new Map([
+        [true,7],
+        [{foo:3},['abc']]
+    ])
+    console.log(arrToMap)
+
+    // Map转为对象
+    console.log('Map转为对象,如果所有Map的键都是字符串，它可以无损的转为对象')
+    function strMapToObj(strMap) {
+        let obj = Object.create(null);
+        for(let [k,v] of strMap) {
+            obj[k] = v;
+        }
+        return obj;
+    }
+    const strMap = new Map().set('name','maomao').set('age',30).set('getName',function() {
+        return this.name
+    }).set('getAge',function() {
+        return this.age
+    });
+    console.log(strMapToObj(strMap).getAge())
+
+
+    // 对象转为Map
+    console.log('对象转为Map')
+    function objToStrMap(obj) {
+        const map = new Map();
+        for (let k of Object.keys(obj)) {
+            map.set(k,obj[k])
+        }
+        return map;
+    }
+    const mapStr = {
+        name:'mimo',
+        age:30
+    }
+    console.log(objToStrMap(mapStr))
+
+
+    // map转为json
+    console.log('Map转为json')
+    function mapToJSON(map) {
+        return JSON.stringify(strMapToObj(map))
+    }
+    const mapJSON = new Map().set('name','liaodsa').set('age',30);
+    console.log(mapToJSON(mapJSON))
+
+    // json转为map
+    console.log('json转为map')
+    function jsonToMap(jsonStr) {
+        return objToStrMap(JSON.parse(jsonStr));
+    }
+    const jsonMap = '{"name":"jaskd","age":30}';
+    console.log(jsonToMap(jsonMap))
+
+</script>
+</body>
+</html>

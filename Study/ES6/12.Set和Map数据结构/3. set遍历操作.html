@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历操作</title>
+</head>
+<body>
+<script>
+    // keys()
+    // values()
+    // entries()
+    // foreach()
+
+    let set = new Set([1,2,3,4,5,5,5,6]);
+
+    // keys
+    console.log('========keys()==========')
+    for(let s of set.keys()) {
+        console.log(s)
+    }
+
+    // values
+    console.log('========values()==========')
+    for(let s of set.values()) {
+        console.log(s)
+    }
+
+    // entries
+    console.log('========entries()==========')
+    for(let s of set.entries()) {
+        console.log(s)
+    }
+
+    //foreach
+    console.log('========foreach()==========')
+    set.forEach(s=>console.log(s))
+
+    // 数组的map和filter间接用于Set
+    let setMF = new Set([1,4,4,4]);
+    setMF = new Set([...setMF].map(x=>x*2)) // [1,16]
+    setMF = new Set([...setMF].filter(x=>(x%2)==0)) // [1,16]
+
+    // 方便的并集与交集
+    console.log("求并、交")
+    let a = new Set([1,2,3])
+    let b = new Set([3,2,5])
+
+    let union = Array.from(new Set([...a,...b]))
+    let intersect = new Set([...a].filter(x=>b.has(x)))
+    console.log(union,intersect)
+
+</script>
+</body>
+</html>

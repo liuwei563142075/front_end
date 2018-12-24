@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>概述</title>
+</head>
+<body>
+ES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。
+它是 JavaScript 语言的第七种数据类型，前六种
+是：undefined、null、布尔值（Boolean）、字符串（String）、
+数值（Number）、对象（Object）。
+
+<script>
+    // 1.Symbol 值通过Symbol函数生成,创建独一无二的属性名
+    // 对象的属性名称现在可以有两种数据类型。一种是原来的字符串
+    // ，另一种就是新增的Symbol类型
+    let s1 = Symbol();
+    console.log(typeof s1) // symbol 类型，不是字符串类型
+
+    // 2.Symbol函数可以接受一个字符串作为参数，表示对Symbol实例的描述，
+    // 主要是用来在控制台显示，或者转为字符串时，比较容易区分
+    let s2 = Symbol('is string');
+    console.log(s2); // 更类似在控制台输出false 和 true
+    console.log(s2.toString()); // Symbol(is string)
+
+    // 3.Symbol的参数是一个对象，就会调用该对象的toString方法，将其转为字符串，
+    // 然后才生成一个Symbol值，前方法提是该对象存在toString，如果不存在，输出
+    // 的并不是字符串，依旧是一个Symbol类型的值
+    obj3 = {
+        toString() {
+            return 'abc'
+        }
+    }
+    let s3 = Symbol(obj3)
+    console.log(s3) // Symbol(abc)
+
+
+    // 4.相同参数的Symbol函数返回值是不相等的
+    let s4 = Symbol('foo')
+    let s5 = Symbol('foo')
+    console.log(Object.is(s4,s5)) // false
+
+    // 5.Symbol值不能与其他类型的值进行运算，会报错，但是可以显示展示
+    let s6 = Symbol('My symbol')
+    //console.log(s6+ "is very good")// 报错Cannot convert a Symbol value to a string
+    console.log(s6.toString() + " is very good") // Symbol(My symbol) is very good
+    console.log(String(s6) + " is very good") // Symbol(My symbol) is very good
+
+    // 6.Symbol 值也可以转为布尔值，但是不能转为数值。
+    let s7 = Symbol()
+    console.log(Boolean(s7)) // true
+    console.log(!s7) // false
+    //console.log(Number(s7)) // Cannot convert a Symbol value to a number
+
+
+</script>
+
+</body>
+</html>

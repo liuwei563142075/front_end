@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本用法</title>
+</head>
+<body>
+<script>
+    // 1.ES6中Set类似于数组，但是成员是唯一的，没有重复的值
+    // Set本身是一个构造函数，用来生成Set数据结构，不会添加
+    // 重复值
+    const s1 = new Set();
+    [2,3,41,2,54,3,8].forEach(x=>s1.add(x))
+    console.log(s1) // Set(5) {2, 3, 41, 54, 8}
+
+    // 2.Set函数可以接受一个数组（或者具有iterable接口的其他
+    // 数据结构）作为参数，用来初始化
+    const s2 = new Set([1,2,3,4,4,4])
+    console.log(s2) // Set(4) {1, 2, 3, 4}
+
+    // 3.方便了数组去重
+    let arr = [...new Set([1,2,3,4,4,4])]
+    console.log(arr) // (4) [1, 2, 3, 4]
+
+</script>
+
+</body>
+</html>

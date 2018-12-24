@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作为属性名的 Symbol</title>
+</head>
+<body>
+<script>
+    // 1.Symbol对与一个对象有多模块构成的情况非常有用，能防止某一个键不小心被覆盖
+    let mySymbol = Symbol()
+
+    // 第一种写法，对象内部定义必须放在方括号中
+    let a1 = {};
+    a1[mySymbol] = 'Hello!'
+    console.log(a1[mySymbol])
+    // 第二种写法，对象内部定义必须放在方括号中
+    let a2 = {
+        [mySymbol]:'Hello!'
+    }
+    console.log(a2[mySymbol])
+    // 第三种写法
+    let a3 = {};
+    Object.defineProperty(a3,mySymbol,{value:'Hello!'})
+    console.log(a3[mySymbol])
+</script>
+</body>
+</html>

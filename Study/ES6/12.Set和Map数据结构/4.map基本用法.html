@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map的基本用法</title>
+</head>
+<body>
+<script>
+    // 1.ES6 中Map数据结构不限制key和value,也就是说key和value可以
+    // 是任何数据类型，key可以为对象等其他类型
+    let map1 = new Map();
+    map1.set('name','maomao') // key可以为字符串/数值/boolean/等类型
+    const o = {p:'Hello World'}
+    map1.set(o,'hw') // key为对象类型
+    console.log(map1) // Map(2) {"name" => "maomao", {…} => "hw"}
+    console.log(map1.has('name'))  // true
+    console.log(map1.delete('name')) // true
+    console.log(map1.has('name'))  // true
+
+    // 2.以数组作为参数
+    let map2 = new Map([
+        ['name','张三'],
+        ['sex',1]
+    ])
+    console.log(map2.size) // 2
+    console.log(map2.has('name')) // true
+    console.log(map2) // Map(2) {"name" => "张三", "sex" => 1}
+
+    // clear
+    map2.clear()
+    console.log(map2.size) // 0
+
+    // 遍历
+    // keys()
+    // values()
+    // entries()
+    // foreach()
+
+</script>
+</body>
+</html>
