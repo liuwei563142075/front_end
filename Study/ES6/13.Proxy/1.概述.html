@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proxy</title>
+</head>
+<body>
+<script>
+
+    // 代理
+    var obj = new Proxy({},{
+        get: function (target, key, receiver) {
+            // 代理逻辑
+            console.log(`getting ${key}!`);
+            return Reflect.get(target,key,receiver);
+        },
+        set: function(target,key,value,receiver) {
+            // 代理逻辑
+            console.log(`setting ${key}!`);
+            return Reflect.set(target,key,value,receiver);
+        }
+    });
+
+    obj.count = 1;
+    ++obj.count;
+
+    // 语法：var proxy = new Proxy(target,handler);
+</script>
+</body>
+</html>
