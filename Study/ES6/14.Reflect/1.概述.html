@@ -6,7 +6,19 @@
 </head>
 <body>
 <script>
-    // 反射
+    // 反射：Reflect对象的方法与Proxy对象的方法一一对应，只要
+    // 是Proxy对象的方法，就能在Reflect对象上找到对应的方法
+
+    // Reflect有很多用法这里说一种：不管Proxy怎么修改默认行为，你总可以在Reflect上获取默认行为
+    var proxy = new Proxy({},{
+        set:function (target,name,value,receiver) {
+            var success = Reflect.set(target,name,value,receiver);
+            if(success) {
+                console.log('prototy'+name+' on '+target+'set to '+value);
+            }
+            return success
+        }
+    });
 </script>
 </body>
 </html>
