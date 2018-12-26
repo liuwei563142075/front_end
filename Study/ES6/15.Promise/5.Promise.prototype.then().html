@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise.prototype.then()</title>
+</head>
+<body>
+<script>
+    // then是Promise.prototype特有的。then的第一个参数是resolved状态的回调函数，
+    // 第二个参数是reject状态的回调函数。
+    // 注意：then方法返回的是一个新的Promise对象。
+
+    const getJson = function(url) {
+        return new Promise(function (resolve,reject) {
+            // ajax
+            const handler = function() {
+                if(this.readyState != 4) {
+                    return;
+                }
+                if(this.status == 200) {
+                    resolve(this.response);
+                }else{
+                    reject(this.statusText);
+                }
+            };
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET',url);
+            xhr.onreadystatechange = handler;
+            xhr.responseType = "json";
+            xhr.setRequestHeader("Accept","application/json");
+            xhr.send();
+        });
+    };
+
+
+    getJson('./package.json').then(function(successData){
+        return successData.name;
+    },function(errData) {
+        console.log(errData);
+    }).then(function(str) { // 第一个回调函数结束后会将结果作为参数，传入第二个回调函数。
+        return str.toUpperCase();
+    }).then(function (upStr) {
+        console.log(upStr);
+    });
+</script>
+</body>
+</html>

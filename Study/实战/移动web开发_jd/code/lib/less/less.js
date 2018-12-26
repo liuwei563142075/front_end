@@ -71,7 +71,7 @@ module.exports = function(window, options) {
 
 // TODO - consider switching this out for a recommendation for this polyfill?
 // <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-// Browsers have good Promise support
+// Browsers have good 15.Promise support
 require('promise/polyfill');
 
 var options = require('../less/default-options')();
@@ -756,7 +756,7 @@ module.exports = function(window, options) {
 
     //
     // Asynchronously get all <link> tags with the 'rel' attribute set to
-    // "stylesheet/less", returning a Promise.
+    // "stylesheet/less", returning a 15.Promise.
     //
     less.registerStylesheets = function() {
         return new Promise(function(resolve, reject) {
@@ -14544,7 +14544,7 @@ function Promise(fn) {
     throw new TypeError('Promises must be constructed via new');
   }
   if (typeof fn !== 'function') {
-    throw new TypeError('Promise constructor\'s argument is not a function');
+    throw new TypeError('15.Promise constructor\'s argument is not a function');
   }
   this._40 = 0;
   this._65 = 0;
@@ -14617,7 +14617,7 @@ function handleResolved(self, deferred) {
   });
 }
 function resolve(self, newValue) {
-  // Promise Resolution Procedure: https://github.com/promises-aplus/promises-spec#the-promise-resolution-procedure
+  // 15.Promise Resolution Procedure: https://github.com/promises-aplus/promises-spec#the-promise-resolution-procedure
   if (newValue === self) {
     return reject(
       self,
@@ -14823,7 +14823,7 @@ if (typeof Promise.prototype.done !== 'function') {
   }
 }
 },{}],107:[function(require,module,exports){
-// not "use strict" so we can declare global "Promise"
+// not "use strict" so we can declare global "15.Promise"
 
 var asap = require('asap');
 

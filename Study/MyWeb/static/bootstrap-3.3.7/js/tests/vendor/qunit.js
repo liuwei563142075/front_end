@@ -1121,7 +1121,7 @@ Test.prototype = {
 					promise,
 					function() { QUnit.start(); },
 					function( error ) {
-						message = "Promise rejected " +
+						message = "15.Promise rejected " +
 							( !phase ? "during" : phase.replace( /Each$/, "" ) ) +
 							" " + test.testName + ": " + ( error.message || error );
 						test.pushFailure( message, extractStacktrace( error, 0 ) );

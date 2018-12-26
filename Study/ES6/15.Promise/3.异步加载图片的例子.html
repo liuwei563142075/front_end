@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步加载图片</title>
+</head>
+<body>
+<script>
+    function loadImageAsync(url) {
+        return new Promise(function(resolve,reject){
+            const image = new Image();
+
+            image.onload = function() {
+                console.log(image);
+                resolve(image);
+            };
+            image.onerror = function () {
+                reject(new Error('Could not load image at' + url))
+            };
+            image.src = url;
+        })
+    }
+
+
+    loadImageAsync('./images/logo.png').then(function(image) {
+        console.log(image)
+    },function(err) {
+        console.log(err)
+    })
+</script>
+</body>
+</html>

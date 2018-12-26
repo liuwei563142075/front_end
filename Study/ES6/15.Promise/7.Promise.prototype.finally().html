@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise.prototype.then()</title>
+</head>
+<body>
+<script>
+    // Promise.prototype.catch方法是.then(null,rejection)的别名，用于指定发生错误
+    // 时的回调函数。
+
+    const getJson = function(url) {
+        return new Promise(function (resolve,reject) {
+            // ajax
+            const handler = function() {
+                if(this.readyState != 4) {
+                    return;
+                }
+                if(this.status == 200) {
+                    resolve(this.response);
+                }else{
+                    reject(this.statusText);
+                }
+            };
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET',url);
+            xhr.onreadystatechange = handler;
+            xhr.responseType = "json";
+            xhr.setRequestHeader("Accept","application/json");
+            xhr.send();
+        });
+    };
+
+
+    // 更推荐！！！
+    getJson('../package.json').then(function(successData){
+        return successData.name;
+    }).catch(function (error) {
+        // 处理getJSON 和 前一个回调函数运行时发生的错误
+        console.log('发生错误！',error)
+    }).finally(function () {
+        // 不敢Promise最后状态如何都会执行的函数，finally方法的回调函数
+        // 不接收任何参数，也就是说finally和promise执行状态无关
+    });
+</script>
+</body>
+</html>
