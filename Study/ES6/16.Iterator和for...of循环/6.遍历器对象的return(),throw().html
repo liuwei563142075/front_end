@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历器对象的return和next方法</title>
+</head>
+<body>
+<script>
+    // return使用场合：如果for...of循环提前
+    // 退出（通常是因为出错，或者有break语句），就会调用return.
+    // 如果一个对象在完成遍历前，需要清理或释放资源，就可以部
+    // 署return方法
+
+    function readLineSync(file) {
+        return {
+            [Symbol.iterator](){
+                return {
+                    next() {
+                        return {done:false};
+                    },
+                    return() {
+                        file.close();
+                        return {done:true};
+                    }
+                }
+            }
+        }
+    }
+
+    // 触发return 情况一：输出文件的第一行以后，就会执行return方法，关闭这个文件
+    for(let line of readLineSync(fileName)) {
+        console.log(line);
+        break;
+    }
+
+    // 触发return 情况二：会在执行return方法关闭文件后，在抛出错误。
+    for(let line of readLineSync(fileName)) {
+        console.log(line);
+        throw new Error();
+    }
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>终结遍历器对象</title>
+</head>
+<body>
+<script>
+    function* gen() {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+    var g = gen();
+
+    console.log(g.next());
+    console.log(g.return('foo')); // 终结循环
+    console.log(g.next());
+</script>
+</body>
+</html>

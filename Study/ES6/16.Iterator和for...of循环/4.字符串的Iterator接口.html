@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串的Iterator接口</title>
+</head>
+<body>
+<script>
+    // 字符串是一个类似数组的对象，也原生具有Iterator接口
+    var str1 = 'hi';
+    console.log([...str1])
+
+    for(let s of str1) {
+        console.log(s);
+    }
+
+    // 覆盖原生方法修改遍历器
+    var str = new String('hi');
+    str[Symbol.iterator] = function() {
+        return {
+            next:function () {
+                if(this._first) {
+                    this._first = false;
+                    return {value:'bye',done:false};
+                }else {
+                    return {done:true};
+                }
+            },
+            _first:true
+        };
+    };
+
+    console.log([...str])
+    console.log(str.toString())
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yield表达式[只能用在Generator函数里！]</title>
+</head>
+<body>
+<script>
+    // yield表达式就是暂停标志
+
+    // 1.惰性求值
+    function* gen() {
+        yield 123+456;
+    }
+    // 上面的代码中，yield后面的表达式不会立即求值，
+    // 只会在next方法将指针移动到这一句时才会求值
+
+    // 2.暂缓执行函数
+    function* f() {
+        console.log('执行了')
+    }
+    // 如果f是一个普通函数，在赋值时就会被执行。
+    var generator = f();
+
+    setTimeout(function() {
+        generator.next();
+    },2000);
+    // 但是f是一个Generator函数，只
+    // 有调用next方法时，函数f才会执行
+
+    // 3，yield表达式如果用在另一个表达式中，必须放在圆括号内。
+    function* demo() {
+        console.log('Hello'+(yield)) // ok
+        console.log('Hello'+(yield 123)) // ok
+
+
+        // console.log('Hello'+ yield)) // SyntaxErroe
+        // console.log('Hello'+ yield 123) // SyntaxErroe
+    }
+
+    // 4,yield表达式用咋函数参数或者放在赋值表达式的右边，可以不加括号。
+    function foo(x,y) {
+        console.log('foo:',x,y);
+    }
+    function* demo1() {
+        foo(yield 'a',yield 'b'); // ok
+        let input = yield 5; // ok
+    }
+    var ge = demo1();
+    console.log(ge.next());
+    console.log(ge.next());
+    console.log(ge.next());
+    console.log(ge.next());
+
+
+
+</script>
+</body>
+</html>

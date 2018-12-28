@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6种原生的数据接口</title>
+</head>
+<body>
+<script>
+    // 原生具备Iterator接口的数据结构如下：
+    // Array,Map,Set,String,TypedArray,函数的arguments对象，NodeList对象
+
+    let arr = ['a','b','c'];
+    // 使用Symbol.iterator即可获取遍历器：
+    // 针对数组，原生的遍历器接口部署在数组的Symbol.iterator属性上面，所以调用这个属性，
+    // 就可以得到遍历器对象
+    let iter = arr[Symbol.iterator]();
+
+    console.log("数组=======================")
+    console.log(iter.next()) // {value: "a", done: false}
+    console.log(iter.next()) // {value: "b", done: false}
+    console.log(iter.next()) // {value: "c", done: false}
+    console.log(iter.next()) // {value: "undefined", done: true}
+
+
+    let map = new Map().set('name','nik').set('age',2);
+    var mapIter = map[Symbol.iterator]();
+    console.log("Map=======================")
+    console.log(mapIter.next())
+    console.log(mapIter.next())
+
+
+    // 原生具备Iterator接口的数据结构可以直接使用for...of循环
+    console.log("数组具备原生接口=======================")
+    for(let a of arr) {
+        console.log(a)
+    }
+
+
+    // 没有原生iterator的接口的对象，需要自己在
+    // Symbol.iterator属性上部署遍历器生成方法（原型链上的对象具有该方法也可）
+    // 这样才会被for...of循环遍历
+
+    class RangeIterator {
+        constructor(start,stop) {
+            this.value = start;
+            this.stop = stop;
+        }
+
+        [Symbol.iterator]() {return this;}
+
+        next() {
+            var value = this.value;
+            if(value < this.stop) {
+                this.value++;
+                return {done:false,value:value};
+            }
+            return {done:true,value:undefined};
+        }
+    }
+
+    function range(start,stop) {
+        return new RangeIterator(start,stop);
+    }
+    console.log("给对象添加iterator接口后=======================")
+    for(var value of range(0,3)) {
+        console.log(value);
+    }
+
+
+
+</script>
+</body>
+</html>

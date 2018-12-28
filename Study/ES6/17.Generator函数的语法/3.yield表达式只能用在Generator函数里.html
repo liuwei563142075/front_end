@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yield表达式[只能用在Generator函数里！]</title>
+</head>
+<body>
+<script>
+    // yield表达式就是暂停标志，只能用咋Generator函数里
+
+    // ex1:
+    function f() {
+        yield 2; // 直接报语法错误
+    }
+
+    var arr = [1,2,3,4,5,6,7]
+    function* f1() {
+        arr.forEach(function (item) { // foreach内部参函数不是Generator
+            if (typeof item !== 'number') {
+                yield* flat(item); // 语法错误
+            }else {
+                yield item; // 语法错误
+            }
+        })
+    }
+
+</script>
+</body>
+</html>

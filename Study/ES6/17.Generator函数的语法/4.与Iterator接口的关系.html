@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>与Iterator接口的关系</title>
+</head>
+<body>
+<script>
+    // Generator函数执行的结果就是一个Iterator对象。
+    // Generator函数就是遍历器生成函数。因此可以将
+    // Generator函数赋值给对象的Symbol.iterator属性，
+    // 从而使得该对象具有Iterator接口。
+
+    myIterator = {};
+    myIterator[Symbol.iterator] = function* () {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+    console.log([...myIterator]);
+</script>
+</body>
+</html>
