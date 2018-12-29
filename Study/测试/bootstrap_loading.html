@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.min.css"></link>
+</head>
+<body>
+<div class="container">
+    <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+        Loading state
+    </button>
+</div>
+<script src="../static/jquery/jquery-1.9.1.min.js"></script>
+<script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script>
+    $('#myButton').on('click', function () {
+        var $btn = $(this).button('loading')
+        // business logic...
+        //$btn.button('reset');
+        setTimeout(function() {
+
+        })
+    })
+</script>
+</body>
+</html>
