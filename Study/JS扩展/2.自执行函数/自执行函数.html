@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自执行函数</title>
+</head>
+<body>
+<script>
+    // 写法1：
+    // 不在其他处调用的时候可以写匿名。
+    (function () {
+        console.log(1);
+    })();
+
+    // 写法2：
+    var f = function() {
+        console.log(2);
+    }();
+
+    // 带参数的写法：
+    var params = {name:'mlo',age:2};
+    // 参数在外
+    (function (obj) {
+        console.log(params)
+    })(params); // 一定要加;
+    // 参数在内(更推荐)
+    (function (obj) {
+        console.log(params)
+    }(params));
+
+    // 非自执行写法：
+    var t = function () {
+        console.log('非自执行函数')
+    }
+    t();
+</script>
+</body>
+</html>
