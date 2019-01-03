@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.min.css"></link>
+</head>
+<body>
+<div class="container">
+    <!-- Small modal -->
+    <!--data-keyboard="false"表示键盘按下esc不会触发模态框消失
+     data-backdrop="static"表示点击其他地方模态框不会隐藏  -->
+    <button type="button" id="split_modal" class="btn btn-primary" data-toggle="modal" data-target="#splitModal" data-keyboard="false" data-backdrop="static">Small modal</button>
+
+    <div id="splitModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content" style="height:100px;text-align: center;line-height: 100px;">
+                <span>分割可能需要几分钟，请耐心等待<i id="dash">...</i></span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../static/jquery/jquery-1.9.1.min.js"></script>
+<script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script>
+    $("#split_modal").on('click',function() {
+        var flag = true;
+        var num = 0;
+        var dasharr = ['','.','..','...']
+        var splitdash = setInterval(function () {
+            if (flag) {
+                if(num >= 4) {
+                    num = 0;
+                }
+                $('#dash').html(dasharr[num]);
+                num++;
+            }
+            console.log(num);
+        },1000);
+        setTimeout(function(){
+            $('#splitModal').modal('hide');
+            window.clearInterval(splitdash);
+            alert('执行完成！')
+        },10000)
+    });
+</script>
+</body>
+</html>
