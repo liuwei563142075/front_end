@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>next方法的参数</title>
+</head>
+<body>
+<script>
+    function* foo(x) {
+        let y = 2*(yield x+3);
+        let z =yield y/3;
+        return x+y+z;
+    }
+
+    var a = foo(5);
+    console.log(a.next()); // {value: 8, done: false}
+    console.log(a.next()); // {value: NaN, done: false}
+    console.log(a.next()); // {value: NaN, done: true}
+    console.log(a.next()); // {value: undefined, done: true}
+
+
+    var b = foo(6);
+    console.log(b.next()); // {value: 9, done: false}
+    console.log(b.next(3)); // {value: 2, done: false}
+    console.log(b.next(4)); // {value: 16, done: true}
+
+    // next参数代表上一次yield的返回值：
+    // let y = 2*(3) // 传3  yield 6/3 => 2   y:6
+    // let z = 4 //传4 yi   z:4  x=6
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yield* 表达式</title>
+</head>
+<body>
+<script>
+    // 如果在Generator函数内部，调用另一个Generator函数，默认情况下是没有效果的。
+    function* foo() {
+        yield 'a';
+        yield 'b';
+    }
+
+    function* bar1() {
+        yield 'x';
+        foo();
+        yield 'y';
+    }
+
+    for (b of bar1()) {
+        console.log(b);// x  y
+    }
+
+    // 只有使用yield* 才能调用其他Generator函数
+    function* bar2() {
+        yield 'x';
+        yield* foo();
+        yield 'y';
+    }
+    for (b of bar2()) {
+        console.log(b);// x  a  b  y
+    }
+</script>
+</body>
+</html>
