@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<script src="//libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<input id="size" type="range" max="1000" min="100" value="100" step="50" />
+<p id="pp"></p>
+<script type="text/javascript">
+    $('#size').on('input propertychange',function(){
+        $('#pp').html($('#size').val());
+    })
+</script>
+</body>
+</html>

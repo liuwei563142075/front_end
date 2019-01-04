@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="//libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<input type="range" id="range"/>
+<span id="range_val"></span>
+</body>
+<script>
+    $('#range_val').text($('#range').val());
+    $('#range').on('mouseover',function(){
+        var $context = $(this);
+        if($context.data('event'))return;
+        $context.data('event','bindChange');
+
+        $context.one('mousedown',function(){
+            $(document).on('mousemove',function(){
+                //range改变回调
+                console.log($context.val());
+                $('#range_val').text($context.val());
+            });
+        });
+        $(document).one('mouseup',function(){
+            $(document).off('mousemove');
+            $context.removeData('event');
+        });
+
+    });
+</script>
+</html>
