@@ -31,6 +31,19 @@
     for (b of bar2()) {
         console.log(b);// x  a  b  y
     }
+
+    // yield*返回任何可遍历的对象
+    function* fer() {
+        yield '1'
+        yield* 'hello world'
+        yield [1,2,3]
+        yield* [4,5,6]
+    }
+
+    for (fr of fer()) {
+        console.log(fr);
+        // 1 h e l l o  w o r l d [1,2,3] 4 5 6
+    }
 </script>
 </body>
 </html>

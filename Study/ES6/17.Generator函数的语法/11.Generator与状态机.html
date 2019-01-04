@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator函数与状态机</title>
+</head>
+<body>
+<script>
+    // 在ES5实现两种状态: 锁-开
+    var ticking = true;
+    var clock = function() {
+        if (ticking) {
+            console.log('ticking');
+        } else{
+            console.log('tocked');
+        }
+        ticking = !ticking;
+    }
+
+    // ES6的实现方式:更高效，省去了中间变量，更安全：变量不会被非法篡改
+    var col = function* () {
+        while (true) {
+            console.log('ticking');
+            yield ;
+            console.log('tocked');
+            yield ;
+        }
+    }
+
+    let co = col();
+    co.next();
+    co.next();
+    co.next();
+    co.next();
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传统的执行异步的方式</title>
+</head>
+<body>
+<script>
+    // 传统的异步编程方式：
+        // - 回调函数
+        // - 事件监听
+        // - 发布/订阅
+        // - Promise对象
+
+    // 回调函数实现：缺点：多个回调函数嵌套不利于管理
+    fs.readFile('/etc/passwd','utf-8',function (err,data) {
+        if (err) throw err;
+        console.log(data);
+    }); // 第三个参数为回调函数，等操作系统返回了/etc/passwd这个文件
+    // 后，才开始执行回调函数。
+
+
+    // Promise：链式回调
+    var readFile = require('fs-readfile-promise');
+
+    readFile(fileA).then(function (data) {
+        console.log(data.toString());
+    }).then(function () {
+        return readFile(fileB);
+    }).then(function (data) {
+        console.log(data.toString());
+    }).catch(function (err) {
+        console.log(err);
+    })
+
+</script>
+</body>
+</html>

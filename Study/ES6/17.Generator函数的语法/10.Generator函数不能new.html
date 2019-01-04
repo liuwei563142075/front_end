@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator函数不能new,内部this也无法生效</title>
+</head>
+<body>
+<script>
+    // Generator函数无法直接使用new创建，无法直接使用this
+    function* g() {
+        this.a = 11;
+    }
+    let obj = g(); // 不能使用new的方式创建
+    console.log(obj.next());
+    console.log(obj.a); // undefined
+
+
+    // 改造：
+    function* gen() {
+        this.a = 1;
+        yield this.b = 2;
+        yield this.c = 3;
+    }
+
+    function F() {
+        return gen.call(gen.prototype);
+    }
+
+    var f = new F();
+
+    f.next();  // Object {value: 2, done: false}
+    f.next();  // Object {value: 3, done: false}
+    f.next();  // Object {value: undefined, done: true}
+
+    f.a // 1
+    f.b // 2
+    f.c // 3
+</script>
+</body>
+</html>
