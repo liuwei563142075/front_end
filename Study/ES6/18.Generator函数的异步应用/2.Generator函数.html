@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator</title>
+</head>
+<body>
+<script>
+    // 协程：
+    /*第一步，协程A开始执行。
+    第二步，协程A执行到一半，进入暂停，执行权转移到协程B。
+    第三步，（一段时间后）协程B交还执行权。
+    第四步，协程A恢复执行。*/
+
+    // 协程举例：
+    function* asyncJob() {
+        // ...其他代码
+        var f = yield readFile(fileA);
+        // ...其他代码
+    }
+
+</script>
+</body>
+</html>

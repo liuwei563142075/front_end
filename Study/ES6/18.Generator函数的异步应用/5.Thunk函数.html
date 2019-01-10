@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thunk函数</title>
+</head>
+<body>
+<script>
+    // Thunk函数是自动执行Generator函数的一种方法。
+
+    // 函数的求值策略：-传值调用，-传名调用
+    var x = 1;
+    function f(m) {
+        return m*2;
+    }
+    f(x+5);
+
+    // 传名调用：(x+5)*2
+
+    /*
+    * - 传值调用：即进入函数体之前，就计算x+5的值，在将这个值传入函数f【c语言采用的策略】
+    * - 传名调用：即直接将表达式x + 5传入函数体，只在用到它的时候求值。Haskell 语言采用这种策略。
+    * 利弊：传值调用比较简单，但是对参数求值的时候，实际上还没用到这个参数，有可能造成性能损失。
+    * */
+
+    // Thunk函数的含义：编译器的“传名调用”实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。
+    // 这个临时函数就叫做 Thunk 函数。
+    function f1(m) {
+        return m*2;
+    }
+    f(x+5);
+    // 等同于
+    var thunk = function () {
+        return x+5;
+    }
+    function f2(thunk) {
+        return thunk() * 2;
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator内部部署错误处理代码</title>
+</head>
+<body>
+<script>
+    function* gen(x) {
+        try {
+            var y = yield x + 2;
+        }catch (e){
+            console.log(e);
+        }
+        return y;
+    }
+
+    var g = gen(1);
+    g.next();
+    g.throw('出错了'); // 外部抛出的错误，在内部被捕获。
+
+    /*Generator 函数体外，使用指针对象的throw方法抛出的错误，
+    可以被函数体内的try...catch代码块捕获。这意味着，出错的
+    代码与处理错误的代码，实现了时间和空间上的分离，这对于
+    异步编程无疑是很重要的*/
+
+</script>
+</body>
+</html>

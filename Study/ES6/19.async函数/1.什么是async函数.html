@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // ES2017标准引入了async函数，使得异步操作更加方便。
+    // async函数是Generator函数的语法糖。
+
+    // 前面有一个Generator函数，依次读取两个文件。
+    const fs = require('fs');
+    const co = require('co');
+    var readFile = function (fileName) {
+        return new Promise(function (resolve, reject) {
+            fs.readFile(fileName,function (err, data) {
+                if(err) return reject(err);
+                return resolve(data);
+            })
+        })
+    }
+    function* gen() {
+        var result1 = yield readFile('./node_modules/thunkify/package.json')
+        var result2 = yield readFile('./node_modules/thunkify/Readme.md')
+        console.log(result1);
+        console.log(result2);
+    }
+    co(gen);
+
+    // 上面代码可以写成async函数
+    const asyncgen = async function () {
+        const f1 = await readFile('./node_modules/thunkify/package.json')
+        const f2 = await readFile('./node_modules/thunkify/Readme.md')
+        console.log(f1.toString());
+        console.log(f2.toString());
+    }
+
+    // 对比就是：async函数就是将 Generator 函数的星号（*）替换成async，将yield替换成await，仅此而已
+
+</script>
+</body>
+</html>
