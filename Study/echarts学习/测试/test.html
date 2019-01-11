@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自缩放</title>
+    <script type="text/javascript" src="../static/echarts-4.1.0.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .parent{
+            width:100%;
+            height:99999px;
+        <!--  border:1px solid red; -->
+        }
+        .child{
+        <!--  display:inline; -->
+
+            border:1px solid black;
+        }
+    </style>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div class="parent">
+    <div id="main2" class="child" style="width:580px;height:580px;float:left;"></div>
+</div>
+<script type="text/javascript">
+    var dom = document.getElementById("main2");
+    var myChart = echarts.init(dom);
+    var option = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                crossStyle: {
+                    color: '#999'
+                }
+            }
+            },
+        grid: {
+            left: '15%',
+            right: '10%'
+        },
+        legend: {
+            data: ['专业指标', '全市最高分', '全市最低分', '全市平均分']
+        },
+        xAxis: [
+            {
+                splitLine: {show: false},
+                type: 'category',
+                nameLocation: 'middle',
+                data: ['专业指标', '全市最高分', '全市最低分', '全市平均分'],
+                axisPointer: {type: 'shadow'}
+            }
+            ],
+        yAxis: [
+            {
+                splitArea: {show: true},
+                type: 'value',
+                name: '分值',
+                scale: true,
+                boundaryGap: [0.1, 0.1],
+                axisLabel: {formatter: '{value} '}
+                },
+        //     {
+        //     splitLine: {show: false},
+        //     type: 'value',
+        //     name: '',
+        //     axisLabel: {formatter: '{value} '}
+        // }
+        ],
+        series: [
+            {
+                name: '专业指标',
+                type: 'bar',
+                data: [80,100,120,110],
+                yAxisIndex: '0'
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>

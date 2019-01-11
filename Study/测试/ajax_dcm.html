@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>error</title>
+    <script src="../static/jquery/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<script>
+    $(function () {
+        // ajax get a dcm
+        $.ajax({
+            type:"POST",
+            url:"http://10.1.192.130:8042/dicom-web/studies/1.3.6.1.4.1.14519.5.2.1.7310.5101.135450865614714970112095619074/series/1.3.6.1.4.1.14519.5.2.1.7310.5101.343583687454462859010836615696/instances/1.3.6.1.4.1.14519.5.2.1.7310.5101.270436518927160932846919806694",
+            dataType:"application/dicom+xml",
+            success:function (result) {
+                console.log(result);
+            },
+            error:function (err) {
+                console.log(err); // 必须要认证！！！
+            }
+        });
+
+    })
+</script>
+</body>
+</html>

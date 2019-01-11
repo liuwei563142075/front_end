@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的深度拷贝和浅拷贝</title>
+</head>
+<body>
+<script>
+    // 浅拷贝是拷贝引用
+    // 深度拷贝是拷贝对象
+    var objDeepCopy = function (source) {
+        var sourceCopy = source instanceof Array ? [] : {};
+        for (var item in source) {
+            sourceCopy[item] = typeof source[item] === 'object' ? objDeepCopy(source[item]) : source[item];
+        }
+        return sourceCopy;
+    }
+    let obj = [{ "a": { "a1": ["a11", "a12"], "a2": 1 }, "b": 2 }, ["c", { "d": 4, "e": 5 }]]
+    var objCopy = objDeepCopy(obj);
+    objCopy[0].a.a1[1] = "a13";
+    objCopy[1][1].e = "6";
+    console.log(obj);
+    console.log(objCopy);
+</script>
+</body>
+</html>

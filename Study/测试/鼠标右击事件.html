@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标右键事件</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #tar {
+            height: 60px;
+            width: 220px;
+            background-color: #888888;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        #menu {
+            display: none;
+            position: absolute;
+            background-color: #FF0000;
+            z-index: 2;
+        }
+
+        #menu ul li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<p id="tar">这里是一些内容
+<menu id="menu">
+    <ul>
+        <li>选项1</li>
+        <li>选项2</li>
+        <li>选项3</li>
+    </ul>
+</menu>
+</p>
+
+<script>
+    window.onload = function() {
+        var el = document.getElementById("tar");
+        var oMenu = document.getElementById("menu");
+        document.oncontextmenu = function(){return false};     //禁止鼠标右键菜单显示
+        el.oncontextmenu = function(e) {
+            //左键--button属性=1，右键button属性=2
+            if(e.button == 2) {
+                e.preventDefault();
+
+                var _x = e.clientX,
+                    _y = e.clientY;
+
+                oMenu.style.display = "block";
+                oMenu.style.left = _x + "px";
+                oMenu.style.top = _y + "px";
+            }
+        }
+
+    }
+</script>
+</body>
+
+</html>
