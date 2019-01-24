@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/ladda-bootstrap-master/dist/ladda-themeless.min.css">
+
+    <style>
+        .ladda-spinner div {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+<a style="cursor: default" class="btn btn-primary ladda-button" data-style="slide-right"><span class="ladda-label">slide-right</span></a>
+<script src="../static/jquery/jquery-1.9.1.min.js"></script>
+<script src="../static/ladda-bootstrap-master/dist/spin.min.js"></script>
+<script src="../static/ladda-bootstrap-master/dist/ladda.min.js"></script>
+<script>
+    var l = Ladda.create($(".ladda-button").get(0));
+    l.start();
+    console.log(1);
+    console.log(2);
+    console.log(3);
+    setTimeout(function () {
+        console.log(123);
+        l.stop();
+    },100);
+    console.log(4);
+    console.log(5);
+    console.log(6);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="../static/jquery/jquery-1.9.1.min.js"></script>
+    <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="dropdown">
+    <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown trigger
+        <span class="caret"></span>
+    </div>
+    <ul class="dropdown-menu" aria-labelledby="dLabel">
+        ...
+    </ul>
+</div>
+<script>
+    $(function() {
+        $('.dropdown-toggle').dropdown();
+    })
+</script>
+</body>
+</html>
