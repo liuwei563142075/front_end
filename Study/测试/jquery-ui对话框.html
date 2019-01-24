@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-ui对话框dialog</title>
+    <link rel="stylesheet" href="../static/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../static/jquery/jquery-1.9.1.min.js"></script>
+    <script src="../static/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <!--<link rel="stylesheet" href="jqueryui/style.css">-->
+    <script>
+        $(function() {
+            $( "#dialog-modal" ).dialog({
+                dialogClass: "no-close",
+                buttons: [
+                    {
+                        text: "OK",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+    <style>
+        .no-close .ui-dialog-titlebar-close {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="dialog-modal" title="">
+    <p>添加模态覆盖屏幕，让对话框看起来更突出，因为它让页面上其他内容变暗。</p>
+    <input type="range">
+</div>
+
+<p>Sed vel diam id libero <a href="http://www.w3cschool.cc">rutrum convallis</a>. Donec aliquet leo vel magna. Phasellus rhoncus faucibus ante. Etiam bibendum, enim faucibus aliquet rhoncus, arcu felis ultricies neque, sit amet auctor elit eros a lectus.</p>
+
+</body>
+</html>
