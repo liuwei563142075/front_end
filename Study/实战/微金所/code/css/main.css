@@ -301,7 +301,10 @@ body {
 #cooperation {
     height: 200px;
     padding: 50px 0 50px 0;
+<<<<<<< Updated upstream
     overflow: hidden;
+=======
+>>>>>>> Stashed changes
 }
 #cooperation .cooper-icon {
     list-style:none;
