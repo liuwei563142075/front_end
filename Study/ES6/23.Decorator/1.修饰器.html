@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日志修饰器</title>
+</head>
+<body>
+<script>
+    // log修饰器
+    class Math {
+        @log
+        add(a, b) {
+            return a + b;
+        }
+    }
+
+    function log(target, name, descriptor) {
+        var oldValue = descriptor.value;
+
+        descriptor.value = function() {
+            console.log(`Calling ${name} with`, arguments);
+            return oldValue.apply(this, arguments);
+        };
+
+        return descriptor;
+    }
+
+    const math = new Math();
+
+    // passed parameters should get logged now
+    math.add(2, 4);
+</script>
+</body>
+</html>
