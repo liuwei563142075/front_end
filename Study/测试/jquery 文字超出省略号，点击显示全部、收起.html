@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jquery 文字超出省略号，点击显示全部、收起</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="desc">
+    <ul>
+        <li>
+            <div class="branddesc">两句话深度开发几号上的佛牌维护佛文化的开户费收到了家很富是的开户费了色块大黄蜂评委会分是开将恢复时来得快积分还圣诞快乐抵抗力金凤凰收到了开间房</div>
+        </li>
+        <li>
+            <div class="branddesc">复合弓放假光华科技个我快让他也未发生的分数线从V型从v错把女女过一会就返回二过水电费三的丰盛的v格式规范换个环境感觉感觉吃吧许不舒服个的非国有etymology返回返回</div>
+        </li>
+    </ul>
+</div>
+<script>
+    (function($){
+        $.fn.moreText = function(options){
+            var defaults = {
+                maxLength:50,
+                mainCell:".branddesc",
+                openBtn:'显示全部',
+                closeBtn:'收起'
+            }
+            return this.each(function() {
+                var _this = $(this);
+
+                var opts = $.extend({},defaults,options);
+                var maxLength = opts.maxLength;
+                var TextBox = $(opts.mainCell,_this);
+                var openBtn = opts.openBtn;
+                var closeBtn = opts.closeBtn;
+
+                var countText = TextBox.html();
+                var newHtml = '';
+                if(countText.length > maxLength){
+                    newHtml = countText.substring(0,maxLength)+'...<a class="more">'+openBtn+'</a>';
+                }else{
+                    newHtml = countText;
+                }
+                TextBox.html(newHtml);
+                TextBox.on("click",".more",function(){
+                    if($(this).text()==openBtn){
+                        TextBox.html(countText + '<a class="more">'+closeBtn+'</a>');
+                    }else{
+                        TextBox.html(newHtml);
+                    }
+                })
+            })
+        }
+    })(jQuery);
+    $(function(){
+        $(".desc ul li").moreText({
+            maxLength: 10, //默认最大显示字数，超过...
+            mainCell: '.branddesc' //文字容器
+        });
+    })
+</script>
+</body>
+</html>
