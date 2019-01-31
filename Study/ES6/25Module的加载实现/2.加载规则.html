@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加载规则</title>
+    <!--
+        浏览器加载ES6模块，也使用<script>标签，但是要加入type="module"属性
+    -->
+    <script type="module" src="./foo.js"></script>
+    <!--
+        浏览器对于带有type="module"的<script>，都是异步加载，
+        不会造成堵塞浏览器，即等到整个页面渲染完，再执行模块脚本，等同于打开了<script>标签的defer属性。
+        如果网页有多个<script type="module">，他们会按照在页面的出现顺序依次执行。
+    -->
+
+    <script type="module" src="./feee.js" async></script>
+    <!--一旦开启了async属性，<script type="module">就不会按照在页面出现的顺序执行，而是按照async的方式-->
+</head>
+<body>
+<script>
+    // ES6语法也允许内嵌在网页中，语法行为与加载外部脚本完全一致。
+    import utils from './utils.js';
+    // other code
+
+    /**
+     * 对于外部的模块脚本（上例是foo.js），有几点需要注意。
+
+     代码是在模块作用域之中运行，而不是在全局作用域运行。模块内部的顶层变量，外部不可见。
+     模块脚本自动采用严格模式，不管有没有声明use strict。
+     模块之中，可以使用import命令加载其他模块（.js后缀不可省略，需要提供绝对 URL 或相对 URL），也可以使用export命令输出对外接口。
+     模块之中，顶层的this关键字返回undefined，而不是指向window。也就是说，在模块顶层使用this关键字，是无意义的。
+     同一个模块如果加载多次，将只执行一次。
+     * */
+</script>
+</body>
+</html>

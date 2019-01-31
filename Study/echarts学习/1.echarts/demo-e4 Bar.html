@@ -5,19 +5,21 @@
     <script type="text/javascript" src="../static/echarts-3.5.8.min.js"></script>
 </head>
 <style>
-    *{
-        margin:0;
-        padding:0;
+    * {
+        margin: 0;
+        padding: 0;
     }
-    .parent{
-        width:100%;
-        height:99999px;
-    <!--  border:1px solid red; -->
-    }
-    .child{
-    <!--  display:inline; -->
 
-        border:1px solid black;
+    .parent {
+        width: 100%;
+        height: 99999px;
+    <!-- border: 1 px solid red;
+    -->
+    }
+
+    .child {
+    <!-- display: inline;
+    --> border: 1px solid black;
     }
 </style>
 <body>
@@ -32,31 +34,42 @@
     // 指定图表的配置项和数据
     var option = {
         tooltip: {
-            trigger:'axis',
-            axisPointer:{
-                type:'shadow'
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
             }
         },
-        grid:{
-            top:'15',
-            left:'3%',
-            right:'4%',
-            bottom:'2%',
-            containLabel:true
+        grid: {
+            top: '15',
+            left: '3%',
+            right: '4%',
+            bottom: '2%',
+            containLabel: true
         },
         xAxis: {
-            type:'value',
+            type: 'category',
+            axisLabel: {
+                interval: 0,
+                rotate: -30,
+                margin: 30,
+                textStyle: {
+                    align: 'center'
+                },
+            },
+            axisTick: {
+                alignWithLabel: true
+            },
+            data: ["衬衫", "羊毛衫毛啊妈妈", "雪纺衫", "高跟鞋", "袜子"]
         },
         yAxis: {
-            type:'category',
-            data: ["衬衫","羊毛衫","雪纺衫","高跟鞋","袜子"]
+            type: 'value',
         },
         series: [{
             name: '销量',
             type: 'bar',
-            barCategoryGap:'80%',
-            axisLabel:{
-                interval:1
+            barCategoryGap: '80%',
+            axisLabel: {
+                interval: 1
             },
             data: [5, 20, 36, 10, 20]
         }]
