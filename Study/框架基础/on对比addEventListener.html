@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addEventListener对比on优点</title>
+</head>
+<body>
+<button id="btn1">on</button>
+<button id="btn2">addEventListener</button>
+<div id="content" style="width:500px;height:300px;background-color:pink">
+
+</div>
+<script>
+    /**
+     * 优点一：addEventListener可以绑定多个事件方法
+     * */
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var content = document.getElementById("content");
+
+    btn1.onclick = function () {
+        content.innerHTML += 'on Content1';
+    };
+    // 会覆盖上一个
+    btn1.onclick = function () {
+        content.innerHTML += 'on Content2';
+    };
+
+
+    // 不会覆盖
+    btn2.addEventListener('click',f1,false);
+    btn2.addEventListener('click',f2,false);
+    btn2.addEventListener('click',f3,false);
+
+    function f1() {
+        content.innerHTML += 'addEventListener Content1';
+    }
+    function f2() {
+        content.innerHTML += 'addEventListener Content2';
+    }
+    function f3() {
+        content.innerHTML += 'addEventListener Content3';
+    }
+
+    btn2.removeEventListener('click',f3);
+</script>
+</body>
+</html>
