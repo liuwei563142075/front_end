@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试事件模块</title>
+    <style>
+        .model {
+            width: 500px;
+            height:300px;
+            background-color: goldenrod;
+        }
+    </style>
+</head>
+<body>
+<div class="model"></div>
+<script src="../frame.js"></script>
+<script>
+    $$.on('.model','click',function () {
+        this.style.backgroundColor = 'pink';
+    });
+
+    // $$.mouseover('.model',function() {
+    //     this.innerHTML = 'mouseover';
+    // });
+    // $$.mouseout('.model',function() {
+    //     this.innerHTML = 'mouseout';
+    // });
+
+    // $$.mouseenter('.model',function() {
+    //     this.innerHTML = 'mouseenter';
+    // });
+    // $$.mouseleave('.model',function() {
+    //     this.innerHTML = 'mouseleave';
+    // });
+
+    // $$.hover('.model',function () {
+    //     this.innerHTML = 'hover';
+    // },function() {
+    //     this.innerHTML = 'out';
+    // })
+</script>
+</body>
+</html>

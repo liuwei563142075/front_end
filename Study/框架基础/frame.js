@@ -36,6 +36,7 @@ $$ = new $$();
 
 // 基础模块-search
 $$.extend($$, {
+    // Id选择器
     $id: function (id) {
         return document.getElementById(id)
     },
@@ -67,6 +68,10 @@ $$.extend($$, {
             return typeof data[key] === "undefined" ? '' : data[key]
         });
     },
+    // 判断是否是字符串
+    isString: function (str) {
+        return typeof str === 'string';
+    }
 });
 // 基础模块-ajax
 $$.extend($$, {
@@ -147,18 +152,76 @@ $$.extend($$, {
 });
 
 // 时间模块
-$$.extend($$, {
+$$.extend($$, {});
 
-});
-
-// 事件框架
-// 表示将后面一个对象拷贝给前面一个对象。
+// 事件模块
 $$.extend($$, {
-    on: function (event) {
-        this.addEventListener(event, function () {
-            // do...
-        })
-    }
+    // on事件
+    on: function (div, event, fn) {
+        let dom = $$.isString(div) ? document.querySelector(div) : div;
+        if (dom.addEventListener) { // chrome,firefox
+            dom.addEventListener(event, fn);
+        } else if (dom.attachEvents) { // ie支持
+            dom.attachEvents(event, fn);
+        }
+    },
+    // click事件
+    click: function (div, fn) {
+        $$.on(div, 'click', fn);
+    },
+    // mouseover事件
+    mouseover: function (div, fn) {
+        $$.on(div, 'mouseover', fn);
+    },
+    // mouseout事件
+    mouseout: function (div, fn) {
+        $$.on(div, 'mouseout', fn);
+    },
+    // mouseenter事件
+    mouseenter: function (div, fn) {
+        $$.on(div, 'mouseenter', fn);
+    },
+    // mouseleave事件
+    mouseleave: function (div, fn) {
+        $$.on(div, 'mouseleave', fn);
+    },
+    // hover事件
+    hover: function (div, fnover, fnout) {
+        if (fnover) {
+            $$.mouseover(div, fnover);
+        }
+        if (fnout) {
+            $$.mouseout(div, fnout);
+        }
+    },
+    // 获取事件的event对象
+    getEvent: function (e) {
+        return e ? e : window.event;
+    },
+    // 获取事件的target对象
+    getTarget: function (e) {
+        let event = $$.getEvent(e);
+        // 短路表达式
+        return event.target || event.srcElement;
+    },
+    // 阻止默认行为
+    preventDefault: function (e) {
+        var event = $$.getEvent(e);
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    },
+    // 阻止冒泡
+    stopPropagation: function (e) {
+        var event = $$.getEvent(e);
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        } else { // ie
+            event.cancelBubble = false;
+        }
+    },
 });
 
 

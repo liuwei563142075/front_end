@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阻止默认行为</title>
+</head>
+<body>
+<script>
+   function  getEvent(e) {
+        return e ? e : window.event;
+    }
+
+    // 阻止默认行为
+    function preventDefault(e) {
+        var event = getEvent(e);
+        if(event.preventDefault) {
+            event.preventDefault();
+        }else {
+            event.returnValue = false;
+        }
+    }
+
+    // 取消冒泡事件
+    function stopPropagation(e) {
+        var event = getEvent(e);
+        if(event.stopPropagation) {
+            event.stopPropagation();
+        }else { // ie
+            event.cancelBubble = false;
+        }
+    }
+</script>
+</body>
+</html>

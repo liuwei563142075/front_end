@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class选择器基础</title>
+</head>
+<body>
+<ul id="ul">
+    <li class="dul">A</li>
+    <li class="dul">B</li>
+    <li class="dul">C</li>
+    <li class="dul">D</li>
+    <li class="dul">E</li>
+    <li class="dul">F</li>
+    <li class="dul">G</li>
+    <li class="dul">H</li>
+    <li class="dul">I</li>
+</ul>
+<script>
+    // 封装class选择器
+    // 为什么不直接使用getElementByClassName？
+    // 因为IE10之前的浏览器不支持这种写法，所以选择自己封装
+    function $class(className) {
+        var arr = [];
+        // 获取所有元素
+        var elements = document.getElementsByTagName('*');
+        // 过滤class = className的元素
+        for(var i = 0; i < elements.length; i++) {
+            if(elements[i].className == className) {
+                arr.push(elements[i]);
+            }
+        }
+        return arr;
+    }
+
+    console.log($class('dul'));
+
+    // 多组合选择器
+    function $selectors(content) {
+        var arr = [];
+        //content: div,.dul,#more,#module>div
+        var elements = content.split(',');
+        for(var index in elements) {
+            var first = elements[index].charAt(0);
+            switch (first){
+                case '.':
+                    // 如果是class,直接用上面的方法获得数组，
+                    // 在将该数组的所有元素，赋值该当前要返回的数组。
+                    break;
+                case '#':
+                    // 如果是Id，直接getElementById获取该元素，添加到arr
+                    break;
+                default:
+                    // 元素选择器getElementsByTagName,获取的放入arr
+                    break;
+            }
+
+        }
+
+    }
+    $selectors("li");
+
+    function dealContent(content) { // #dv>.more span
+        // 复杂组合逻辑：要考虑css基本选择器类型
+    }
+
+    // 管道思想：可以连续使用getElementBy...
+    var guandao = document.getElementById("ul").getElementsByClassName('dul');
+    console.log(guandao);
+</script>
+</body>
+</html>
