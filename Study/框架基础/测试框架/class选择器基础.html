@@ -35,38 +35,66 @@
 
     console.log($class('dul'));
 
-    // 多组合选择器
+    // 多类型选择器
     function $selectors(content) {
         var arr = [];
-        //content: div,.dul,#more,#module>div
-        var elements = content.split(',');
-        for(var index in elements) {
-            var first = elements[index].charAt(0);
-            switch (first){
-                case '.':
-                    // 如果是class,直接用上面的方法获得数组，
-                    // 在将该数组的所有元素，赋值该当前要返回的数组。
-                    break;
-                case '#':
-                    // 如果是Id，直接getElementById获取该元素，添加到arr
-                    break;
-                default:
-                    // 元素选择器getElementsByTagName,获取的放入arr
-                    break;
-            }
-
+        //content: div,.dul,#more
+        content = $$.trim(content);
+        var first = content.charAt(0);
+        var eleName = content.substring(1,content.length);
+        switch (first) {
+            case '.':
+                // 如果是class,直接用上面的方法获得数组，
+                // 在将该数组的所有元素，赋值该当前要返回的数组。
+                var tempArr = $class(eleName);
+                Array.prototype.push.apply(arr,tempArr);
+                break;
+            case '#':
+                // 如果是Id，直接getElementById获取该元素，添加到arr
+                var element = $$.$id(eleName);
+                Array.prototype.push.call(arr,element);
+                break;
+            default:
+                // 元素选择器getElementsByTagName,获取的放入arr
+                var elements = document.getElementsByTagName(content);
+                Array.prototype.push.apply(arr,elements);
+                break;
         }
-
-    }
-    $selectors("li");
-
-    function dealContent(content) { // #dv>.more span
-        // 复杂组合逻辑：要考虑css基本选择器类型
+        return arr;
     }
 
     // 管道思想：可以连续使用getElementBy...
     var guandao = document.getElementById("ul").getElementsByClassName('dul');
     console.log(guandao);
+
+    // 管道流的思想
+    function dealContent(content) { // #dv>.more span
+        // 分组
+        // 1.split(',')
+
+        content = $$.trim(content);
+        // 分类
+        var contents = content.split('>');
+        // 2.split('>') 子元素
+
+        // 3.split('+') 相邻选择符
+
+        // 4.split('~') 兄弟选择符
+
+        // 1.split(' ') 包含【应该放在最后】
+
+        return '';// 可能是递归
+
+    }
+
+    function splitC(content) {
+
+    }
+
+    function getDirectChild(parent,childStr) {
+        var
+    }
+
 </script>
 </body>
 </html>

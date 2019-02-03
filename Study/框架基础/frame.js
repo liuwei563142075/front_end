@@ -37,8 +37,104 @@ $$ = new $$();
 // 基础模块-search
 $$.extend($$, {
     // Id选择器
-    $id: function (id) {
-        return document.getElementById(id)
+    $id: function (id, parent) {
+        return parent != undefined ? parent.getElementById(id) : document.getElementById(id);
+    },
+    // 封装class选择器
+    // 为什么不直接使用getElementByClassName？
+    // 因为IE10之前的浏览器不支持这种写法，所以选择自己封装
+    $class: function (className, parent) {
+        var arr = [];
+        className = $$.trim(className);
+        // 获取所有元素
+        var elements = parent != undefined ? parent.getElementsByTagName('*') : document.getElementsByTagName('*');
+        // 过滤class = className的元素
+        for (var i = 0; i < elements.length; i++) {
+            if ($$.trim(elements[i].className) == className) {
+                arr.push(elements[i]);
+            }
+        }
+        return arr;
+    },
+    // 分类选择器div   .module   #people
+    $selectors: function (content, parent) {
+        var arr = [];
+        //content: div,.dul,#more
+        if ($$.isString(content)) {
+            content = $$.trim(content);
+            var first = content.charAt(0);
+            var eleName = content.substring(1, content.length);
+            switch (first) {
+                case '.':
+                    // 如果是class,直接用上面的方法获得数组，
+                    // 在将该数组的所有元素，赋值该当前要返回的数组。
+                    var tempArr = $$.$class(eleName, parent);
+                    Array.prototype.push.apply(arr, tempArr);
+                    break;
+                case '#':
+                    // 如果是Id，直接getElementById获取该元素，添加到arr
+                    var element = $$.$id(eleName, parent);
+                    Array.prototype.push.call(arr, element);
+                    break;
+                default:
+                    // 元素选择器getElementsByTagName,获取的放入arr
+                    var elements = parent != undefined ? parent.getElementsByTagName(content) : document.getElementsByTagName(content);
+                    Array.prototype.push.apply(arr, elements);
+                    break;
+            }
+        } else {
+            arr.push(content);
+        }
+        return arr;
+    },
+    // 组合选择器 > + ~ 空格
+    $group: function (content) {
+        content = $$.trim(content);
+    },
+    // 包含选择器，即 div p
+    $selectorsByspan: function (content, parent) {
+        content = $$.trim(content);
+        var before;
+        var after;
+        if ($$.isString(content)) {
+            var elements = content.split(' ');
+            if (elements.length == 1) {
+                before = parent;
+                after = $$.$selectors(elements[0], before);
+            } else {
+                before = $$.$selectors(elements[0], parent);
+                after = $$.$selectors(elements[1], before[0]);
+            }
+        } else {
+            before = parent;
+            after = $$.$selectors(content, before);
+        }
+        return after;
+    },
+    // 子选择器，即 div>p
+    $selectorsBychild: function (content, parent) {
+        content = $$.trim(content);
+        var before;
+        var after;
+        if ($$.isString(content)) {
+            var elements = content.split('>');
+            if (elements.length == 1) {
+
+            } else {
+
+            }
+        } else {
+
+        }
+        return after;
+    },
+    // 相邻选择器，即 div+p
+    $selectorsByadjacent: function (content, parent) {
+
+    },
+    // 兄弟选择器，即 div~p
+    $selectorsBybrother: function (content, parent) {
+
     },
 });
 // 基础模块-数字相关操作
