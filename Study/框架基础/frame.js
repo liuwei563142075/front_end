@@ -38,7 +38,8 @@ $$ = new $$();
 $$.extend($$, {
     // Id选择器
     $id: function (id, parent) {
-        return parent != undefined ? parent.getElementById(id) : document.getElementById(id);
+        parent != undefined ? parent:document;
+        return parent.getElementById(id);
     },
     // 封装class选择器
     // 为什么不直接使用getElementByClassName？
@@ -46,8 +47,9 @@ $$.extend($$, {
     $class: function (className, parent) {
         var arr = [];
         className = $$.trim(className);
+        parent != undefined ? parent:document;
         // 获取所有元素
-        var elements = parent != undefined ? parent.getElementsByTagName('*') : document.getElementsByTagName('*');
+        var elements = parent.getElementsByTagName('*');
         // 过滤class = className的元素
         for (var i = 0; i < elements.length; i++) {
             if ($$.trim(elements[i].className) == className) {
@@ -59,6 +61,7 @@ $$.extend($$, {
     // 分类选择器div   .module   #people
     $selectors: function (content, parent) {
         var arr = [];
+        parent != undefined ? parent : document;
         //content: div,.dul,#more
         if ($$.isString(content)) {
             content = $$.trim(content);
@@ -78,7 +81,7 @@ $$.extend($$, {
                     break;
                 default:
                     // 元素选择器getElementsByTagName,获取的放入arr
-                    var elements = parent != undefined ? parent.getElementsByTagName(content) : document.getElementsByTagName(content);
+                    var elements = parent.getElementsByTagName(content);
                     Array.prototype.push.apply(arr, elements);
                     break;
             }
@@ -94,17 +97,18 @@ $$.extend($$, {
     // 包含选择器，即 div p
     $selectorsByspan: function (content, parent) {
         content = $$.trim(content);
+        parent != undefined ? parent : document;
         var before;
         var after;
         if ($$.isString(content)) {
             var elements = content.split(' ');
-            if (elements.length == 1) {
-                before = parent;
-                after = $$.$selectors(elements[0], before);
-            } else {
-                before = $$.$selectors(elements[0], parent);
-                after = $$.$selectors(elements[1], before[0]);
-            }
+            // if (elements.length == 1) {
+            //     before = parent;
+            //     after = $$.$selectors(elements[0], before);
+            // } else {
+            //     before = $$.$selectors(elements[0], parent);
+            //     after = $$.$selectors(elements[1], before[0]);
+            // }
         } else {
             before = parent;
             after = $$.$selectors(content, before);
