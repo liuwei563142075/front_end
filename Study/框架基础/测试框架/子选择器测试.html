@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>包含选择器测试</title>
+    <title>子选择器测试</title>
 </head>
 <body>
 <div class="module">
@@ -23,12 +23,10 @@
 </div>
 <script src="../frame.js"></script>
 <script>
-    console.log('.module div : ',$$.$selectorSByspan('.module div'));
-    console.log('.p span : ',$$.$selectorsBySpan('p span'));
-    console.log('#ssp div : ',$$.$selectorsBySpan('#ssp div'));
-    console.log('#ssp #coco : ',$$.$selectorsBySpan('#ssp #coco'));
-    // var parent = document.getElementById("ssp");
-    // var coco = parent.getElementById("#coco");
+    console.log('.module > div :',$$.$selectorsByChild('.module > div'));
+    console.log('div > span :',$$.$selectorsByChild('div > span'));
+    console.log('#ssp > .demo :',$$.$selectorsByChild('#ssp > .demo'));
+    console.log('#ssp > #coco :',$$.$selectorsByChild('#ssp > #coco'));
 </script>
 </body>
 </html>

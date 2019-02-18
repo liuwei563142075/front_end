@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>包含选择器测试</title>
+    <title>相邻选择器测试</title>
 </head>
 <body>
 <div class="module">
@@ -20,15 +20,16 @@
     <div id="coco">
         哈哈哈
     </div>
+    <div class="ha">
+        sda
+    </div>
 </div>
 <script src="../frame.js"></script>
 <script>
-    console.log('.module div : ',$$.$selectorSByspan('.module div'));
-    console.log('.p span : ',$$.$selectorsBySpan('p span'));
-    console.log('#ssp div : ',$$.$selectorsBySpan('#ssp div'));
-    console.log('#ssp #coco : ',$$.$selectorsBySpan('#ssp #coco'));
-    // var parent = document.getElementById("ssp");
-    // var coco = parent.getElementById("#coco");
+    console.log('.module + div :',$$.$selectorsByAdjacent('.module + div'));
+    console.log('div + #ssp :',$$.$selectorsByAdjacent('div + #ssp'));
+    console.log('#coco + .ha :',$$.$selectorsByAdjacent('#coco + .ha'));
+    console.log('h3 + .demo :',$$.$selectorsByAdjacent('h3 + .demo'));
 </script>
 </body>
 </html>
