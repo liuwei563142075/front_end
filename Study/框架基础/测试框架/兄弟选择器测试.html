@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟选择器测试</title>
+</head>
+<body>
+<div class="module">
+    <div>
+        <p>sadasd<span>cew</span></p>
+        <span>呵哒</span>
+        <span>呵sad呵哒</span>
+    </div>
+</div>
+<div id="ssp">
+    <h3>找到了</h3>
+    <div class="demo">
+        啦啦啦
+    </div>
+    <div id="coco">
+        哈哈哈
+    </div>
+    <div class="ha">
+        sda
+    </div>
+    <div class="demo">
+        fasd啦啦dasfa啦
+    </div>
+</div>
+<script src="../frame.js"></script>
+<script>
+    console.log('.module ~ div :',$$.$selectorsBybrother('.module ~ div'));
+    console.log('.module ~ #ssp :',$$.$selectorsBybrother('.module ~ #ssp'));
+    console.log('h3 ~ div :',$$.$selectorsBybrother('h3 ~ div'));
+    console.log('h3 ~ .demo :',$$.$selectorsBybrother('h3 ~ .demo'));
+</script>
+</body>
+</html>

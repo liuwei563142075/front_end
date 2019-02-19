@@ -1,4 +1,4 @@
- /**
+/**
  * core
  * */
 var $$ = function () {
@@ -47,7 +47,7 @@ $$.extend($$, {
     $class: function (className, parent) {
         var arr = [];
         className = $$.trim(className);
-        parent = parent != undefined ? parent:document;
+        parent = parent != undefined ? parent : document;
         // 获取所有元素
         var elements = parent.getElementsByTagName('*');
         // 过滤class = className的元素
@@ -61,7 +61,7 @@ $$.extend($$, {
     // 分类选择器div   .module   #people
     $selectors: function (content, parent) {
         var result = [];
-        parent = parent != undefined ? parent:document;
+        parent = parent != undefined ? parent : document;
         //content: div,.dul,#more
         if ($$.isString(content)) {
             content = $$.trim(content);
@@ -93,18 +93,30 @@ $$.extend($$, {
     // 组合选择器 > + ~ 空格
     $group: function (content) {
         content = $$.trim(content);
+        let c = content.split('>');
+        for(let i in content) {
+            switch (i){
+                case '>':
+                    break
+                case '+':
+                    break;
+                case '~':
+                    break;
+
+            }
+        }
     },
     // 包含选择器，即 div p         #shop > .cloths + a img
     $selectorsBySpan: function (content, parent) {
         content = $$.trim(content);
-        parent = parent != undefined ? parent:document;
+        parent = parent != undefined ? parent : document;
         var result;
         var beforeArr;
         if ($$.isString(content)) {
             var elements = content.split(' ');
-            beforeArr = $$.$selectors(elements[0],parent);
+            beforeArr = $$.$selectors(elements[0], parent);
             for (var key in beforeArr) {
-                result = $$.$selectors(elements[1],beforeArr[key]);
+                result = $$.$selectors(elements[1], beforeArr[key]);
             }
         }
         return result;
@@ -112,13 +124,13 @@ $$.extend($$, {
     // 子选择器，即 div>p  #div>#p #div>.p
     $selectorsByChild: function (content, parent) {
         content = $$.trim(content);
-        parent = parent != undefined ? parent:document;
+        parent = parent != undefined ? parent : document;
         var result = [];
         var beforeArr;
         var afterStr;
         if ($$.isString(content)) {
             var elements = content.split('>'); // 子代选择器，仅仅命中子代，孙代不计
-            beforeArr = $$.$selectors(elements[0],parent);
+            beforeArr = $$.$selectors(elements[0], parent);
             afterStr = $$.trim(elements[1]);
             var index = afterStr.charAt(0);
             var afterName = afterStr.substring(1, afterStr.length);
@@ -128,7 +140,7 @@ $$.extend($$, {
                     // 在将该数组的所有元素，赋值该当前要返回的数组。
                     for (let key in beforeArr) {
                         let childrens = beforeArr[key].children;
-                        for(let childkey in childrens) {
+                        for (let childkey in childrens) {
                             if (childrens[childkey].className == afterName) {
                                 result.push(childrens[childkey]);
                             }
@@ -139,7 +151,7 @@ $$.extend($$, {
                     // 如果是Id，直接getElementById获取该元素，添加到arr
                     for (let key in beforeArr) {
                         let childrens = beforeArr[key].children;
-                        for(let childkey in childrens) {
+                        for (let childkey in childrens) {
                             if (childrens[childkey].id == afterName) {
                                 result.push(childrens[childkey]);
                             }
@@ -151,7 +163,7 @@ $$.extend($$, {
                     afterName = afterStr;
                     for (let key in beforeArr) {
                         let childrens = beforeArr[key].children;
-                        for(let childkey in childrens) {
+                        for (let childkey in childrens) {
                             if (childrens[childkey].tagName == afterName.toUpperCase()) {
                                 result.push(childrens[childkey]);
                             }
@@ -165,13 +177,13 @@ $$.extend($$, {
     // 相邻选择器，即 div+p
     $selectorsByAdjacent: function (content, parent) {
         content = $$.trim(content);
-        parent = parent != undefined ? parent:document;
+        parent = parent != undefined ? parent : document;
         var result = [];
         var beforeArr;
         var afterStr;
         if ($$.isString(content)) {
             var elements = content.split('+'); // 选择紧贴在E元素之后F元素，元素E与F必须同属一个父级。
-            beforeArr = $$.$selectors(elements[0],parent);
+            beforeArr = $$.$selectors(elements[0], parent);
             afterStr = $$.trim(elements[1]);
             var index = afterStr.charAt(0);
             var afterName = afterStr.substring(1, afterStr.length);
@@ -182,7 +194,7 @@ $$.extend($$, {
                     // 在将该数组的所有元素，赋值该当前要返回的数组。
                     for (let key in beforeArr) {
                         targetEle = $$.$nextElementSibling(beforeArr[key]);
-                        if(targetEle.className == afterName) {
+                        if (targetEle != null && targetEle.className == afterName) {
                             result.push(targetEle);
                         }
                     }
@@ -191,7 +203,7 @@ $$.extend($$, {
                     // 如果是Id，直接getElementById获取该元素，添加到arr
                     for (let key in beforeArr) {
                         targetEle = $$.$nextElementSibling(beforeArr[key]);
-                        if(targetEle.id == afterName) {
+                        if (targetEle != null && targetEle.id == afterName) {
                             result.push(targetEle);
                         }
                     }
@@ -200,7 +212,7 @@ $$.extend($$, {
                     // 元素选择器getElementsByTagName,获取的放入arr
                     for (let key in beforeArr) {
                         targetEle = $$.$nextElementSibling(beforeArr[key]);
-                        if(targetEle.tagName == afterStr.toUpperCase()) {
+                        if (targetEle != null && targetEle.tagName == afterStr.toUpperCase()) {
                             result.push(targetEle);
                         }
                     }
@@ -212,13 +224,13 @@ $$.extend($$, {
     // 兄弟选择器，即 div~p
     $selectorsBybrother: function (content, parent) {
         content = $$.trim(content);
-        parent = parent != undefined ? parent:document;
+        parent = parent != undefined ? parent : document;
         var result = [];
         var beforeArr;
         var afterStr;
         if ($$.isString(content)) {
             var elements = content.split('~'); // 选择E元素后面的所有兄弟元素F，元素E与F必须同属一个父级。
-            beforeArr = $$.$selectors(elements[0],parent);
+            beforeArr = $$.$selectors(elements[0], parent);
             afterStr = $$.trim(elements[1]);
             var index = afterStr.charAt(0);
             var afterName = afterStr.substring(1, afterStr.length);
@@ -229,8 +241,11 @@ $$.extend($$, {
                     // 在将该数组的所有元素，赋值该当前要返回的数组。
                     for (let key in beforeArr) {
                         targetEle = $$.$nextElementSibling(beforeArr[key]);
-                        if(targetEle.className == afterName) {
-                            result.push(targetEle);
+                        while (targetEle) {
+                            if (targetEle.className == afterName) {
+                                result.push(targetEle);
+                            }
+                            targetEle = $$.$nextElementSibling(targetEle);
                         }
                     }
                     break;
@@ -238,8 +253,11 @@ $$.extend($$, {
                     // 如果是Id，直接getElementById获取该元素，添加到arr
                     for (let key in beforeArr) {
                         targetEle = $$.$nextElementSibling(beforeArr[key]);
-                        if(targetEle.id == afterName) {
-                            result.push(targetEle);
+                        while (targetEle) {
+                            if (targetEle.id == afterName) {
+                                result.push(targetEle);
+                            }
+                            targetEle = $$.$nextElementSibling(targetEle);
                         }
                     }
                     break;
@@ -247,8 +265,11 @@ $$.extend($$, {
                     // 元素选择器getElementsByTagName,获取的放入arr
                     for (let key in beforeArr) {
                         targetEle = $$.$nextElementSibling(beforeArr[key]);
-                        if(targetEle.tagName == afterStr.toUpperCase()) {
-                            result.push(targetEle);
+                        while (targetEle) {
+                            if (targetEle.tagName == afterStr.toUpperCase()) {
+                                result.push(targetEle);
+                            }
+                            targetEle = $$.$nextElementSibling(targetEle);
                         }
                     }
                     break;
@@ -259,10 +280,14 @@ $$.extend($$, {
     // nextElementSibling 下一个节点
     $nextElementSibling: function (ele) {
         let targetEle = null;
-        if(ele.nextElementSibling) {
+        if (ele.nextElementSibling) {
             targetEle = ele.nextElementSibling;
-        }else if(ele.nextSibling) {
-            targetEle = ele.nextSibling;
+        } else if (ele.nextSibling) {
+            let x = ele.nextSibling;
+            while (x != null && x.nodeType != 1) { // 元素节点的nodeType==1，文本节点、注释节点等不为1
+                x = x.nextSibling;
+            }
+            targetEle = x;
         }
         return targetEle;
     },
