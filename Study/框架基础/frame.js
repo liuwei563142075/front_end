@@ -90,22 +90,75 @@ $$.extend($$, {
         }
         return result;
     },
-    // 组合选择器 > + ~ 空格
+    // 分组选择器 (#div span,#div .module)
+    /**
     $group: function (content) {
-        content = $$.trim(content);
-        let c = content.split('>');
-        for(let i in content) {
-            switch (i){
+        let result = []
+        content = $$.blank2one($$.trim(content));
+        let flag = false;
+        let flagTag = '';
+        let cont = '';
+        let index = 0;
+        let parent = [];
+        for (let i in content) {
+            switch (content[i]) {
                 case '>':
+                    if (!flag) {
+                        flag = !flag;
+                        flagTag = '>';
+                    } else {
+                        cont = content.substring(index,i);
+                        index = i;
+                        parent = $$.$selectByTag(cont,'>',parent);
+                        flag = !flag
+                    }
                     break
                 case '+':
+                    if (!flag) {
+                        flag = !flag
+                        flagTag = '+'
+                    } else {
+                        cont = content.substring(index,i);
+                        index = i;
+                        parent = $$.$selectByTag(cont,'+',parent);
+                        flag = !flag
+                    }
                     break;
                 case '~':
+                    if (!flag) {
+                        flag = !flag
+                        flagTag = '~'
+                    } else {
+                        cont = content.substring(index,i);
+                        index = i;
+                        parent = $$.$selectByTag(cont,'~',parent);
+                        flag = !flag
+                    }
                     break;
-
+                case ' ':
+                    if (content[i - 1] == ' ' && content[i + 1] == ' ') {
+                        if (!flag) {
+                            flag = !flag
+                            flagTag = '~'
+                        } else {
+                            cont = content.substring(index,i);
+                            index = i;
+                            parent = $$.$selectByTag(cont,' ',parent);
+                            flag = !flag
+                        }
+                    }
+                    break;
             }
         }
     },
+     */
+    // 层次选择器 (#div span #div .module)
+    /**
+     $cengci: function (content) {
+
+    },
+     */
+
     // 包含选择器，即 div p         #shop > .cloths + a img
     $selectorsBySpan: function (content, parent) {
         content = $$.trim(content);
@@ -277,6 +330,49 @@ $$.extend($$, {
         }
         return result;
     },
+    // selectByTag 通过传入的tag,进入不同的处理器
+    $selectByTag:function(content,tag,parent) {
+        let result = [];
+        switch (tag) {
+            case '+':
+                if(parent) {
+                    for(let i = 0;i<parent.length;i++) {
+                        Array.prototype.push.apply(result,$$.$selectorsByAdjacent(content,parent[i]));
+                    }
+                }else {
+                    Array.prototype.push.apply(result,$$.$selectorsByAdjacent(content,undefined));
+                }
+                break;
+            case '>':
+                if(parent) {
+                    for(let i = 0;i<parent.length;i++) {
+                        Array.prototype.push.apply(result,$$.$selectorsByChild(content,parent[i]));
+                    }
+                }else {
+                    Array.prototype.push.apply(result,$$.$selectorsByChild(content,undefined));
+                }
+                break;
+            case '~':
+                if(parent) {
+                    for(let i = 0;i<parent.length;i++) {
+                        Array.prototype.push.apply(result,$$.$selectorsBybrother(content,parent[i]));
+                    }
+                }else {
+                    Array.prototype.push.apply(result,$$.$selectorsBybrother(content,undefined));
+                }
+                break;
+            case ' ':
+                if(parent) {
+                    for(let i = 0;i<parent.length;i++) {
+                        Array.prototype.push.apply(result,$$.$selectorsBySpan(content,parent[i]));
+                    }
+                }else {
+                    Array.prototype.push.apply(result,$$.$selectorsBySpan(content,undefined));
+                }
+                break;
+        }
+        return result;
+    },
     // nextElementSibling 下一个节点
     $nextElementSibling: function (ele) {
         let targetEle = null;
@@ -322,6 +418,10 @@ $$.extend($$, {
     // 判断是否是字符串
     isString: function (str) {
         return typeof str === 'string';
+    },
+    // 将两个或多个空格替换为1个
+    blank2one: function (str) {
+        return str.replace(/\s+/g, ' ')
     }
 });
 // 基础模块-ajax
