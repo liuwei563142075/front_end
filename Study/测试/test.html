@@ -2,37 +2,32 @@
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="utf-8" />
-    <title>justify-content_CSS参考手册_web前端开发参考手册系列</title>
+    <title>test</title>
     <meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
-    <style>
-        .box{
-            display:flex;
-            width:400px;
-            height:100px;
-            margin:0;
-            padding:0;
-            border-radius:5px;
-            list-style:none;
-            background-color:#eee;
-        }
-        .box li{
-            margin:5px;
-            padding:10px;
-            border-radius:5px;
-            background:#aaa;
-            text-align:center;
-        }
-        #box3{
-            justify-content:center;
-        }
-    </style>
 </head>
 <body>
-<h2>justify-content:center</h2>
-<ul id="box3" class="box">
-    <li>a</li>
-    <li>b</li>
-    <li>c</li>
-</ul>
+<script>
+    // 错误写法
+    // function f() {
+    //     console.log(456);
+    // }()
+
+    // 正确写法
+    (function () {
+        var name = '毛毛'
+        console.log(name);
+    })()
+
+    var f0 = (function () {
+        var name = 'maomao'
+        console.log(name);
+        return name;
+    })()
+
+    console.log(f0);
+
+
+
+</script>
 </body>
 </html>

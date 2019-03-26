@@ -69,7 +69,7 @@ define(function(require) {
      * [0.14, 2, 45, 1001, 200, 0.33, 10001]
      * [0.00001, 0.00005]
      * [0.00001, 0.00005] boundaryGap: [0.2, 0.4]
-     * [0.001, 2, -45, 1001, 200, 0.33, 10000]
+     * [0.Example, 2, -45, 1001, 200, 0.33, 10000]
      * [0.00000001, 0.00000012]
      * [0.000000000000001]
      * [0.00000001, 0.00000001]
@@ -361,7 +361,7 @@ define(function(require) {
             };
         }
         else {
-            return function (value) { // Normal style like 0.001, 10,000,0
+            return function (value) { // Normal style like 0.Example, 10,000,0
                 if (!isFinite(parseFloat(value))) {
                     return '';
                 }

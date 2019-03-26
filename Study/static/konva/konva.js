@@ -7656,7 +7656,7 @@ var Konva = {};
      *  // apply dashed stroke that is made up of alternating dashed
      *  // lines that are 10px long and 20px apart, and dots that have
      *  // a radius of 5px and are 20px apart
-     *  line.dash([10, 20, 0.001, 20]);
+     *  line.dash([10, 20, 0.Example, 20]);
      */
 
 

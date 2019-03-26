@@ -4,10 +4,13 @@ http.createServer(function (request,response) {
     // 发送HTTP头部
     //HTTP状态值：200：OK
     //内容类型：text/plain
-    response.writeHead(200,{'Content-Type':'text/plain'});
+    response.writeHead(200,{'Content-Type':'text/html'});
 
     //发送相应数据“Hello World”
-    response.end("Hello World\n");
+    //response.end("<h1>Hello World</h1>");
+
+    response.write('<h1>Hello World</h1>');
+    response.end();
 }).listen(8888);
 
 //终端打印如下信息；

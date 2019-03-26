@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断浏览器内核版本</title>
+</head>
+<body>
+<a href="https://www.cnblogs.com/skybady/p/3513465.html">一篇文章</a>
+<script>
+    // 判断内核
+    function getKernel() {
+        if (navigator.userAgent.indexOf('MSIE') > 0) {
+            return 'MSIE' // MSIE内核
+        }
+        if (navigator.userAgent.indexOf('Firefox') > 0) {
+            return 'Firefox' // Firefox内核
+        }
+        if (navigator.userAgent.indexOf('Opera') > 0) {
+            return 'Opera' // Opera内核
+        }
+        if (navigator.userAgent.indexOf('Safari') > 0) {
+            return 'Safari' // Safari内核
+        }
+        if (navigator.userAgent.indexOf('Camino') > 0) {
+            return 'Camino' // Camino内核
+        }
+        if (navigator.userAgent.indexOf('Gecko') > 0) {
+            return 'Gecko' // Gecko内核
+        }
+    }
+
+    // 判断IE内核版本
+    function getIEKernel(){
+        if (window.navigator.userAgent.indexOf('MSIE 7.0') >= 1) {
+            return 'MSIE 7.0';  // 如果浏览器为IE7
+        }
+        if (window.navigator.userAgent.indexOf('MSIE 8.0') >= 1) {
+            return 'MSIE 8.0';  // 如果浏览器为IE8
+        }
+        if (window.navigator.userAgent.indexOf('MSIE 9.0') >= 1) {
+            return 'MSIE 9.0';  // 如果浏览器为IE9
+        }
+    }
+
+    console.log(getKernel())
+    console.log(getIEKernel())
+</script>
+</body>
+</html>

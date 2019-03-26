@@ -798,7 +798,7 @@ test("time", function() {
 	ok(!method( "30:00" ), "Invalid time" );
 	ok(!method( "29:59" ), "Invalid time" );
 	ok(!method( "120:00" ), "Invalid time" );
-	ok(!method( "12:001" ), "Invalid time" );
+	ok(!method( "12:Example" ), "Invalid time" );
 	ok(!method( "12:00a" ), "Invalid time" );
 });
 

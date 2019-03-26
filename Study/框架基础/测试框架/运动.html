@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #animat {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var beginPosition = 0;
+            var endPosition = 500;
+            var speed = (endPosition - beginPosition) / 5;
+            var ele = document.getElementById("animat");
+            var go = setInterval(function () {
+                if(ele.offsetLeft < endPosition) {
+                    ele.style.left = ele.offsetLeft + speed + 'px';
+                }else {
+                    window.clearInterval(go);
+                }
+            }, 1000)
+        }
+    </script>
+</head>
+<body>
+<!--5秒中从0位置移动到500位置-->
+<div id="animat">
+
+</div>
+</body>
+</html>

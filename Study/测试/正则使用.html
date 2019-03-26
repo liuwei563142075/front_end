@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则使用</title>
+</head>
+<body>
+<script>
+    // 字符串的拼接问题：
+        // 字面量方式
+    var reg1 = /pattern/ + '2'
+    console.log(reg1);// /pattern/2
+        // 对象创建方式
+    var reg2 = RegExp('pattern' + '2')
+    console.log(reg2); // /pattern2/
+
+    // 转义问题
+        // 字面量方式
+    var reg3 = /\w/
+    console.log(reg3); // /\w/
+    console.log('keke'.match(reg3)); // ["k", index: 0, input: "keke", groups: undefined]
+        // 对象创建方式
+    var reg4 = RegExp('\w');
+    var reg5 = RegExp('\\w');
+    console.log(reg4); // /w/
+    console.log(reg5); // /\w/
+    console.log('keke'.match(reg4)); // null
+    console.log('keke'.match(reg5)); // ["k", index: 0, input: "keke", groups: undefined]
+</script>
+</body>
+</html>

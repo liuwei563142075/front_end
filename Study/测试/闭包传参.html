@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    (function () {
+        var name = '毛毛';
+        var getName = function () {
+            return name;
+        };
+        var setName = function (name_) {
+            name = name_
+        };
+        // 一般使用json，将所有内部东西封装起来，赋值给全局变量
+        window.json = {
+            name:name,
+            getName:getName,
+            setName:setName,
+        };
+    })()
+</script>
+</body>
+</html>
